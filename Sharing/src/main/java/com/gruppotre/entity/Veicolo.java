@@ -25,8 +25,8 @@ public class Veicolo {
 	private String alimentazione;
 	@Column(name="ruote")
 	private String ruote;
-	@Column(name="disponibilità")
-	private String disponibilità;
+	@Column(name="disponibilita")
+	private String disponibilita;
 	@Column(name="indirizzo")
 	private String indirizzo;
 	@Column(name="citta")
@@ -43,13 +43,13 @@ public class Veicolo {
 	}
 	
 	public Veicolo(int id, String categoria, String descrizione, String alimentazione, String ruote,
-			String disponibilità, String indirizzo, String citta, String coordinateGps, String immagine) {
+			String disponibilita, String indirizzo, String citta, String coordinateGps, String immagine) {
 		super();
 		this.categoria = categoria;
 		this.descrizione = descrizione;
 		this.alimentazione = alimentazione;
 		this.ruote = ruote;
-		this.disponibilità = disponibilità;
+		this.disponibilita = disponibilita;
 		this.indirizzo = indirizzo;
 		this.citta = citta;
 		this.coordinateGps = coordinateGps;
@@ -86,11 +86,11 @@ public class Veicolo {
 	public void setRuote(String ruote) {
 		this.ruote = ruote;
 	}
-	public String getDisponibilità() {
-		return disponibilità;
+	public String getDisponibilita() {
+		return disponibilita;
 	}
-	public void setDisponibilità(String disponibilità) {
-		this.disponibilità = disponibilità;
+	public void setDisponibilità(String disponibilita) {
+		this.disponibilita = disponibilita;
 	}
 	public String getIndirizzo() {
 		return indirizzo;
