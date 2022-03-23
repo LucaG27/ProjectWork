@@ -31,8 +31,8 @@ public class Veicolo {
 	private String indirizzo;
 	@Column(name="citta")
 	private String citta;
-	@Column(name="coordinateGps")
-	private String coordinateGps;
+	@Column(name="coordinate")
+	private String coordinate;
 	@Column(name="immagine")
 	private String immagine;
 	
@@ -52,7 +52,7 @@ public class Veicolo {
 		this.disponibilita = disponibilita;
 		this.indirizzo = indirizzo;
 		this.citta = citta;
-		this.coordinateGps = coordinateGps;
+		this.coordinate = coordinateGps;
 		this.immagine = immagine;
 	}
 	
@@ -105,10 +105,10 @@ public class Veicolo {
 		this.citta = citta;
 	}
 	public String getCoordinateGps() {
-		return coordinateGps;
+		return coordinate;
 	}
 	public void setCoordinateGps(String coordinateGps) {
-		this.coordinateGps = coordinateGps;
+		this.coordinate = coordinateGps;
 	}
 	public String getImmagine() {
 		return immagine;
