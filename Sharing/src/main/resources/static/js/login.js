@@ -2,8 +2,8 @@
 	function login() {
 		
 		let utente = {
-			"email" : document.getElementById("typeEmailX").value,
-			"password" : document.getElementById("typePasswordX").value
+			"email" : document.getElementById("email").value,
+			"password" : document.getElementById("password").value
 		}
 		
 		fetch("/api/login/validation", {
