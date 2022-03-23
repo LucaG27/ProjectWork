@@ -23,6 +23,11 @@ public class VeicoloREST {
 		return srv.getAll();
 	}
 	
+	@GetMapping("/id/{id}")
+	public Veicolo getById(@PathVariable int id) {
+		return srv.getById(id);
+	}
+	
 	@GetMapping("/disponibili/{disponibilita}")
 	public List<Veicolo> getAllDisponibili(@PathVariable("disponibilita") String disponibilita){
 		return srv.getAllDisponibili(disponibilita);
