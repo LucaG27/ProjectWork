@@ -15,11 +15,11 @@ public class PrenotazioneService {
 	PrenotazioneDAO db;
 
 	public List<Prenotazione> findByStato(String stato) {
-		return db.findByStato(stato);
+		return db.findAllByStato(stato);
 	}
 
 	public List<Prenotazione> findByData(String data) {
-		return db.findByData(data);
+		return db.findAllByData(data);
 	}
 
 	public Prenotazione getPrenotazioneById(int id) {
