@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.gruppotre.entity.Prenotazione;
-import com.gruppotre.entity.PrenotazioniDTO;
+import com.gruppotre.entity.PrenotazioneDTO;
 
 public interface PrenotazioneDAO extends JpaRepository<Prenotazione, Integer>{
 
@@ -14,7 +14,7 @@ public interface PrenotazioneDAO extends JpaRepository<Prenotazione, Integer>{
 	
 	Prenotazione findById(int id);
 	
-	@Query(value= "select stato, nome, cognome, email, data_inizio, data_fine "
-			+ " from prenotazione p, utente u where p.utente_id_fk=u.utente_id ",nativeQuery=true)
-	List<PrenotazioniDTO> getAllPrenotazioniDTO();
+	@Query(value= "select new com.gruppotre.entity.PrenotazioneDTO(p.stato, u.nome, u.cognome, u.email, p.dataInizio, p.dataFine ) "
+			+ " from Prenotazione p, Utente u where p.utenteId=u.id ")
+	List<PrenotazioneDTO> getAllPrenotazioniDTO();
 }

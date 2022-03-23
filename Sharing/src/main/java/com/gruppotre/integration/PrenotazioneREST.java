@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gruppotre.entity.Prenotazione;
-import com.gruppotre.entity.PrenotazioniDTO;
-import com.gruppotre.entity.Utente;
+import com.gruppotre.entity.PrenotazioneDTO;
 import com.gruppotre.service.PrenotazioneService;
 
 @RestController
@@ -28,7 +27,7 @@ public class PrenotazioneREST {
 	
 	
 	@GetMapping("/allPrenotazioniUtente")
-	public List<PrenotazioniDTO> selectAllPrenotazioniUtente(){
+	public List<PrenotazioneDTO> selectAllPrenotazioniUtente(){
 		return srv.getAllPrenotazioniDTO();
 	}
 }
