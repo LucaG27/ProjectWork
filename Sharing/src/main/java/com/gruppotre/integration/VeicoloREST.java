@@ -12,7 +12,7 @@ import com.gruppotre.entity.Veicolo;
 import com.gruppotre.service.VeicoloService;
 
 @RestController
-@RequestMapping("/veicolo")
+@RequestMapping("/api/veicolo")
 public class VeicoloREST {
 
 	@Autowired
