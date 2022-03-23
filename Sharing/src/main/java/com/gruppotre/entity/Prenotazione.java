@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,11 +28,11 @@ public class Prenotazione {
 	private String stato;
 
 	@OneToOne
-	@Column(name = "utente_id_fk")
+	@JoinColumn(name = "utente_id_fk")
 	private int utenteId;
 
 	@OneToOne
-	@Column(name = "veicolo_id_fk")
+	@JoinColumn(name = "veicolo_id_fk")
 	private int veicoloId;
 
 
