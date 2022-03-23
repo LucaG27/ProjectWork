@@ -12,7 +12,5 @@ public interface UtenteDAO extends JpaRepository<Utente, Integer> {
     @Query(value= "select * from utente where email = ?1 and password = ?2",nativeQuery=true)
 	Utente findByEmailAndPassword(String email, String password);
 
-    @Query(value= "select * from utente where prenotazione_id = ?1",nativeQuery=true)
-	Utente findByPrenotazione(int prenotazioneId);
     
 }
