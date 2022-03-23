@@ -24,7 +24,7 @@ public class Utente {
     private String password;
     private String ruolo;
 
-    @OneToOne(mappedBy ="utente")
+    @OneToOne(mappedBy ="utenteId")
     private Prenotazione prenotazione;
 
     public Utente() {
