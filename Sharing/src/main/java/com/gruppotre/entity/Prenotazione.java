@@ -39,7 +39,7 @@ public class Prenotazione {
 	public Prenotazione() {
 	}
 
-	public Prenotazione(int id, String dataInizio, String dataFine, String stato, Utente utenteId, Veicolo veicoloId) {
+	public Prenotazione(String dataInizio, String dataFine, String stato, Utente utenteId, Veicolo veicoloId) {
 		this.dataInizio = dataInizio;
 		this.dataFine = dataFine;
 		this.stato = stato;

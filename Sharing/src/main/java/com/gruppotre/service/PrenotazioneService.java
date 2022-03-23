@@ -3,7 +3,6 @@ package com.gruppotre.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import com.gruppotre.dal.PrenotazioneDAO;
@@ -25,5 +24,9 @@ public class PrenotazioneService {
 
 	public Prenotazione getPrenotazioneById(int id) {
 		return db.findById(id);
+	}
+	
+	public List<Prenotazione> getAllPrenotazioni() {
+		return db.findAll();
 	}
 }

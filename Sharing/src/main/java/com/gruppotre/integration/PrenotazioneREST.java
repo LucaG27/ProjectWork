@@ -18,8 +18,8 @@ public class PrenotazioneREST {
 	PrenotazioneService srv;
 	
 	@GetMapping("/allPrenotazioni")
-	public List<Prenotazione> selectAllOrdini(){
-		List<Prenotazione> list = srv.getAll();
-		return srv.getPrenotazioni();
+	public List<Prenotazione> selectAllPrenotazioni(){
+		List<Prenotazione> list = srv.getAllPrenotazioni();
+		return srv.getAllPrenotazioni();
 	}
 }

@@ -14,10 +14,10 @@ public class PrenotazioneCtrl {
 
 	@Autowired
 	PrenotazioneService srv;
-	
+
 	@GetMapping("/lista-prenotazioni")
 	public String list(Model model, HttpSession session) {
-		
+
 		if(session.getAttribute("utenteLoggato") == null) return "redirect:/login-page";
 		else return "articolo";
 	}
