@@ -8,9 +8,9 @@ import com.gruppotre.entity.Prenotazione;
 
 public interface PrenotazioneDAO extends JpaRepository<Prenotazione, Integer>{
 
-	List<Prenotazione> findByStato(String stato);
+	List<Prenotazione> findAllByStato(String stato);
 	
-	List<Prenotazione> findByData(String data);
+	List<Prenotazione> findAllByData(String data);
 
 	Prenotazione findById(int id);
 }
