@@ -18,9 +18,6 @@ public class PrenotazioneService {
 		return db.findAllByStato(stato);
 	}
 
-	public List<Prenotazione> findByData(String data) {
-		return db.findAllByData(data);
-	}
 
 	public Prenotazione getPrenotazioneById(int id) {
 		return db.findById(id);
