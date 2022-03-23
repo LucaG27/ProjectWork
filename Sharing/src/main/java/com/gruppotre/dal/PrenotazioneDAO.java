@@ -11,4 +11,6 @@ public interface PrenotazioneDAO {
 	List<Prenotazione> findByStato(String stato);
 	
 	List<Prenotazione> findByData(String data);
+
+	Prenotazione findById(int id);
 }
