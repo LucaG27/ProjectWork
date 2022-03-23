@@ -1,0 +1,21 @@
+veicolo_id;categoria;descrizione;alimentazione;ruote;disponibilita;indirizzo;citta;coordinate;immagine
+1;AUTO;fiat 500;BENZINA;QUATTRO RUOTE;DISPONIBILE;via carlo alberto,22;torino;sdaasd;123456
+2;MOTO;tmax;BENZINA;DUE RUOTE;NOLEGGIATO;via antonio meucci;torino;asdasdasd;123456
+3;AUTO;ford Puma;ibrida;QUATTRO RUOTE;disponibile;via Mazzini, 25;torino;sdaasd;123456
+4;BICICLETTA;NCM Milano;Elettrica;DUE RUOTE;NOLEGGIATO;Via Sorbole, 147;torino;asdasdasd;123456
+5;AUTO;audi q5;ibrida;QUATTRO RUOTE;disponibile;Via Gerbole, 12;torino;sdaasd;123456
+6;BICICLETTA;Argento Omega;Elettrica;DUE RUOTE;NOLEGGIATO;Via Paolini,45;torino;asdasdasd;123456
+7;AUTO;Tesla Model 3;Elettrica;QUATTRO RUOTE;disponibile;Via Bisanzio,37;torino;sdaasd;123456
+8;MONOPATTINO;Xiaomi Electric Scooter 3;Elettrica;DUE RUOTE;NOLEGGIATO;Via Roma, 12;torino;asdasdasd;123456
+9;AUTO;Renault zoe;Elettrica;QUATTRO RUOTE;disponibile;Via Torino,20;torino;sdaasd;123456
+10;MONOPATTINO;I-Bike Mono Adventure;Elettrica;DUE RUOTE;NOLEGGIATO;Via Chieri,45;torino;asdasdasd;123456
+11;AUTO;Seat Leon;Diesel;QUATTRO RUOTE;disponibile;Corso Potenza, 23;torino;sdaasd;123456
+12;MOTO;Yamaha YBR125;BENZINA;DUE RUOTE;NOLEGGIATO;Corso Marche, 45;torino;asdasdasd;123456
+13;AUTO;Mazda Mx 30;Elettrica;QUATTRO RUOTE;disponibile;Via Sant'ottavio,19;torino;sdaasd;123456
+14;MOTO;Africa Twin;BENZINA;DUE RUOTE;NOLEGGIATO;Corso San Maurizio, 45;torino;asdasdasd;123456
+15;AUTO;Opel Grand Land;Diesel;QUATTRO RUOTE;disponibile;Via Mattei, 78;torino;sdaasd;123456
+16;MOTO;Askoll es2;Elettrica;DUE RUOTE;NOLEGGIATO;Via Carlo Alberto,12;torino;asdasdasd;123456
+17;AUTO;Renault Clio;GPL;QUATTRO RUOTE;disponibile;Via Verdi, 90;torino;sdaasd;123456
+18;Furgoni;Renault kangoo;Elettrica;QUATTRO RUOTE;NOLEGGIATO;Via Filadelfia, 12;torino;asdasdasd;123456
+19;AUTO;Ford Fiesta;GPL;QUATTRO RUOTE;disponibile;Via Milano, 40;torino;sdaasd;123456
+20;MOTO;Zero s;Elettrica;DUE RUOTE;NOLEGGIATO;Via Ascanio Sobrero, 30;torino;asdasdasd;123456
