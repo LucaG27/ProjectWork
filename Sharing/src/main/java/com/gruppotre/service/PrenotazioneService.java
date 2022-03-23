@@ -12,13 +12,17 @@ import com.gruppotre.entity.Prenotazione;
 public class PrenotazioneService {
 
 	@Autowired
-	PrenotazioneDAO pdb;
-	
+	PrenotazioneDAO db;
+
 	public List<Prenotazione> findByStato(String stato) {
-		return pdb.findByStato(stato);
+		return db.findByStato(stato);
 	}
 
 	public List<Prenotazione> findByData(String data) {
-		return pdb.findByData(data);
+		return db.findByData(data);
+	}
+
+	public Prenotazione getPrenotazioneById(int id) {
+		return db.findById(id);
 	}
 }
