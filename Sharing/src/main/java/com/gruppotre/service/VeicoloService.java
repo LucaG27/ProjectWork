@@ -25,4 +25,8 @@ public class VeicoloService {
 	public List<Veicolo> getAllDisponibili(String disponibilita){
 		return db.findAllByDisponibilita(disponibilita);
 	}
+	
+	public List<Veicolo> getAllCategoria(String categoria){
+		return db.findAllByCategoria(categoria);
+	}
 }

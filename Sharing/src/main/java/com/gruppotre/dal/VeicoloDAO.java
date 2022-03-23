@@ -10,5 +10,8 @@ import com.gruppotre.entity.Veicolo;
 @Repository
 public interface VeicoloDAO extends JpaRepository<Veicolo, Integer>{
 
+
 	List<Veicolo> findAllByDisponibilita(String disponibilita);
+	
+	List<Veicolo> findAllByCategoria(String categoria);
 }
