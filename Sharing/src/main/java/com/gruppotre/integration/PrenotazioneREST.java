@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gruppotre.entity.Prenotazione;
+import com.gruppotre.entity.PrenotazioniDTO;
+import com.gruppotre.entity.Utente;
 import com.gruppotre.service.PrenotazioneService;
 
 @RestController
@@ -17,9 +19,16 @@ public class PrenotazioneREST {
 	@Autowired
 	PrenotazioneService srv;
 	
+	
 	@GetMapping("/allPrenotazioni")
 	public List<Prenotazione> selectAllPrenotazioni(){
 		List<Prenotazione> list = srv.getAllPrenotazioni();
 		return srv.getAllPrenotazioni();
+	}
+	
+	
+	@GetMapping("/allPrenotazioniUtente")
+	public List<PrenotazioniDTO> selectAllPrenotazioniUtente(){
+		return srv.getAllPrenotazioniDTO();
 	}
 }

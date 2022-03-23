@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.gruppotre.dal.PrenotazioneDAO;
 import com.gruppotre.entity.Prenotazione;
+import com.gruppotre.entity.PrenotazioniDTO;
 
 @Service
 public class PrenotazioneService {
@@ -18,12 +19,15 @@ public class PrenotazioneService {
 		return db.findAllByStato(stato);
 	}
 
-
 	public Prenotazione getPrenotazioneById(int id) {
 		return db.findById(id);
 	}
 	
 	public List<Prenotazione> getAllPrenotazioni() {
 		return db.findAll();
+	}
+	
+	public List<PrenotazioniDTO> getAllPrenotazioniDTO() {
+		return db.getAllPrenotazioniDTO();
 	}
 }
