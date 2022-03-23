@@ -29,19 +29,17 @@ public class Prenotazione {
 
 	@OneToOne
 	@JoinColumn(name = "utente_id_fk")
-	private int utenteId;
+	private Utente utenteId;
 
 	@OneToOne
 	@JoinColumn(name = "veicolo_id_fk")
-	private int veicoloId;
+	private Veicolo veicoloId;
 
-
+	
 	public Prenotazione() {
-		super();
 	}
 
-	public Prenotazione(int id, String dataInizio, String dataFine, String stato, int utenteId, int veicoloId) {
-		super();
+	public Prenotazione(int id, String dataInizio, String dataFine, String stato, Utente utenteId, Veicolo veicoloId) {
 		this.dataInizio = dataInizio;
 		this.dataFine = dataFine;
 		this.stato = stato;
@@ -81,19 +79,19 @@ public class Prenotazione {
 		this.stato = stato;
 	}
 
-	public int getUtenteId() {
+	public Utente getUtenteId() {
 		return utenteId;
 	}
 
-	public void setUtenteId(int utenteId) {
+	public void setUtenteId(Utente utenteId) {
 		this.utenteId = utenteId;
 	}
 
-	public int getVeicoloId() {
+	public Veicolo getVeicoloId() {
 		return veicoloId;
 	}
 
-	public void setVeicoloId(int veicoloId) {
+	public void setVeicoloId(Veicolo veicoloId) {
 		this.veicoloId = veicoloId;
 	}
 
