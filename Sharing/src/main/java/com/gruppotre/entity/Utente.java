@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +23,9 @@ public class Utente {
     private String email;
     private String password;
     private String ruolo;
+
+    @OneToOne(mappedBy ="utente")
+    private Prenotazione prenotazione;
 
     public Utente() {
     }
