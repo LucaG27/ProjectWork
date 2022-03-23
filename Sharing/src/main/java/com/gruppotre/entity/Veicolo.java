@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,28 +17,39 @@ public class Veicolo {
 	@Column(name="veicolo_id")
 	private int id;
 	
-	private String categoria;
+	@Column(name="categoria")
+	private String categoria;	
+	@Column(name="descrizione")
 	private String descrizione;
+	@Column(name="alimentazione")
 	private String alimentazione;
+	@Column(name="ruote")
 	private String ruote;
-	private String disponibilità;
+	@Column(name="disponibilita")
+	private String disponibilita;
+	@Column(name="indirizzo")
 	private String indirizzo;
+	@Column(name="citta")
 	private String citta;
+	@Column(name="coordinateGps")
 	private String coordinateGps;
+	@Column(name="immagine")
 	private String immagine;
+	
+	@OneToOne(mappedBy = "veicoloId")
+	private Prenotazione prenotazione;
 	
 	public Veicolo() {
 	}
 	
 	public Veicolo(int id, String categoria, String descrizione, String alimentazione, String ruote,
-			String disponibilità, String indirizzo, String citta, String coordinateGps, String immagine) {
+			String disponibilita, String indirizzo, String citta, String coordinateGps, String immagine) {
 		super();
-		this.id = id;
 		this.categoria = categoria;
 		this.descrizione = descrizione;
 		this.alimentazione = alimentazione;
 		this.ruote = ruote;
-		this.disponibilità = disponibilità;
+		this.disponibilita = disponibilita;
 		this.indirizzo = indirizzo;
 		this.citta = citta;
 		this.coordinateGps = coordinateGps;
@@ -74,11 +86,11 @@ public class Veicolo {
 	public void setRuote(String ruote) {
 		this.ruote = ruote;
 	}
-	public String getDisponibilità() {
-		return disponibilità;
+	public String getDisponibilita() {
+		return disponibilita;
 	}
-	public void setDisponibilità(String disponibilità) {
-		this.disponibilità = disponibilità;
+	public void setDisponibilità(String disponibilita) {
+		this.disponibilita = disponibilita;
 	}
 	public String getIndirizzo() {
 		return indirizzo;
