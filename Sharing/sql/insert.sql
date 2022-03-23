@@ -15,3 +15,7 @@ INSERT INTO `veicolo`(categoria,descrizione,alimentazione,disponibilità,indiriz
 VALUES ('Auto','AVENTADOR LP 780-4 ULTIMAE ROADSTER','benzina','DISPONIBILE','Via Carlo Alberto 22,Torino','45.22325425,7.2342555',''),
 ('Auto','AVENTADOR LP 780-4 ULTIMAE ROADSTER','benzina','DISPONIBILE','Via Carlo Alberto 22,Torino','45.22325425,7.2342555',''),
 ('Carlo','Verdi','2001-03-19','utente@email.com','utente','RUOLO_UTENTE');
+
+
+INSERT INTO `prenotazione`(data_inizio,data_fine,stato,utente_id_fk,veicolo_id_fk)
+VALUES ('2020-08-08','2023-07-07','in corso','2','1');
