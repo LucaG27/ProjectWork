@@ -27,4 +27,9 @@ public class VeicoloREST {
 	public List<Veicolo> getAllDisponibili(@PathVariable("disponibilita") String disponibilita){
 		return srv.getAllDisponibili(disponibilita);
 	}
+	
+	@GetMapping("/categoria/{categoria}")
+	public List<Veicolo> getAllByCategoria(@PathVariable("categoria") String categoria){
+		return srv.getAllCategoria(categoria);
+	}
 }
