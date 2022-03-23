@@ -84,9 +84,21 @@
         <!-- Slides -->
         <div class="swiper-slide">
           <img class="img-fluid" src="https://www.arval.it/sites/it/files/styles/izmo-format/public/gla-2021.png?itok=z5PeUJ_5" alt="">
-          <h2>Lorem, ipsum.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn btn-primary">Buy now</button>
+          <h2 class="text-center">Lorem, ipsum.</h2>
+          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <center><button class="btn btn-primary">Buy now</button></center>
+        </div>
+        <div class="swiper-slide">
+          <img class="img-fluid" src="https://www.arval.it/sites/it/files/styles/izmo-format/public/toyota_21yariscrosshevdynplussu1b_lowaggressive.png?itok=jj0PEO24" alt="">
+          <h2 class="text-center">Lorem, ipsum.</h2>
+          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <center><button class="btn btn-primary">Buy now</button></center>
+        </div>
+        <div class="swiper-slide">
+          <img class="img-fluid" src="https://www.arval.it/sites/it/files/fiat_21500eviconha3b_lowaggressive.png" alt="">
+          <h2 class="text-center">Lorem, ipsum.</h2>
+          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
+          <center><button class="btn btn-primary">Buy now</button></center>
         </div>
       </div>
 
@@ -98,10 +110,7 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
 
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
-    </div>
-    
+      
   </div>
 
 
@@ -178,35 +187,19 @@
     </footer> -->
 
   <!-- Footer -->
-  <footer class="bg-dark text-center text-white">
+  <footer class="bg-dark text-center text-white ">
     <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-
-        <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-
-      </section>
-      <!-- Section: Social media -->
+    
 
       <!-- Section: Form -->
       <section class="">
         <form action="">
           <!--Grid row-->
-          <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-center pt-5">
             <!--Grid column-->
             <div class="col-auto">
               <p class="pt-2">
-                <strong>Sign up for our newsletter</strong>
+                <strong>Registrati alla newsletter</strong>
               </p>
             </div>
             <!--Grid column-->
@@ -215,8 +208,7 @@
             <div class="col-md-5 col-12">
               <!-- Email input -->
               <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example21" class="form-control" />
-                <label class="form-label" for="form5Example21">Email address</label>
+                <input type="email" id="form5Example21" class="form-control" placeholder="Email" />
               </div>
             </div>
             <!--Grid column-->
@@ -326,6 +318,25 @@
                   src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
                   alt="" width="150px">
               </li>
+              <li>
+                <div class="container p-4">
+                  <!-- Section: Social media -->
+                  <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+            
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+            
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+            
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+            
+                  </section>
+                  <!-- Section: Social media -->
+              </li>
 
             </ul>
           </div>
@@ -420,11 +431,6 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
     });
 
     // Navbar shrink function
@@ -447,6 +453,18 @@
     myModal.addEventListener('shown.bs.modal', function () {
       myInput.focus()
     })
+
+    var navbar = document.querySelector('nav')
+
+     window.onscroll = function() {
+
+  // pageYOffset or scrollY
+  if (window.pageYOffset > 0) {
+    navbar.classList.add('scrolled')
+  } else {
+    navbar.classList.remove('scrolled')
+  }
+}
 
   </script>
 </body>

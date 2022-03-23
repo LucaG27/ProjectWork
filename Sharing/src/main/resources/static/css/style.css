@@ -13,6 +13,10 @@ svg{
     width: 20px;
 }
 
-nav{
+nav:hover{
     background-color: #212529;
 }
+
+nav.scrolled {
+    background: #0a0a0a;
+  }
