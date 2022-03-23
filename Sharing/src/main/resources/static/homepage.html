@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  rel="stylesheet"  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Home Page</title>
@@ -66,75 +66,27 @@
         <div class="swiper-slide">
             <img src="https://www.arval.it/sites/it/files/styles/izmo-format/public/gla-2021.png?itok=z5PeUJ_5" alt="">
             <div class="slideText">
-                <h2>Lorem, ipsum.</h2>
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <!-- <h2>Lorem, ipsum.</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-                <button class="btn btn-primary">Buy now</button>
+                <button class="btn btn-primary">Buy now</button> -->
             </div>
         </div>
   
-        <div class="swiper-slide">
-          <img src="https://source.unsplash.com/400x400/?vintage+computer" alt="">
-          <div class="slideText">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-              <button class="btn btn-primary">Buy now</button>
-          </div>
-      </div>
-  
-      <div class="swiper-slide">
-          <img src="https://source.unsplash.com/400x400/?gaming" alt="">
-          <div class="slideText">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-              <button class="btn btn-primary">Buy now</button>
-          </div>
-      </div>
-  
-      <div class="swiper-slide">
-          <img src="https://source.unsplash.com/400x400/?atari" alt="">
-          <div class="slideText">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-              <button class="btn btn-primary">Buy now!!!</button>
-          </div>
-      </div>
-  
-      <div class="swiper-slide">
-          <img src="https://source.unsplash.com/400x400/?80s+computer" alt="">
-          <div class="slideText">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-              <button class="btn btn-primary">Buy now!!!</button>
-          </div>
-      </div>
-  
-      <div class="swiper-slide">
-          <img src="https://source.unsplash.com/400x400/?ibm+vintage" alt="">
-          <div class="slideText">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-              <button class="btn btn-primary">Buy now!!!</button>
-          </div>
-      </div>
-      
-      <div class="swiper-slide">
-          <img src="https://source.unsplash.com/400x400/?silicon+graphics" alt="">
-          <div class="slideText">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-              <button class="btn btn-primary">Buy now!!!</button>
-          </div>
-      </div>
-      
-  
-      <div class="swiper-slide">
-          <img src="https://source.unsplash.com/400x400/?old+pc" alt="">
-          <div class="slideText">
-              <h2>Lorem, ipsum.</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-              <button class="btn btn-primary">Buy now!!!</button>
-          </div>
-      </div>
+       
       
        
       </div>
@@ -406,18 +358,18 @@
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Username</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="email" class="col-form-label">Email</label>
+              <input type="text" id="email" class="form-control">
             </div>
             <div class="mb-3">
-              <label for="message-text" class="col-form-label">Password</label>
-              <input type="password" class="form-control" id="recipient-name">
+              <label for="password" class="col-form-label">Password</label>
+              <input type="password" id="password" class="form-control">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-          <button type="button" class="btn btn-primary"><a href="nuovo" style="color: white;">Accedi</a></button>
+          <button type="button" id="btn" class="btn btn-primary">Accedi</button>
         </div>
       </div>
     </div>
