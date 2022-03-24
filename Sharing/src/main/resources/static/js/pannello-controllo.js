@@ -1,7 +1,7 @@
 "use strict";
 let template_riga = "";
 const url = "http://localhost:8080/api/veicolo/";
-const cat = localStorage.getItem('myCat');
+const UTENTE = localStorage.getItem('user');
 let modal = null;
 
 
@@ -31,6 +31,7 @@ function listaVeicoli(){
             }
 
             document.getElementById("table_rows").innerHTML = rows;
+            agganciaEventi();
         })
         .catch(function(err) {
             alert(err);
@@ -47,7 +48,7 @@ function listaVeicoli(){
             },
             body: JSON.stringify({
     
-                id: document.getElementById("id").value,
+                id: document.getElementById("veicolo_id").value,
                 categoria: document.getElementById("categoria").value,
                 descrizione: document.getElementById("descrizione").value,
                 alimentazione: document.getElementById("alimentazione").value,
@@ -84,7 +85,7 @@ function listaVeicoli(){
                     "Content-type": "application/json; charset=UTF-8"
                 },
                 body: JSON.stringify({
-                    id: document.getElementById("id").value,
+                    id: document.getElementById("veicolo_id").value,
                     categoria: document.getElementById("categoria").value,
                     descrizione: document.getElementById("descrizione").value,
                     alimentazione: document.getElementById("alimentazione").value,
@@ -183,9 +184,12 @@ function listaVeicoli(){
         let call_modale = document.getElementById("call_modale");
         call_modale.addEventListener("click", chiamaModale);
 
+        let createButton = document.getElementById("createButton");
+        createButton.addEventListener("click", createVeicolo);
+
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
             editButton[li].addEventListener("click", editInsertVeicolo);
         }
-            console.log(JSON.stringify(cat))
+            console.log(JSON.stringify(UTENTE))
         });
