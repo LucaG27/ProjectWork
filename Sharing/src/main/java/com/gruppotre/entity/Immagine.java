@@ -24,7 +24,7 @@ public class Immagine {
 	private String immagine4;
 	private String immagine5;
 
-	@OneToOne
+	@OneToOne(mappedBy = "immagine")
 	private Veicolo veicolo;
 
 	public Immagine() {
