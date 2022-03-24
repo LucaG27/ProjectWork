@@ -29,4 +29,8 @@ public class UtenteService {
     public Utente findByEmailAndPassword(String email, String password) {
 		return udb.findByEmailAndPassword(email, password);
 	}
+
+	public Utente getUtente(String email){
+		return udb.findByEmail(email);
+	}
 }

@@ -1,9 +1,14 @@
+let logiId = document.getElementById("btn").addEventListener("click", login);
+const EMAIL = document.getElementById("email");
+const PSW = document.getElementById("password");
+const cat = localStorage.getItem('myCat');
 
+	
 	function login() {
 		
 		let utente = {
-			"email" : document.getElementById("email").value,
-			"password" : document.getElementById("password").value
+			"email" : EMAIL.value,
+			"password" : PSW.value
 		}
 		
 		fetch("/api/login/validation", {
@@ -19,7 +24,24 @@
 			.then(utente => {
 				if(utente == null) alert("Utente o Password errati.")
 				else {
+					getUser();
 					window.location.reload();
+					console.log(cat);
 				}
 			})
 	}
+
+	function getUser() {
+
+		fetch("/api/login/utente"+EMAIL.value)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(json) {
+	    localStorage.setItem('myCat',JSON.stringify(json));
+	})
+}
+
+	
+
+	

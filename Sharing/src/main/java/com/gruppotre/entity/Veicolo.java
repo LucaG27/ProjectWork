@@ -120,10 +120,5 @@ public class Veicolo {
 	}
 	public void setImmagine(String immagine) {
 		this.immagine = immagine;
-	}
-	
-	
-	
-	
-	
+	}		
 }
