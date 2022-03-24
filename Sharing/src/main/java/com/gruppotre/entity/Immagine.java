@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +24,8 @@ public class Immagine {
 	private String immagine4;
 	private String immagine5;
 
+	@OneToOne
+	private Veicolo veicolo;
 
 	public Immagine() {
 	}
@@ -93,6 +96,16 @@ public class Immagine {
 
 	public void setImmagine5(String immagine5) {
 		this.immagine5 = immagine5;
+	}
+
+	
+	public Veicolo getVeicolo() {
+		return veicolo;
+	}
+
+
+	public void setVeicolo(Veicolo veicolo) {
+		this.veicolo = veicolo;
 	}
 
 
