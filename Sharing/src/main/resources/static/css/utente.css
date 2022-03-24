@@ -6,7 +6,7 @@ svg{
     width: 20px;
 }
 
-.contento{
+.contenitore{
     background-image: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("https://news.sap.com/wp-content/blogs.dir/1/files/2021/07/20/282868_shutterstock_725700925_F.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ svg{
 
 }
 
-.contento .col p{
+.contenitore .col p{
     color: white;
     font-size: 1.2rem;
 }
@@ -30,17 +30,17 @@ nav{
     border-bottom: 1px solid white;
 }
 
-.contento img{
+.contenitore img{
     width: 100px;
 }
 
-.contento a{
+.contenitore a{
     color: rgb(255, 255, 255);
     margin-left: 1.5rem;
     font-size: 1.1rem;
 }
 
-.contento ul li a:hover{
+.contenitore ul li a:hover{
 
     color: rgb(3, 183, 3);
 }
@@ -50,7 +50,7 @@ nav{
     color: white;
 }
 
-.contento .swiper-button-prev{
+.contenitore .swiper-button-prev{
     background-color: rgb(3, 183, 3);
 }
 
