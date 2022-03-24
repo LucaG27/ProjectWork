@@ -23,6 +23,14 @@ public class PrenotazioneService {
 		return db.findById(id);
 	}
 	
+	public Prenotazione savePrenotazione(Prenotazione p) {
+		return db.save(p);
+	}
+	
+	public void deletePrenotazione(int id) {
+		db.delete(db.getById(id));
+	}
+	
 	public List<Prenotazione> getAllPrenotazioni() {
 		return db.findAll();
 	}

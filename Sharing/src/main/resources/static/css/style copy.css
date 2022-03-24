@@ -20,11 +20,17 @@ svg{
 }
 
 .contento{
-    background-image: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("https://www.cislpiemonte.it/torino-canavese/wp-content/uploads/sites/2/2020/12/Torino.jpg");
+    background-image: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("https://cdn.auto.it/img/960/540/2019/07/19/105220073-c634c5d5-9086-4d10-afe5-f8ea32aac4a1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 690px; 
     filter: opacity(100%);   
+
+}
+
+.cards ul{
+    list-style-type: none;
+    padding: 0;
 
 }
 
