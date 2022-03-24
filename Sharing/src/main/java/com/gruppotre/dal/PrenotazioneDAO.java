@@ -14,6 +14,8 @@ public interface PrenotazioneDAO extends JpaRepository<Prenotazione, Integer>{
 	
 	Prenotazione findById(int id);
 	
+	Prenotazione save(int id);
+	
 	@Query(value= "select new com.gruppotre.entity.PrenotazioneDTO(p.stato, u.nome, u.cognome, u.email, p.dataInizio, p.dataFine ) "
 			+ " from Prenotazione p, Utente u where p.utenteId=u.id ")
 	List<PrenotazioneDTO> getAllPrenotazioniDTO();
