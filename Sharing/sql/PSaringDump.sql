@@ -16,33 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `immagini`
+-- Table structure for table `immagine`
 --
 
-DROP TABLE IF EXISTS `immagini`;
+DROP TABLE IF EXISTS `immagine`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `immagini` (
-  `immagini_id` int NOT NULL,
-  `veicolo_id_imgFk` int NOT NULL,
+CREATE TABLE `immagine` (
+  `immagine_id` int NOT NULL,
   `immagine1` varchar(45) DEFAULT NULL,
   `immagine2` varchar(45) DEFAULT NULL,
   `immagine3` varchar(45) DEFAULT NULL,
   `immagine4` varchar(45) DEFAULT NULL,
   `immagine5` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`immagini_id`),
-  KEY `veicoloImgFk` (`veicolo_id_imgFk`),
-  CONSTRAINT `veicoloImgFk` FOREIGN KEY (`veicolo_id_imgFk`) REFERENCES `veicolo` (`veicolo_id`)
+  PRIMARY KEY (`immagine_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `immagini`
+-- Dumping data for table `immagine`
 --
 
-LOCK TABLES `immagini` WRITE;
-/*!40000 ALTER TABLE `immagini` DISABLE KEYS */;
-/*!40000 ALTER TABLE `immagini` ENABLE KEYS */;
+LOCK TABLES `immagine` WRITE;
+/*!40000 ALTER TABLE `immagine` DISABLE KEYS */;
+/*!40000 ALTER TABLE `immagine` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -103,7 +100,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES (1,'Paolo','Rossi','1994-06-07','admin@email.com','admin','RUOLO_ADMIN'),(2,'Carlo','Verdi','2001-03-19','utente@email.com','utente','RUOLO_UTENTE'),(3,'Oscar','Vecchione','1978-06-06','oscar@gmail.it','oscar123','RUOLO_ADMIN'),(4,'Allen','Ingaramo','1984-07-07','allen@gmail.it','allen123','RUOLO_ADMIN'),(5,'Milo','Spandre','1982-08-08','milo@gmail.it','milo123','RUOLO_ADMIN'),(6,'Dino','Olivieri','1980-09-09','dino@gmail.it','dino123','RUOLO_ADMIN'),(7,'Antony','Banche','1989-06-06','antony@gmail.it','antony123','RUOLO_ADMIN'),(8,'Federico','Muscio','1997-10-10','federico@gmail.it','federico123','RUOLO_ADMIN'),(9,'Mauro','Boiaccino','1965-11-11','mauro@gmail.it','mauro123','RUOLO_ADMIN'),(10,'Davive','Ghione','1981-12-12','davide@gmail.it','davide123','RUOLO_ADMIN'),(11,'Pippo','Franco','1940-01-01','pippo@gmail.it','pippo123','RUOLO_ADMIN'),(12,'Povero','Gabbiano','1980-02-02','gabbiano@gmail.it','povero123','RUOLO_UTENTE'),(13,'Manco','Morto','1999-03-03','manco@gmail.it','manco123','RUOLO_UTENTE'),(14,'Giorgio','Vanni','1980-04-04','giorgio@gmail.it','giorgio123','RUOLO_UTENTE'),(15,'Cristina','Davena','1975-05-05','cristina@gmail.it','cristina123','RUOLO_UTENTE'),(16,'Maicol','Giecson','1978-06-06','maicol@gmail.it','maicol123','RUOLO_UTENTE'),(17,'Umberto','Tozzi','1952-07-07','umberto@gmail.it','umberto123','RUOLO_UTENTE'),(18,'Ivana','Spagna','1975-08-08','ivana@gmail.it','ivana123','RUOLO_UTENTE'),(19,'Claudia','Speranza','1969-09-09','claudia@gmail.it','claudia123','RUOLO_UTENTE'),(20,'Paola','Capra','1978-06-06','paola@gmail.it','paola123','RUOLO_UTENTE');
+INSERT INTO `utente` VALUES (1,'Paolo','Rossi','1994-06-07','admin@email.com','admin','RUOLO_ADMIN'),(2,'Carlo','Verdi','2001-03-19','utente@email.com','utente','RUOLO_UTENTE'),(3,'Oscar','Vecchione','1978-06-06','oscar@gmail.it','oscar','RUOLO_ADMIN'),(4,'Allen','Ingaramo','1984-07-07','allen@gmail.it','allen','RUOLO_ADMIN'),(5,'Milo','Spandre','1982-08-08','milo@gmail.it','milo','RUOLO_ADMIN'),(6,'Dino','Olivieri','1980-09-09','dino@gmail.it','dino','RUOLO_ADMIN'),(7,'Antony','Banche','1989-06-06','antony@gmail.it','antony','RUOLO_ADMIN'),(8,'Federico','Muscio','1997-10-10','federico@gmail.it','federico','RUOLO_ADMIN'),(9,'Mauro','Boiaccino','1965-11-11','mauro@gmail.it','mauro','RUOLO_ADMIN'),(10,'Davive','Ghione','1981-12-12','davide@gmail.it','davide','RUOLO_ADMIN'),(11,'Pippo','Franco','1940-01-01','pippo@gmail.it','pippo','RUOLO_ADMIN'),(12,'Povero','Gabbiano','1980-02-02','gabbiano@gmail.it','povero','RUOLO_UTENTE'),(13,'Manco','Morto','1999-03-03','manco@gmail.it','manco','RUOLO_UTENTE'),(14,'Giorgio','Vanni','1980-04-04','giorgio@gmail.it','giorgio','RUOLO_UTENTE'),(15,'Cristina','Davena','1975-05-05','cristina@gmail.it','cristina','RUOLO_UTENTE'),(16,'Maicol','Giecson','1978-06-06','maicol@gmail.it','maicol','RUOLO_UTENTE'),(17,'Umberto','Tozzi','1952-07-07','umberto@gmail.it','umberto','RUOLO_UTENTE'),(18,'Ivana','Spagna','1975-08-08','ivana@gmail.it','ivana','RUOLO_UTENTE'),(19,'Claudia','Speranza','1969-09-09','claudia@gmail.it','claudia','RUOLO_UTENTE'),(20,'Paola','Capra','1978-06-06','paola@gmail.it','paola','RUOLO_UTENTE');
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,8 +121,10 @@ CREATE TABLE `veicolo` (
   `indirizzo` varchar(50) NOT NULL,
   `citta` varchar(45) NOT NULL,
   `coordinate` varchar(50) NOT NULL,
-  `immagine` varchar(75) NOT NULL,
-  PRIMARY KEY (`veicolo_id`)
+  `immagine_id_fk` int DEFAULT NULL,
+  PRIMARY KEY (`veicolo_id`),
+  KEY `immagine_id_fk` (`immagine_id_fk`),
+  CONSTRAINT `veicolo_ibfk_1` FOREIGN KEY (`immagine_id_fk`) REFERENCES `immagine` (`immagine_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,7 +134,7 @@ CREATE TABLE `veicolo` (
 
 LOCK TABLES `veicolo` WRITE;
 /*!40000 ALTER TABLE `veicolo` DISABLE KEYS */;
-INSERT INTO `veicolo` VALUES (1,'AUTO','fiat 500','BENZINA','QUATTRO RUOTE','DISPONIBILE','via carlo alberto,22','torino','123456','123456'),(2,'MOTO','tmax','BENZINA','DUE RUOTE','NOLEGGIATO','via antonio meucci','torino','123456','123456'),(3,'AUTO','ford Puma','IBRIDA','QUATTRO RUOTE','DISPONIBILE','via Mazzini, 25','torino','sdaasd','123456'),(4,'BICICLETTA','NCM Milano','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Sorbole, 147','torino','asdasdasd','123456'),(5,'AUTO','audi q5','IBRIDA','QUATTRO RUOTE','DISPONIBILE','Via Gerbole, 12','torino','sdaasd','123456'),(6,'BICICLETTA','Argento Omega','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Paolini,45','torino','asdasdasd','123456'),(7,'AUTO','Tesla Model 3','ELETTRICA','QUATTRO RUOTE','DISPONIBILE','Via Bisanzio,37','torino','sdaasd','123456'),(8,'MONOPATTINO','Xiaomi Electric Scooter 3','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Roma, 12','torino','asdasdasd','123456'),(9,'AUTO','Renault zoe','ELETTRICA','QUATTRO RUOTE','DISPONIBILE','Via Torino,20','torino','sdaasd','123456'),(10,'MONOPATTINO','I-Bike Mono Adventure','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Chieri,45','torino','asdasdasd','123456'),(11,'AUTO','Seat Leon','DIESEL','QUATTRO RUOTE','DISPONIBILE','Corso Potenza, 23','torino','sdaasd','123456'),(12,'MOTO','Yamaha YBR125','BENZINA','DUE RUOTE','NOLEGGIATO','Corso Marche, 45','torino','asdasdasd','123456'),(13,'AUTO','Mazda Mx 30','ELETTRICA','QUATTRO RUOTE','DISPONIBILE','Via Sant\'ottavio,19','torino','sdaasd','123456'),(14,'MOTO','Africa Twin','BENZINA','DUE RUOTE','NOLEGGIATO','Corso San Maurizio, 45','torino','asdasdasd','123456'),(15,'AUTO','Opel Grand Land','DIESEL','QUATTRO RUOTE','DISPONIBILE','Via Mattei, 78','torino','sdaasd','123456'),(16,'MOTO','Askoll es2','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Carlo Alberto,12','torino','asdasdasd','123456'),(17,'AUTO','Renault Clio','GPL','QUATTRO RUOTE','DISPONIBILE','Via Verdi, 90','torino','sdaasd','123456'),(18,'FURGONI','Renault kangoo','ELETTRICA','QUATTRO RUOTE','NOLEGGIATO','Via Filadelfia, 12','torino','asdasdasd','123456'),(19,'AUTO','Ford Fiesta','GPL','QUATTRO RUOTE','DISPONIBILE','Via Milano, 40','torino','sdaasd','123456'),(20,'MOTO','Zero s','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Ascanio Sobrero, 30','torino','asdasdasd','123456');
+INSERT INTO `veicolo` VALUES (1,'AUTO','fiat 500','BENZINA','QUATTRO RUOTE','DISPONIBILE','via carlo alberto,22','torino','123456',NULL),(2,'MOTO','tmax','BENZINA','DUE RUOTE','NOLEGGIATO','via antonio meucci','torino','123456',NULL),(3,'AUTO','ford Puma','IBRIDA','QUATTRO RUOTE','DISPONIBILE','via Mazzini, 25','torino','sdaasd',NULL),(4,'BICICLETTA','NCM Milano','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Sorbole, 147','torino','asdasdasd',NULL),(5,'AUTO','audi q5','IBRIDA','QUATTRO RUOTE','DISPONIBILE','Via Gerbole, 12','torino','sdaasd',NULL),(6,'BICICLETTA','Argento Omega','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Paolini,45','torino','asdasdasd',NULL),(7,'AUTO','Tesla Model 3','ELETTRICA','QUATTRO RUOTE','DISPONIBILE','Via Bisanzio,37','torino','sdaasd',NULL),(8,'MONOPATTINO','Xiaomi Electric Scooter 3','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Roma, 12','torino','asdasdasd',NULL),(9,'AUTO','Renault zoe','ELETTRICA','QUATTRO RUOTE','DISPONIBILE','Via Torino,20','torino','sdaasd',NULL),(10,'MONOPATTINO','I-Bike Mono Adventure','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Chieri,45','torino','asdasdasd',NULL),(11,'AUTO','Seat Leon','DIESEL','QUATTRO RUOTE','DISPONIBILE','Corso Potenza, 23','torino','sdaasd',NULL),(12,'MOTO','Yamaha YBR125','BENZINA','DUE RUOTE','NOLEGGIATO','Corso Marche, 45','torino','asdasdasd',NULL),(13,'AUTO','Mazda Mx 30','ELETTRICA','QUATTRO RUOTE','DISPONIBILE','Via Sant\'ottavio,19','torino','sdaasd',NULL),(14,'MOTO','Africa Twin','BENZINA','DUE RUOTE','NOLEGGIATO','Corso San Maurizio, 45','torino','asdasdasd',NULL),(15,'AUTO','Opel Grand Land','DIESEL','QUATTRO RUOTE','DISPONIBILE','Via Mattei, 78','torino','sdaasd',NULL),(16,'MOTO','Askoll es2','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Carlo Alberto,12','torino','asdasdasd',NULL),(17,'AUTO','Renault Clio','GPL','QUATTRO RUOTE','DISPONIBILE','Via Verdi, 90','torino','sdaasd',NULL),(18,'FURGONI','Renault kangoo','ELETTRICA','QUATTRO RUOTE','NOLEGGIATO','Via Filadelfia, 12','torino','asdasdasd',NULL),(19,'AUTO','Ford Fiesta','GPL','QUATTRO RUOTE','DISPONIBILE','Via Milano, 40','torino','sdaasd',NULL),(20,'MOTO','Zero s','ELETTRICA','DUE RUOTE','NOLEGGIATO','Via Ascanio Sobrero, 30','torino','asdasdasd',NULL);
 /*!40000 ALTER TABLE `veicolo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -148,4 +147,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-24 14:53:28
+-- Dump completed on 2022-03-24 16:39:51

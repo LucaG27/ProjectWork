@@ -12,5 +12,7 @@ public interface UtenteDAO extends JpaRepository<Utente, Integer> {
     @Query(value= "select * from utente where email = ?1 and password = ?2",nativeQuery=true)
 	Utente findByEmailAndPassword(String email, String password);
 
+
+	Utente findByEmail(String email);
     
 }

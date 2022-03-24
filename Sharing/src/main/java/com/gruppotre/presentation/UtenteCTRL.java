@@ -2,6 +2,7 @@ package com.gruppotre.presentation;
 
 import javax.servlet.http.HttpSession;
 
+import com.gruppotre.entity.Utente;
 import com.gruppotre.service.UtenteService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class UtenteCTRL {
     @GetMapping("/login")
 	public String list(Model model, HttpSession session) {
 		
-		if(session.getAttribute("utenteSession") == null) return "login";
-		else return "homepage";
+		if(session.getAttribute("utenteSession") == null) return "index";
+		else return "index";
 	}
 	
 	@GetMapping("/logout")
@@ -27,5 +28,5 @@ public class UtenteCTRL {
 		session.setAttribute("utenteSession", null);
 		return "redirect:/login";
 	}
-    
+
 }

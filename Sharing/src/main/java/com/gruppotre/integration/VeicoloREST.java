@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gruppotre.entity.Veicolo;
+import com.gruppotre.entity.VeicoloPrenotazioniDTO;
 import com.gruppotre.service.VeicoloService;
 
 @RestController
@@ -49,5 +50,10 @@ public class VeicoloREST {
 	@PutMapping
 	public void updVeicolo(@RequestBody Veicolo veicolo) {
 		srv.updVeicolo(veicolo);
+	}
+	
+	@GetMapping("/prenotazioni/{id}")
+	public List<VeicoloPrenotazioniDTO> getAllPrenotazioni(@PathVariable("id") int id){
+		return srv.getAllPrenotazioni(id);
 	}
 }
