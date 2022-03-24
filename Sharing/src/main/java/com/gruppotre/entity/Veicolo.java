@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -37,7 +38,9 @@ public class Veicolo {
 	private String citta;
 	@Column(name="coordinate")
 	private String coordinate;
-	@Column(name="immagine")
+	
+	@OneToOne(mappedBy = "immagine_id")
+	@Column(name="immagine_id_fk")
 	private String immagine;
 	
 	@OneToMany(mappedBy = "veicoloId")
