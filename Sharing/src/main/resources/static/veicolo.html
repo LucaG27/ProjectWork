@@ -114,23 +114,7 @@
       </div>
       <div class="col-lg-6">
         <div class="swiper mySwiper container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img class="img-fluid"
-                src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_lowaggressive.png" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img class="img-fluid" src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_sideview.png"
-                alt="">
-            </div>
-            <div class="swiper-slide">
-              <img class="img-fluid"
-                src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_angularrear.png" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img class="img-fluid" src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_frontview.png"
-                alt="">
-            </div>
+          <div class="swiper-wrapper" id="bodyDivImmagini">
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
@@ -302,7 +286,36 @@
   </footer>
   <!-- Footer -->
 
+  <script id="template-veicoli" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine1}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine2}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine3}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine4}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine5}}" alt="">
+    </div>
+    {{/each}}
+  </script>
+  
+
+
+
   <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
