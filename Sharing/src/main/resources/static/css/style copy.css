@@ -28,6 +28,12 @@ svg{
 
 }
 
+.cards ul{
+    list-style-type: none;
+    padding: 0;
+
+}
+
 .contento .col p{
     color: white;
     font-size: 1.2rem;
