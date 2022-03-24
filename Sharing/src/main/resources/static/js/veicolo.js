@@ -1,6 +1,14 @@
+let render_veicoli = null;
 
+fetch("http://localhost:8080/api/immagine/allImmagini").then(e => e.json()).then(immagine => {
 
+	for (const i of immagine) {
+		let opt = document.createElement('option');
+		opt.innerHTML = r;
+		SELECT_REGIONE.appendChild(opt);
+	}
 
+})
 
       var swiper = new Swiper(".mySwiper", {
         pagination: {
@@ -24,5 +32,12 @@
    zoomOffset: -1,
    accessToken: 'your.mapbox.access.token'
 }).addTo(map);
+
+window.addEventListener(
+	'DOMContentLoaded', 
+	function(event){
+
+		render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
+});
 
 

@@ -38,7 +38,6 @@ function listaVeicoli(){
             console.log('Failed to fetch page: ', err);
         });
     }
-
     function createVeicolo(event) {
 
         fetch(url, {
