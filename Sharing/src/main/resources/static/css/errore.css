@@ -20,10 +20,10 @@ svg{
 }
 
 .contenitore{
-    background-image: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("https://cdn.auto.it/img/960/540/2019/07/19/105220073-c634c5d5-9086-4d10-afe5-f8ea32aac4a1.jpg");
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("https://cdn.auto.it/img/960/540/2019/07/19/105220073-c634c5d5-9086-4d10-afe5-f8ea32aac4a1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 690px; 
+    height: 125px; 
     filter: opacity(100%);   
 
 }
