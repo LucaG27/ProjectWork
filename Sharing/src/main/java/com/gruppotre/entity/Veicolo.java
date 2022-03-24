@@ -48,7 +48,7 @@ public class Veicolo {
 	}
 	
 	public Veicolo(int id, String categoria, String descrizione, String alimentazione, String ruote,
-			String disponibilita, String indirizzo, String citta, String coordinateGps, String immagine) {
+			String disponibilita, String indirizzo, String citta, String coordinate, String immagine) {
 		super();
 		this.categoria = categoria;
 		this.descrizione = descrizione;
@@ -57,7 +57,7 @@ public class Veicolo {
 		this.disponibilita = disponibilita;
 		this.indirizzo = indirizzo;
 		this.citta = citta;
-		this.coordinate = coordinateGps;
+		this.coordinate = coordinate;
 		this.immagine = immagine;
 	}
 	
@@ -109,11 +109,11 @@ public class Veicolo {
 	public void setCitta(String citta) {
 		this.citta = citta;
 	}
-	public String getCoordinateGps() {
+	public String getCoordinate() {
 		return coordinate;
 	}
-	public void setCoordinateGps(String coordinateGps) {
-		this.coordinate = coordinateGps;
+	public void setCoordinate(String coordinate) {
+		this.coordinate = coordinate;
 	}
 	public String getImmagine() {
 		return immagine;
