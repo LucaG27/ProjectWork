@@ -1,12 +1,16 @@
 package com.gruppotre.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="veicolo")
@@ -36,8 +40,9 @@ public class Veicolo {
 	@Column(name="immagine")
 	private String immagine;
 	
-	@OneToOne(mappedBy = "veicoloId")
-	private Prenotazione prenotazione;
+	@OneToMany(mappedBy = "veicoloId")
+	@JsonIgnore
+	private List<Prenotazione> prenotazione;
 	
 	public Veicolo() {
 	}
