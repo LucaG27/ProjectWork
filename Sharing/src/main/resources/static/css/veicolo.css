@@ -71,6 +71,11 @@ nav{
     text-decoration: none;
 }
 
+#map{
+    width: 100%;
+    height: 300px;
+}
+
 
 /* CSS */
 .button-6 {
