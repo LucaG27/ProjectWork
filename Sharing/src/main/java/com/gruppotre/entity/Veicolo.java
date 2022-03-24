@@ -1,12 +1,16 @@
 package com.gruppotre.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="veicolo")
@@ -36,14 +40,15 @@ public class Veicolo {
 	@Column(name="immagine")
 	private String immagine;
 	
-	@OneToOne(mappedBy = "veicoloId")
-	private Prenotazione prenotazione;
+	@OneToMany(mappedBy = "veicoloId")
+	@JsonIgnore
+	private List<Prenotazione> prenotazione;
 	
 	public Veicolo() {
 	}
 	
 	public Veicolo(int id, String categoria, String descrizione, String alimentazione, String ruote,
-			String disponibilita, String indirizzo, String citta, String coordinateGps, String immagine) {
+			String disponibilita, String indirizzo, String citta, String coordinate, String immagine) {
 		super();
 		this.categoria = categoria;
 		this.descrizione = descrizione;
@@ -52,7 +57,7 @@ public class Veicolo {
 		this.disponibilita = disponibilita;
 		this.indirizzo = indirizzo;
 		this.citta = citta;
-		this.coordinate = coordinateGps;
+		this.coordinate = coordinate;
 		this.immagine = immagine;
 	}
 	
@@ -104,11 +109,11 @@ public class Veicolo {
 	public void setCitta(String citta) {
 		this.citta = citta;
 	}
-	public String getCoordinateGps() {
+	public String getCoordinate() {
 		return coordinate;
 	}
-	public void setCoordinateGps(String coordinateGps) {
-		this.coordinate = coordinateGps;
+	public void setCoordinate(String coordinate) {
+		this.coordinate = coordinate;
 	}
 	public String getImmagine() {
 		return immagine;

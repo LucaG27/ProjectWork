@@ -6,7 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
@@ -27,11 +28,13 @@ public class Prenotazione {
 	@Column(name = "stato")
 	private String stato;
 
-	@OneToOne
+	@ManyToOne
+	@MapsId("utenteId")
 	@JoinColumn(name = "utente_id_fk")
 	private Utente utenteId;
 
-	@OneToOne
+	@ManyToOne
+	@MapsId("veicoloId")
 	@JoinColumn(name = "veicolo_id_fk")
 	private Veicolo veicoloId;
 
