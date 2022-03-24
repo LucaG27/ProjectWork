@@ -29,4 +29,12 @@ public class VeicoloService {
 	public List<Veicolo> getAllCategoria(String categoria){
 		return db.findAllByCategoria(categoria);
 	}
+	
+	public void addVeicolo(Veicolo veicolo) {
+		db.save(veicolo);
+	}
+	
+	public Veicolo updVeicolo(Veicolo veicolo) {
+		return db.save(veicolo);
+	}
 }
