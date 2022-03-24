@@ -141,6 +141,7 @@
         <thead>
           <tr>
             <th scope="col">ID Veicolo</th>
+            <th scope="col">Descrizione</th>
             <th scope="col">Data Inizio</th>
             <th scope="col">Data Fine</th>
             <th scope="col">Stato</th>
@@ -151,17 +152,7 @@
           </tr>
         </thead>
         <tbody id="bodyTabellaClienti">
-          <tr>
-            <td>24</td>
-            <td>24/03/2022</td>
-            <td>26/03/2022</td>
-            <td>Prenotato</td>
-
-
-            <td><button class="btn btn-success" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">Modifica</button></td>
-            <td><button class="btn btn-danger">Cancella</button></td>
-          </tr>
+          
         </tbody>
       </table>
 
@@ -173,7 +164,7 @@
     <div id="archivio">
 
       <h4>Archivio Ordini</h4>
-      <table class="table sfondoTab" id="tabellaPrenotazioni">
+      <table class="table sfondoTab" id="tabellaPrenotazioni2">
         <thead>
           <tr>
             <th scope="col">ID Veicolo</th>
@@ -186,14 +177,8 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody id="bodyTabellaClienti">
-          <tr>
-            <td>24</td>
-            <td>24/03/2022</td>
-            <td>26/03/2022</td>
-            <td>Concluso</td>
-
-          </tr>
+        <tbody id="bodyTabellaClienti2">
+          
         </tbody>
       </table>
 
@@ -348,9 +333,41 @@
   </div>
 
   <!-- FINE MODAL -->
+<script id="template-prenotazioni" type="text/x-handlebars-template">
+  {{#each this}}
+  <tr>
+    <td>{{idVeicolo}}</td>
+    <td>{{descrizione}}</td>
+    <td>{{dataInizio}}</td>
+    <td>{{dataFine}}</td>
+    <td>{{stato}}</td>
 
 
+    <td><button class="btn btn-success" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">Modifica</button></td>
+    <td><button class="btn btn-danger">Cancella</button></td>
+  </tr>
+  {{/each}}      
+</script>
 
+<script id="template-prenotazioni2" type="text/x-handlebars-template">
+  {{#each this}}
+  <tr>
+    <td>{{idVeicolo}}</td>
+    <td>{{descrizione}}</td>
+    <td>{{dataInizio}}</td>
+    <td>{{dataFine}}</td>
+    <td>{{stato}}</td>
+
+
+    <td><button class="btn btn-success" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">Modifica</button></td>
+    <td><button class="btn btn-danger">Cancella</button></td>
+  </tr>
+  {{/each}}      
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
   <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -360,6 +377,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/chart.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/utente.js"></script>
 
 
 </html>
