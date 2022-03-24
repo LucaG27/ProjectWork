@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.gruppotre.dal.VeicoloDAO;
 import com.gruppotre.entity.Veicolo;
+import com.gruppotre.entity.VeicoloPrenotazioniDTO;
 
 @Service
 public class VeicoloService {
@@ -36,5 +37,9 @@ public class VeicoloService {
 	
 	public Veicolo updVeicolo(Veicolo veicolo) {
 		return db.save(veicolo);
+	}
+	
+	public List<VeicoloPrenotazioniDTO> getAllPrenotazioni (int id){
+		return db.getAllPrenotazioniVeicoli(id);
 	}
 }
