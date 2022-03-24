@@ -18,7 +18,7 @@
      <div class="contento container-fluid mb-5 ">
        <nav class="navbar navbar-expand-lg container ">
         <div class="container">
-          <a class="navbar-brand" href="#"><img src="Sbstract-eco-logo-on-transparent-background-PNG-removebg-preview.png" alt=""></a>
+          <a class="navbar-brand" href="#"><img class="logo" src="https://media.discordapp.net/attachments/955030566347079702/956491474218934292/M__1_-removebg-preview.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -95,7 +95,7 @@
           <img class="img-fluid" src="https://www.arval.it/sites/it/files/mazda_20cx30skydriveluxsu1b_lowaggressive.png" alt="">
           <h2 class="text-center">Lorem, ipsum.</h2>
           <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <center><button class="btn">Buy now</button></center>
+          <center><button class="btn">Scopri</button></center>
         </div>
         <div class="swiper-slide">
           <img class="img-fluid" src="https://www.arval.it/sites/it/files/audi_21q5editiononesu2fb_lowaggressive.png" alt="">
@@ -160,8 +160,11 @@
 
   <!-- GRAFICO-->
 
-  <div class="container grafico">
-  </div>
+ 
+    <div class="container p-5">
+      <canvas id="myChart"></canvas>
+    </div>
+ 
 
   <!-- Footer -->
   <footer class="bg-dark text-center text-white pt-5 ">
@@ -312,7 +315,74 @@
     crossorigin="anonymous"></script>
   <script src="js/login.js"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/chart.js"></script>
+
+  <!-- INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI -->
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
+      spaceBetween: 10,
+      breakpoints: {
+        // when window width is >= 576
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        // when window width is >= 1200px
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        }
+      },
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Navbar shrink function
+    var navbarShrink = function () {
+      const navbarCollapsible = document.body.querySelector('#mainNav');
+      if (!navbarCollapsible) {
+        return;
+      }
+      if (window.scrollY === 0) {
+        navbarCollapsible.classList.remove('navbar-shrink')
+      } else {
+        navbarCollapsible.classList.add('navbar-shrink')
+      }
+
+    };
+
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+      myInput.focus()
+    })
+
+
+  </script>
   <script src="js/home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/chart.js"></script>
 </body>
 
 </html>
