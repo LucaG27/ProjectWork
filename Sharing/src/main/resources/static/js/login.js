@@ -1,7 +1,7 @@
 let logiId = document.getElementById("btn").addEventListener("click", login);
 const EMAIL = document.getElementById("email");
 const PSW = document.getElementById("password");
-const cat = localStorage.getItem('myCat');
+const utente = localStorage.getItem('user');
 
 	
 	function login() {
@@ -26,19 +26,18 @@ const cat = localStorage.getItem('myCat');
 				else {
 					getUser();
 					window.location.reload();
-					console.log(cat);
 				}
 			})
 	}
 
 	function getUser() {
 
-		fetch("/api/login/utente"+EMAIL.value)
+		fetch("/api/login/utente/"+EMAIL.value)
         .then(function(response) {
             return response.json();
         })
         .then(function(json) {
-	    localStorage.setItem('myCat',JSON.stringify(json));
+	    localStorage.setItem('user',json);
 	})
 }
 
