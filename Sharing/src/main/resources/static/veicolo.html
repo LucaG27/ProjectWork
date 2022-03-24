@@ -92,29 +92,52 @@
 
 
   <!-- Swiper -->
-  <div class="swiper mySwiper container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img class="img-fluid"
-          src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_lowaggressive.png" alt="">
+  <div class="container-fluid">
+    <div class="row">
+ 
+
+ 
+  <!-- MAPPA -->
+      <div class="col-lg-6">
+  <div id='map'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGFudG94OTQiLCJhIjoiY2wxNHZlZ2s5MDFidjNlb2czbXNoMzc1aCJ9.iBe28DfUV8hQO25wBG3X2w';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11'
+    });
+  </script>
+
+  <!-- FINE MAPPA -->
+
+        
       </div>
-      <div class="swiper-slide">
-        <img class="img-fluid" src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_sideview.png"
-          alt="">
-      </div>
-      <div class="swiper-slide">
-        <img class="img-fluid"
-          src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_angularrear.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img class="img-fluid" src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_frontview.png"
-          alt="">
+      <div class="col-lg-6">
+        <div class="swiper mySwiper container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="img-fluid"
+                src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_lowaggressive.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="img-fluid" src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_sideview.png"
+                alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="img-fluid"
+                src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_angularrear.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="img-fluid" src="https://www.arval.it/sites/it/files/toyota_21yariscrosshevdynplussu1b_frontview.png"
+                alt="">
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-
   </div>
 
   <!-- INFORMAZIONI -->
@@ -160,22 +183,8 @@
       </ul>
     </div>
   </div>
-
-  <!-- FINE INFORMAZIONI -->
-
-  <!-- MAPPA -->
-
-  <div id='map'></div>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGFudG94OTQiLCJhIjoiY2wxNHZlZ2s5MDFidjNlb2czbXNoMzc1aCJ9.iBe28DfUV8hQO25wBG3X2w';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
-    });
-  </script>
-
-  <!-- FINE MAPPA -->
-
+ <!--  FINE INFORMAZIONI -->
+ 
 
 
 
@@ -312,5 +321,5 @@
     crossorigin=""></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-
+</body>
 </html>
