@@ -28,3 +28,4 @@
     document.getElementById('myChart'),
     config
   );
+ 
