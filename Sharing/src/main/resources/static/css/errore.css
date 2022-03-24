@@ -20,7 +20,7 @@ svg{
 }
 
 .contenitore{
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
     background-size: cover;
     background-repeat: no-repeat;
     height: 70px; 
