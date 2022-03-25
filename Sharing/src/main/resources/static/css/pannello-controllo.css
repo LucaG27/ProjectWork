@@ -1,10 +1,10 @@
-
 .grafico{
     border: 1px solid black;
     height: 500px;
     border-radius: 10px;
     margin-bottom: 5rem;
 }
+
 .logo{
     width: 200px;
 }
@@ -19,13 +19,11 @@ svg{
     background-repeat: no-repeat;
     height: 70px; 
     filter: opacity(100%);   
-
 }
 
 .cards ul{
     list-style-type: none;
     padding: 0;
-
 }
 
 .contenitore .col p{
@@ -37,13 +35,17 @@ nav{
     border-bottom: 1px solid white;
 }
 
+.dropdown-menu li a{
+    color: green;
+}
+
 .contenitore img{
     width: 100px;
 }
 
 .contenitore a{
     color: rgb(255, 255, 255);
-    margin-left: 1.5rem;
+    padding-left: 1.5rem;
     font-size: 1.1rem;
 }
 
@@ -114,3 +116,9 @@ nav{
   transform: translateY(0);
 }
 
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+ }
