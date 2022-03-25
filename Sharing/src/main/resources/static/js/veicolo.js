@@ -2,9 +2,26 @@ let render_specifiche = null;
 let render_veicoli = null;
 const URL = "http://localhost:8080/api/immagine/allImmagini"
 const URL2 = "http://localhost:8080/api/specifiche/"
+const URL3 = "http://localhost:8080/api/veicolo/id/"
 const user = localStorage.getItem('user');
+let prova = document.getElementById("prova").addEventListener("click", asyncCall);
+let coo = null;
   "use strict";
 
+
+  
+   async function asyncCall(){
+    const veicolo = await loadCoordinate();
+      coo = veicolo.coordinate;
+      wrap();
+  }
+  
+  async function loadCoordinate() {
+  
+    let response = await fetch(URL3 + 1);
+    let veicolo = await response.json();
+    return veicolo;
+  }
 
   
   function listaVeicoli(event){
@@ -28,7 +45,6 @@ const user = localStorage.getItem('user');
   
   }
 
-    
   function listaSpecifiche(event){
   
     fetch(URL2+"id/"+5)
@@ -83,16 +99,43 @@ const swiper = new Swiper('.swiper', {
   
           listaVeicoli();
           listaSpecifiche();
+
       
   });
 
-  let map = L.map('map').setView([40.91907 ,14.30608], 13);
+  function wrap(){
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18, 
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoicmFmZmFlbGVkcCIsImEiOiJjbDE2ZGI4M24wMHV6M2NwOXR2Y2plbWQ5In0.N7Rxyu2_1WhiIiZ9Gl6XMw'
+var map = L.map('map').setView([coo], 13);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18, 
+  id: 'mapbox/streets-v11',
+  tileSize: 512,
+  zoomOffset: -1,
+  accessToken: 'pk.eyJ1IjoicmFmZmFlbGVkcCIsImEiOiJjbDE2ZGI4M24wMHV6M2NwOXR2Y2plbWQ5In0.N7Rxyu2_1WhiIiZ9Gl6XMw'
 }).addTo(map);
+
+var LeafIcon = L.Icon.extend({
+  options: {
+   // shadowUrl: 'leaf-shadow.png',
+    iconSize:     [70, 70],
+    shadowSize:   [50, 64],
+    iconAnchor:   [22, 94],
+    shadowAnchor: [4, 62],
+    popupAnchor:  [-3, -76]
+  }
+});
+/*
+var greenIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
+var redIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
+*/
+var orangeIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
+/*
+var mGreen = L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup('I am a green leaf.').addTo(map);
+var mRed = L.marker([51.495, -0.083], {icon: redIcon}).bindPopup('I am a red leaf.').addTo(map);
+*/
+
+var mOrange = L.marker([51.49, -0.1], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
+
+}

@@ -1,4 +1,4 @@
-let logiId = document.getElementById("btn").addEventListener("click", login);
+let loginId = document.getElementById("btn").addEventListener("click", login);
 const EMAIL = document.getElementById("email");
 const PSW = document.getElementById("password");
 const utente = localStorage.getItem('user');
