@@ -6,468 +6,173 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
   <title>Home Page</title>
 </head>
 
 <body>
-  <!-- NAVBAR-->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img
-          src="https://w7.pngwing.com/pngs/598/999/png-transparent-hybrid-electric-vehicle-electric-car-charging-station-green-car-driving-text-logo.png"
-          alt="" width="50px">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" style="color: rgb(3, 183, 3);">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Città
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item d-flex">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-              <defs>
-                <path id="ico_account_svg__a"
-                  d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm4.893 16.002H6.829a.34.34 0 00-.1.015A7.96 7.96 0 0012 20a7.968 7.968 0 005.15-1.878.335.335 0 00-.257-.12zM12 4a8 8 0 00-6.568 12.57c.365-.357.861-.57 1.397-.57h10.064a2 2 0 011.552.74A8 8 0 0012 4zm0 2a4 4 0 110 8 4 4 0 010-8zm0 2a2 2 0 100 4 2 2 0 000-4z">
-                </path>
-              </defs>
-              <use fill="#fff" fill-rule="evenodd" xlink:href="#ico_account_svg__a"></use>
-            </svg>
-            <a class="nav-link" id="myModal" href="#" tabindex="-1" data-bs-toggle="modal"
-              data-bs-target="#exampleModal" data-bs-whatever="@mdo">Accedi</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- FINE NAVBER-->
-  <!-- Navigation-->
+  <!-- Button trigger modal -->
+<button type="button" id="myModal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Sign Up
+</button>
 
-  <!-- HERO-->
-  <div class="mb-5 container-fluid px-0">
-    <img class="img-fluid"
-      src="https://images-ext-1.discordapp.net/external/ckY0AkkRj902DJpYW_d9Q3oj3FExsokQCeajfakBHs0/https/www.cartoleriaelia.it/wp-content/uploads/2020/08/torino-royal-torino-1920x1080-min.jpg"
-      alt="">
-  </div>
-  <!-- FINE HERO-->
-
-  <div class="container">
-    <!-- SLIDER-->
-    <div class="swiper">
-      <!-- swiper è una classe per il carousel, container è una classe di BS -->
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img class="img-fluid" src="https://www.arval.it/sites/it/files/styles/izmo-format/public/gla-2021.png?itok=z5PeUJ_5" alt="">
-          <h2 class="text-center">Lorem, ipsum.</h2>
-          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <center><button class="btn btn-primary">Buy now</button></center>
-        </div>
-        <div class="swiper-slide">
-          <img class="img-fluid" src="https://www.arval.it/sites/it/files/styles/izmo-format/public/toyota_21yariscrosshevdynplussu1b_lowaggressive.png?itok=jj0PEO24" alt="">
-          <h2 class="text-center">Lorem, ipsum.</h2>
-          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <center><button class="btn btn-primary">Buy now</button></center>
-        </div>
-        <div class="swiper-slide">
-          <img class="img-fluid" src="https://www.arval.it/sites/it/files/fiat_21500eviconha3b_lowaggressive.png" alt="">
-          <h2 class="text-center">Lorem, ipsum.</h2>
-          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <center><button class="btn btn-primary">Buy now</button></center>
-        </div>
-      </div>
-
-
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      
-  </div>
-
-
-  <!-- CARDS-->
-  <!-- CARDS -->
-  <div class="cards p-4">
-    <div class="container mt-5 mb-5">
-      <h1 class="fontTitoli testoColorato">Utilme offerte</h1>
-      <div id="trattiniNo" class="container trattini"></div>
-      <div class="row">
-        <div class="col-lg-4 mt-5 p-3">
-          <div class="card">
-            <img class="card-img-top" src="https://source.unsplash.com/400x400/?80s+computer" alt="">
-            <div class="card-body">
-              <h5 class="card-title pac fontTitoli">Card title</h5>
-              <p class="card-text mb-4">Some quick example text to build on the card title and make up the
-                bulk of
-                the card's content.</p>
-              <a href="#" class="btn btn-primary mb-3">Button</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mt-5 p-3">
-          <div class="card">
-            <img class="card-img-top" src="https://source.unsplash.com/400x400/?80s+computer" alt="">
-            <div class="card-body">
-              <h5 class="card-title pac fontTitoli">Card title</h5>
-              <p class="card-text mb-4">Some quick example text to build on the card title and make up the
-                bulk of
-                the card's content.</p>
-              <a href="#" class="btn btn-primary mb-3">Button</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mt-5 p-3">
-          <div class="card">
-            <img class="card-img-top" src="https://source.unsplash.com/400x400/?80s+computer" alt="">
-            <div class="card-body">
-              <h5 class="card-title pac fontTitoli">Card title</h5>
-              <p class="card-text mb-4">Some quick example text to build on the card title and make up the
-                bulk of
-                the card's content.</p>
-              <a href="#" class="btn btn-primary mb-3">Button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- FINE CARDS -->
-
-
-  <!-- GRAFICO-->
-
-  <div class="container grafico">
-  </div>
-
-  <!-- FOOTER-->
-  <!-- <footer id="mainFooter" style="background-color: rgb(106, 102, 181)">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-4 text-center text-lg-start mb-3 mb-lg-0">
-                    Lorem ipsum dolor
-                </div>
-                <div class="col-lg-4 text-center mb-3 mb-lg-0 icone">
-                    <i class="bi bi-instagram"><i class="bi bi-facebook p-2"></i></i><i class="bi bi-twitter"></i>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    © 2022 jaita52
-                </div>
-            </div>
-        </div>
-    </footer> -->
-
-  <!-- Footer -->
-  <footer class="bg-dark text-center text-white ">
-    <!-- Grid container -->
-    
-
-      <!-- Section: Form -->
-      <section class="">
-        <form action="">
-          <!--Grid row-->
-          <div class="row d-flex justify-content-center pt-5">
-            <!--Grid column-->
-            <div class="col-auto">
-              <p class="pt-2">
-                <strong>Registrati alla newsletter</strong>
-              </p>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-md-5 col-12">
-              <!-- Email input -->
-              <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example21" class="form-control" placeholder="Email" />
-              </div>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-auto">
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-outline-light mb-4">
-                Subscribe
-              </button>
-            </div>
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
-        </form>
-      </section>
-      <!-- Section: Form -->
-
-      <!-- Section: Text -->
-      <section class="mb-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-          eum harum corrupti dicta, aliquam sequi voluptate quas.
-        </p>
-      </section>
-      <!-- Section: Text -->
-
-      <!-- Section: Links -->
-      <section class="">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-
-            <ul class="list-unstyled mb-0">
-              <li>FOLLOW MOVE</li>
-              <li>
-                <div class="container p-4">
-                  <!-- Section: Social media -->
-                  <section class="mb-4">
-                    <!-- Facebook -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-            
-                    <!-- Twitter -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-            
-                    <!-- Google -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-            
-                    <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-            
-                  </section>
-                  <!-- Section: Social media -->
-              </li>
-              <li class="mb-3">
-                <img
-                  src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
-                  alt="" width="150px">
-              </li>
-              <li class="mb-3">
-                <img
-                  src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
-                  alt="" width="150px">
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </section>
-      <!-- Section: Links -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Copyright: Move
-
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="column" id="main">
+          <h1>Sign Up </h1>
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
           <form>
-            <div class="mb-3">
-              <label for="email" class="col-form-label">Email</label>
-              <input type="text" id="email" class="form-control">
+            <div class="form-group">
+              <label for="exampleInputName">Name</label>
+              <input type="name" class="form-control" id="exampleInputName" placeholder="Name">
             </div>
-            <div class="mb-3">
-              <label for="password" class="col-form-label">Password</label>
-              <input type="password" id="password" class="form-control">
+            <div class="form-group">
+              <label for="exampleInputEmail1">E-mail </label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
             </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-          <button type="button" id="btn" class="btn btn-primary">Accedi</button>
+        <div>
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+              <title>Path</title>
+              <desc>Created with Sketch.</desc>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#F9BC35"></path>
+              </g>
+          </svg>
+        </div>
+        <div class="column" id="secondary">
+          <div class="sec-content">
+            <h2>Welcome Back!</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <button type="button" class="btn btn-primary">Login</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-
-
-
-  <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="js/login.js"></script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
-  <!-- INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI -->
-
-  <script>
-    const swiper = new Swiper('.swiper', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
-      slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
-      spaceBetween: 10,
-      breakpoints: {
-        // when window width is >= 576
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        // when window width is >= 768px
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
-        // when window width is >= 1200px
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        }
-      },
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-
-    // Navbar shrink function
-    var navbarShrink = function () {
-      const navbarCollapsible = document.body.querySelector('#mainNav');
-      if (!navbarCollapsible) {
-        return;
-      }
-      if (window.scrollY === 0) {
-        navbarCollapsible.classList.remove('navbar-shrink')
-      } else {
-        navbarCollapsible.classList.add('navbar-shrink')
-      }
-
-    };
-
-    var myModal = document.getElementById('myModal')
-    var myInput = document.getElementById('myInput')
-
-    myModal.addEventListener('shown.bs.modal', function () {
-      myInput.focus()
-    })
-
-    var navbar = document.querySelector('nav')
-
-     window.onscroll = function() {
-
-  // pageYOffset or scrollY
-  if (window.pageYOffset > 0) {
-    navbar.classList.add('scrolled')
-  } else {
-    navbar.classList.remove('scrolled')
-  }
+<style>
+   .modal-body {
+  display: flex;
+  padding: 0;
+  border-radius: 4rem;
+  font-family: 'PT Sans', sans-serif;
 }
 
-  </script>
+.modal-content {
+  border-radius: 4rem;
+  width: 140%;
+  -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+-moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+}
+.modal-content h1, .modal-content h2, .modal-content h3 {
+    text-align: center;
+}
+.modal-content h1 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+.modal-content h2 {
+    font-size: 1.1em;
+}
+.modal-content h3 {
+  font-size: .8em;
+  letter-spacing: 2px;
+}
+form {
+    font-size: .8em;
+}
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+
+.column#main {
+  flex: 75%;
+  padding: 50px;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+#secondary {
+  background-color: #F9BC35;
+  border-radius: 0 4rem 4rem 0;
+  text-align: center;
+}
+
+#main .form-control {
+  border-radius: 0;
+  font-size: .9em;
+}
+
+.btn {
+  text-transform: uppercase;
+  border-radius: .15rem;
+  width: 200px;
+  padding: .150rem .75rem;
+  margin: 30px auto;
+  font-family: 'PT Sans', sans-serif;
+  letter-spacing: 2px;
+}
+
+.btn-primary {
+  border-color: rgba( 255, 255, 255, 0);
+  background: #f1da36; /* Old browsers */
+background: -moz-linear-gradient(left, #f1da36 0%, #fca86c 99%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #f1da36 0%,#fca86c 99%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #f1da36 0%,#fca86c 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+
+}
+
+.btn-primary:hover {
+  border-color: rgba( 255, 255, 255, 0);
+}
+
+#main .btn-primary {
+  width: 100%;
+}
+#secondary .btn-primary {
+  background: #f8f9fa4f;
+  color: #000;
+}
+.modal-body label {
+  margin-bottom: 0;
+}
+
+.sec-content {
+  margin-top: 85%;
+}
+</style>
+
+<script>
+  var myModal = document.getElementById('myModal')
+  var myInput = document.getElementById('myInput')
+
+  myModal.addEventListener('shown.bs.modal', function () {
+    myInput.focus()
+  })
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
