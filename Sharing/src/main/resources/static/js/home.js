@@ -1,6 +1,10 @@
 let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
 let render_veicoli = null;
 
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+  return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
 function listaVeicoli(event){
 
   fetch("http://localhost:8080/api/veicolo/")
