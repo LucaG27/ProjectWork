@@ -20,7 +20,7 @@ public class Specifiche {
 	private int id;
 	
 	private String velocita;
-	
+	@Column(name = "potenza_motore")
 	private String potenza;
 	
 	private String alimentazione;
