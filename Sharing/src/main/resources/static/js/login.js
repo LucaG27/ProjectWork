@@ -37,7 +37,7 @@ const utente = localStorage.getItem('user');
             return response.json();
         })
         .then(function(json) {
-	    localStorage.setItem('user',json);
+	    localStorage.setItem('user', JSON.stringify(json));
 	})
 }
 

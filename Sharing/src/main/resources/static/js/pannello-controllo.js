@@ -1,7 +1,6 @@
 "use strict";
 let template_riga = "";
 const url = "http://localhost:8080/api/veicolo/";
-const UTENTE = localStorage.getItem('user');
 let modal = null;
 
 
@@ -38,7 +37,6 @@ function listaVeicoli(){
             console.log('Failed to fetch page: ', err);
         });
     }
-
     function createVeicolo(event) {
 
         fetch(url, {
@@ -191,5 +189,5 @@ function listaVeicoli(){
         for (let li = 0; li < editButton.length; li++) {
             editButton[li].addEventListener("click", editInsertVeicolo);
         }
-            console.log(JSON.stringify(UTENTE))
+            console.log(JSON.parse(localStorage.getItem('user')));
         });
