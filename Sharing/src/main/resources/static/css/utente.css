@@ -1,5 +1,18 @@
+
+.swiper{
+    padding-bottom: 3rem;
+  
+
+}
+
+.grafico{
+    border: 1px solid black;
+    height: 500px;
+    border-radius: 10px;
+    margin-bottom: 5rem;
+}
 .logo{
-    width: 100px;
+    width: 200px;
 }
 
 svg{
@@ -7,10 +20,10 @@ svg{
 }
 
 .contenitore{
-    background-image: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("https://news.sap.com/wp-content/blogs.dir/1/files/2021/07/20/282868_shutterstock_725700925_F.jpg");
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 400px; 
+    height: 70px; 
     filter: opacity(100%);   
 
 }
@@ -58,50 +71,52 @@ nav{
     text-decoration: none;
 }
 
+
+/* CSS */
 .button-6 {
-    align-items: center;
-    background-color: rgb(3, 183, 3);
-    color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: .25rem;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 1.25;
-    margin: 0;
-    min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    position: relative;
-    text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
-  }
-  
-  .button-6:hover,
-  .button-6:focus {
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: rgba(255, 255, 255, 0.65);
-  }
-  
-  .button-6:hover {
-    transform: translateY(-1px);
-  }
-  
-  .button-6:active {
-    background-color: #F0F0F1;
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-    color: rgba(0, 0, 0, 0.65);
-    transform: translateY(0);
-  }
+  align-items: center;
+  background-color: rgb(3, 183, 3);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
 
