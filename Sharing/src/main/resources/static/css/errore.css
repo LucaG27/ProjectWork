@@ -1,8 +1,17 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .swiper{
     padding-bottom: 3rem;
-  
+}
 
+.swiper-button-prev{
+    color: green;
+}
+
+.swiper-button-next{
+    color: green;
 }
 
 .grafico{
@@ -11,13 +20,52 @@
     border-radius: 10px;
     margin-bottom: 5rem;
 }
+
+.banner{
+    background-image: url("https://enjoy.eni.com/img/home/bg_map_milano.png");
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner .ban img{
+    width: 90%;
+}
+
+.banner .info{
+    height: 200px;
+}
+
+.banner .info p{
+    font-size: 2.3rem;
+    color: white;
+}
+.banner .info span{
+    color: #7ab423;
+}
+
+
 .logo{
     width: 200px;
+}
+
+.dropdown-menu li a{
+    color: green;
 }
 
 svg{
     width: 20px;
 }
+
+.banner{
+  display: flex;   
+  flex-direction: column; 
+  align-items: center;
+  justify-content: end;
+  
+  
+}
+
 
 .contenitore{
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
@@ -32,6 +80,18 @@ svg{
     list-style-type: none;
     padding: 0;
 
+}
+
+.icon-inside{
+    position: relative;
+}
+
+.icon-inside i{
+    position: absolute;
+    right:1rem;
+    top:50%;
+    transform: translateY(-50%);
+    color:#30A3F1;
 }
 
 .contenitore .col p{
@@ -49,7 +109,7 @@ nav{
 
 .contenitore a{
     color: rgb(255, 255, 255);
-    margin-left: 1.5rem;
+    padding-left: 1.5rem;
     font-size: 1.1rem;
 }
 
@@ -119,4 +179,3 @@ nav{
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
-
