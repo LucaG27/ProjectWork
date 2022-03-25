@@ -278,3 +278,7 @@ li {
         padding: 0 20px;
     }
 }
+
+#map { 
+    height: 720px;
+ }
