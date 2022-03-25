@@ -17,4 +17,8 @@ public class ImmagineService {
     public List<Immagine> getAllImmagini() {
 		return db.findAll();
 	}
+
+	public Immagine getById(int id) {
+		return db.findById(id).get();
+	}
 }

@@ -43,6 +43,10 @@ public class Veicolo {
 	@OneToOne
 	@JoinColumn(name="immagine_id_fk")
 	private Immagine immagine;
+
+	@OneToOne
+	@JoinColumn(name="specifiche_id_fk")
+	private Specifiche specifiche;
 	
 	@OneToMany(mappedBy = "veicoloId")
 	@JsonIgnore
