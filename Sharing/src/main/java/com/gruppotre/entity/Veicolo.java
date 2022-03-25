@@ -55,9 +55,15 @@ public class Veicolo {
 	public Veicolo() {
 	}
 
+
+
+	
+
+
+
 	public Veicolo(int id, String categoria, String descrizione, String alimentazione, String ruote,
 			String disponibilita, String indirizzo, String citta, String coordinate, Immagine immagine,
-			List<Prenotazione> prenotazione) {
+			Specifiche specifiche, List<Prenotazione> prenotazione) {
 		super();
 		this.id = id;
 		this.categoria = categoria;
@@ -69,8 +75,11 @@ public class Veicolo {
 		this.citta = citta;
 		this.coordinate = coordinate;
 		this.immagine = immagine;
+		this.specifiche = specifiche;
 		this.prenotazione = prenotazione;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -160,6 +169,15 @@ public class Veicolo {
 		this.prenotazione = prenotazione;
 	}
 
+	public Specifiche getSpecifiche() {
+		return specifiche;
+	}
+
+
+
+	public void setSpecifiche(Specifiche specifiche) {
+		this.specifiche = specifiche;
+	}
 	@Override
 	public String toString() {
 		return "Veicolo [id=" + id + ", categoria=" + categoria + ", descrizione=" + descrizione + ", alimentazione="
