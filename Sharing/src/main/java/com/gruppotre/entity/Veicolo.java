@@ -2,6 +2,7 @@ package com.gruppotre.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,11 +41,11 @@ public class Veicolo {
 	@Column(name="coordinate")
 	private String coordinate;
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="immagine_id_fk")
 	private Immagine immagine;
 
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="specifiche_id_fk")
 	private Specifiche specifiche;
 	
