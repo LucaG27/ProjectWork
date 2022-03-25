@@ -118,7 +118,7 @@ nav{
 
 
 footer {
-    position:absolute;
+    position:static;
     bottom:0;
     width:100%;
  }
