@@ -46,7 +46,8 @@ public class Specifiche {
 	@Column(name = "cilindrata_motore")
 	private String cilindrata;
 	
-	private String consumo;
+	@Column(name = "consumo_medio")
+	private String consumoMedio;
 
 	@OneToOne(mappedBy = "specifiche")
 	@JsonIgnore
@@ -57,7 +58,7 @@ public class Specifiche {
 
 	public Specifiche(String velocita, String potenza, String alimentazione, String tempoDiRicarica,
 			String tipoDiRuota, String limitatoreVelocita, String autonomia, String emissioniCo2, String cambio,
-			String cavalli, String cilindrata, String consumo, Veicolo veicolo) {
+			String cavalli, String cilindrata, String consumoMedio, Veicolo veicolo) {
 		this.velocita = velocita;
 		this.potenza = potenza;
 		this.alimentazione = alimentazione;
@@ -69,7 +70,7 @@ public class Specifiche {
 		this.cambio = cambio;
 		this.cavalli = cavalli;
 		this.cilindrata = cilindrata;
-		this.consumo = consumo;
+		this.consumoMedio = consumoMedio;
 		this.veicolo = veicolo;
 	}
 
@@ -169,12 +170,12 @@ public class Specifiche {
 		this.cilindrata = cilindrata;
 	}
 
-	public String getConsumo() {
-		return consumo;
+	public String getConsumoMedio() {
+		return consumoMedio;
 	}
 
-	public void setConsumo(String consumo) {
-		this.consumo = consumo;
+	public void setConsumoMedio(String consumoMedio) {
+		this.consumoMedio = consumoMedio;
 	}
 
 	public Veicolo getVeicolo() {
@@ -191,6 +192,6 @@ public class Specifiche {
 				+ alimentazione + ", tempoDiRicarica=" + tempoDiRicarica + ", tipoDiRuota=" + tipoDiRuota
 				+ ", limitatoreVelocita=" + limitatoreVelocita + ", autonomia=" + autonomia + ", emissioniCo2="
 				+ emissioniCo2 + ", cambio=" + cambio + ", cavalli=" + cavalli + ", cilindrata=" + cilindrata
-				+ ", consumo=" + consumo + ", veicolo=" + veicolo + "]";
+				+ ", consumoMedio=" + consumoMedio + ", veicolo=" + veicolo + "]";
 	}
 }
