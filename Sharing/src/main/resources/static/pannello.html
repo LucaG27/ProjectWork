@@ -58,55 +58,53 @@
        </div>
      </div>
         </nav>
-
-        <div class="container">
-          <div class="row">
-            <div class="col"></div>
-            <div class="col mt-5 p-5">
-             <p>WE MOVE PEOPLE</p>
-             
-            </div>
-            <div class="col ">
-              
-             </div>
-          </div>
-        </div>
   </div>
+  <!-- AGGIUNGI E CSV-->
+  <button type="button" id="call_modale" class="btn btn-primary">
+    Aggiungi Articolo
+</button>
 
+<form action="/api/articolo/import" name="importCSV" method="post" enctype="multipart/form-data">
+
+
+            Import Articoli CSV: <input type="file" name="fileCSV" accept=".csv" />
+            <input type="submit" value="Aggiungi">
   <!-- TABLE-->
-  <table class="styled-table table">
-    <thead>
-        <tr>
-          <th scope="col">id</th>
-          <th scope="col">categoria</th>
-          <th scope="col">descrizione</th>
-          <th scope="col">alimentazione</th>
-          <th scope="col">ruote</th>
-          <th scope="col">disponibilita</th>
-          <th scope="col">indirizzo</th>
-          <th scope="col">citta</th>
-          <th scope="col">coordinate</th>
-          <th scope="col">immagine</th>
-          <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody id="table_rows">
-      <th scope="row">{{veicolo_id}}</th>
-      <td class="active-row">{{categoria}}</td>
-      <td>{{descrizione}}</td>
-      <td class="active-row">{{alimentazione}}</td>
-      <td>{{ruote}}</td>
-      <td class="active-row">{{disponibilita}}</td>
-      <td>{{indirizzo}}</td>
-      <td class="active-row">{{citta}}</td>
-      <td>{{coordinate}}</td>
-      <td class="active-row">{{immagine}}</td>
-      <td>
-          <button type="button" class="btn btn-sm btn-primary editButton" veicolo-id="{{veicolo_id}}"
-              data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button>
-      </td>
-    </tbody>
-</table>
+  <div class="container">
+    <table class="styled-table table">
+      <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">categoria</th>
+            <th scope="col">descrizione</th>
+            <th scope="col">alimentazione</th>
+            <th scope="col">ruote</th>
+            <th scope="col">disponibilita</th>
+            <th scope="col">indirizzo</th>
+            <th scope="col">citta</th>
+            <th scope="col">coordinate</th>
+            <th scope="col">immagine</th>
+            <th scope="col"></th>
+          </tr>
+      </thead>
+      <tbody id="table_rows">
+        <th scope="row">{{veicolo_id}}</th>
+        <td class="active-row">{{categoria}}</td>
+        <td>{{descrizione}}</td>
+        <td class="active-row">{{alimentazione}}</td>
+        <td>{{ruote}}</td>
+        <td class="active-row">{{disponibilita}}</td>
+        <td>{{indirizzo}}</td>
+        <td class="active-row">{{citta}}</td>
+        <td>{{coordinate}}</td>
+        <td class="active-row">{{immagine}}</td>
+        <td>
+            <button type="button" class="btn btn-sm btn-primary editButton" veicolo-id="{{veicolo_id}}"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button>
+        </td>
+      </tbody>
+    </table>
+  </div>
 
 
 
@@ -224,7 +222,77 @@
   </footer>
   <!-- Footer -->
 
+  <!--MODAL-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="id" class="form-label ">Id</label>
+                                    <input type="text" class="form-control" id="veicolo_id" aria-describedby="emailHelp"
+                                        readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descrizione" class="form-label ">categoria</label>
+                                    <input type="text" class="form-control" id="categoria" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="prezzo" class="form-label ">descrizione</label>
+                                    <input type="text" class="form-control" id="descrizione"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="categoria" class="form-label">alimentazione</label>
+                                    <input type="text" class="form-control" id="alimentazione"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rimanenza" class="form-label">ruote</label>
+                                    <input type="text" class="form-control" id="ruote" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rimanenza" class="form-label">disponibilita</label>
+                                    <input type="text" class="form-control" id="disponibilita"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rimanenza" class="form-label">indirizzo</label>
+                                    <input type="text" class="form-control" id="indirizzo" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rimanenza" class="form-label">citta</label>
+                                    <input type="text" class="form-control" id="citta" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rimanenza" class="form-label">coordinate</label>
+                                    <input type="text" class="form-control" id="coordinate"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rimanenza" class="form-label">immagine</label>
+                                    <input type="text" class="form-control" id="immagine" aria-describedby="emailHelp">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button id="createButton" type="button" class="btn btn-primary">Add</button>
+                            <button id="updateButton" type="button" class="btn btn-primary">Update</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </form>
+
   <!--bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="js/pannello-controllo.js"></script>
 </body>
 </html>
