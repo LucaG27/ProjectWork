@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/veicolo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <title>Veicolo</title>
+</head>
+
+<body>
+  <!-- NAVBAR-->
+  <div class="contenitore container-fluid mb-5 ">
+    <nav class="navbar navbar-expand-lg container ">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img class="logo"
+            src="https://media.discordapp.net/attachments/955030566347079702/956500337945104444/M__2_-removebg-preview_final.png"
+            alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" style="color: rgb(3, 183, 3);">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Città
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item d-flex">
+              <svg class="ms-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 24 24">
+                <defs>
+                  <path id="ico_account_svg__a"
+                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm4.893 16.002H6.829a.34.34 0 00-.1.015A7.96 7.96 0 0012 20a7.968 7.968 0 005.15-1.878.335.335 0 00-.257-.12zM12 4a8 8 0 00-6.568 12.57c.365-.357.861-.57 1.397-.57h10.064a2 2 0 011.552.74A8 8 0 0012 4zm0 2a4 4 0 110 8 4 4 0 010-8zm0 2a2 2 0 100 4 2 2 0 000-4z">
+                  </path>
+                </defs>
+                <use fill="#fff" fill-rule="evenodd" xlink:href="#ico_account_svg__a"></use>
+              </svg>
+              <a class="nav-link ms-2" id="myModal" href="#" tabindex="-1" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" data-bs-whatever="@mdo">Accedi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col mt-5 p-5">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe possimus magnam, cum facilis esse pariatur
+            quas quos placeat labore ab at, sunt libero!</p>
+          <button class="button-6 mt-3" role="button">Button 6</button>
+        </div>
+        <div class="col ">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINE HERO-->
+
+
+  <!-- Swiper -->
+  <div class="container-fluid">
+    <div class="row">
+ 
+
+ 
+  <!-- MAPPA -->
+      <div class="col-lg-6 d-flex align-items-center">
+  
+<!-- INFORMAZIONI -->
+<div class="group-specifications" id="specifications-ancor">
+  <h2 class="pane-title open text-center"></h2>
+  <div class="pane-content">
+    <h3 class="title-group open">CARATTERISTICHE</h3>
+    <ul class="group-wrapper"id="body_specifiche">
+      <!-- check last row -->
+      <li class="empty"></li>
+    </ul>
+  </div>
+</div>
+<!--  FINE INFORMAZIONI -->
+  <!-- FINE MAPPA -->
+
+        
+      </div>
+      <div class="col-lg-6">
+        <div class="swiper mySwiper container">
+          <div class="swiper-wrapper" id="bodyDivImmagini">
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+ <div id='map'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGFudG94OTQiLCJhIjoiY2wxNHZlZ2s5MDFidjNlb2czbXNoMzc1aCJ9.iBe28DfUV8hQO25wBG3X2w';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11'
+    });
+  </script>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white pt-5 ">
+    <!-- Grid container -->
+
+    <!-- Section: Links -->
+    <section class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Indirizzo</h5>
+
+          <ul class="list-unstyled mb-0">
+
+            <li>
+              <a class="text-white">Via Principi d'Acaja, 33</a>
+            </li>
+            <li>
+              <a class="text-white">10138 Torino TO</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contatti</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a class="text-white">Tel. 0114472954</a>
+            </li>
+            <li>
+              <a class="text-white">move@gmail.com</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Cookies</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Privacy Policy</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+          <ul class="list-unstyled mb-0">
+            <li class="">FOLLOW MOVE</li>
+            <li>
+              <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-2">
+                  <!-- Facebook -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                      class="fab fa-facebook-f"></i></a>
+
+                  <!-- Twitter -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                      class="fab fa-twitter"></i></a>
+
+                  <!-- Google -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                      class="fab fa-google"></i></a>
+
+                  <!-- Instagram -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                      class="fab fa-instagram"></i></a>
+
+                </section>
+                <!-- Section: Social media -->
+            </li>
+            <li class="mb-3">
+              <img
+                src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
+                alt="" width="150px">
+            </li>
+            <li class="mb-3">
+              <img
+                src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
+                alt="" width="150px">
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright: Move
+
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <script id="template-veicoli" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine1}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine2}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine3}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine4}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine5}}" alt="">
+    </div>
+    {{/each}}
+  </script>
+  
+  <script id="template-specifiche" type="text/x-handlebars-template">
+    <li>
+      <span class="field-label field_offer_doors">Velocità</span>
+      <span class="value field-item field_offer_doors ">{{velocita}}</span>
+    </li>
+    <li>
+      <span class="field-label field_offer_transmission">Potenza Motore</span>
+      <span class="value field-item field_offer_transmission ">{{potenza}}</span>
+    </li>
+    <li>
+      <span class="field-label field_offer_average_consumption">Alimentazione</span>
+      <span class="value field-item field_offer_average_consumption ">{{alimentazione}}</span>
+    </li>
+    <li>
+      <span class="field-label field_offer_horsepower">Cambio</span>
+      <span class="value field-item field_offer_horsepower">{{cambio}}</span>
+    </li>
+    <li>
+      <span class="field-label field_offer_horsepower">Cavalli</span>
+      <span class="value field-item field_offer_horsepower">{{cavalli}}</span>
+    </li>
+    <li>
+      <span class="field-label field_offer_emission_co2">Cilindrata motore</span>
+      <span class="value field-item field_offer_emission_co2 ">{{cilindrata}}</span>
+    </li>
+    <li>
+      <span class="field-label field_offer_fuel_type">Consumo Medio</span>
+      <span class="value field-item field_offer_fuel_type ">{{consumoMedio}}</span>
+    </li>
+    <li>
+      <span class="field-label field_offer_motor_displacement">Emissioni CO2</span>
+      <span class="value field-item field_offer_motor_displacement ">{{emissioniCo2}}</span>
+    </li>
+  </script>
+
+
+
+  <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="js/login.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/veicolo.js"></script>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</body>
+</html>
