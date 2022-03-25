@@ -78,36 +78,29 @@
         <!-- Slides -->
         <div class="swiper-slide text-center">
           <img class="img-fluid"
-            src="https://www.arval.it/sites/it/files/citycar_01.png" alt="">
-          <h2 class="text-center">MACCHINE</h2>
+            src="img/veicoli/auto.png" alt="">
+          <h2 class="text-center">Auto</h2>
           <p class="text-center">Tutta l'agilità che ti occorre</p>
-          <button class="btn">Scopri</button>
+          <button class="btn"id="btn_auto">Scopri</button>
         </div>
         <div class="swiper-slide text-center">
-          <img class="img-fluid" src="https://www.arval.it/sites/it/files/family_large_01.png"
+          <img class="img-fluid" src="img/veicoli/scooter.png"
             alt="">
-          <h2 class="text-center">SCOOTER</h2>
+          <h2 class="text-center">Scooter</h2>
           <p class="text-center">Tutto lo spazio che ti serve, con stile</p>
           <button class="btn">Scopri</button>
         </div>
         <div class="swiper-slide text-center">
-          <img class="img-fluid" src="https://www.arval.it/sites/it/files/compact_01_7.png"
+          <img class="img-fluid" src="img/veicoli/bici.png"
             alt="">
-          <h2 class="text-center">MOTO</h2>
+          <h2 class="text-center">Bici</h2>
           <p class="text-center">Comodità e stile al tuo servizio</p>
           <button class="btn">Scopri</button>
         </div>
         <div class="swiper-slide text-center">
-          <img class="img-fluid" src="https://www.arval.it/sites/it/files/fiat_21500eviconha3b_lowaggressive.png"
+          <img class="img-fluid" src="img/veicoli/monopattino.png"
             alt="">
-          <h2 class="text-center">BICI</h2>
-          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn">Scopri</button>
-        </div>
-        <div class="swiper-slide text-center">
-          <img class="img-fluid"
-            src="https://www.arval.it/sites/it/files/suzuki_20ignisglplushevhb2fb_lowaggressive.png" alt="">
-          <h2 class="text-center">MONOPATTINI</h2>
+          <h2 class="text-center">Monopattini</h2>
           <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
           <button class="btn">Scopri</button>
         </div>
@@ -126,24 +119,8 @@
   <div class="cards p-4">
     <div class="container mt-5 mb-5">
       <h1 class="fontTitoli testoColorato">Ultime offerte</h1>
-      <div class="row">
-        <div class="col-lg-3 mt-5 p-3">
-          <div class="card">
-            <img class="card-img-top"
-              src="https://www.arval.it/sites/it/files/styles/izmo-format/public/toyota_21yariscrosshevdynplussu1b_lowaggressive.png?itok=jj0PEO24"
-              alt="">
-            <div class="card-body text-center">
-              <h5 class="card-title pac fontTitoli">TOYOTA YARIS CROSS</h5>
-              <ul>
-                <li>Auto</li>
-                <li>Ibrida</li>
-                <li>Indirizzo</li>
-              </ul>
-              <a href="#" class="btn mb-3">Prenota</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="bodyDivImmagini"></div>
+
     </div>
   </div>
 
@@ -310,12 +287,57 @@
 
   <!-- FINE MODAL -->
 
+  <div class="row">
+    <div class="col-lg-3 mt-5 p-3">
+      <div class="card">
+        <img class="card-img-top"
+          src="https://www.arval.it/sites/it/files/styles/izmo-format/public/toyota_21yariscrosshevdynplussu1b_lowaggressive.png?itok=jj0PEO24"
+          alt="">
+        <div class="card-body text-center">
+          <h5 class="card-title pac fontTitoli">TOYOTA YARIS CROSS</h5>
+          <ul>
+            <li>Auto</li>
+            <li>Ibrida</li>
+            <li>Indirizzo</li>
+          </ul>
+          <a href="#" class="btn mb-3">Prenota</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script id="template-veicoli" type="text/x-handlebars-template">
+    {{#each this}}
+    {{#ifEquals categoria "AUTO"}}
+    <div class="row">
+      <div class="col-lg-3 mt-5 p-3">
+        <div class="card">
+          <img class="card-img-top"
+            src="{{immagine.immagine1}}"
+            alt="">
+          <div class="card-body text-center">
+            <h5 class="card-title pac fontTitoli">{{descrizione}}</h5>
+            <ul>
+              <li>{{categoria}}</li>
+              <li>{{alimentazione}}</li>
+              <li>{{disponibilita}}</li>
+            </ul>
+            <a href="#" class="btn mb-3">Prenota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/ifEquals}}
+    {{/each}}
+  </script>
 
 
   <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
   <script src="js/login.js"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

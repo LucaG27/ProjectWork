@@ -2,6 +2,8 @@
 let template_riga = "";
 const url = "http://localhost:8080/api/veicolo/";
 let modal = null;
+let immagini = null;
+let specifiche = null;
 
 
 function listaVeicoli(){
@@ -46,7 +48,6 @@ function listaVeicoli(){
             },
             body: JSON.stringify({
     
-                id: document.getElementById("veicolo_id").value,
                 categoria: document.getElementById("categoria").value,
                 descrizione: document.getElementById("descrizione").value,
                 alimentazione: document.getElementById("alimentazione").value,
@@ -92,7 +93,29 @@ function listaVeicoli(){
                     indirizzo: document.getElementById("indirizzo").value,
                     citta: document.getElementById("citta").value,
                     coordinate: document.getElementById("coordinate").value,
-                    immagine: document.getElementById("immagine").value,
+                    immagine: {
+                        id: immagini.id,
+                        immagine1: immagini.immagine1,
+                        immagine2: immagini.immagine2,
+                        immagine3: immagini.immagine3,
+                        immagine4: immagini.immagine4,
+                        immagine5: immagini.immagine5
+                    },
+                    specifiche:{
+                        id: specifiche.id,
+                        velocita: specifiche.velocita,
+                        potenza: specifiche.potenza,
+                        alimentazione: specifiche.alimentazione,
+                        tempoDiRicarica: specifiche.tempoDiRicarica,
+                        tipoDiRuota: specifiche.tempoDiRicarica,
+                        limitatoreVelocita: specifiche.limitatoreVelocita,
+                        autonomia: specifiche.autonomia,
+                        emissioniCo2: specifiche.emissioniCo2,
+                        cambio: specifiche.cambio,
+                        cavalli: specifiche.cavalli,
+                        cilindrata: specifiche.cilindrata,
+                        consumoMedio: specifiche.consumoMedio
+                    }
                 }),
             })
             .then(response => response.json())
@@ -131,7 +154,29 @@ function listaVeicoli(){
                 document.getElementById("indirizzo").value = json.indirizzo;
                 document.getElementById("citta").value = json.citta;
                 document.getElementById("coordinate").value = json.coordinate;
-                document.getElementById("immagine").value = json.immagine;
+                immagini = {
+                    id: json.immagine.id,
+                    immagine1: json.immagine.immagine1,
+                    immagine2: json.immagine.immagine2,
+                    immagine3: json.immagine.immagine3,
+                    immagine4: json.immagine.immagine4,
+                    immagine5: json.immagine.immagine5
+                };
+                specifiche = {
+                    id: json.specifiche.id,
+                    velocita: json.specifiche.velocita,
+                    potenza: json.specifiche.potenza,
+                    alimentazione: json.specifiche.alimentazione,
+                    tempoDiRicarica: json.specifiche.tempoDiRicarica,
+                    tipoDiRuota: json.specifiche.tempoDiRicarica,
+                    limitatoreVelocita: json.specifiche.limitatoreVelocita,
+                    autonomia: json.specifiche.autonomia,
+                    emissioniCo2: json.specifiche.emissioniCo2,
+                    cambio: json.specifiche.cambio,
+                    cavalli: json.specifiche.cavalli,
+                    cilindrata: json.specifiche.cilindrata,
+                    consumoMedio: json.specifiche.consumoMedio
+                }
             })
             .catch(function(err) {
                 alert(err);
