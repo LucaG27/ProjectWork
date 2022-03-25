@@ -98,16 +98,52 @@
 
  
   <!-- MAPPA -->
-      <div class="col-lg-6">
-  <div id='map'></div>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGFudG94OTQiLCJhIjoiY2wxNHZlZ2s5MDFidjNlb2czbXNoMzc1aCJ9.iBe28DfUV8hQO25wBG3X2w';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
-    });
-  </script>
-
+      <div class="col-lg-6 d-flex align-items-center">
+  
+<!-- INFORMAZIONI -->
+<div class="group-specifications" id="specifications-ancor">
+  <h2 class="pane-title open text-center"></h2>
+  <div class="pane-content">
+    <h3 class="title-group open">CARATTERISTICHE</h3>
+    <ul class="group-wrapper">
+      <li>
+        <span class="field-label field_offer_doors">Porte</span>
+        <span class="value field-item field_offer_doors ">5porte</span>
+      </li>
+      <li>
+        <span class="field-label field_offer_transmission">Cambio</span>
+        <span class="value field-item field_offer_transmission ">Automatico</span>
+      </li>
+      <li>
+        <span class="field-label field_offer_average_consumption">Consumo Medio</span>
+        <span class="value field-item field_offer_average_consumption ">4.4L/100km</span>
+      </li>
+      <li>
+        <span class="field-label field_offer_horsepower">Cavalli</span>
+        <span class="value field-item field_offer_horsepower ">116CV</span>
+      </li>
+      <li>
+        <span class="field-label field_offer_co2">CO²</span>
+        <span class="value field-item field_offer_co2 cl-A">cl-A &lt;- 100g/km</span>
+      </li>
+      <li>
+        <span class="field-label field_offer_emission_co2">Emissioni di CO²</span>
+        <span class="value field-item field_offer_emission_co2 ">100 g/km</span>
+      </li>
+      <li>
+        <span class="field-label field_offer_fuel_type">Alimentazione</span>
+        <span class="value field-item field_offer_fuel_type ">Ibrida</span>
+      </li>
+      <li>
+        <span class="field-label field_offer_motor_displacement">Cilindrata Motore</span>
+        <span class="value field-item field_offer_motor_displacement ">1490cm3</span>
+      </li>
+      <!-- check last row -->
+      <li class="empty"></li>
+    </ul>
+  </div>
+</div>
+<!--  FINE INFORMAZIONI -->
   <!-- FINE MAPPA -->
 
         
@@ -140,51 +176,15 @@
     </div>
   </div>
 
-  <!-- INFORMAZIONI -->
-  <div class="group-specifications" id="specifications-ancor">
-    <h2 class="pane-title open text-center">APPROFONDIMENTI</h2>
-    <div class="pane-content">
-      <h3 class="title-group open">CARATTERISTICHE</h3>
-      <ul class="group-wrapper">
-        <li>
-          <span class="field-label field_offer_doors">Porte</span>
-          <span class="value field-item field_offer_doors ">5porte</span>
-        </li>
-        <li>
-          <span class="field-label field_offer_transmission">Cambio</span>
-          <span class="value field-item field_offer_transmission ">Automatico</span>
-        </li>
-        <li>
-          <span class="field-label field_offer_average_consumption">Consumo Medio</span>
-          <span class="value field-item field_offer_average_consumption ">4.4L/100km</span>
-        </li>
-        <li>
-          <span class="field-label field_offer_horsepower">Cavalli</span>
-          <span class="value field-item field_offer_horsepower ">116CV</span>
-        </li>
-        <li>
-          <span class="field-label field_offer_co2">CO²</span>
-          <span class="value field-item field_offer_co2 cl-A">cl-A &lt;- 100g/km</span>
-        </li>
-        <li>
-          <span class="field-label field_offer_emission_co2">Emissioni di CO²</span>
-          <span class="value field-item field_offer_emission_co2 ">100 g/km</span>
-        </li>
-        <li>
-          <span class="field-label field_offer_fuel_type">Alimentazione</span>
-          <span class="value field-item field_offer_fuel_type ">Ibrida</span>
-        </li>
-        <li>
-          <span class="field-label field_offer_motor_displacement">Cilindrata Motore</span>
-          <span class="value field-item field_offer_motor_displacement ">1490cm3</span>
-        </li>
-        <!-- check last row -->
-        <li class="empty"></li>
-      </ul>
-    </div>
-  </div>
- <!--  FINE INFORMAZIONI -->
- 
+  
+ <div id='map'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGFudG94OTQiLCJhIjoiY2wxNHZlZ2s5MDFidjNlb2czbXNoMzc1aCJ9.iBe28DfUV8hQO25wBG3X2w';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11'
+    });
+  </script>
 
 
 
