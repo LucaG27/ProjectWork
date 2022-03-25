@@ -336,16 +336,17 @@
 <script id="template-prenotazioni" type="text/x-handlebars-template">
   {{#each this}}
   <tr>
+    {{#ifEquals stato "in corso"}}
     <td>{{idVeicolo}}</td>
     <td>{{descrizione}}</td>
     <td>{{dataInizio}}</td>
     <td>{{dataFine}}</td>
     <td>{{stato}}</td>
-
-
+    
     <td><button class="btn btn-success" data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop">Modifica</button></td>
-    <td><button class="btn btn-danger">Cancella</button></td>
+      data-bs-target="#staticBackdrop">Modifica</button></td>
+      <td><button class="btn btn-danger">Cancella</button></td>
+      {{/ifEquals}}
   </tr>
   {{/each}}      
 </script>
@@ -353,6 +354,7 @@
 <script id="template-prenotazioni2" type="text/x-handlebars-template">
   {{#each this}}
   <tr>
+    {{#ifEquals stato "scaduta"}}
     <td>{{idVeicolo}}</td>
     <td>{{descrizione}}</td>
     <td>{{dataInizio}}</td>
@@ -363,6 +365,7 @@
     <td><button class="btn btn-success" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop">Modifica</button></td>
     <td><button class="btn btn-danger">Cancella</button></td>
+    {{/ifEquals}}
   </tr>
   {{/each}}      
 </script>

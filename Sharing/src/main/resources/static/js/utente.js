@@ -6,6 +6,10 @@ let render_prenotazioni = null;
 let render_prenotazioni2 = null;
 let session = JSON.parse(localStorage.getItem('user'))
 
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
 function listaPrenotazioni(event){
 
     fetch(URL+"prenotazioni/"+ session.id)
@@ -18,13 +22,12 @@ function listaPrenotazioni(event){
             let rows2 = "";       
             rows = render_prenotazioni(json);
             rows2 = render_prenotazioni2(json);
-            for(let li=0; li<json.length; li++){
-            if(json[li].stato == "in corso"){
-                document.getElementById("bodyTabellaClienti").innerHTML = rows;
-            }else{
-                document.getElementById("bodyTabellaClienti2").innerHTML = rows2;
-            }
-        }
+           
+            document.getElementById("bodyTabellaClienti").innerHTML = rows;
+            document.getElementById("bodyTabellaClienti2").innerHTML = rows2;
+       
+    
+        
         })
         .catch(function(err) { 
                 alert(err);
