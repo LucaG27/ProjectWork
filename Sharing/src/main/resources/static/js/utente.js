@@ -4,6 +4,7 @@ const URL = "http://localhost:8080/api/veicolo/";
 const user = localStorage.getItem('user');
 let render_prenotazioni = null;
 let render_prenotazioni2 = null;
+let session = JSON.parse(localStorage.getItem('user'))
 
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
@@ -11,14 +12,12 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
 
 function listaPrenotazioni(event){
 
-    fetch(URL+"prenotazioni/"+ "1")
+    fetch(URL+"prenotazioni/"+ session.id)
         .then(function(response) {
 		    return response.json();
 	    })
         .then(function(json) {
-			
             console.log(json);
-    
             let rows = "";   
             let rows2 = "";       
             rows = render_prenotazioni(json);

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "immagine")
 public class Immagine {
@@ -25,6 +27,7 @@ public class Immagine {
 	private String immagine5;
 
 	@OneToOne(mappedBy = "immagine")
+	@JsonIgnore
 	private Veicolo veicolo;
 
 	public Immagine() {
