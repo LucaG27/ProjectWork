@@ -4,16 +4,16 @@ const URL = "http://localhost:8080/api/immagine/allImmagini"
 const URL2 = "http://localhost:8080/api/specifiche/"
 const URL3 = "http://localhost:8080/api/veicolo/id/"
 const user = localStorage.getItem('user');
-let prova = document.getElementById("prova").addEventListener("click", asyncCall);
-let coo = null;
+
   "use strict";
 
 
   
    async function asyncCall(){
     const veicolo = await loadCoordinate();
-      coo = veicolo.coordinate;
-      wrap();
+     let coo = veicolo.coordinate;
+     let coo_split=coo.split(',');
+    return coo_split;
   }
   
   async function loadCoordinate() {
@@ -99,13 +99,15 @@ const swiper = new Swiper('.swiper', {
   
           listaVeicoli();
           listaSpecifiche();
+          wrap();
 
       
   });
 
-  function wrap(){
+async function wrap(){
+let coo_split = await asyncCall();
 
-var map = L.map('map').setView([coo], 13);
+let map = L.map('map').setView([coo_split[0],coo_split[1]], 18);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -136,6 +138,6 @@ var mGreen = L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup('I am a green 
 var mRed = L.marker([51.495, -0.083], {icon: redIcon}).bindPopup('I am a red leaf.').addTo(map);
 */
 
-var mOrange = L.marker([51.49, -0.1], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
+var mOrange = L.marker([coo_split[0],coo_split[1]], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
 
 }

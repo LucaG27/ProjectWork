@@ -310,6 +310,20 @@
 
   <!-- FINE MODAL -->
 
+  <!-- HANDLEBARS -->
+  <script id="template-veicoli" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="swiper-slide text-center">
+      <img class="img-fluid"
+        src="https://www.arval.it/sites/it/files/citycar_01.png" alt="">
+      <h2 class="text-center">{{categoria}}</h2>
+      <p class="text-center">{{descrizione}}</p>
+      <button class="btn">Scopri</button>
+    </div>
+    {{/each}}
+  </script>
+  
+
 
 
   <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
