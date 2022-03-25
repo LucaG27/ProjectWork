@@ -1,3 +1,28 @@
+let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
+let render_veicoli = null;
+
+function listaVeicoli(event){
+
+  fetch("http://localhost:8080/api/veicolo/")
+      .then(function(response) {
+      return response.json();
+    })
+      .then(function(json) {
+          console.log(json);    
+          let rows = render_veicoli(json);
+         
+          document.getElementById("bodyDivImmagini").innerHTML = rows;
+     
+  
+      
+      })
+      .catch(function(err) { 
+              alert(err);
+              console.log('Failed to fetch page: ', err);
+      });	
+
+}
+
 
 //INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI 
 
@@ -68,4 +93,13 @@ const swiper = new Swiper('.swiper', {
     password.setAttribute('type', type);
     // toggle the eye slash icon
     this.classList.toggle('fa-eye-slash');
+});
+
+  
+window.addEventListener(
+  'DOMContentLoaded', 
+  function(event){
+
+    render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
+    
 });
