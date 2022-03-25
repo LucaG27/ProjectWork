@@ -73,6 +73,42 @@
         </div>
   </div>
 
+  <!-- TABLE-->
+  <table class="styled-table table">
+    <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">categoria</th>
+          <th scope="col">descrizione</th>
+          <th scope="col">alimentazione</th>
+          <th scope="col">ruote</th>
+          <th scope="col">disponibilita</th>
+          <th scope="col">indirizzo</th>
+          <th scope="col">citta</th>
+          <th scope="col">coordinate</th>
+          <th scope="col">immagine</th>
+          <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody id="table_rows">
+      <th scope="row">{{veicolo_id}}</th>
+      <td class="active-row">{{categoria}}</td>
+      <td>{{descrizione}}</td>
+      <td class="active-row">{{alimentazione}}</td>
+      <td>{{ruote}}</td>
+      <td class="active-row">{{disponibilita}}</td>
+      <td>{{indirizzo}}</td>
+      <td class="active-row">{{citta}}</td>
+      <td>{{coordinate}}</td>
+      <td class="active-row">{{immagine}}</td>
+      <td>
+          <button type="button" class="btn btn-sm btn-primary editButton" veicolo-id="{{veicolo_id}}"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button>
+      </td>
+    </tbody>
+</table>
+
+
 
   <!-- Footer -->
   <footer class="bg-dark text-center text-white pt-5 ">

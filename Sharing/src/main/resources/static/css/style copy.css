@@ -1,6 +1,5 @@
 body{
     font-family: 'Montserrat', sans-serif;
-
 }
 
 .swiper{
@@ -73,7 +72,6 @@ svg{
     background-repeat: no-repeat;
     height: 690px; 
     filter: opacity(100%);   
-
 }
 
 .cards ul{
