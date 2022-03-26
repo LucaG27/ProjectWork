@@ -48,7 +48,7 @@ const idv = localStorage.getItem('veicolo');
 
   function listaSpecifiche(event){
   
-    fetch(URL2+"id/"+idv)
+    fetch(URL3 + idv)
         .then(function(response) {
         return response.json();
       })

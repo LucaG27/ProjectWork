@@ -275,42 +275,63 @@
   <script id="template-specifiche" type="text/x-handlebars-template">
     <li>
       <span class="field-label field_offer_doors">Velocità</span>
-      <span class="value field-item field_offer_doors ">{{velocita}}</span>
+      <span class="value field-item field_offer_doors ">{{specifiche.velocita}}</span>
     </li>
     <li>
       <span class="field-label field_offer_transmission">Potenza Motore</span>
-      <span class="value field-item field_offer_transmission ">{{potenza}}</span>
+      <span class="value field-item field_offer_transmission ">{{specifiche.potenza}}</span>
     </li>
     <li>
       <span class="field-label field_offer_average_consumption">Alimentazione</span>
-      <span class="value field-item field_offer_average_consumption ">{{alimentazione}}</span>
+      <span class="value field-item field_offer_average_consumption ">{{specifiche.alimentazione}}</span>
     </li>
+    {{#if specifiche.cambio includeZero=true}}
     <li>
       <span class="field-label field_offer_horsepower">Cambio</span>
-      <span class="value field-item field_offer_horsepower">{{cambio}}</span>
-    </li>
-    {{#if cavalli}}
-    <li>
-      <span class="field-label field_offer_horsepower">Cavalli</span>
-      <span class="value field-item field_offer_horsepower">{{cavalli}}</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.cambio}}</span>
     </li>
     {{else}}
     <li>
-      <span class="field-label field_offer_horsepower">Velocità</span>
-      <span class="value field-item field_offer_horsepower">{{velocita}}</span>
+      <span class="field-label field_offer_horsepower">Limitatore Velocità</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.limitatoreVelocita}}</span>
+    </li>
+    {{/if}}
+    {{#if specifiche.cavalli includeZero=true}}
+    <li> 
+      <span class="field-label field_offer_horsepower">Cavalli</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.cavalli}}</span>
+    </li>
+    {{else}}
+    <li>
+      <span class="field-label field_offer_horsepower">Autonomia</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.autonomia}}</span>
+    </li>
+    {{/if}}
+    {{#if specifiche.cilindrata includeZero=true}}
+    <li>
+      <span class="field-label field_offer_emission_co2">Cilindrata motore</span>
+      <span class="value field-item field_offer_emission_co2 ">{{specifiche.cilindrata}}</span>
+    </li>
+    {{else}}
+    <li>
+      <span class="field-label field_offer_emission_co2">Tempo di ricarica</span>
+      <span class="value field-item field_offer_emission_co2 ">{{specifiche.tempoDiRicarica}}</span>
+    </li>
+    {{/if}}
+    {{#if specifiche.consumoMedio includeZero=true}}
+    <li>
+      <span class="field-label field_offer_fuel_type">Consumo Medio</span>
+      <span class="value field-item field_offer_fuel_type ">{{specifiche.consumoMedio}}</span>
+    </li>
+    {{else}}
+    <li>
+      <span class="field-label field_offer_fuel_type">Tipo di ruota</span>
+      <span class="value field-item field_offer_fuel_type ">{{specifiche.tipoDiRuota}}</span>
     </li>
     {{/if}}
     <li>
-      <span class="field-label field_offer_emission_co2">Cilindrata motore</span>
-      <span class="value field-item field_offer_emission_co2 ">{{cilindrata}}</span>
-    </li>
-    <li>
-      <span class="field-label field_offer_fuel_type">Consumo Medio</span>
-      <span class="value field-item field_offer_fuel_type ">{{consumoMedio}}</span>
-    </li>
-    <li>
       <span class="field-label field_offer_motor_displacement">Emissioni CO2</span>
-      <span class="value field-item field_offer_motor_displacement ">{{emissioniCo2}}</span>
+      <span class="value field-item field_offer_motor_displacement ">{{specifiche.emissioniCo2}}</span>
     </li>
   </script>
 
