@@ -289,10 +289,17 @@
       <span class="field-label field_offer_horsepower">Cambio</span>
       <span class="value field-item field_offer_horsepower">{{cambio}}</span>
     </li>
+    {{#if cavalli}}
     <li>
       <span class="field-label field_offer_horsepower">Cavalli</span>
       <span class="value field-item field_offer_horsepower">{{cavalli}}</span>
     </li>
+    {{else}}
+    <li>
+      <span class="field-label field_offer_horsepower">Velocità</span>
+      <span class="value field-item field_offer_horsepower">{{velocita}}</span>
+    </li>
+    {{/if}}
     <li>
       <span class="field-label field_offer_emission_co2">Cilindrata motore</span>
       <span class="value field-item field_offer_emission_co2 ">{{cilindrata}}</span>
