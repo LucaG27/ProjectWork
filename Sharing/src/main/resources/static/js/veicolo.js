@@ -1,9 +1,11 @@
 let render_specifiche = null;
 let render_veicoli = null;
+let veicolo_id = document.getElementById("veicolo_id")
 const URL = "http://localhost:8080/api/immagine/allImmagini"
 const URL2 = "http://localhost:8080/api/specifiche/"
 const URL3 = "http://localhost:8080/api/veicolo/id/"
 const user = localStorage.getItem('user');
+const idv = localStorage.getItem('veicolo');
 
   "use strict";
 
@@ -18,7 +20,7 @@ const user = localStorage.getItem('user');
   
   async function loadCoordinate() {
   
-    let response = await fetch(URL3 + 1);
+    let response = await fetch(URL3 + idv);
     let veicolo = await response.json();
     return veicolo;
   }
@@ -26,7 +28,7 @@ const user = localStorage.getItem('user');
   
   function listaVeicoli(event){
   
-      fetch(URL)
+      fetch(URL3 + idv)
           .then(function(response) {
           return response.json();
         })
@@ -34,8 +36,7 @@ const user = localStorage.getItem('user');
         
               console.log(json);
       
-              let rows = "";      
-              rows = render_veicoli(json);
+              let rows = render_veicoli(json);
                   document.getElementById("bodyDivImmagini").innerHTML = rows;
           })
           .catch(function(err) { 
@@ -47,7 +48,7 @@ const user = localStorage.getItem('user');
 
   function listaSpecifiche(event){
   
-    fetch(URL2+"id/"+5)
+    fetch(URL2+"id/"+idv)
         .then(function(response) {
         return response.json();
       })

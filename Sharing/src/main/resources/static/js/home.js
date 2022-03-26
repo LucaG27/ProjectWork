@@ -1,9 +1,12 @@
-let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli)
-let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli)
-let bottone_mono  = document.getElementById("btn_mono").addEventListener("click", listaVeicoli)
-let bottone_bici  = document.getElementById("btn_bici").addEventListener("click", listaVeicoli)
-
+let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
+let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli);
+let bottone_mono  = document.getElementById("btn_mono").addEventListener("click", listaVeicoli);
+let bottone_bici  = document.getElementById("btn_bici").addEventListener("click", listaVeicoli);
 let render_veicoli = null;
+let bottone_prenota= null;
+
+
+
 
 // handlebars Helpers
 /*
@@ -35,15 +38,15 @@ function listaVeicoli(event){
           let rows = render_veicoli(json);
          
           document.getElementById("bodyDivImmagini").innerHTML = rows;
-     
-  
+
+          agganciaEventi();
       
       })
       .catch(function(err) { 
               alert(err);
               console.log('Failed to fetch page: ', err);
-      });	
-
+      })
+     
 }
 
 
@@ -119,6 +122,22 @@ const swiper = new Swiper('.swiper', {
     this.classList.toggle('fa-eye-slash');
 });
 
+function switchVeicolo(event) {
+
+  let originator = event.currentTarget;
+  let veicolo = originator.getAttribute("veicolo-id");
+  localStorage.setItem('veicolo', veicolo);
+  location.href="/veicolo"
+}
+
+function agganciaEventi(){
+bottone_prenota = document.getElementsByClassName("button-prenota");
+for (let i = 0; i < bottone_prenota.length; i++) {
+  bottone_prenota[i].addEventListener('click', switchVeicolo);
+}
+}
+
+
   
 window.addEventListener(
   'DOMContentLoaded', 
@@ -126,4 +145,4 @@ window.addEventListener(
 
     render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
     
-});
+})
