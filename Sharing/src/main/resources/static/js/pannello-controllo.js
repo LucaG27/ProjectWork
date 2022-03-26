@@ -236,3 +236,5 @@ function listaVeicoli(){
         }
             console.log(JSON.parse(localStorage.getItem('user')));
         });
+
+        

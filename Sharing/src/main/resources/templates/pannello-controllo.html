@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <!-- font awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/css/pannello-controllo.css">
     <title>Pannello</title>
 </head>
@@ -31,8 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="homepage.html"
-                               >Home</a>
+                            <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#"
@@ -63,195 +65,237 @@
                                 </defs>
                                 <use fill="#fff" fill-rule="evenodd" xlink:href="#ico_account_svg__a"></use>
                             </svg>
-                            <a class="nav-link ms-2" id="myModal" href="#" tabindex="-1" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo">Logout</a>
+                            <a class="nav-link ms-2" id="myModal" href="#" >Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-    
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="mb-3">Aggiungi un singolo articolo</h3>
-                <button type="button" id="call_modale" class="btn btn-primary">Aggiungi</button>
+
             </div>
             <div class="col-lg-6">
                 <form action="/api/articolo/import" name="importCSV" method="post" enctype="multipart/form-data">
                     <h3 class="mb-3">Import Articoli CSV:</h3>
-                    <input  type="file" name="fileCSV" accept=".csv" />
+                    <input type="file" name="fileCSV" accept=".csv" />
                     <input type="submit" value="Aggiungi">
-
-
             </div>
         </div>
     </div>
     <!-- AGGIUNGI E CSV-->
-    
 
-    
-        <!-- TABLE-->
-        <div class="container">
-            <table class="styled-table table">
-                <thead>
-                    <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">categoria</th>
-                        <th scope="col">descrizione</th>
-                        <th scope="col">alimentazione</th>
-                        <th scope="col">ruote</th>
-                        <th scope="col">disponibilita</th>
-                        <th scope="col">indirizzo</th>
-                        <th scope="col">citta</th>
-                        <th scope="col">coordinate</th>
-                        <th scope="col">immagine</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody id="table_rows">
-                    <th scope="row">{{veicolo_id}}</th>
-                    <td class="active-row">{{categoria}}</td>
-                    <td>{{descrizione}}</td>
-                    <td class="active-row">{{alimentazione}}</td>
-                    <td>{{ruote}}</td>
-                    <td class="active-row">{{disponibilita}}</td>
-                    <td>{{indirizzo}}</td>
-                    <td class="active-row">{{citta}}</td>
-                    <td>{{coordinate}}</td>
-                    <td class="active-row">{{immagine}}</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-primary editButton" veicolo-id="{{veicolo_id}}"
-                            data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button>
-                    </td>
-                </tbody>
-            </table>
-              <!--		Start Pagination -->
-  <div class='pagination-container'>
-    <nav>
-      <ul class="pagination">
-
-        <li data-page="prev">
-          <span>
-             <span class="sr-only">(current)
-          </span>
-        </span>
-        </li>
-        <!--	Here the JS Function Will Add the Rows -->
-        <li data-page="next" id="prev">
-          <span> > <span class="sr-only">(current)</span></span>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
-</div> <!-- 		End of Container -->
-
-        </div>
-
-
-
-        <!-- Footer -->
-        <footer class="bg-dark text-center text-white pt-5 ">
-            <!-- Grid container -->
-
-            <!-- Section: Links -->
-            <section class="container">
-                <!--Grid row-->
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Indirizzo</h5>
-
-                        <ul class="list-unstyled mb-0">
-
-                            <li>
-                                <a class="text-white">Via Principi d'Acaja, 33</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="">
+                    <div class='tex'>
+                        <ul class='nav navbar-nav side-nav fadeInLeft'>
+                            <li class='dashboard'><a href='#'><i class='fa fa-lg fa-dashboard'></i> </a></li>
+                            <li class='admin'><a href='#admin'><i class='fa fa-lg fa-user pe-2'></i> Admin</a></li>
+                            <li class='active docs'><a href='#docs'><i class='fa fa-lg fa-folder-open pe-1'></i> Carica CSV</a></li>
+                            <li class='divider'>
+                             <hr>
                             </li>
-                            <li>
-                                <a class="text-white">10138 Torino TO</a>
-                            </li>
-
+                            <li class='person-lookup'><a href='#personLookup'><i
+                                        class='fa fa-lg fa-phone-square pe-2'></i> Person Lookup</a></li>
+                            <li class='software-support'><a href='#softwareSupport'><i
+                                        class='fa fa-lg fa-question-circle pe-2'></i> Support</a></li>
+                            <li class='dashboard-updates' id="call_modale"><a href="#"><i
+                                        class='fa fa-lg fa-arrow-up pe-2'></i> Aggiungi Articolo</a></li>
+                            <li class='print'><a><i class='fa fa-lg fa-print pe-2'></i> Stampa</a></li>
                         </ul>
                     </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Contatti</h5>
-
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a class="text-white">Tel. 0114472954</a>
-                            </li>
-                            <li>
-                                <a class="text-white">move@gmail.com</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#!" class="text-white">Cookies</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Privacy Policy</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-
-                        <ul class="list-unstyled mb-0">
-                            <li class="">FOLLOW MOVE</li>
-                            <li>
-                                <div class="container p-4">
-                                    <!-- Section: Social media -->
-                                    <section class="mb-2">
-                                        <!-- Facebook -->
-                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                                class="fab fa-facebook-f"></i></a>
-
-                                        <!-- Twitter -->
-                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                                class="fab fa-twitter"></i></a>
-
-                                        <!-- Google -->
-                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                                class="fab fa-google"></i></a>
-
-                                        <!-- Instagram -->
-                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                                class="fab fa-instagram"></i></a>
-
-                                    </section>
-                                    <!-- Section: Social media -->
-                            </li>
-                            <li class="mb-3">
-                                <img src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
-                                    alt="" width="150px">
-                            </li>
-                            <li class="mb-3">
-                                <img src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
-                                    alt="" width="150px">
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
+                    </nav>
                 </div>
-                <!--Grid row-->
-            </section>
-            <!-- Section: Links -->
+            </div>
+            <div class="col-lg-7">
+                <!-- TABLE-->
+                <div class="container">
+                    <h2>Select Number Of Rows</h2>
+                    <div class="form-group">
+                        <!--		Show Numbers Of Rows 		-->
+                        <select class="form-control" name="state" id="maxRows">
+                            <option value="5000">Show ALL Rows</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="70">70</option>
+                            <option value="100">100</option>
+                        </select>
+
+                    </div>
+
+                    <table class="table table-striped table-class" id="table-id">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">categoria</th>
+                                <th scope="col">descrizione</th>
+                                <th scope="col">alimentazione</th>
+                                <th scope="col">ruote</th>
+                                <th scope="col">disponibilita</th>
+                                <th scope="col">indirizzo</th>
+                                <th scope="col">citta</th>
+                                <th scope="col">coordinate</th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody id="table_rows">
+                            <tr>
+                                <th >{{veicolo_id}}</th>
+                                <td >{{categoria}}</td>
+                                <td>{{descrizione}}</td>
+                                <td >{{alimentazione}}</td>
+                                <td>{{ruote}}</td>
+                                <td >{{disponibilita}}</td>
+                                <td>{{indirizzo}}</td>
+                                <td >{{citta}}</td>
+                                <td>{{coordinate}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-primary editButton"
+                                        veicolo-id="{{veicolo_id}}" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                    <!--		Start Pagination -->
+                    <div class='pagination-container'>
+                        <nav>
+                            <ul class="pagination">
+                                <li data-page="prev">
+                                    <span> <span class="sr-only">(current)</span></span>
+                                </li>
+                                <!--	Here the JS Function Will Add the Rows -->
+                                <li data-page="next" id="prev">
+                                    <span><span class="sr-only">(current)</span></span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div> <!-- 		End of Container -->
+
+            </div>
+        </div>
+    </div>
+    
+
+
+                <!--  Developed By Yasser Mas -->
+
+
+
+                <!-- Footer -->
+                <footer class="bg-dark text-center text-white pt-5 ">
+                    <!-- Grid container -->
+
+                    <!-- Section: Links -->
+                    <section class="container">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">Indirizzo</h5>
+
+                                <ul class="list-unstyled mb-0">
+
+                                    <li>
+                                        <a class="text-white">Via Principi d'Acaja, 33</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-white">10138 Torino TO</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">Contatti</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a class="text-white">Tel. 0114472954</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-white">move@gmail.com</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">Links</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Cookies</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Privacy Policy</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+                                <ul class="list-unstyled mb-0">
+                                    <li class="">FOLLOW MOVE</li>
+                                    <li>
+                                        <div class="container p-4">
+                                            <!-- Section: Social media -->
+                                            <section class="mb-2">
+                                                <!-- Facebook -->
+                                                <a class="btn btn-outline-light btn-floating m-1" href="#!"
+                                                    role="button"><i class="fab fa-facebook-f"></i></a>
+
+                                                <!-- Twitter -->
+                                                <a class="btn btn-outline-light btn-floating m-1" href="#!"
+                                                    role="button"><i class="fab fa-twitter"></i></a>
+
+                                                <!-- Google -->
+                                                <a class="btn btn-outline-light btn-floating m-1" href="#!"
+                                                    role="button"><i class="fab fa-google"></i></a>
+
+                                                <!-- Instagram -->
+                                                <a class="btn btn-outline-light btn-floating m-1" href="#!"
+                                                    role="button"><i class="fab fa-instagram"></i></a>
+
+                                            </section>
+                                            <!-- Section: Social media -->
+                                    </li>
+                                    <li class="mb-3">
+                                        <img src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
+                                            alt="" width="150px">
+                                    </li>
+                                    <li class="mb-3">
+                                        <img src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
+                                            alt="" width="150px">
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
             </div>
             <!-- Grid container -->
 
@@ -261,95 +305,275 @@
 
             </div>
             <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
+            </footer>
+            <!-- Footer -->
 
-        <!--MODAL-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="id" class="form-label ">Id</label>
-                                            <input type="text" class="form-control" id="veicolo_id"
-                                                aria-describedby="emailHelp" readonly>
+            <!--MODAL-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label for="id" class="form-label ">Id</label>
+                                                <input type="text" class="form-control" id="veicolo_id"
+                                                    aria-describedby="emailHelp" readonly>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="descrizione" class="form-label ">categoria</label>
+                                                <input type="text" class="form-control" id="categoria"
+                                                    aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="prezzo" class="form-label ">descrizione</label>
+                                                <input type="text" class="form-control" id="descrizione"
+                                                    aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="categoria" class="form-label">alimentazione</label>
+                                                <input type="text" class="form-control" id="alimentazione"
+                                                    aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="rimanenza" class="form-label">ruote</label>
+                                                <input type="text" class="form-control" id="ruote"
+                                                    aria-describedby="emailHelp">
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="descrizione" class="form-label ">categoria</label>
-                                            <input type="text" class="form-control" id="categoria"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="prezzo" class="form-label ">descrizione</label>
-                                            <input type="text" class="form-control" id="descrizione"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="categoria" class="form-label">alimentazione</label>
-                                            <input type="text" class="form-control" id="alimentazione"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="rimanenza" class="form-label">ruote</label>
-                                            <input type="text" class="form-control" id="ruote"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="rimanenza" class="form-label">disponibilita</label>
-                                            <input type="text" class="form-control" id="disponibilita"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="rimanenza" class="form-label">indirizzo</label>
-                                            <input type="text" class="form-control" id="indirizzo"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="rimanenza" class="form-label">citta</label>
-                                            <input type="text" class="form-control" id="citta"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="rimanenza" class="form-label">coordinate</label>
-                                            <input type="text" class="form-control" id="coordinate"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="rimanenza" class="form-label">immagine</label>
-                                            <input type="text" class="form-control" id="immagine"
-                                                aria-describedby="emailHelp">
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label for="rimanenza" class="form-label">disponibilita</label>
+                                                <input type="text" class="form-control" id="disponibilita"
+                                                    aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="rimanenza" class="form-label">indirizzo</label>
+                                                <input type="text" class="form-control" id="indirizzo"
+                                                    aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="rimanenza" class="form-label">citta</label>
+                                                <input type="text" class="form-control" id="citta"
+                                                    aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="rimanenza" class="form-label">coordinate</label>
+                                                <input type="text" class="form-control" id="coordinate"
+                                                    aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="rimanenza" class="form-label">immagine</label>
+                                                <input type="text" class="form-control" id="immagine"
+                                                    aria-describedby="emailHelp">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button id="createButton" type="button" class="btn btn-primary">Add</button>
-                        <button id="updateButton" type="button" class="btn btn-primary">Update</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button id="createButton" type="button" class="btn btn-primary">Add</button>
+                            <button id="updateButton" type="button" class="btn btn-primary">Update</button>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+            </form>
 
-    <!--bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <script src="js/pannello-controllo.js"></script>
+            <style>
+                body {
+
+                    background-color: #eee;
+                }
+
+                table th,
+                table td {
+                    text-align: center;
+                }
+
+                table tr:nth-child(even) {
+                    background-color: #BEF2F5
+                }
+
+                .pagination li:hover {
+                    cursor: pointer;
+                }
+
+                table tbody tr {
+                    display: none;
+                }
+            </style>
+
+            <script>
+                getPagination("#table-id");
+                //getPagination('.table-class');
+                //getPagination('table');
+
+                /*					PAGINATION 
+                          - on change max rows select options fade out all rows gt option value mx = 5
+                          - append pagination list as per numbers of rows / max rows option (20row/5= 4pages )
+                          - each pagination li on click -> fade out all tr gt max rows * li num and (5*pagenum 2 = 10 rows)
+                          - fade out all tr lt max rows * li num - max rows ((5*pagenum 2 = 10) - 5)
+                          - fade in all tr between (maxRows*PageNum) and (maxRows*pageNum)- MaxRows 
+                          */
+
+                function getPagination(table) {
+                    var lastPage = 1;
+
+                    $("#maxRows")
+                        .on("change", function (evt) {
+                            //$('.paginationprev').html('');						// reset pagination
+
+                            lastPage = 1;
+                            $(".pagination").find("li").slice(1, -1).remove();
+                            var trnum = 0; // reset tr counter
+                            var maxRows = parseInt($(this).val()); // get Max Rows from select option
+
+                            if (maxRows == 5000) {
+                                $(".pagination").hide();
+                            } else {
+                                $(".pagination").show();
+                            }
+
+                            var totalRows = $(table + " tbody tr").length; // numbers of rows
+                            $(table + " tr:gt(0)").each(function () {
+                                // each TR in  table and not the header
+                                trnum++; // Start Counter
+                                if (trnum > maxRows) {
+                                    // if tr number gt maxRows
+
+                                    $(this).hide(); // fade it out
+                                }
+                                if (trnum <= maxRows) {
+                                    $(this).show();
+                                } // else fade in Important in case if it ..
+                            }); //  was fade out to fade it in
+                            if (totalRows > maxRows) {
+                                // if tr total rows gt max rows option
+                                var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
+                                //	numbers of pages
+                                for (var i = 1; i <= pagenum;) {
+                                    // for each page append pagination li
+                                    $(".pagination #prev")
+                                        .before(
+                                            '<li data-page="' +
+                                            i +
+                                            '">\
+								  <span>' +
+                                            i++ +
+                                            '<span class="sr-only">(current)</span></span>\
+								</li>'
+                                        )
+                                        .show();
+                                } // end for i
+                            } // end if row count > max rows
+                            $('.pagination [data-page="1"]').addClass("active"); // add active class to the first li
+                            $(".pagination li").on("click", function (evt) {
+                                // on click each page
+                                evt.stopImmediatePropagation();
+                                evt.preventDefault();
+                                var pageNum = $(this).attr("data-page"); // get it's number
+
+                                var maxRows = parseInt($("#maxRows").val()); // get Max Rows from select option
+
+                                if (pageNum == "prev") {
+                                    if (lastPage == 1) {
+                                        return;
+                                    }
+                                    pageNum = --lastPage;
+                                }
+                                if (pageNum == "next") {
+                                    if (lastPage == $(".pagination li").length - 2) {
+                                        return;
+                                    }
+                                    pageNum = ++lastPage;
+                                }
+
+                                lastPage = pageNum;
+                                var trIndex = 0; // reset tr counter
+                                $(".pagination li").removeClass("active"); // remove active class from all li
+                                $('.pagination [data-page="' + lastPage + '"]').addClass("active"); // add active class to the clicked
+                                // $(this).addClass('active');					// add active class to the clicked
+                                limitPagging();
+                                $(table + " tr:gt(0)").each(function () {
+                                    // each tr in table not the header
+                                    trIndex++; // tr index counter
+                                    // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+                                    if (
+                                        trIndex > maxRows * pageNum ||
+                                        trIndex <= maxRows * pageNum - maxRows
+                                    ) {
+                                        $(this).hide();
+                                    } else {
+                                        $(this).show();
+                                    } //else fade in
+                                }); // end of for each tr in table
+                            }); // end of on click pagination list
+                            limitPagging();
+                        })
+                        .val(5)
+                        .change();
+
+                    // end of on select change
+
+                    // END OF PAGINATION
+                }
+
+                function limitPagging() {
+                    // alert($('.pagination li').length)
+
+                    if ($(".pagination li").length > 7) {
+                        if ($(".pagination li.active").attr("data-page") <= 3) {
+                            $(".pagination li:gt(5)").hide();
+                            $(".pagination li:lt(5)").show();
+                            $('.pagination [data-page="next"]').show();
+                        }
+                        if ($(".pagination li.active").attr("data-page") > 3) {
+                            $(".pagination li:gt(0)").hide();
+                            $('.pagination [data-page="next"]').show();
+                            for (
+                                let i = parseInt($(".pagination li.active").attr("data-page")) - 2;
+                                i <= parseInt($(".pagination li.active").attr("data-page")) + 2;
+                                i++
+                            ) {
+                                $('.pagination [data-page="' + i + '"]').show();
+                            }
+                        }
+                    }
+                }
+
+                $(function () {
+                    // Just to append id number for each row
+                    $("table tr:eq(0)").prepend("<th> ID </th>");
+
+                    var id = 0;
+
+                    $("table tr:gt(0)").each(function () {
+                        id++;
+                        $(this).prepend("<td>" + id + "</td>");
+                    });
+                });
+
+//  Developed By Yasser Mas
+// yasser.mas2@gmail.com
+
+            </script>
+
+            <!--bootstrap-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+            <script src="/js/pannello-controllo.js"></script>
 </body>
 
 </html>
