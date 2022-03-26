@@ -76,33 +76,33 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide text-center">
+        <div class="text-center">
           <img class="img-fluid"
             src="img/veicoli/auto.png" alt="">
           <h2 class="text-center">Auto</h2>
           <p class="text-center">Tutta l'agilità che ti occorre</p>
-          <button class="btn"id="btn_auto">Scopri</button>
+          <button class="btn" id="btn_auto" veicolo-id="AUTO">Scopri</button>
         </div>
-        <div class="swiper-slide text-center">
+        <div class="text-center">
           <img class="img-fluid" src="img/veicoli/scooter.png"
             alt="">
           <h2 class="text-center">Scooter</h2>
           <p class="text-center">Tutto lo spazio che ti serve, con stile</p>
-          <button class="btn">Scopri</button>
+          <button class="btn" id="btn_moto" veicolo-id="MOTO">Scopri</button>
         </div>
-        <div class="swiper-slide text-center">
+        <div class="text-center">
           <img class="img-fluid" src="img/veicoli/bici.png"
             alt="">
           <h2 class="text-center">Bici</h2>
           <p class="text-center">Comodità e stile al tuo servizio</p>
-          <button class="btn">Scopri</button>
+          <button class="btn" id="btn_bici" veicolo-id="BICICLETTA">Scopri</button>
         </div>
-        <div class="swiper-slide text-center">
+        <div class="text-center">
           <img class="img-fluid" src="img/veicoli/monopattino.png"
             alt="">
           <h2 class="text-center">Monopattini</h2>
           <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn">Scopri</button>
+          <button class="btn" id="btn_mono" veicolo-id="MONOPATTINO">Scopri</button>
         </div>
       </div>
       <!-- If we need pagination -->
@@ -119,7 +119,7 @@
   <div class="cards p-4">
     <div class="container mt-5 mb-5">
       <h1 class="fontTitoli testoColorato">Ultime offerte</h1>
-      <div id="bodyDivImmagini"></div>
+      <div class="row" id="bodyDivImmagini"></div>
 
     </div>
   </div>
@@ -287,31 +287,10 @@
 
   <!-- FINE MODAL -->
 
-  <div class="row">
-    <div class="col-lg-3 mt-5 p-3">
-      <div class="card">
-        <img class="card-img-top"
-          src="https://www.arval.it/sites/it/files/styles/izmo-format/public/toyota_21yariscrosshevdynplussu1b_lowaggressive.png?itok=jj0PEO24"
-          alt="">
-        <div class="card-body text-center">
-          <h5 class="card-title pac fontTitoli">TOYOTA YARIS CROSS</h5>
-          <ul>
-            <li>Auto</li>
-            <li>Ibrida</li>
-            <li>Indirizzo</li>
-          </ul>
-          <a href="#" class="btn mb-3">Prenota</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script id="template-veicoli" type="text/x-handlebars-template">
     {{#each this}}
-    {{#ifEquals categoria "AUTO"}}
-    <div class="row">
       <div class="col-lg-3 mt-5 p-3">
-        <div class="card">
+        <div class="card {{is_available disponibilita}}">
           <img class="card-img-top"
             src="{{immagine.immagine1}}"
             alt="">
@@ -326,10 +305,11 @@
           </div>
         </div>
       </div>
-    </div>
-    {{/ifEquals}}
     {{/each}}
   </script>
+  
+
+  
 
 
   <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>

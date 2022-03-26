@@ -1,13 +1,32 @@
-let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
+let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli)
+let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli)
+let bottone_mono  = document.getElementById("btn_mono").addEventListener("click", listaVeicoli)
+let bottone_bici  = document.getElementById("btn_bici").addEventListener("click", listaVeicoli)
+
 let render_veicoli = null;
 
+// handlebars Helpers
+/*
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
-  return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
+
+*/
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
+Handlebars.registerHelper('is_available', function (disponibilita) {
+	return (disponibilita == "DISPONIBILE")?"btn-primary":"btn-outline-primary";
+})
+
 
 function listaVeicoli(event){
 
-  fetch("http://localhost:8080/api/veicolo/")
+  let originator = event.currentTarget;
+  let veicoloId = originator.getAttribute("veicolo-id");
+
+  fetch("http://localhost:8080/api/veicolo/categoria/"+ veicoloId)
       .then(function(response) {
       return response.json();
     })
@@ -79,6 +98,7 @@ const swiper = new Swiper('.swiper', {
     }
 
   };
+  
 
   var myModal = document.getElementById('myModal')
   var myInput = document.getElementById('myInput')
