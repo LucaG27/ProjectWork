@@ -4,6 +4,7 @@ let veicolo_id = document.getElementById("veicolo_id")
 const URL = "http://localhost:8080/api/immagine/allImmagini"
 const URL2 = "http://localhost:8080/api/specifiche/"
 const URL3 = "http://localhost:8080/api/veicolo/id/"
+const URL4 = "http://localhost:8080/api/prenotazioni/"
 const user = localStorage.getItem('user');
 const idv = localStorage.getItem('veicolo');
 let tipo_veicolo = null;
@@ -69,6 +70,52 @@ let icon = null;
 
 }
 
+  function createPrenotazione(event){
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    let yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+      fetch(URL3 + idv)
+          .then(function(response) {
+          return response.json();
+        })
+          .then(function(veicoloPreno) {
+        
+              console.log(veicoloPreno);
+      
+              /*let rows = render_veicoli(json);
+                  document.getElementById("bodyDivImmagini").innerHTML = rows;*/
+
+              return fetch(URL4 + "savePrenotazione",{
+                          method: 'POST',
+
+                          body: JSON.stringify({ 
+                            dataInizio: today,
+                            dataFine: null,
+                            stato: "in corso",
+                            utenteId: {
+                              id: 12,
+                              nome: user.nome,
+                              cognome: user.cognome,
+                              dataNascita: user.dataNascita,
+                              email: user.email,
+                              password: user.password,
+                              ruolo: user.ruolo
+                            },
+                            veicoloId: veicoloPreno
+
+                          })
+              });   
+          })
+          .catch(function(err) { 
+                  alert(err);
+                  console.log('Failed to fetch page: ', err);
+          });	
+  }
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
@@ -90,8 +137,6 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
-
-
   
   window.addEventListener(
     'DOMContentLoaded', 
@@ -99,6 +144,7 @@ const swiper = new Swiper('.swiper', {
   
       render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
       render_specifiche = Handlebars.compile( document.getElementById("template-specifiche").innerHTML );
+      let bottone_prenota = document.getElementById("bottone_prenota").addEventListener("click", createPrenotazione);
   
           listaVeicoli();
           listaSpecifiche();

@@ -32,7 +32,19 @@ public class Utente {
     @JsonIgnore
     private List<Prenotazione> prenotazione;
 
-    public Utente() {
+    public List<Prenotazione> getPrenotazione() {
+		return prenotazione;
+	}
+
+	public void setPrenotazione(List<Prenotazione> prenotazione) {
+		this.prenotazione = prenotazione;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Utente() {
     }
 
     public Utente(int id, String nome, String cognome, String dataNascita, String email, String password,
