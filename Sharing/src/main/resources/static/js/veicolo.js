@@ -6,6 +6,8 @@ const URL2 = "http://localhost:8080/api/specifiche/"
 const URL3 = "http://localhost:8080/api/veicolo/id/"
 const user = localStorage.getItem('user');
 const idv = localStorage.getItem('veicolo');
+let tipo_veicolo = null;
+let icon = null;
 
   "use strict";
 
@@ -14,6 +16,7 @@ const idv = localStorage.getItem('veicolo');
    async function asyncCall(){
     const veicolo = await loadCoordinate();
      let coo = veicolo.coordinate;
+     tipo_veicolo= veicolo.categoria;
      let coo_split=coo.split(',');
     return coo_split;
   }
@@ -133,12 +136,36 @@ var LeafIcon = L.Icon.extend({
 var greenIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
 var redIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
 */
-var orangeIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
+/*
+if(tipo_veicolo == "AUTO"){
+icon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'})
+}else{
+icon = new LeafIcon({iconUrl: 'img/veicoli/monopattino.png'})
+}
+*/
+
+switch(tipo_veicolo){
+  case 'AUTO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/auto.png'})
+    break;
+
+  case 'MOTO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/scooter.png'})
+    break;
+  
+  case 'BICICLETTA':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/bicicletta.png'})
+    break;
+
+  case 'MONOPATTINO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/monopattino.png'})
+    break;
+}
 /*
 var mGreen = L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup('I am a green leaf.').addTo(map);
 var mRed = L.marker([51.495, -0.083], {icon: redIcon}).bindPopup('I am a red leaf.').addTo(map);
 */
 
-var mOrange = L.marker([coo_split[0],coo_split[1]], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
+let mOrange = L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
 
 }
