@@ -193,6 +193,23 @@ async function wrap(){
 for (let x of coo){
 let allCoo = x.coordinate;
 let coo_split=allCoo.split(',');
+switch(x.categoria){
+  case 'AUTO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/auto.png'})
+    break;
+
+  case 'MOTO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/scooter.png'})
+    break;
+  
+  case 'BICICLETTA':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/bicicletta.png'})
+    break;
+
+  case 'MONOPATTINO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/monopattino.png'})
+    break;
+}
 L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
 }
 
