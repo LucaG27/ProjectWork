@@ -4,7 +4,8 @@ let bottone_mono  = document.getElementById("btn_mono").addEventListener("click"
 let bottone_bici  = document.getElementById("btn_bici").addEventListener("click", listaVeicoli);
 let render_veicoli = null;
 let bottone_prenota= null;
-
+let icon = null;
+let coordinate = null;
 
 
 
@@ -49,6 +50,19 @@ function listaVeicoli(event){
      
 }
 
+  async function asyncCall(){
+    const veicolo = await loadCoordinate();
+     let coo = veicolo;
+     console.log(coo)
+    return coo;
+  }
+  
+  async function loadCoordinate() {
+  
+    let response = await fetch("http://localhost:8080/api/veicolo");
+    let veicolo = await response.json();
+    return veicolo;
+  }
 
 //INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI 
 
@@ -137,12 +151,58 @@ for (let i = 0; i < bottone_prenota.length; i++) {
 }
 }
 
+async function wrap(){
 
+  let coo = await asyncCall();
+
+  console.log(coo);
+  
+  let map = L.map('map').setView([43.76928, 11.25524], 18);
+  
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18, 
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoicmFmZmFlbGVkcCIsImEiOiJjbDE2ZGI4M24wMHV6M2NwOXR2Y2plbWQ5In0.N7Rxyu2_1WhiIiZ9Gl6XMw'
+  }).addTo(map);
+  
+  var LeafIcon = L.Icon.extend({
+    options: {
+     // shadowUrl: 'leaf-shadow.png',
+      iconSize:     [70, 70],
+      shadowSize:   [50, 64],
+      iconAnchor:   [22, 94],
+      shadowAnchor: [4, 62],
+      popupAnchor:  [-3, -76]
+    }
+  });
+
+  let icon = new LeafIcon({iconUrl: 'img/veicoli/icon/auto.png'})
+/*
+  for (let i = 0; i < coo.length; i++) {
+    let obj = coo[i];
+    console.log(obj)
+    let obj_split=obj.split(',');
+    L.marker([obj_split[0],obj_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
+    
+  }
+*/
+
+for (let x of coo){
+let allCoo = x.coordinate;
+let coo_split=allCoo.split(',');
+L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
+}
+
+
+}
   
 window.addEventListener(
   'DOMContentLoaded', 
   function(event){
 
     render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
-    
+    wrap();
 })

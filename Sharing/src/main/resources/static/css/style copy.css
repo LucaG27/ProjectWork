@@ -378,3 +378,7 @@ small.justify-content-center {
         margin-bottom: 50px
     }
 }
+
+#map { 
+  height: 720px;
+}
