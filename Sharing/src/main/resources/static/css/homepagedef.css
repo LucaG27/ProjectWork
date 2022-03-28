@@ -22,6 +22,9 @@
     color: green;
 }
 
+.nav-link:focus, .nav-link:hover {
+  color: gray;
+}
   /* ------------------------------------ 
                 HERO                      
 --------------------------------------- */
@@ -36,9 +39,9 @@
 
   .cta{
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 50%;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -75%);
   }
   
   #wa i{
@@ -60,6 +63,9 @@
     padding-bottom: 3rem;
 }
 
+.slideText{
+  text-align: center
+}
 /* ------------------------------------ 
                 SEZIONE VANTAGGI                   
 --------------------------------------- */
@@ -378,7 +384,7 @@ small.justify-content-center {
 
   .btn-primary:hover{
 
-    border-color: black;
+    border-color: gray;
     color: gray;
   }
 
@@ -387,6 +393,7 @@ small.justify-content-center {
 --------------------------------------- */
 .news-container{
     height: 300px;
+    margin-bottom: 4rem;
 }
 
 @media(max-width: 768px){
@@ -471,6 +478,10 @@ small.justify-content-center {
     z-index: 1;
     transition: .3s ease-in;
     overflow: hidden
+}
+
+.btn2:hover{
+color: gray;
 }
 
 .btn2-primary:after {
