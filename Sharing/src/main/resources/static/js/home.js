@@ -1,3 +1,11 @@
+$(document).ready(function() {
+  var o = 0;
+  $(window).scroll(function() {
+      o = $(window).scrollTop(), $(".counter").html(o),
+      o >= 100 ? $(".navbar").addClass("scrolled-nav") : o < 100 && $(".navbar").removeClass("scrolled-nav")
+  })
+});
+
 let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
 let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli);
 let bottone_mono  = document.getElementById("btn_mono").addEventListener("click", listaVeicoli);
@@ -89,41 +97,49 @@ function listaVeicoli(event){
   }
 //INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI 
 
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
-    spaceBetween: 10,
-    breakpoints: {
-      // when window width is >= 576
-      576: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
-      // when window width is >= 768px
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
-      // when window width is >= 1200px
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    },
+  
 
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+    const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
+  spaceBetween: 10,
+  breakpoints: {
+    // when window width is >= 576
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 20
     },
-  });
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20
+    },
+    // when window width is >= 1200px
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
 
   // Navbar shrink function
   var navbarShrink = function () {
@@ -235,5 +251,44 @@ window.addEventListener(
     render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
     veicoliDisponibili();
     wrap();
-
 })
+
+
+var util = {
+  mobileMenu() {
+    $("#nav").toggleClass("nav-visible");
+  },
+  windowResize() {
+    if ($(window).width() > 800) {
+      $("#nav").removeClass("nav-visible");
+    }
+  },
+  scrollEvent() {
+    var scrollPosition = $(document).scrollTop();
+
+    $.each(util.scrollMenuIds, function (i) {
+      var link = util.scrollMenuIds[i],
+        container = $(link).attr("href"),
+        containerOffset = $(container).offset().top,
+        containerHeight = $(container).outerHeight(),
+        containerBottom = containerOffset + containerHeight;
+
+      if (
+        scrollPosition < containerBottom - 20 &&
+        scrollPosition >= containerOffset - 20
+      ) {
+        $(link).addClass("active");
+      } else {
+        $(link).removeClass("active");
+      }
+    });
+  }
+};
+
+$(document).ready(function () {
+  util.scrollMenuIds = $("a.nav-link[href]");
+  $("#menu").click(util.mobileMenu);
+  $(window).resize(util.windowResize);
+  $(document).scroll(util.scrollEvent);
+});
+

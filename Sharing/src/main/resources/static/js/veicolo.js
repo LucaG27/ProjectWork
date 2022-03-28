@@ -144,7 +144,7 @@ const swiper = new Swiper('.swiper', {
   
       render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
       render_specifiche = Handlebars.compile( document.getElementById("template-specifiche").innerHTML );
-      let bottone_prenota = document.getElementById("bottone_prenota").addEventListener("click", createPrenotazione);
+      // let bottone_prenota = document.getElementById("bottone_prenota").addEventListener("click", createPrenotazione);
   
           listaVeicoli();
           listaSpecifiche();
