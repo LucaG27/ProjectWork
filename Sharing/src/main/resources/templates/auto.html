@@ -260,26 +260,12 @@
   <!-- Footer -->
 
   <script id="template-veicoli" type="text/x-handlebars-template">
+    {{#each immagine}}
     <div class="swiper-slide">
       <img class="img-fluid"
-        src="{{immagine.immagine1}}" alt="">
+        src="{{immagine}}" alt="">
     </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine.immagine2}}" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine.immagine3}}" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine.immagine4}}" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine.immagine5}}" alt="">
-    </div>
+    {{/each}}
   </script>
 
   <script id="template-specifiche" type="text/x-handlebars-template">
