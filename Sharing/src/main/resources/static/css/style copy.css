@@ -238,9 +238,7 @@ nav:hover{
     font-size: 2rem;
   }
 
-  #main{
-    
-  }
+
   
   #main .form-control {
     border-radius: 0;
@@ -253,7 +251,12 @@ nav:hover{
   
   }
   
+ .btn:hover{
  
+    background-color: rgb(6, 151, 6);
+    border-color: rgb(3, 183, 3);
+  
+ }
   
   .btn-primary {
     border-color: rgba( 255, 255, 255, 0);
@@ -264,6 +267,11 @@ nav:hover{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
   
   }
+
+.btn-primary:hover{
+  background-color: rgb(6, 151, 6);
+  border-color: rgb(3, 183, 3);
+}
 
   .modal-body label {
     margin-bottom: 0;
@@ -365,4 +373,113 @@ nav:hover{
 
 #map { 
   height: 720px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800');
+body{
+	padding: 0;
+	margin: 0;
+	
+}
+.newsletter h1{
+	text-align: center;
+	font-size: 36px;
+}
+.newsletter h3{
+	text-align: center;
+	font-size: 30px;
+	padding: 20px;
+	font-weight: 400;
+	letter-spacing: 1px;
+
+}
+.newsletter input[type=text] {
+    
+    padding: 12px 20px;
+    margin: 9px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    width: 40%;
+    height:20%;
+    border:1px solid #7c7b7b;
+}
+.newsletter input[type=text]:hover {
+	border:1px solid #000;
+	transition: 6s;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: rgb(6, 151, 6);
+  border-color: rgb(3, 183, 3);
+}
+::placeholder { 
+    color: #000;
+    opacity: 1;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+
+
+}
+.newsletter button{
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	
+}
+.btn2{
+	border-radius: 30px;
+	width: 14%;
+	margin-left: 5px;
+	font-size: 20px;
+ background-color: rgb(3, 183, 3);
+}
+.btn-success {
+  color: #fff;
+  background-color: rgb(3, 183, 3);
+  border-color: white;
+}
+
+
+@media(max-width: 992px){
+	.btn2{
+		width: 20%
+	}
+	input[type=text]{
+		width: 50%;
+	}
+}
+@media(max-width: 768px){
+	.btn2{
+		width: 40%
+	}
+	input[type=text]{
+		width: 90%;
+	}
+}
+@media(max-width: 440px){
+	.btn2{
+		width: 50%;
+		font-size: 18px;
+	}
+	input[type=text]{
+		width: 100%;
+	}
+	h3{
+		font-size: 22px;
+	}
+}
+@media(max-width: 373px){
+	h3{
+		font-size: 20px;
+		font-weight: 600;
+	}
+	h1{
+		font-size: 28px;
+		font-weight: 400;
+	}
+
+
 }
