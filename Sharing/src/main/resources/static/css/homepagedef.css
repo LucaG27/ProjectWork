@@ -1,0 +1,261 @@
+/* ------------------------------------ 
+                NAVBAR                      
+--------------------------------------- */
+.navbar {
+    transition: all .2s ease-in-out;
+  }
+  .navbar.scrolled-nav{
+    background: linear-gradient(189deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
+  }
+
+  nav:hover{
+    background: linear-gradient(189deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
+       
+  }
+  .navbar-nav li a{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .dropdown-menu li a{
+    color: green;
+}
+
+  /* ------------------------------------ 
+                HERO                      
+--------------------------------------- */
+.backg{
+    background-image: url("https://images.ctfassets.net/ro7z507xvlp4/6RBkiwkjjmYaO7ChCyIlH7/4b6fbbb97db332633e91c9fa590cf695/new_fleet.png?q=80&fm=png&w=3200");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 760px;
+    background-position:center;
+  }
+
+  .cta{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+  }
+  
+  #wa i{
+    font-size: 72px;
+    background: linear-gradient(0deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 0.5rem;
+  }
+
+  .backg h2, h4{
+    color: #eee;
+  }
+
+   /* ------------------------------------ 
+                SWIPER                      
+--------------------------------------- */
+.swiper{
+    padding-bottom: 3rem;
+}
+
+
+ /* ------------------------------------ 
+                CARDS                     
+--------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+    background: #F5F1EE;
+    font-family: 'Roboto', sans-serif
+}
+
+.card {
+    width: 250px;
+    border-radius: 10px
+}
+
+.card-img-top {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px
+}
+
+span.text-muted {
+    font-size: 12px
+}
+
+small.text-muted {
+    font-size: 8px
+}
+
+h5.mb-0 {
+    font-size: 1rem
+}
+
+small.ghj {
+    font-size: 9px
+}
+
+.mid {
+    background: #ECEDF1
+}
+
+h6.ml-1 {
+    font-size: 13px
+}
+
+small.key {
+    text-decoration: underline;
+    font-size: 9px;
+    cursor: pointer
+}
+
+.btn-danger {
+    color: #FFCBD2
+}
+
+.btn-danger:focus {
+    box-shadow: none
+}
+
+small.justify-content-center {
+    font-size: 9px;
+    cursor: pointer;
+    text-decoration: underline
+}
+
+@media screen and (max-width:600px) {
+    .col-sm-4 {
+        margin-bottom: 50px
+    }
+}
+
+/* ------------------------------------ 
+                BANNER                   
+--------------------------------------- */
+
+.banner{
+    background-image: url("https://enjoy.eni.com/img/home/bg_map_milano.png");
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner .ban img{
+    width: 90%;
+}
+
+.banner .info{
+    height: 200px;
+}
+
+.banner .info p{
+    font-size: 2.3rem;
+    color: white;
+}
+.banner .info span{
+    color: #7ab423;
+}
+.banner{
+    display: flex;   
+    flex-direction: column; 
+    align-items: center;
+    justify-content: end; 
+}  
+
+/* ------------------------------------ 
+                MODAL                   
+--------------------------------------- */
+.modal-body {
+    display: flex;
+    padding: 0;
+    border-radius: 4rem;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .modal-body h1 {
+    padding-top: 3rem;
+  }
+  
+  .modal-content {
+    border-radius: 4rem;
+    width: 140%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+  -moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+  box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+  }
+  .modal-content h1, .modal-content h2, .modal-content h3 {
+      text-align: center;
+  }
+  .modal-content h1 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+  
+  .modal-content h2 {
+      font-size: 1.1em;
+  }
+  .modal-content h3 {
+    font-size: .8em;
+    letter-spacing: 2px;
+  }
+  form {
+    font-size: .8em;
+}
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+.column#main {
+    flex: 75%;
+    padding: 50px;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  
+  #secondary {
+    background: linear-gradient(287deg,#9df136 0%, #27ea1d 99% 100%);
+    border-radius: 0 4rem 4rem 0;
+    text-align: center;
+  }
+
+  #secondary h2, h3{
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  #main .form-control {
+    border-radius: 0;
+    font-size: .9em;
+    padding-top: 1rem;
+  }
+
+  #main h1, h3{
+    font-weight: 500;
+  }
+
+  .modal-body label {
+    margin-bottom: 0;
+  }
+  
+  .sec-content {
+    margin-top: 85%;
+  }
+
+/* ------------------------------------ 
+                BANNER                   
+--------------------------------------- */
+
+.btn-primary {
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+  background: -moz-linear-gradient(left, #9df136 0%, #27ea1d 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #9df136 0%, #27ea1d 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #9df136 0%, #27ea1d 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+  
+  }
