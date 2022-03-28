@@ -66,6 +66,17 @@
 .slideText{
   text-align: center
 }
+/* ------------------------------------ 
+                SEZIONE VANTAGGI                   
+--------------------------------------- */
+.vantaggi{
+    height: 500px;
+}
+.vantaggi-title{
+    padding-top: 3rem;
+}
+
+
  /* ------------------------------------ 
                 CARDS                     
 --------------------------------------- */
@@ -382,6 +393,7 @@ small.justify-content-center {
 --------------------------------------- */
 .news-container{
     height: 300px;
+    margin-bottom: 4rem;
 }
 
 @media(max-width: 768px){
