@@ -9,6 +9,7 @@ const user = localStorage.getItem('user');
 const idv = localStorage.getItem('veicolo');
 let tipo_veicolo = null;
 let icon = null;
+let bottone_prenota = null;
 
   "use strict";
 
@@ -72,6 +73,7 @@ let icon = null;
 
   function createPrenotazione(event){
 
+    let userJson = JSON.parse(user);
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); 
@@ -86,26 +88,18 @@ let icon = null;
           .then(function(veicoloPreno) {
         
               console.log(veicoloPreno);
-      
-              /*let rows = render_veicoli(json);
-                  document.getElementById("bodyDivImmagini").innerHTML = rows;*/
 
               return fetch(URL4 + "savePrenotazione",{
                           method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json'
+                          },
 
                           body: JSON.stringify({ 
                             dataInizio: today,
                             dataFine: null,
                             stato: "in corso",
-                            utenteId: {
-                              id: 12,
-                              nome: user.nome,
-                              cognome: user.cognome,
-                              dataNascita: user.dataNascita,
-                              email: user.email,
-                              password: user.password,
-                              ruolo: user.ruolo
-                            },
+                            utenteId: userJson,
                             veicoloId: veicoloPreno
 
                           })
@@ -141,10 +135,12 @@ const swiper = new Swiper('.swiper', {
   window.addEventListener(
     'DOMContentLoaded', 
     function(event){
+
+
   
       render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
       render_specifiche = Handlebars.compile( document.getElementById("template-specifiche").innerHTML );
-      // let bottone_prenota = document.getElementById("bottone_prenota").addEventListener("click", createPrenotazione);
+      bottone_prenota = document.getElementById("prenota").addEventListener("click", createPrenotazione);
   
           listaVeicoli();
           listaSpecifiche();

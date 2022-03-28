@@ -1,10 +1,10 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   var o = 0;
   $(window).scroll(function() {
       o = $(window).scrollTop(), $(".counter").html(o),
       o >= 100 ? $(".navbar").addClass("scrolled-nav") : o < 100 && $(".navbar").removeClass("scrolled-nav")
   })
-});
+});*/
 
 let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
 let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli);
