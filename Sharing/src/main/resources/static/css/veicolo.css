@@ -2,9 +2,6 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.swiper{
-    padding-bottom: 3rem;
-}
 
 .swiper-button-prev{
     color: green;
@@ -189,9 +186,6 @@ nav{
     color: green;
 }
 
-.swiper-slide img{
-    padding: 8rem;
-}
 
 .group-specifications {
     background-color: #f4f5f6;
@@ -327,11 +321,7 @@ li {
     border-top: 1px solid rgba(0,0,0,.1);
     display: none;
 }
-@media screen and (max-width: 1400px) {
-    #page-title, #sliding-popup .popup-content, .easy-breadcrumb, .pane-title, .wrapper {
-        padding: 0 20px;
-    }
-}
+
 
 #map { 
     height: 720px;
