@@ -4,6 +4,10 @@
 .navbar {
     transition: all .2s ease-in-out;
   }
+
+  body{
+      background-color: #fdf9fd;;
+  }
   .navbar.scrolled-nav{
     background: linear-gradient(189deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
   }
@@ -25,6 +29,12 @@
 .nav-link:focus, .nav-link:hover {
   color: gray;
 }
+
+@media (max-width: 991px){
+ .verticalerule{
+       display: none; 
+    }
+}
   /* ------------------------------------ 
                 HERO                      
 --------------------------------------- */
@@ -35,8 +45,7 @@
     background-size: cover;
     height: 760px;
     background-position:center;
-  }
-
+}
   .cta{
     position: absolute;
     top: 75%;
@@ -70,10 +79,16 @@
                 SEZIONE VANTAGGI                   
 --------------------------------------- */
 .vantaggi{
-    height: 500px;
+    height: auto;
 }
 .vantaggi-title{
     padding-top: 3rem;
+}
+
+@media (min-width: 768px){
+    .vantaggi{
+        padding-bottom: 5rem;
+    }
 }
 
 
@@ -83,7 +98,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-
+.carte{
+    padding-bottom: 5rem;
+   
+}
 
 .card {
     width: 250px;
@@ -148,6 +166,7 @@ small.justify-content-center {
     background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    padding: 5rem;
 }
 /* ------------------------------------ 
                 BANNER                   
@@ -296,6 +315,7 @@ small.justify-content-center {
     padding: 0;
     border-radius: 4rem;
     font-family: 'PT Sans', sans-serif;
+    
   }
 
   .modal-body h1 {
@@ -304,28 +324,32 @@ small.justify-content-center {
   
   .modal-content {
     border-radius: 4rem;
-    width: 140%;
+    width: 90%;
     -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
   -moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
   box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
   }
   .modal-content h1, .modal-content h2, .modal-content h3 {
       text-align: center;
+
+      
   }
   .modal-content h1 {
-    font-size: 1.3em;
+    font-size: 1.5em;
     text-transform: uppercase;
   }
   
   .modal-content h2 {
       font-size: 1.1em;
+      
   }
   .modal-content h3 {
-    font-size: .8em;
+    font-size: 1rem;
     letter-spacing: 2px;
+    color: black;
   }
   form {
-    font-size: .8em;
+    font-size: 1rem;
 }
 .column {
   flex: 50%;
@@ -342,12 +366,13 @@ small.justify-content-center {
     background: linear-gradient(287deg,#9df136 0%, #27ea1d 99% 100%);
     border-radius: 0 4rem 4rem 0;
     text-align: center;
+    
   }
 
   #secondary h2, h3{
     color: white;
     font-weight: 500;
-    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     font-size: 2rem;
   }
 
@@ -369,6 +394,18 @@ small.justify-content-center {
     margin-top: 85%;
   }
 
+
+.icon-inside{
+  position: relative;
+}
+
+.icon-inside i{
+  position: absolute;
+  right:1rem;
+  top:70%;
+  transform: translateY(-70%);
+  color:#30A3F1;
+}
 /* ------------------------------------ 
                 BOTTONI                   
 --------------------------------------- */
@@ -387,7 +424,10 @@ small.justify-content-center {
     border-color: gray;
     color: gray;
   }
-
+#secondary .btn2{
+    background: linear-gradient(80deg, #859ce8 0%, #de9505 100%);
+    padding: 8px 15px;
+}
 /* ------------------------------------ 
                 NEWSLETTER                   
 --------------------------------------- */
