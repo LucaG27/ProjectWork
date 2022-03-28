@@ -30,12 +30,10 @@ public class Prenotazione {
 	private String stato;
 
 	@ManyToOne
-	@MapsId("utenteId")
 	@JoinColumn(name = "utente_id_fk")
 	private Utente utenteId;
 
 	@ManyToOne
-	@MapsId("veicoloId")
 	@JoinColumn(name = "veicolo_id_fk")
 	private Veicolo veicoloId;
 

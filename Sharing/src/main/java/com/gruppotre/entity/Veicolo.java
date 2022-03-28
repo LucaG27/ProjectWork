@@ -41,9 +41,8 @@ public class Veicolo {
 	@Column(name="coordinate")
 	private String coordinate;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name="immagine_id_fk")
-	private Immagine immagine;
+	@OneToMany(mappedBy= "veicolo" ,cascade = {CascadeType.ALL})
+	private List<Immagine> immagine;
 
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="specifiche_id_fk")
@@ -56,16 +55,9 @@ public class Veicolo {
 	public Veicolo() {
 	}
 
-
-
-	
-
-
-
 	public Veicolo(int id, String categoria, String descrizione, String alimentazione, String ruote,
-			String disponibilita, String indirizzo, String citta, String coordinate, Immagine immagine,
+			String disponibilita, String indirizzo, String citta, String coordinate, List<Immagine> immagine,
 			Specifiche specifiche, List<Prenotazione> prenotazione) {
-		super();
 		this.id = id;
 		this.categoria = categoria;
 		this.descrizione = descrizione;
@@ -79,8 +71,6 @@ public class Veicolo {
 		this.specifiche = specifiche;
 		this.prenotazione = prenotazione;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -154,12 +144,20 @@ public class Veicolo {
 		this.coordinate = coordinate;
 	}
 
-	public Immagine getImmagine() {
+	public List<Immagine> getImmagine() {
 		return immagine;
 	}
 
-	public void setImmagine(Immagine immagine) {
+	public void setImmagine(List<Immagine> immagine) {
 		this.immagine = immagine;
+	}
+
+	public Specifiche getSpecifiche() {
+		return specifiche;
+	}
+
+	public void setSpecifiche(Specifiche specifiche) {
+		this.specifiche = specifiche;
 	}
 
 	public List<Prenotazione> getPrenotazione() {
@@ -170,20 +168,11 @@ public class Veicolo {
 		this.prenotazione = prenotazione;
 	}
 
-	public Specifiche getSpecifiche() {
-		return specifiche;
-	}
-
-
-
-	public void setSpecifiche(Specifiche specifiche) {
-		this.specifiche = specifiche;
-	}
 	@Override
 	public String toString() {
-		return "Veicolo [id=" + id + ", categoria=" + categoria + ", descrizione=" + descrizione + ", alimentazione="
-				+ alimentazione + ", ruote=" + ruote + ", disponibilita=" + disponibilita + ", indirizzo=" + indirizzo
-				+ ", citta=" + citta + ", coordinate=" + coordinate + ", immagine=" + immagine + ", prenotazione="
-				+ prenotazione + "]";
-	}
+		return "Veicolo [alimentazione=" + alimentazione + ", categoria=" + categoria + ", citta=" + citta
+				+ ", coordinate=" + coordinate + ", descrizione=" + descrizione + ", disponibilita=" + disponibilita
+				+ ", id=" + id + ", immagine=" + immagine + ", indirizzo=" + indirizzo + ", prenotazione="
+				+ prenotazione + ", ruote=" + ruote + ", specifiche=" + specifiche + "]";
+	}	
 }

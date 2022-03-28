@@ -1,10 +1,10 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   var o = 0;
   $(window).scroll(function() {
       o = $(window).scrollTop(), $(".counter").html(o),
       o >= 100 ? $(".navbar").addClass("scrolled-nav") : o < 100 && $(".navbar").removeClass("scrolled-nav")
   })
-});
+});*/
 
 let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
 let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli);
@@ -14,6 +14,7 @@ let render_veicoli = null;
 let bottone_prenota= null;
 let icon = null;
 let coordinate = null;
+let counter = null;
 
 
 
@@ -72,6 +73,29 @@ function listaVeicoli(event){
     return veicolo;
   }
 
+  function veicoliDisponibili(event){
+
+    fetch("http://localhost:8080/api/veicolo/disponibili/DISPONIBILE")
+    .then(function(response) {
+    return response.json();
+  })
+    .then(function(json) {
+        console.log(json); 
+  
+        for(let li=0; li<json.length; li++){
+          counter++
+        }
+        document.getElementById("contatore").innerHTML += counter;
+        
+  
+    })
+    .catch(function(err) { 
+            alert(err);
+            console.log('Failed to fetch page: ', err);
+    })
+  
+  }
+//INIZIALIZZO SWIPER CON I RELATIVI PARAMETRI 
 
   
 
@@ -195,15 +219,6 @@ async function wrap(){
   });
 
   let icon = new LeafIcon({iconUrl: 'img/veicoli/icon/auto.png'})
-/*
-  for (let i = 0; i < coo.length; i++) {
-    let obj = coo[i];
-    console.log(obj)
-    let obj_split=obj.split(',');
-    L.marker([obj_split[0],obj_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
-    
-  }
-*/
 
 for (let x of coo){
 let allCoo = x.coordinate;
@@ -227,8 +242,6 @@ switch(x.categoria){
 }
 L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
 }
-
-
 }
   
 window.addEventListener(
@@ -236,6 +249,7 @@ window.addEventListener(
   function(event){
 
     render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
+    veicoliDisponibili();
     wrap();
 })
 

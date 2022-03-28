@@ -2,6 +2,7 @@
 let template_riga = "";
 const url = "http://localhost:8080/api/veicolo/";
 let modal = null;
+let modalImmagine = null;
 let immagini = null;
 let specifiche = null;
 
@@ -95,11 +96,7 @@ function listaVeicoli(){
                     coordinate: document.getElementById("coordinate").value,
                     immagine: {
                         id: immagini.id,
-                        immagine1: immagini.immagine1,
-                        immagine2: immagini.immagine2,
-                        immagine3: immagini.immagine3,
-                        immagine4: immagini.immagine4,
-                        immagine5: immagini.immagine5
+                        immagine: immagini.immagine
                     },
                     specifiche:{
                         id: specifiche.id,
@@ -154,14 +151,6 @@ function listaVeicoli(){
                 document.getElementById("indirizzo").value = json.indirizzo;
                 document.getElementById("citta").value = json.citta;
                 document.getElementById("coordinate").value = json.coordinate;
-                immagini = {
-                    id: json.immagine.id,
-                    immagine1: json.immagine.immagine1,
-                    immagine2: json.immagine.immagine2,
-                    immagine3: json.immagine.immagine3,
-                    immagine4: json.immagine.immagine4,
-                    immagine5: json.immagine.immagine5
-                };
                 specifiche = {
                     id: json.specifiche.id,
                     velocita: json.specifiche.velocita,
@@ -185,10 +174,35 @@ function listaVeicoli(){
         agganciaEventi();
     }
 
+    function insertImmagine(event) {
+
+        modalImmagine.show();
+        let originator = event.currentTarget;
+        let idvImmagine = originator.getAttribute('veicolo-id');
+        console.log(idvImmagine);
+        /*
+        let rows ="";
+        let row = template_riga;
+        rows+= row.replaceAll("{{veicolo}}", idvImmagine);
+        */
+
+
+        document.getElementById("upload_immagini").value = idvImmagine;
+        /*document.getElementById("upload_immagini").innerHtml = idvImmagine;*/
+
+        console.log(document.getElementById("upload_immagini").value);
+        
+    }
+
     function agganciaEventi() {
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
             editButton[li].addEventListener("click", editInsertVeicolo);
+        }
+
+        let imgButton = document.getElementsByClassName("imgButton");
+        for (let li = 0; li < imgButton.length; li++) {
+            imgButton[li].addEventListener("click", insertImmagine);
         }
     }
 
@@ -207,6 +221,7 @@ function listaVeicoli(){
     
     }
 
+
     function chiamaModale(event) {
 
         svuotaModale();
@@ -218,14 +233,16 @@ function listaVeicoli(){
 
         modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
         
+        modalImmagine = new bootstrap.Modal(document.getElementById('immaginiModal'), {});
+        
         template_riga = document.getElementById("table_rows").innerHTML;
         listaVeicoli();
 
         let updateButton = document.getElementById("updateButton");
         updateButton.addEventListener("click", editVeicolo);
         
-        let call_modale = document.getElementById("call_modale");
-        call_modale.addEventListener("click", chiamaModale);
+        /*let call_modale = document.getElementById("call_modale");
+        call_modale.addEventListener("click", chiamaModale);*/
 
         let createButton = document.getElementById("createButton");
         createButton.addEventListener("click", createVeicolo);
