@@ -107,7 +107,7 @@
                   <li class='pricing-feature'>Livello del serbatoio Benzina: 69%</li>
                   <li class='pricing-feature'>Lato Partenze, 10072 Aeroporto TO</li>
                 </ul>
-                <button class='pricing-action'>Prenota</button>
+                <button id="prenota" class='pricing-action'>Prenota</button>
               </div>
             </div>
           </section>
@@ -260,12 +260,26 @@
   <!-- Footer -->
 
   <script id="template-veicoli" type="text/x-handlebars-template">
-    {{#each immagine}}
     <div class="swiper-slide">
       <img class="img-fluid"
-        src="{{immagine}}" alt="">
+        src="{{immagine.immagine1}}" alt="">
     </div>
-    {{/each}}
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine.immagine2}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine.immagine3}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine.immagine4}}" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img class="img-fluid"
+        src="{{immagine.immagine5}}" alt="">
+    </div>
   </script>
 
   <script id="template-specifiche" type="text/x-handlebars-template">
