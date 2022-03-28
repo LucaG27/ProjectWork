@@ -24,6 +24,7 @@ public class Immagine {
 
 	@ManyToOne
 	@JoinColumn(name="veicolo_fk_id")
+	@JsonIgnore
 	private Veicolo veicolo;
 
 	public Immagine() {

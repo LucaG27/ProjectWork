@@ -45,7 +45,7 @@ public class PannelloCTRL {
 
 	@PostMapping("/save")
 	public String saveArt(Model model, Immagine veicoloForm,
-			@RequestParam(name = "image") MultipartFile immagine,int idVeicolo) {
+			@RequestParam(name = "image") MultipartFile immagine,@RequestParam(name = "veicoloId")Integer idVeicolo) {
 
 		if (immagine != null) {
 			try {

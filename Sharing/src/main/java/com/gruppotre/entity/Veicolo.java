@@ -42,7 +42,6 @@ public class Veicolo {
 	private String coordinate;
 	
 	@OneToMany(mappedBy= "veicolo" ,cascade = {CascadeType.ALL})
-	@JsonIgnore
 	private List<Immagine> immagine;
 
 	@OneToOne(cascade = {CascadeType.ALL})
