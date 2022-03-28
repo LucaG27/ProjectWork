@@ -251,6 +251,8 @@ nav:hover{
   
   }
   
+
+
  .btn:hover{
  
     background-color: rgb(6, 151, 6);
@@ -272,7 +274,12 @@ nav:hover{
   background-color: rgb(6, 151, 6);
   border-color: rgb(3, 183, 3);
 }
+.btn-danger:hover{
 
+  background-color: #bb2d3b;
+  border-color: #bb2d3b;
+
+}
   .modal-body label {
     margin-bottom: 0;
   }
