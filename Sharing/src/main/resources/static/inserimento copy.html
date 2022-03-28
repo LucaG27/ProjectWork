@@ -66,6 +66,17 @@
     </nav>
   </div>
 
+  <dl class="inputbox">
+    <dd class="inputbox-content">
+      <select class="form-select" id="categoria" aria-label="Default select example">
+        <option selected>Scegli categoria</option>
+        <option value="AUTO">Auto</option>
+        <option value="MOTO">Moto</option>
+        <option value="BICICLETTA">Bicicletta</option>
+        <option value="MONOPATTINO">Monopattino</option>
+      </select>
+    </dd>
+  </dl>
 
   <div class="container">
     <div id="wrap" class="input">
@@ -79,142 +90,185 @@
             <div class="col-lg-4">
               <dl class="inputbox">
                 <dd class="inputbox-content">
-                  <input id="veicolo_id" type="text" class="" required />
-                  <label for="id">ID</label>
-                  <span class="underline"></span>
-                </dd>
-              </dl>
-              <dl class="inputbox">
-                <dd class="inputbox-content">
-                  <input type="text" class="" id="categoria" required />
-                  <label for="categoria">Categoria</label>
-                  <span class="underline"></span>
-                </dd>
-              </dl>
-              <dl class="inputbox">
-                <dd class="inputbox-content">
                   <input type="text" class="" id="descrizione" required />
                   <label for="descrizione">Descrizione</label>
                   <span class="underline"></span>
                 </dd>
               </dl>
+              <dl class="inputbox">
+                <dd class="inputbox-content">
+                  <input type="text" class="" id="coordinate" required />
+                  <label for="coordinate">Coordinate</label>
+                  <span class="underline"></span>
+                </dd>
+              </dl>        
             </div>
               <div class="col-lg-4 mb-3">
                 <dl class="inputbox">
                   <dd class="inputbox-content">
-                    <input type="text" class="" id="alimentazione" required />
-                    <label for="alimentazione">Alimentazione</label>
-                    <span class="underline"></span>
+                    <select id="alimentazione" class="form-select" aria-label="Default select example">
+                      <option selected>Scegli alimentazione</option>
+                      <option value="BENZINA">Benzina</option>
+                      <option value="ELETTRICA">Elettrica</option>
+                      <option value="GPL">Gpl</option>
+                      <option value="DIESEL">Diesel</option>
+                      <option value="IBRIDA">Ibrida</option>
+                    </select>
                   </dd>
                 </dl>
                 <dl class="inputbox">
                   <dd class="inputbox-content">
-                    <input ype="text" class="" id="ruote" required />
-                    <label for="ruote">Ruote</label>
+                    <input type="text" class="" id="citta" required />
+                    <label for="citta">Città</label>
                     <span class="underline"></span>
                   </dd>
-                </dl>
-                <dl class="inputbox">
-                  <dd class="inputbox-content">
-                    <input ype="text" class="" id="disponibilita" required />
-                    <label for="disponibilita">Disponibilità</label>
-                    <span class="underline"></span>
-                  </dd>
-                </dl>
+                </dl>                    
               </div>
               <div class="col-lg-4">
                 <dl class="inputbox">
                   <dd class="inputbox-content">
-                    <input ype="text" class="" id="indirizzo" required />
+                    <input type="text" class="" id="indirizzo" required />
                     <label for="indirizzo">Indirizzo</label>
                     <span class="underline"></span>
                   </dd>
                 </dl>
+                
                 <dl class="inputbox">
                   <dd class="inputbox-content">
-                    <input ype="text" class="" id="citta" required />
-                    <label for="citta">Città</label>
-                    <span class="underline"></span>
+                    <select id="ruote" class="form-select" aria-label="Default select example">
+                      <option selected>Scegli nr. Ruote</option>
+                      <option value="DUE RUOTE">2</option>
+                      <option value="QUATTRO RUOTE">4</option>
+                    </select>
                   </dd>
-                </dl>
-                <dl class="inputbox">
-                  <dd class="inputbox-content">
-                    <input ype="text" class="" id="coordinate" required />
-                    <label for="coordinate">Coordinate</label>
-                    <span class="underline"></span>
-                  </dd>
-                </dl>
+                </dl> 
               </div>
+            </div>
 
             
             <h2>Caratteristiche tecniche</h2>
-              <div class="row">
-                <div class="col-lg-4">
-                  <dl class="inputbox">
-                    <dd class="inputbox-content">
-                      <input id="potenzaMotore" type="text" class="" required />
-                      <label for="potenzaMotore">Potenza Motore</label>
-                      <span class="underline"></span>
-                    </dd>
-                  </dl>
-                  <dl class="inputbox">
-                    <dd class="inputbox-content">
-                      <input type="text" class="" id="cambio" required />
-                      <label for="cambio">Cambio</label>
-                      <span class="underline"></span>
-                    </dd>
-                  </dl>
-                  <dl class="inputbox">
-                    <dd class="inputbox-content">
-                      <input type="text" class="" id="cilindrata" required />
-                      <label for="cilindrata">Cilindrata Motore</label>
-                      <span class="underline"></span>
-                    </dd>
-                  </dl>
-                </div>
-                <div class="col-lg-4">
-                  <dl class="inputbox">
-                    <dd class="inputbox-content">
-                      <input type="text" class="" id="emissioni" required />
-                      <label for="emissioni">Emissioni CO2</label>
-                      <span class="underline"></span>
-                    </dd>
-                  </dl>
-                <dl class="inputbox">
-                  <dd class="inputbox-content">
-                    <input ype="text" class="" id="cavalli" required />
-                    <label for="cavalli">Cavalli</label>
-                    <span class="underline"></span>
-                  </dd>
-                </dl>
-              </div>
-              <div class="col-lg-4">
-            <dl class="inputbox">
-              <dd class="inputbox-content">
-                <input ype="text" class="" id="velocita" required />
-                <label for="velocita">Velocità</label>
-                <span class="underline"></span>
-              </dd>
-            </dl>
-             <dl class="inputbox">
-                  <dd class="inputbox-content">
-                    <input ype="text" class="" id="consumoMedio" required />
-                    <label for="consumoMedio">Consumo Medio</label>
-                    <span class="underline"></span>
-                  </dd>
-                </dl>
-           </div>
+              <div class="row" id="specifiche">
+                
             
           </div>
         </div>
         <div class="btns text-end">
           <button id="createButton" type="button" class="btn btn-primary btn-confirm">Aggiungi</button>
-          <button id="updateButton" type="button" class="btn btn-primary btn-cancel">Aggiorna</button>
         </div>
       </section>
     </div>
   </div>
 
+<!--  MODALE  -->
+<div class="modal fade" id="veicoloModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="false" data-bs-backdrop="static" data-bs-keyboard="false" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="form-login">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Che tipo di veicolo vuoi inserire?</h5>
+        </div>
+        <div class="modal-body">
+					<div class="container text-center">		
+          <button id="button-auto" veicolo-cate="AUTO" type="submit" class="btn btn-primary" data-dismiss="modal">Auto</button>
+          <button id="button-moto" veicolo-cate="MOTO" type="submit" class="btn btn-primary" data-dismiss="modal">Moto</button>
+          <button id="button-bici" veicolo-cate="BICI" type="submit" class="btn btn-primary" data-dismiss="modal">Bicicletta</button>
+          <button id="button-mono" veicolo-cate="MONO" type="submit" class="btn btn-primary" data-dismiss="modal">Monopattino</button>
+        </div>   
+        </div>
+             
+      </form>
+    </div>
+  </div>
+</div>
+  
+
+<script id="template-specs" type="text/x-handlebars-template">
+  <div class="col-lg-4">
+    <dl class="inputbox">
+      <dd class="inputbox-content">
+        <input id="potenzaMotore" type="text" class="" required />
+        <label for="potenzaMotore">Potenza Motore</label>
+        <span class="underline"></span>
+      </dd>
+    </dl>
+    {{#ifEquals categoria "AUTO" "MOTO"}}
+    <dl class="inputbox">
+      <dd class="inputbox-content">
+        <input type="text" class="" id="cambio" required />
+        <label for="cambio">Cambio</label>
+        <span class="underline"></span>
+      </dd>
+    </dl>
+    {{else}}
+    <dl class="inputbox">
+      <dd class="inputbox-content">
+        <input type="text" class="" id="limitatore" required />
+        <label for="limitatore">Limitatore Velocità</label>
+        <span class="underline"></span>
+      </dd>
+    </dl>
+    {{/ifEquals}}
+    <dl class="inputbox">
+      <dd class="inputbox-content">
+        <input type="text" class="" id="cilindrata" required />
+        <label for="cilindrata">Cilindrata Motore</label>
+        <span class="underline"></span>
+      </dd>
+    </dl>
+  </div>
+  <div class="col-lg-4">
+    <dl class="inputbox">
+      <dd class="inputbox-content">
+        <input type="text" class="" id="emissioni" required />
+        <label for="emissioni">Emissioni CO2</label>
+        <span class="underline"></span>
+      </dd>
+    </dl>
+    {{#ifEquals categoria "AUTO" "MOTO"}}  
+  <dl class="inputbox">
+    <dd class="inputbox-content">
+      <input ype="text" class="" id="cavalli" required />
+      <label for="cavalli">Cavalli</label>
+      <span class="underline"></span>
+    </dd>
+  </dl>
+  {{else}}
+  <dl class="inputbox">
+    <dd class="inputbox-content">
+      <input ype="text" class="" id="autonomia" required />
+      <label for="autonomia">Autonomia</label>
+      <span class="underline"></span>
+    </dd>
+  </dl>
+  {{/ifEquals}}
+</div>
+<div class="col-lg-4">
+<dl class="inputbox">
+<dd class="inputbox-content">
+  <input ype="text" class="" id="velocita" required />
+  <label for="velocita">Velocità</label>
+  <span class="underline"></span>
+</dd>
+</dl>
+{{#ifEquals categoria "AUTO" "MOTO"}}
+<dl class="inputbox">
+    <dd class="inputbox-content">
+      <input ype="text" class="" id="consumoMedio" required />
+      <label for="consumoMedio">Consumo Medio</label>
+      <span class="underline"></span>
+    </dd>
+  </dl>
+{{else}}
+<dl class="inputbox">
+  <dd class="inputbox-content">
+    <input ype="text" class="" id="tipoRuota" required />
+    <label for="tipoRuota">Tipo di Ruota</label>
+    <span class="underline"></span>
+  </dd>
+</dl> 
+{{/ifEquals}}
+</div>
+</script>
 
   <style>
     html,
@@ -497,6 +551,11 @@
   </footer>
   <!-- Footer -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+<script src="/js/inserimento.js"></script>
+
+
 </body>
+
 
 </html>
