@@ -362,6 +362,7 @@ nav:hover{
   text-align: center;
 }
 
-.header_widgets a {
-  color: #555;
+
+#map { 
+  height: 720px;
 }

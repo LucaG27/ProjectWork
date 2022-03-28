@@ -1,24 +1,29 @@
 let render_specifiche = null;
 let render_veicoli = null;
+let veicolo_id = document.getElementById("veicolo_id")
 const URL = "http://localhost:8080/api/immagine/allImmagini"
 const URL2 = "http://localhost:8080/api/specifiche/"
 const URL3 = "http://localhost:8080/api/veicolo/id/"
+const URL4 = "http://localhost:8080/api/prenotazioni/"
 const user = localStorage.getItem('user');
+const idv = localStorage.getItem('veicolo');
+let tipo_veicolo = null;
+let icon = null;
 
   "use strict";
-
 
   
    async function asyncCall(){
     const veicolo = await loadCoordinate();
      let coo = veicolo.coordinate;
+     tipo_veicolo= veicolo.categoria;
      let coo_split=coo.split(',');
     return coo_split;
   }
   
   async function loadCoordinate() {
   
-    let response = await fetch(URL3 + 1);
+    let response = await fetch(URL3 + idv);
     let veicolo = await response.json();
     return veicolo;
   }
@@ -26,7 +31,7 @@ const user = localStorage.getItem('user');
   
   function listaVeicoli(event){
   
-      fetch(URL)
+      fetch(URL3 + idv)
           .then(function(response) {
           return response.json();
         })
@@ -34,8 +39,7 @@ const user = localStorage.getItem('user');
         
               console.log(json);
       
-              let rows = "";      
-              rows = render_veicoli(json);
+              let rows = render_veicoli(json);
                   document.getElementById("bodyDivImmagini").innerHTML = rows;
           })
           .catch(function(err) { 
@@ -47,7 +51,7 @@ const user = localStorage.getItem('user');
 
   function listaSpecifiche(event){
   
-    fetch(URL2+"id/"+5)
+    fetch(URL3 + idv)
         .then(function(response) {
         return response.json();
       })
@@ -66,6 +70,52 @@ const user = localStorage.getItem('user');
 
 }
 
+  function createPrenotazione(event){
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    let yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+      fetch(URL3 + idv)
+          .then(function(response) {
+          return response.json();
+        })
+          .then(function(veicoloPreno) {
+        
+              console.log(veicoloPreno);
+      
+              /*let rows = render_veicoli(json);
+                  document.getElementById("bodyDivImmagini").innerHTML = rows;*/
+
+              return fetch(URL4 + "savePrenotazione",{
+                          method: 'POST',
+
+                          body: JSON.stringify({ 
+                            dataInizio: today,
+                            dataFine: null,
+                            stato: "in corso",
+                            utenteId: {
+                              id: 12,
+                              nome: user.nome,
+                              cognome: user.cognome,
+                              dataNascita: user.dataNascita,
+                              email: user.email,
+                              password: user.password,
+                              ruolo: user.ruolo
+                            },
+                            veicoloId: veicoloPreno
+
+                          })
+              });   
+          })
+          .catch(function(err) { 
+                  alert(err);
+                  console.log('Failed to fetch page: ', err);
+          });	
+  }
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
@@ -87,8 +137,6 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
-
-
   
   window.addEventListener(
     'DOMContentLoaded', 
@@ -96,6 +144,7 @@ const swiper = new Swiper('.swiper', {
   
       render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
       render_specifiche = Handlebars.compile( document.getElementById("template-specifiche").innerHTML );
+      let bottone_prenota = document.getElementById("bottone_prenota").addEventListener("click", createPrenotazione);
   
           listaVeicoli();
           listaSpecifiche();
@@ -128,16 +177,26 @@ var LeafIcon = L.Icon.extend({
     popupAnchor:  [-3, -76]
   }
 });
-/*
-var greenIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
-var redIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
-*/
-var orangeIcon = new LeafIcon({iconUrl: 'img/veicoli/icon-car.svg'});
-/*
-var mGreen = L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup('I am a green leaf.').addTo(map);
-var mRed = L.marker([51.495, -0.083], {icon: redIcon}).bindPopup('I am a red leaf.').addTo(map);
-*/
 
-var mOrange = L.marker([coo_split[0],coo_split[1]], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
+
+switch(tipo_veicolo){
+  case 'AUTO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/auto.png'})
+    break;
+
+  case 'MOTO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/scooter.png'})
+    break;
+  
+  case 'BICICLETTA':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/bicicletta.png'})
+    break;
+
+  case 'MONOPATTINO':
+    icon = new LeafIcon({iconUrl: 'img/veicoli/icon/monopattino.png'})
+    break;
+}
+
+let mOrange = L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
 
 }

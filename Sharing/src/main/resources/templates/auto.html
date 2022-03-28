@@ -75,6 +75,23 @@
         </div>
       </div>
     </nav>
+<<<<<<< HEAD:Sharing/src/main/resources/static/auto.html
+=======
+
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col mt-5 p-5">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe possimus magnam, cum facilis esse pariatur
+            quas quos placeat labore ab at, sunt libero!</p>
+          <button class="button-6 mt-3" id="bottone_prenota" role="button">Button 6</button>
+        </div>
+        <div class="col ">
+
+        </div>
+      </div>
+    </div>
+>>>>>>> 4c7b85aae71b9747d9c1bf4dea5bb539f105aca2:Sharing/src/main/resources/templates/auto.html
   </div>
   <!-- FINE HERO-->
 
@@ -260,62 +277,88 @@
   <!-- Footer -->
 
   <script id="template-veicoli" type="text/x-handlebars-template">
-    {{#each this}}
     <div class="swiper-slide">
       <img class="img-fluid"
-        src="{{immagine1}}" alt="">
+        src="{{immagine.immagine1}}" alt="">
     </div>
     <div class="swiper-slide">
       <img class="img-fluid"
-        src="{{immagine2}}" alt="">
+        src="{{immagine.immagine2}}" alt="">
     </div>
     <div class="swiper-slide">
       <img class="img-fluid"
-        src="{{immagine3}}" alt="">
+        src="{{immagine.immagine3}}" alt="">
     </div>
     <div class="swiper-slide">
       <img class="img-fluid"
-        src="{{immagine4}}" alt="">
+        src="{{immagine.immagine4}}" alt="">
     </div>
     <div class="swiper-slide">
       <img class="img-fluid"
-        src="{{immagine5}}" alt="">
+        src="{{immagine.immagine5}}" alt="">
     </div>
-    {{/each}}
   </script>
 
   <script id="template-specifiche" type="text/x-handlebars-template">
     <li>
       <span class="field-label field_offer_doors">Velocità</span>
-      <span class="value field-item field_offer_doors ">{{velocita}}</span>
+      <span class="value field-item field_offer_doors ">{{specifiche.velocita}}</span>
     </li>
     <li>
       <span class="field-label field_offer_transmission">Potenza Motore</span>
-      <span class="value field-item field_offer_transmission ">{{potenza}}</span>
+      <span class="value field-item field_offer_transmission ">{{specifiche.potenza}}</span>
     </li>
     <li>
       <span class="field-label field_offer_average_consumption">Alimentazione</span>
-      <span class="value field-item field_offer_average_consumption ">{{alimentazione}}</span>
+      <span class="value field-item field_offer_average_consumption ">{{specifiche.alimentazione}}</span>
     </li>
+    {{#if specifiche.cambio includeZero=true}}
     <li>
       <span class="field-label field_offer_horsepower">Cambio</span>
-      <span class="value field-item field_offer_horsepower">{{cambio}}</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.cambio}}</span>
     </li>
+    {{else}}
     <li>
-      <span class="field-label field_offer_horsepower">Cavalli</span>
-      <span class="value field-item field_offer_horsepower">{{cavalli}}</span>
+      <span class="field-label field_offer_horsepower">Limitatore Velocità</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.limitatoreVelocita}}</span>
     </li>
+    {{/if}}
+    {{#if specifiche.cavalli includeZero=true}}
+    <li> 
+      <span class="field-label field_offer_horsepower">Cavalli</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.cavalli}}</span>
+    </li>
+    {{else}}
+    <li>
+      <span class="field-label field_offer_horsepower">Autonomia</span>
+      <span class="value field-item field_offer_horsepower">{{specifiche.autonomia}}</span>
+    </li>
+    {{/if}}
+    {{#if specifiche.cilindrata includeZero=true}}
     <li>
       <span class="field-label field_offer_emission_co2">Cilindrata motore</span>
-      <span class="value field-item field_offer_emission_co2 ">{{cilindrata}}</span>
+      <span class="value field-item field_offer_emission_co2 ">{{specifiche.cilindrata}}</span>
     </li>
+    {{else}}
+    <li>
+      <span class="field-label field_offer_emission_co2">Tempo di ricarica</span>
+      <span class="value field-item field_offer_emission_co2 ">{{specifiche.tempoDiRicarica}}</span>
+    </li>
+    {{/if}}
+    {{#if specifiche.consumoMedio includeZero=true}}
     <li>
       <span class="field-label field_offer_fuel_type">Consumo Medio</span>
-      <span class="value field-item field_offer_fuel_type ">{{consumoMedio}}</span>
+      <span class="value field-item field_offer_fuel_type ">{{specifiche.consumoMedio}}</span>
     </li>
+    {{else}}
+    <li>
+      <span class="field-label field_offer_fuel_type">Tipo di ruota</span>
+      <span class="value field-item field_offer_fuel_type ">{{specifiche.tipoDiRuota}}</span>
+    </li>
+    {{/if}}
     <li>
       <span class="field-label field_offer_motor_displacement">Emissioni CO2</span>
-      <span class="value field-item field_offer_motor_displacement ">{{emissioniCo2}}</span>
+      <span class="value field-item field_offer_motor_displacement ">{{specifiche.emissioniCo2}}</span>
     </li>
     <li>
       <span class="field-label field_offer_motor_displacement"></span>
