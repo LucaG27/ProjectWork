@@ -76,13 +76,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                    <form action="/pannello-controllo/save" name="immagineForm" method="post" enctype="multipart/form-data">
-                    <h3 class="mb-3">upload Immagini:</h3>
-                    <input type="number" name="veicolo_id" id="upload_immagini" value="" />
-                    <input type="file" name="image" accept="image/png, image/jpeg" multiple />
-                    <input type="submit" value="Aggiungi">
-            </div>
-            <div class="col-lg-6">
                 <form action="/api/articolo/import" name="importCSV" method="post" enctype="multipart/form-data">
                     <h3 class="mb-3">Import Articoli CSV:</h3>
                     <input type="file" name="fileCSV" accept=".csv" />
@@ -410,9 +403,10 @@
                                     <div class="col-lg-6">
                                         <form action="/pannello-controllo/save" name="immagineForm" method="post" enctype="multipart/form-data">
                                         <h3 class="mb-3">upload Immagini:</h3>
-                                        <input type="text" name="veicolo_id" id="upload_immagini" readonly />
+                                        <input type="number" id="upload_immagini" readonly />
                                         <input type="file" name="image" accept="image/png, image/jpeg" multiple />
                                         <input type="submit" value="Aggiungi">
+                                        </form>
                                 </div>
                                 </div>
                         </div>

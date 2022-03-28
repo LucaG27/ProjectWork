@@ -151,10 +151,6 @@ function listaVeicoli(){
                 document.getElementById("indirizzo").value = json.indirizzo;
                 document.getElementById("citta").value = json.citta;
                 document.getElementById("coordinate").value = json.coordinate;
-                immagini = {
-                    id: json.immagine.id,
-                    immagine: json.immagine.immagine
-                };
                 specifiche = {
                     id: json.specifiche.id,
                     velocita: json.specifiche.velocita,
@@ -180,7 +176,7 @@ function listaVeicoli(){
 
     function insertImmagine(event) {
 
-
+        modalImmagine.show();
         let originator = event.currentTarget;
         let idvImmagine = originator.getAttribute('veicolo-id');
         console.log(idvImmagine);
@@ -191,8 +187,11 @@ function listaVeicoli(){
         */
 
 
-        document.getElementById("upload_immagini").innerHTML += idvImmagine;
-        modalImmagine.show();
+        document.getElementById("upload_immagini").value = idvImmagine;
+        /*document.getElementById("upload_immagini").innerHtml = idvImmagine;*/
+
+        console.log(document.getElementById("upload_immagini").value);
+        
     }
 
     function agganciaEventi() {
@@ -242,8 +241,8 @@ function listaVeicoli(){
         let updateButton = document.getElementById("updateButton");
         updateButton.addEventListener("click", editVeicolo);
         
-        let call_modale = document.getElementById("call_modale");
-        call_modale.addEventListener("click", chiamaModale);
+        /*let call_modale = document.getElementById("call_modale");
+        call_modale.addEventListener("click", chiamaModale);*/
 
         let createButton = document.getElementById("createButton");
         createButton.addEventListener("click", createVeicolo);
