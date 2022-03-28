@@ -387,6 +387,7 @@ small.justify-content-center {
 --------------------------------------- */
 .news-container{
     height: 300px;
+    margin-bottom: 4rem;
 }
 
 @media(max-width: 768px){
