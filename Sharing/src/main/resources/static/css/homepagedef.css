@@ -60,6 +60,16 @@
     padding-bottom: 3rem;
 }
 
+/* ------------------------------------ 
+                SEZIONE VANTAGGI                   
+--------------------------------------- */
+.vantaggi{
+    height: 500px;
+}
+.vantaggi-title{
+    padding-top: 3rem;
+}
+
 
  /* ------------------------------------ 
                 CARDS                     
