@@ -7,6 +7,7 @@ import com.gruppotre.entity.Immagine;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Service
 public class ImmagineService {
@@ -21,4 +22,5 @@ public class ImmagineService {
 	public Immagine getById(int id) {
 		return db.findById(id).get();
 	}
+
 }
