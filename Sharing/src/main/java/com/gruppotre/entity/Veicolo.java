@@ -40,6 +40,8 @@ public class Veicolo {
 	private String citta;
 	@Column(name="coordinate")
 	private String coordinate;
+	@Column(name="prezzo")
+	private double prezzo;
 	
 	@OneToMany(mappedBy= "veicolo" ,cascade = {CascadeType.ALL})
 	private List<Immagine> immagine;
@@ -56,8 +58,8 @@ public class Veicolo {
 	}
 
 	public Veicolo(int id, String categoria, String descrizione, String alimentazione, String ruote,
-			String disponibilita, String indirizzo, String citta, String coordinate, List<Immagine> immagine,
-			Specifiche specifiche, List<Prenotazione> prenotazione) {
+			String disponibilita, String indirizzo, String citta, String coordinate, double prezzo,
+			List<Immagine> immagine, Specifiche specifiche, List<Prenotazione> prenotazione) {
 		this.id = id;
 		this.categoria = categoria;
 		this.descrizione = descrizione;
@@ -67,6 +69,7 @@ public class Veicolo {
 		this.indirizzo = indirizzo;
 		this.citta = citta;
 		this.coordinate = coordinate;
+		this.prezzo = prezzo;
 		this.immagine = immagine;
 		this.specifiche = specifiche;
 		this.prenotazione = prenotazione;
@@ -144,6 +147,14 @@ public class Veicolo {
 		this.coordinate = coordinate;
 	}
 
+	public double getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(double prezzo) {
+		this.prezzo = prezzo;
+	}
+
 	public List<Immagine> getImmagine() {
 		return immagine;
 	}
@@ -173,6 +184,8 @@ public class Veicolo {
 		return "Veicolo [alimentazione=" + alimentazione + ", categoria=" + categoria + ", citta=" + citta
 				+ ", coordinate=" + coordinate + ", descrizione=" + descrizione + ", disponibilita=" + disponibilita
 				+ ", id=" + id + ", immagine=" + immagine + ", indirizzo=" + indirizzo + ", prenotazione="
-				+ prenotazione + ", ruote=" + ruote + ", specifiche=" + specifiche + "]";
-	}	
+				+ prenotazione + ", prezzo=" + prezzo + ", ruote=" + ruote + ", specifiche=" + specifiche + "]";
+	}
+
+	
 }
