@@ -3,6 +3,7 @@ let template_riga = "";
 const url = "http://localhost:8080/api/veicolo/";
 let modal = null;
 let modalImmagine = null;
+let csvModal = null;
 let immagini = null;
 let specifiche = null;
 
@@ -194,6 +195,11 @@ function listaVeicoli(){
         
     }
 
+    function loadCsv(){
+
+        csvModal.show();
+    }
+
     function agganciaEventi() {
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
@@ -235,6 +241,8 @@ function listaVeicoli(){
         
         modalImmagine = new bootstrap.Modal(document.getElementById('immaginiModal'), {});
         
+        csvModal = new bootstrap.Modal(document.getElementById('csvModal'), {});
+
         template_riga = document.getElementById("table_rows").innerHTML;
         listaVeicoli();
 

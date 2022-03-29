@@ -60,23 +60,6 @@
    
     </div>
 <!-- FINE NAVBAR-->
-  
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <form action="/api/articolo/import" name="importCSV" method="post" enctype="multipart/form-data">
-                    <h3 class="mb-3">Import Articoli CSV:</h3>
-                    <input type="file" name="fileCSV" accept=".csv" />
-                    <input type="submit" value="Aggiungi">
-            </div>
-            <div class="col-lg-6">
-
-            </div>
-        </div>
-    </div>
-
-    <!-- AGGIUNGI E CSV-->
 
     <div class="container-fluid">
         <div class="row">
@@ -86,7 +69,7 @@
                         <ul class='nav navbar-nav side-nav fadeInLeft'>
                             <li class='dashboard'><a href='#'><i class='fa fa-lg fa-dashboard'></i> </a></li>
                             <li class='admin'><a href='#admin'><i class='fa fa-lg fa-user pe-2'></i> Admin</a></li>
-                            <li class='active docs'><a href='#docs'><i class='fa fa-lg fa-folder-open pe-1'></i> Carica CSV</a></li>
+                            <li onclick="loadCsv()" class='active docs'><a href='#'><i class='fa fa-lg fa-folder-open pe-1'></i> Carica CSV</a></li>
                             <li class='divider'>
                              <hr>
                             </li>
@@ -95,7 +78,7 @@
                             <li class='software-support'><a href='#softwareSupport'><i
                                         class='fa fa-lg fa-question-circle pe-2'></i> Support</a></li>
                             <li class='dashboard-updates' ><a href="/inserimento copy.html"><i
-                                        class='fa fa-lg fa-arrow-up pe-2'></i> Aggiungi Articolo</a></li>
+                                        class='fa fa-lg fa-arrow-up pe-2'></i> Aggiungi Veicolo</a></li>
                             <li onclick="printJS('table-id', 'html')" class='print'><a href='#'><i class='fa fa-lg fa-print pe-2'></i> Stampa</a></li>
                         </ul>
                     </div>
@@ -105,11 +88,11 @@
             <div class="col-lg-7">
                 <!-- TABLE-->
                 <div class="container">
-                    <h2>Select Number Of Rows</h2>
+                    <h2>Seleziona le righe da mostrare</h2>
                     <div class="form-group">
                         <!--		Show Numbers Of Rows 		-->
                         <select class="form-control" name="state" id="maxRows">
-                            <option value="5000">Show ALL Rows</option>
+                            <option selected value="5000">Mostra tutte le righe</option>
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="15">15</option>
@@ -406,6 +389,27 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="csvModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Carica file CSV</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                            <div class="container">
+                                <div class="col-lg-6">
+                                    <form action="/api/veicolo/import" name="importCSV" method="post" enctype="multipart/form-data">
+                                        <h3 class="mb-3">Import Veicoli CSV:</h3>
+                                        <input type="file" name="fileCSV" accept=".csv" />
+                                        <input type="submit" value="Aggiungi">
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
             <style>
                 body {
 
