@@ -1,158 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/style copy.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- BOOTSTRAP ICON-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
- integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
- crossorigin=""></script>
-  <title>Home Page</title>
+    <!-- swiper -->
+    <link  rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+      <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/homepagedef.css">
+    <title>Home</title>
 </head>
-
 <body>
-   <!-- NAVBAR-->
-   <div class="contenitore container-fluid mb-5 ">
-    <nav class="navbar navbar-expand-lg container">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img class="logo"
-            src="https://media.discordapp.net/attachments/955030566347079702/956500337945104444/M__2_-removebg-preview_final.png"
-            alt=""></a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list text-white"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Prenota</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Città
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Milano</a></li>
-                <li><a class="dropdown-item" href="#">Roma</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ms-2" id="myModal" href="#" tabindex="-1" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="bi bi-person-circle"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pannello-controllo"><i class="bi bi-gear-fill"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+     <!-- NAVBAR-->
     <div class="container">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col mt-5 p-5 text-center">
-          <p>WE MOVE PEOPLE</p>
-          <button class="button-6 mt-3" role="button">I nostri mezzi</button>
-        </div>
-        <div class="col ">
+        <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Chi siamo</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Milano</a></li>
+                    <li><a class="dropdown-item" href="#">Roma</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item verticalerule">
+                    <a class="nav-link ">|</a>
+                    </li>
+                <li class="nav-item">
+                <a class="nav-link" id="myModal" href="#"data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">Accedi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pannello-controllo"><i class="bi bi-gear-fill"></i></a>
+                </li>
+              </ul>
+        
+            </div>
+          </div>
+        </nav>
+      </div>
 
+<!-- FINE NAVBAR-->
+    <!-- HERO-->
+      <div class="backg">
+        <div class="cta text-center">
+            <h2 class="brand">WE <span id="wa"><i> MOVE</i></span>PEOPLE</h2>
+            <h4>Muoviti liberamente</h4>
         </div>
       </div>
     </div>
-  </div>
+<!-- FINE HERO-->
 
-  <!-- FINE HERO-->
+    <!-- Slider main container -->
+    <div class="swiper container">
+        <!-- swiper è una classe per il carousel, container è una classe di BS -->
+        <h1 class="text-center testoColorato">La nostra Flotta</h1>
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img class="img-fluid" src="https://www.arval.it/sites/it/files/renault_19twingoedn1plushb3fbc_lowaggressive.png" alt="">
+                <div class="slideText">
+                    <h2>Renault Twingo</h2>
+                    <p>Largo La Foppa 27, MI 20215</p>
+                    <button class="btn btn-primary">Buy now!!!</button>
+                </div>
+            </div>
+      
+            <div class="swiper-slide">
+              <img class="img-fluid" src="https://www.arval.it/sites/it/files/mazda_20cx30skydriveluxsu1b_lowaggressive.png" alt="">
+              <div class="slideText">
+                  <h2>Mazda CX-30</h2>
+                  <p>Corso Buenos Aires 79, MI 20121</p>
+                  <button class="btn btn-primary">Scopri</button>
+              </div>
+          </div>
+      
+          <div class="swiper-slide">
+              <img class="img-fluid" src="https://www.arval.it/sites/it/files/audi_21q5editiononesu2fb_lowaggressive.png" alt="">
+              <div class="slideText">
+                  <h2>Audi Q5</h2>
+                  <p>Via della Spiga 84, MI 20122</p>
+                  <button class="btn btn-primary">Scopri</button>
+              </div>
+          </div>
 
-  <!-- SLIDER-->
-  <div class="container">
-
-    <div class="swiper">
-      <!-- swiper è una classe per il carousel, container è una classe di BS -->
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="text-center">
-          <img class="img-fluid"
-            src="img/veicoli/auto.png" alt="">
-          <h2 class="text-center">Auto</h2>
-          <p class="text-center">Tutta l'agilità che ti occorre</p>
-          <button class="btn" id="btn_auto" veicolo-id="AUTO">Scopri</button>
-        </div>
-        <div class="text-center">
-          <img class="img-fluid" src="img/veicoli/scooter.png"
-            alt="">
-          <h2 class="text-center">Scooter</h2>
-          <p class="text-center">Tutto lo spazio che ti serve, con stile</p>
-          <button class="btn" id="btn_moto" veicolo-id="MOTO">Scopri</button>
-        </div>
-        <div class="text-center">
-          <img class="img-fluid" src="img/veicoli/bici.png"
-            alt="">
-          <h2 class="text-center">Bici</h2>
-          <p class="text-center">Comodità e stile al tuo servizio</p>
-          <button class="btn" id="btn_bici" veicolo-id="BICICLETTA">Scopri</button>
-        </div>
-        <div class="text-center">
-          <img class="img-fluid" src="img/veicoli/monopattino.png"
-            alt="">
-          <h2 class="text-center">Monopattini</h2>
-          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, omnis?</p>
-          <button class="btn" id="btn_mono" veicolo-id="MONOPATTINO">Scopri</button>
+          <div class="swiper-slide">
+            <img class="img-fluid" src="https://www.arval.it/sites/it/files/bmw_20118isporthb3b_lowaggressive.png" alt="">
+            <div class="slideText">
+                <h2>BMW serie 1</h2>
+                <p>Via Degli Angioli 15, MI 20121</p>
+                <button class="btn btn-primary">Scopri</button>
+            </div>
+        </div>          
+      
+          <div class="swiper-slide">
+              <img class="img-fluid" src="https://www.arval.it/sites/it/files/styles/izmo-format/public/toyota_21yariscrosshevdynplussu1b_lowaggressive.png?itok=jj0PEO24" alt="">
+              <div class="slideText">
+                  <h2>Toyota Yaris Cross</h2>
+                  <p>Piazza XXIV Maggio 23, MI 20123</p>
+                  <button class="btn btn-primary">Scopri</button>
+              </div>
+          </div>
+      
+          <div class="swiper-slide">
+              <img class="img-fluid" src="https://www.arval.it/sites/it/files/fiat_21500eviconha3b_lowaggressive.png" alt="">
+              <div class="slideText">
+                  <h2>Fiat 500</h2>
+                  <p>Via Della MOSCOVA 13, MI 20121</p>
+                  <button class="btn btn-primary">Scopri</button>
+              </div>
+          </div>
+          </div>
+  
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        
         </div>
       </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
 
-      <!-- If we need navigation buttons -->
+      <!-- FINE SLIDER-->
+<!-- SEZIONE VANTAGGI-->
 
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="container vantaggi pt-5">
+          <div class="text-center">
+            <h1 class="testoColorato">Un noleggio fatto di vantaggi</h1>
+          </div>
+          <div class="text-center pb-3">
+            Quando sali a bordo di Move viaggi senza pensieri. Tu iscriviti, prenota un veicolo e raggiungi subito la tua destinazione.
+            <br>
+            Al resto ci pensiamo noi. 
+          </div>
+          <div class="row text-center pt-5">
+            <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12">
+                    <img src="https://enjoy.eni.com/img/tariffe_differenziate/pieno.png?1.2.4k" height="53">
+                </div>
+                <div class="col-xs-12 vantaggi-title">
+                    <b>Fai il pieno gratis in tutta Italia</b>
+                </div>
+                <div class="col-xs-12 vantaggi-description">
+                    A bordo di Move il pieno non lo paghi e se lo fai quando il serbatoio è inferiore al 30%, ottieni un voucher di 5€.
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12">
+                    <img src="https://enjoy.eni.com/img/tariffe_differenziate/piggy_bank.png?1.2.4k" height="64">
+                </div>
+                <div class="col-xs-12 vantaggi-title">
+                    <b>Un risparmio fatto di comodità</b>
+                </div>
+                <div class="col-xs-12 vantaggi-description">
+                    Tra accesso a ZTL e parcheggio gratuito, puoi muoverti liberamente per la tua città.
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12">
+                    <img src="https://enjoy.eni.com/img/tariffe_differenziate/map.png?1.2.4k" height="50">
+                </div>
+                <div class="col-xs-12 vantaggi-title">
+                    <b>Parti quando vuoi</b>
+                </div>
+                <div class="col-xs-12 vantaggi-description">
+                    Puoi noleggiare Move ovunque e in qualsiasi momento. Devi solo scegliere quale prendere, comodamente, tramite App.
+                </div>
+            </div>
+              </div>
+      </div>
+    <!-- FINE VANTAGGI-->
+
+    <!-- CARDS -->
+    <div class="container carte">
+        <h1 class="fontTitoli testoColorato text-center">Veicoli disponibili</h1>
+          <div class="">
+            <div class="row mt-5">
+                <div class="col-sm-4">
+                    <div class="card"> <img src="https://www.arval.it/sites/it/files/styles/izmo-format/public/toyota_21yariscrosshevdynplussu1b_lowaggressive.png?itok=jj0PEO24" class="card-img-top" width="100%">
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
+                                <h6>&dollar;22,495&ast;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                                <div class="d-flex flex-column"><span class="text-muted">sisisis</span><small class="text-muted">L/100KM&ast;</small></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1.4L MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">135 hp&ast;</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block">
+                              <small>BUILD & PRICE</small></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
     </div>
-  </div>
+    <!-- FINE CARDS -->
+    <!-- BANNER -->
+    <div class="banner container-fluid">
+        <div class="row">
+          <div class="col info text-center">
+            <p>In questo momento a <span><b>Milano</b></span> ci sono <span><b>716</b></span> veicoli disponibili.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col ban text-center">
+            
+            <img src="Schermata 2022-03-24 alle 16.14.37.png" alt="">
+          </div>
+        </div>
+      </div>
+<!-- FINE BANNER -->
 
-  <!-- CARDS -->
-  <div class="cards p-4">
-    <div class="container mt-5 mb-5">
-      <h1 class="fontTitoli testoColorato">Ultime offerte</h1>
-      <div class="row" id="bodyDivImmagini"></div>
-
-    </div>
-  </div>
-
-  <!-- FINE CARDS -->
-
-  <div class="banner">
+<!-- SLIDER  2 main container -->
+<div class="container-fluid slider2 pb-5">
     
-  </div>
-
-
-  <!-- GRAFICO-->
-
-
-  <div class="container p-5">
+        <div class="swiper container">
+            <!-- swiper è una classe per il carousel, container è una classe di BS -->
+            <h1 class="testoColorato text-center">Cosa dicono i nostri clienti</h1>
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper ">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center"  style="margin-left: auto; margin-right: auto;" ><img class="card-img-top" src="img/1517720234393.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Mauro Bogliaccino <br />
+                                <span> Eclipse  Fan </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center"  style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/1554040358981.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Davide Ghione <br />
+                                <span> Project Manager </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center"  style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/vecchione.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Oscar Vecchione <br />
+                                <span> Project Manager </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center ms-5"><img class="card-img-top" src="img/banche.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Anthony Banche <br />
+                                <span> Project Manager </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center ms-5"><img class="card-img-top" src="img/LICENSE.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Dino Olievieri <br />
+                                <span> Project Manager </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center ms-5"><img class="card-img-top" src="img/martinaa.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Martina D'Amato <br />
+                                <span> Project Manager </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center ms-5"><img class="card-img-top" src="img/milo.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Milo Spandre <br />
+                                <span> Project Manager </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                          <div class="card text-center ms-5"><img class="card-img-top" src="img/muscio.jpeg" alt="">
+                            <div class="card-body">
+                              <h5>Federico Muscio <br />
+                                <span> Project Manager </span>
+                              </h5>
+                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+    
+    
+    
+              </div>
+    
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+    
+            </div>
+          </div>
+</div>
+<!-- FINE SLIDER 2-->
+<!-- GRAFICO-->
+<div class="container pb-5">
+    <h1 class="text-center testoColorato">KG di CO2 risparmiati</h1>
     <canvas id="myChart"></canvas>
   </div>
-
- 
-  <h1>In questo momento a Milano ci sono <span id="contatore"></span> veicoli disponibili.</h1>
-
-  <div id="map"></div>
-
-
-  <!-- Footer -->
-  <footer class="bg-dark text-center text-white pt-5 ">
+<!-- FINE GRAFICO-->
+<!-- NEWSLETTER -->
+<div class="news-container pt-5">
+    <div class="container news">
+        <section class="subscription bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 newsletter">
+                        <div class="subscription-wrapper">
+                            <div class="d-flex subscription-content justify-content-between align-items-center flex-column flex-md-row text-center text-md-left">
+                                <h3 class="flex-fill">Iscriviti <br> alla nostra newsletter</h3>
+                                <form action="#" class="row flex-fill">
+                                    <div class="col-lg-7 my-md-2 my-2"> <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" placeholder="Your Email" name="email"> </div>
+                                    <div class="col-lg-5 my-md-2 my-2"> <button type="submit" class="btn2 btn2-primary btn-lg border-0 w-100">Subscribe Now</button> </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+ <!-- FINE NEWSLETTER -->
+<!-- FOOTER -->
+<footer class="bg-dark text-center text-white pt-5 ">
     <!-- Grid container -->
 
     <!-- Section: Links -->
@@ -164,14 +426,19 @@
           <h5 class="text-uppercase">Indirizzo</h5>
 
           <ul class="list-unstyled mb-0">
-
             <li>
-              <a class="text-white">Via Principi d'Acaja, 33</a>
-            </li>
+                <a class="text-white">Via Antonio Banfi, 8</a>
+              </li>
+              <li>
+                <a class="text-white">20122 Milano MI</a>
+              </li>
+              <br>
             <li>
-              <a class="text-white">10138 Torino TO</a>
-            </li>
-
+                <a class="text-white">Via Principi d'Acaja, 33</a>
+              </li>
+              <li>
+                <a class="text-white">10138 Torino TO</a>
+              </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -182,12 +449,11 @@
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a class="text-white">Tel. 0114472954</a>
-            </li>
-            <li>
-              <a class="text-white">move@gmail.com</a>
-            </li>
-
+                <a class="text-white">Tel. 0114472954</a>
+              </li>
+              <li>
+                <a class="text-white">move@gmail.com</a>
+              </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -195,6 +461,10 @@
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase">Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">FAQ</a>
+            </li>
 
           <ul class="list-unstyled mb-0">
             <li>
@@ -203,7 +473,6 @@
             <li>
               <a href="#!" class="text-white">Privacy Policy</a>
             </li>
-
           </ul>
         </div>
         <!--Grid column-->
@@ -218,19 +487,19 @@
                 <!-- Section: Social media -->
                 <section class="mb-2">
                   <!-- Facebook -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-facebook-f"></i></a>
 
                   <!-- Twitter -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-twitter"></i></a>
 
                   <!-- Google -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-google"></i></a>
 
                   <!-- Instagram -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-instagram"></i></a>
 
                 </section>
@@ -257,41 +526,53 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Copyright: Move
+    <div class="text-center p-3" >
+      © 2022 Copyright: Move - All rights reserved
 
     </div>
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
 
-  <!-- MODAL -->
+   <!-- MODAL -->
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="email" class="col-form-label">Email</label>
-              <input type="text" id="email" class="form-control">
-            </div>
-            <div class="mb-3 ">
-              <label for="password" class="col-form-label">Password</label>
-              <div class="icon-inside">
-                <input type="password" id="password" class="form-control">
+        <div class="modal-body ">
+          <div class="column text-centerd" id="main">
+            <h1>Log In</h1>
+            <form>
+              <div class="form-group mb-3">
+                <label for="email">E-mail </label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+              </div>
+              <div class="form-group mb-3 icon-inside">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="">
                 <i class="far fa-eye" id="togglePassword"></i>
               </div>
+              <button type="submit" id="btn" class="btn btn-primary text-center">Accedi</button>
+            </form>
+          </div>
+          <div>
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+                <title>Path</title>
+                <desc>Created with Sketch.</desc>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#27ea1d"></path>
+                </g>
+            </svg>
+          </div>
+          <div class="column" id="secondary">
+            <div class="sec-content">
+              <h2>Registrati</h2>
+              <h3>Cosa aspetti? Crea il tuo account e prenota il tuo veicolo</h3>
+              <button type="button" class="btn2 btn-primary">Sign In</button>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-          <button type="button" id="btn" class="btn btn-primary">Accedi</button>
+          </div>
         </div>
       </div>
     </div>
@@ -299,42 +580,20 @@
 
   <!-- FINE MODAL -->
 
-  <script id="template-veicoli" type="text/x-handlebars-template">
-    {{#each veicoli}}
-      <div class="col-lg-3 mt-5 p-3">
-        <div class="card {{is_available disponibilita}}">
-          <img class="card-img-top"
-            src="{{this.immagine.0.immagine}}"
-            alt="">
-          <div class="card-body text-center">
-            <h5 class="card-title pac fontTitoli">{{this.descrizione}}</h5>
-            <ul>
-              <li>{{this.categoria}}</li>
-              <li>{{this.alimentazione}}</li>
-              <li>{{this.disponibilita}}</li>
-            </ul>
-            <button class="button-prenota" veicolo-id="{{id}}">PRENOTA</button>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </script>
-  
 
-  
-
-
-  <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-  <script src="js/login.js"></script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/chart.js"></script>
-  <script src="js/home.js"></script>
-
-
+      <!-- bootstrap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <!-- swiper -->
+      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+      <!-- jquery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+      <!-- grafico -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <!-- handlebars-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+      <!--custom js-->
+      <script src="js/homepagedef.js"></script>
+      <script src="js/chart.js"></script>
+      <script src="js/login.js"></script>
+</body>
 </html>
