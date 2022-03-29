@@ -72,5 +72,8 @@ public class VeicoloService {
 			e.printStackTrace();
 		}
 		
+	
+	public void delVeicolo(Veicolo veicolo) {
+		db.delete(veicolo);;
 	}
 }

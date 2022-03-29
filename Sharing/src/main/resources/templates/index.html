@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin="" />
+     <!--FONT-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Source+Serif+4:wght@200&display=swap" rel="stylesheet">
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -24,60 +29,57 @@
     <link rel="stylesheet" href="css/homepagedef.css">
     <title>Home</title>
 </head>
-<body>
-     <!-- NAVBAR-->
-    <div class="container">
-        <nav class="navbar navbar-expand-lg fixed-top">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
-              </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Chi siamo</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Milano</a></li>
-                    <li><a class="dropdown-item" href="#">Roma</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item verticalerule">
-                    <a class="nav-link ">|</a>
-                    </li>
-                <li class="nav-item">
-                <a class="nav-link" id="myModal" href="#"data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">Accedi</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="pannello" href="#"><i class="bi bi-gear-fill"></i></a>
-                </li>
-              </ul>
-        
-            </div>
-          </div>
-        </nav>
-      </div>
 
-<!-- FINE NAVBAR-->
-    <!-- HERO-->
-      <div class="backg">
-        <div class="cta text-center">
-            <h2 class="brand">WE <span id="wa"><i> MOVE</i></span>PEOPLE</h2>
-            <h4>Muoviti liberamente</h4>
+<body>
+  <!-- NAVBAR-->
+  <div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Chi siamo</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Città</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Milano</a></li>
+                <li><a class="dropdown-item" href="#">Roma</a></li>
+              </ul>
+            </li>
+            <li class="nav-item verticalerule">
+              <a class="nav-link ">|</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="myModal" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Accedi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pannello" href="#"><i class="bi bi-gear-fill"></i></a>
+            </li>
+          </ul>
+
         </div>
       </div>
-    </div>
-<!-- FINE HERO-->
+    </nav>
+  </div>
 
-   
-<!-- SEZIONE VANTAGGI-->
+  <!-- FINE NAVBAR-->
+  <!-- HERO-->
+  <div class="backg">
+    <!-- <div class="cta text-center fixed-bottom">
+                <h2 class="brand">WE <span id="wa"><i> MOVE</i></span>PEOPLE</h2>
+              </div> -->
+  </div>
+  </div>
 
       <div class="container vantaggi pt-5">
           <div class="text-center">
@@ -91,7 +93,7 @@
           <div class="row text-center pt-5">
             <div class="col-xs-12 col-sm-4">
                 <div class="col-xs-12">
-                    <img src="https://enjoy.eni.com/img/tariffe_differenziate/pieno.png?1.2.4k" height="53">
+                    <img src="https://enjoy.eni.com/img/tariffe_differenziate/pieno.png?1.2.4k" height="50">
                 </div>
                 <div class="col-xs-12 vantaggi-title">
                     <b>Fai il pieno gratis in tutta Italia</b>
@@ -102,7 +104,7 @@
             </div>
             <div class="col-xs-12 col-sm-4">
                 <div class="col-xs-12">
-                    <img src="https://enjoy.eni.com/img/tariffe_differenziate/piggy_bank.png?1.2.4k" height="64">
+                    <img src="https://enjoy.eni.com/img/tariffe_differenziate/piggy_bank.png?1.2.4k" height="50">
                 </div>
                 <div class="col-xs-12 vantaggi-title">
                     <b>Un risparmio fatto di comodità</b>
@@ -124,258 +126,268 @@
             </div>
               </div>
       </div>
-    <!-- FINE VANTAGGI-->
-     <!-- Slider main container -->
-     <div class="swiper container">
+
+  <!-- FINE VANTAGGI-->
+  <!-- Slider main container -->
+  <div class="swiper container">
+    <!-- swiper è una classe per il carousel, container è una classe di BS -->
+    <h1 class="text-center testoColorato">La nostra Flotta</h1>
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/veicoli/auto-removebg-preview.png" alt="">
+        <div class="slideText">
+          <h2>Renault Twingo</h2>
+          <p>Largo La Foppa 27, MI 20215</p>
+          <button class="btn btn-primary" id="btn_auto" veicolo-id="AUTO">Buy now!!!</button>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/veicoli/scooter-removebg-preview.png" alt="">
+        <div class="slideText">
+          <h2>Mazda CX-30</h2>
+          <p>Corso Buenos Aires 79, MI 20121</p>
+          <button class="btn btn-primary" id="btn_moto" veicolo-id="MOTO">Scopri</button>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/veicoli/bici-removebg-preview.png" alt="">
+        <div class="slideText">
+          <h2>Audi Q5</h2>
+          <p>Via della Spiga 84, MI 20122</p>
+          <button class="btn btn-primary" id="btn_bici" veicolo-id="BICICLETTA">Scopri</button>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/veicoli/monopattino-removebg-preview.png" alt="">
+        <div class="slideText">
+          <h2>BMW serie 1</h2>
+          <p>Via Degli Angioli 15, MI 20121</p>
+          <button class="btn btn-primary" id="btn_mono" veicolo-id="MONOPATTINO">Scopri</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+  </div>
+
+  <!-- FINE SLIDER-->
+
+  <!-- CARDS -->
+  <div class="container carte" id="bodyDivImmagini">
+  </div>
+  <!-- FINE CARDS -->
+  <!-- BANNER -->
+
+
+  <div class="banner container-fluid">
+    <div class="row">
+      <div class="col info text-center">
+        <p>In questo momento a <span><b>Milano</b></span> ci sono <span id="contatore"><b></b></span> veicoli
+          disponibili.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col ban text-center">
+        <div class="row">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINE BANNER -->
+
+  <!-- SLIDER  2 main container -->
+  <div class="container-fluid slider2 pb-5">
+
+    <div class="swiper container">
       <!-- swiper è una classe per il carousel, container è una classe di BS -->
-      <h1 class="text-center testoColorato">La nostra Flotta</h1>
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-              <img class="img-fluid" src="img/veicoli/auto-removebg-preview.png" alt="">
-              <div class="slideText">
-                  <h2>Renault Twingo</h2>
-                  <p>Largo La Foppa 27, MI 20215</p>
-                  <button class="btn btn-primary" id="btn_auto" veicolo-id="AUTO">Buy now!!!</button>
-              </div>
-          </div>
-    
-          <div class="swiper-slide">
-            <img class="img-fluid" src="img/veicoli/scooter-removebg-preview.png" alt="">
-            <div class="slideText">
-                <h2>Mazda CX-30</h2>
-                <p>Corso Buenos Aires 79, MI 20121</p>
-                <button class="btn btn-primary" id="btn_moto" veicolo-id="MOTO">Scopri</button>
-            </div>
-        </div>
-    
+      <h1 class="testoColorato text-center">Cosa dicono i nostri clienti</h1>
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper ">
+        <!-- Slides -->
         <div class="swiper-slide">
-            <img class="img-fluid" src="img/veicoli/bici-removebg-preview.png" alt="">
-            <div class="slideText">
-                <h2>Audi Q5</h2>
-                <p>Via della Spiga 84, MI 20122</p>
-                <button class="btn btn-primary" id="btn_bici" veicolo-id="BICICLETTA">Scopri</button>
-            </div>
-        </div>
-
-        <div class="swiper-slide">
-          <img class="img-fluid" src="img/veicoli/monopattino-removebg-preview.png" alt="">
-          <div class="slideText">
-              <h2>BMW serie 1</h2>
-              <p>Via Degli Angioli 15, MI 20121</p>
-              <button class="btn btn-primary" id="btn_mono" veicolo-id="MONOPATTINO">Scopri</button>
-          </div>
-      </div>          
-        </div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      
-      </div>
-    </div>
-
-    <!-- FINE SLIDER-->
-
-    <!-- CARDS -->
-    <div class="container carte" id="bodyDivImmagini">
-    </div>
-    <!-- FINE CARDS -->
-    <!-- BANNER -->
-
- 
-    <div class="banner container-fluid">
-      <div class="row">
-        <div class="col info text-center">
-          <p>In questo momento a <span><b>Milano</b></span> ci sono <span id="contatore"><b></b></span> veicoli disponibili.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col ban text-center">
-          
-          <div class="row"><div id="map"></div>
-        </div>
-      </div>
-    </div>
-    </div>
-        
-<!-- FINE BANNER -->
-
-<!-- SLIDER  2 main container -->
-<div class="container-fluid slider2 pb-5">
-    
-        <div class="swiper container">
-            <!-- swiper è una classe per il carousel, container è una classe di BS -->
-            <h1 class="testoColorato text-center">Cosa dicono i nostri clienti</h1>
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper ">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center"  style="margin-left: auto; margin-right: auto;" ><img class="card-img-top" src="img/1517720234393.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Mauro Bogliaccino <br />
-                                <span> Eclipse  Fan </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/1517720234393.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Mauro Bogliaccino <br />
+                    <span> Eclipse Fan </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
                 </div>
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center"  style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/1554040358981.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Davide Ghione <br />
-                                <span> Project Manager </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center"  style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/vecchione.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Oscar Vecchione <br />
-                                <span> Project Manager </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/banche.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Anthony Banche <br />
-                                <span> Project Manager </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/LICENSE.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Dino Olievieri <br />
-                                <span> Project Manager </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/martinaa.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Martina D'Amato <br />
-                                <span> Project Manager </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/milo.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Milo Spandre <br />
-                                <span> Project Manager </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="gtco-testimonials">
-                    <div class="owl-carousel owl-carousel1 owl-theme">
-                          <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top" src="img/muscio.jpeg" alt="">
-                            <div class="card-body">
-                              <h5>Federico Muscio <br />
-                                <span> Project Manager </span>
-                              </h5>
-                              <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                impedit quo minus id quod maxime placeat ” </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                
-    
-    
-    
               </div>
-    
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-    
             </div>
           </div>
-</div>
-<!-- FINE SLIDER 2-->
-<!-- GRAFICO-->
-<div class="container pb-5">
+        </div>
+        <div class="swiper-slide">
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/1554040358981.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Davide Ghione <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/vecchione.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Oscar Vecchione <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/banche.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Anthony Banche <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/LICENSE.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Dino Olievieri <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/martinaa.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Martina D'Amato <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/milo.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Milo Spandre <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gtco-testimonials">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="card text-center" style="margin-left: auto; margin-right: auto;"><img class="card-img-top"
+                  src="img/muscio.jpeg" alt="">
+                <div class="card-body">
+                  <h5>Federico Muscio <br />
+                    <span> Project Manager </span>
+                  </h5>
+                  <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                    impedit quo minus id quod maxime placeat ” </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </div>
+  </div>
+  <!-- FINE SLIDER 2-->
+  <!-- GRAFICO-->
+  <div class="container pb-5">
     <h1 class="text-center testoColorato">KG di CO2 risparmiati</h1>
     <canvas id="myChart"></canvas>
   </div>
-<!-- FINE GRAFICO-->
-<!-- NEWSLETTER -->
-<div class="news-container pt-5">
+  <!-- FINE GRAFICO-->
+  <!-- NEWSLETTER -->
+  <div class="news-container pt-5">
     <div class="container news">
-        <section class="subscription bg-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 newsletter">
-                        <div class="subscription-wrapper">
-                            <div class="d-flex subscription-content justify-content-between align-items-center flex-column flex-md-row text-center text-md-left">
-                                <h3 class="flex-fill">Iscriviti <br> alla nostra newsletter</h3>
-                                <form action="#" class="row flex-fill">
-                                    <div class="col-lg-7 my-md-2 my-2"> <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" placeholder="Your Email" name="email"> </div>
-                                    <div class="col-lg-5 my-md-2 my-2"> <button type="submit" class="btn2 btn2-primary btn-lg border-0 w-100">Subscribe Now</button> </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+      <section class="subscription bg-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 newsletter">
+              <div class="subscription-wrapper">
+                <div
+                  class="d-flex subscription-content justify-content-between align-items-center flex-column flex-md-row text-center text-md-left">
+                  <h3 class="flex-fill">Iscriviti <br> alla nostra newsletter</h3>
+                  <form action="#" class="row flex-fill">
+                    <div class="col-lg-7 my-md-2 my-2"> <input type="email"
+                        class="form-control px-4 border-0 w-100 text-center text-md-left" placeholder="Your Email"
+                        name="email"> </div>
+                    <div class="col-lg-5 my-md-2 my-2"> <button type="submit"
+                        class="btn2 btn2-primary btn-lg border-0 w-100">Subscribe Now</button> </div>
+                  </form>
                 </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </div>
-</div>
- <!-- FINE NEWSLETTER -->
-<!-- FOOTER -->
-<footer class="bg-dark text-center text-white pt-5 ">
+  </div>
+  <!-- FINE NEWSLETTER -->
+  <!-- FOOTER -->
+  <footer class="bg-dark text-center text-white pt-5 ">
     <!-- Grid container -->
 
     <!-- Section: Links -->
@@ -388,18 +400,18 @@
 
           <ul class="list-unstyled mb-0">
             <li>
-                <a class="text-white">Via Antonio Banfi, 8</a>
-              </li>
-              <li>
-                <a class="text-white">20122 Milano MI</a>
-              </li>
-              <br>
+              <a class="text-white">Via Antonio Banfi, 8</a>
+            </li>
             <li>
-                <a class="text-white">Via Principi d'Acaja, 33</a>
-              </li>
-              <li>
-                <a class="text-white">10138 Torino TO</a>
-              </li>
+              <a class="text-white">20122 Milano MI</a>
+            </li>
+            <br>
+            <li>
+              <a class="text-white">Via Principi d'Acaja, 33</a>
+            </li>
+            <li>
+              <a class="text-white">10138 Torino TO</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -410,11 +422,11 @@
 
           <ul class="list-unstyled mb-0">
             <li>
-                <a class="text-white">Tel. 0114472954</a>
-              </li>
-              <li>
-                <a class="text-white">move@gmail.com</a>
-              </li>
+              <a class="text-white">Tel. 0114472954</a>
+            </li>
+            <li>
+              <a class="text-white">move@gmail.com</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -427,14 +439,14 @@
               <a href="#!" class="text-white">FAQ</a>
             </li>
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Cookies</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Privacy Policy</a>
-            </li>
-          </ul>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Cookies</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Privacy Policy</a>
+              </li>
+            </ul>
         </div>
         <!--Grid column-->
 
@@ -487,7 +499,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" >
+    <div class="text-center p-3">
       © 2022 Copyright: Move - All rights reserved
 
     </div>
@@ -495,9 +507,16 @@
   </footer>
   <!-- Footer -->
 
-   <!-- MODAL -->
+  <!-- Back to top button -->
+  <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <!-- MODAL -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-body ">
@@ -518,13 +537,16 @@
           </div>
           <div>
             <?xml version="1.0" encoding="UTF-8"?>
-            <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-                <title>Path</title>
-                <desc>Created with Sketch.</desc>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#27ea1d"></path>
-                </g>
+            <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+              <title>Path</title>
+              <desc>Created with Sketch.</desc>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path
+                  d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z"
+                  id="Path" fill="#27ea1d"></path>
+              </g>
             </svg>
           </div>
           <div class="column" id="secondary">
@@ -566,7 +588,7 @@
 
   -->
 
-    <script id="template-veicoli" type="text/x-handlebars-template">
+  <script id="template-veicoli" type="text/x-handlebars-template">
     <h1 class="fontTitoli testoColorato text-center">Veicoli disponibili</h1>
     <div class="">
       <div class="row mt-5">
@@ -616,25 +638,29 @@
 </div>
 </div>
   </script>
-  
-    <!-- FINE HANDLEBARS-->
+
+  <!-- FINE HANDLEBARS-->
 
 
 
-      <!-- bootstrap -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-      <!-- swiper -->
-      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      <!-- jquery -->
-      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-      <!-- grafico -->
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <!-- handlebars-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-      <!--custom js-->
-      <script src="js/chart.js"></script>
-      <script src="js/login.js"></script>
-      <script src="js/home.js"></script>
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- swiper -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <!-- grafico -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- handlebars-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+  <!--custom js-->
+  <script src="js/chart.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/home.js"></script>
 
 </body>
+
 </html>
