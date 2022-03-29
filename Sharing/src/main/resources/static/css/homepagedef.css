@@ -41,7 +41,7 @@
     position: absolute;
     top: 70%;
     left: 50%;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -70%);
   }
   
   #wa i{
@@ -70,7 +70,7 @@
                 SEZIONE VANTAGGI                   
 --------------------------------------- */
 .vantaggi{
-    height: 500px;
+    height: auto;
 }
 .vantaggi-title{
     padding-top: 3rem;
