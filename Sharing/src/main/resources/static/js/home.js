@@ -11,6 +11,9 @@ let pannello= document.getElementById("pannello").addEventListener("click", cont
 const user = localStorage.getItem('user');
 const idv = localStorage.getItem('veicolo');
 let modal= null;
+let info= null;
+const URL3 = "http://localhost:8080/api/veicolo/id/"
+const URL4 = "http://localhost:8080/api/prenotazioni/"
 
 
 // handlebars Helpers
@@ -107,8 +110,19 @@ function listaVeicoli(event){
 
 function switchVeicolo(event) {
 
+  localStorage.removeItem('veicolo');
   let originator = event.currentTarget;
   let veicolo = originator.getAttribute("veicolo-id");
+  localStorage.setItem('veicolo', veicolo);
+  location.href="/veicolo"
+}
+
+
+function mapsVeicolo() {
+
+  localStorage.removeItem('veicolo');
+  let prova = document.getElementById("prova");
+  let veicolo = prova.getAttribute("veicolo-id");
   localStorage.setItem('veicolo', veicolo);
   location.href="/veicolo"
 }
@@ -153,6 +167,7 @@ async function wrap(){
 for (let x of coo){
 let allCoo = x.coordinate;
 let coo_split=allCoo.split(',');
+info = '<center>'+x.descrizione +'<br>'+ x.indirizzo+'<br>'+ '<button type="button" id="prova" onclick="mapsVeicolo()" veicolo-id="'+x.id+'" class="btn btn-primary">Prenota</button>'+'</center>';
 switch(x.categoria){
   case 'AUTO':
     icon = new LeafIcon({iconUrl: 'img/veicoli/icon/auto.png'})
@@ -170,9 +185,11 @@ switch(x.categoria){
     icon = new LeafIcon({iconUrl: 'img/veicoli/icon/monopattino.png'})
     break;
 }
-L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
+L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup(info).addTo(map);
 }
+agganciaEventi();
 }
+
   
 window.addEventListener(
   'DOMContentLoaded', 
