@@ -67,7 +67,8 @@ p{
 }
 
 .nav-link:focus, .nav-link:hover {
-  color: gray;
+  font-weight: bold;
+  color: white;
 }
 
 @media (max-width: 991px){
@@ -463,19 +464,17 @@ small.justify-content-center {
   background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
   font-family: 'Dosis', sans-serif;
-  font-weight:bold;
   }
 
   .btn-primary:hover{
-
+font-weight: bold;
     border-color: gray;
-    color: gray;
+    color: white;
   }
 #secondary .btn2{
     background: linear-gradient(80deg, #859ce8 0%, #de9505 100%);
     padding: 8px 15px;
     font-family: 'Dosis', sans-serif;
-    font-weight:bold;
     font-size: 20px;
 }
 /* ------------------------------------ 
@@ -552,7 +551,6 @@ small.justify-content-center {
     border: 0;
     color: #fff;
     font-family: 'Dosis', sans-serif;
-    font-weight:bold;
     font-size: 20px;
 }
 
@@ -572,12 +570,12 @@ small.justify-content-center {
     transition: .3s ease-in;
     overflow: hidden;
     font-family: 'Dosis', sans-serif;
-    font-weight:bold;
     font-size: 20px;
 }
 
 .btn2:hover{
-color: gray;
+color: white;
+font-weight: bold;
 }
 
 .btn2-primary:after {
@@ -607,8 +605,17 @@ color: gray;
     padding: 10px 15px;
     width: 48px;
     font-family: 'Dosis', sans-serif;
-    font-weight:bold;
     font-size: 20px;
+}
+
+.btn-footer:hover{
+  color: white;
+  font-weight: bold;
+}
+
+.fab:hover{
+color: white;
+font-weight: bold;
 }
 
 .text-white{
