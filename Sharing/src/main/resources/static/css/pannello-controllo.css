@@ -1,121 +1,50 @@
-.grafico{
-    border: 1px solid black;
-    height: 500px;
-    border-radius: 10px;
-    margin-bottom: 5rem;
-}
+/* ------------------------------------ 
+                NAVBAR                      
+--------------------------------------- */
+.navbar {
+    transition: all .2s ease-in-out;
+  }
 
-.logo{
-    width: 200px;
-}
 
-svg{
-    width: 20px;
-}
+  .navbar.scrolled-nav{
+    background: linear-gradient(189deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
+  }
 
-.contenitore{
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 70px; 
-    filter: opacity(100%);   
-}
-
-.cards ul{
-    list-style-type: none;
-    padding: 0;
-}
-
-.contenitore .col p{
-    color: white;
+  nav:hover{
+    background: linear-gradient(189deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
+       
+  }
+  .navbar-nav li a, .navbar-toggler-icon{
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
-}
+    font-weight: 500;
+  }
 
-nav{
-    border-bottom: 1px solid white;
-}
-
-.dropdown-menu li a{
+  .dropdown-menu li a{
     color: green;
 }
 
-.contenitore img{
-    width: 100px;
+.nav-link:focus, .nav-link:hover {
+  color: gray;
 }
 
-.contenitore a{
-    color: rgb(255, 255, 255);
-    padding-left: 1.5rem;
-    font-size: 1.1rem;
+.colorenav{
+    background-color: #aaabac;
+    height: 75px;
 }
 
-.contenitore ul li a:hover{
-
-    color: rgb(3, 183, 3);
-}
-
-.container .btn{
-    background-color: rgb(3, 183, 3);
+.icona{
+    font-size: 1.5rem;
     color: white;
+    justify-content: center;
+    align-items: center;
 }
 
-.contenitore .swiper-button-prev{
-    background-color: rgb(3, 183, 3);
+@media (max-width: 991px){
+ .verticalerule{
+       display: none; 
+    }
 }
-
-.text-white{
-    text-decoration: none;
-}
-
-
-/* CSS */
-.button-6 {
-  align-items: center;
-  background-color: rgb(3, 183, 3);
-  color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
-}
-
-.button-6:hover,
-.button-6:focus {
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.button-6:hover {
-  transform: translateY(-1px);
-}
-
-.button-6:active {
-  background-color: #F0F0F1;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  color: rgba(0, 0, 0, 0.65);
-  transform: translateY(0);
-}
-
 
 footer {
     position: static;
@@ -137,6 +66,11 @@ footer {
   
 }
 
+.tex li a{
+    color: #535353;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
 
     /* color: #009879; */
 
