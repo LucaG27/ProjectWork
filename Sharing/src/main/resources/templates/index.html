@@ -31,39 +31,40 @@
 </head>
 
 <body>
-  <!-- NAVBAR-->
-  <div class="container">
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <!-- NAVBAR-->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Chi siamo</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Milano</a></li>
+                    <li><a class="dropdown-item" href="#">Roma</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item verticalerule">
+                    <a class="nav-link ">|</a>
+                    </li>
+                <li class="nav-item">
+                <a class="nav-link" id="buttonLogin" href="#"data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">Accedi</a>
+                  <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i id="pannello" class="bi bi-gear-fill"></i></a>
 
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Chi siamo</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Città</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Milano</a></li>
-                <li><a class="dropdown-item" href="#">Roma</a></li>
-              </ul>
-            </li>
-            <li class="nav-item verticalerule">
-              <a class="nav-link ">|</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="myModal" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Accedi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pannello" href="#"><i class="bi bi-gear-fill"></i></a>
             </li>
           </ul>
 
@@ -562,6 +563,20 @@
   </div>
 
   <!-- FINE MODAL -->
+
+  <!-- OFF CANVAS-->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body container text-end">
+      <div><a href="/pannello-utente">Mio profilo</a></div>
+      <div><a href="/logout">Logout</a></div>
+    </div>
+  </div>
+
+  <!-- FINE OFF CANVAS-->
 
   <!-- HANDLEBARS-->
   <!--
