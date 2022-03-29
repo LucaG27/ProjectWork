@@ -118,10 +118,7 @@ function listaVeicoli(){
                     indirizzo: document.getElementById("indirizzo").value,
                     citta: document.getElementById("citta").value,
                     coordinate: document.getElementById("coordinate").value,
-                    immagine: {
-                        id: immagini.id,
-                        immagine: immagini.immagine
-                    },
+                    prezzo: document.getElementById("prezzo").value,
                     specifiche:{
                         id: specifiche.id,
                         velocita: specifiche.velocita,
@@ -175,6 +172,7 @@ function listaVeicoli(){
                 document.getElementById("indirizzo").value = json.indirizzo;
                 document.getElementById("citta").value = json.citta;
                 document.getElementById("coordinate").value = json.coordinate;
+                document.getElementById("prezzo").value = json.prezzo;
                 specifiche = {
                     id: json.specifiche.id,
                     velocita: json.specifiche.velocita,
@@ -283,7 +281,7 @@ function listaVeicoli(){
         modalDelete = new bootstrap.Modal(document.getElementById('deleteModal'), {});
         
         template_riga = document.getElementById("table_rows").innerHTML;
-        listaVeicoli();
+       
 
         let updateButton = document.getElementById("updateButton");
         updateButton.addEventListener("click", editVeicolo);
@@ -306,6 +304,8 @@ function listaVeicoli(){
         for (let li = 0; li < delButton.length; li++) {
             delButton[li].addEventListener("click", chiamaDelModale);
         }
+
+        listaVeicoli();
             console.log(JSON.parse(localStorage.getItem('user')));
         });
 

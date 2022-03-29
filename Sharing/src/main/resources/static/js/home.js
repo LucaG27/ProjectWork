@@ -34,6 +34,10 @@ Handlebars.registerHelper('is_available', function (disponibilita) {
 })
 
 function logout(){
+
+  localStorage.removeItem("user");
+
+  location.href = "/logout";
   
 }
 
@@ -47,7 +51,7 @@ function loadPage(){
     //document.getElementById("pulsanteProfilo").setAttribute("style", "display:none");
     document.getElementById("buttonLogin").setAttribute("style", "display:block");
   }
-  if(user.ruolo == "RUOLO_UTENTE"){
+  if(userL.ruolo == "RUOLO_UTENTE"){
     document.getElementById("pannello").setAttribute("style", "display:none");
     document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
     //document.getElementById("pulsanteProfilo").setAttribute("style", "display:inline");

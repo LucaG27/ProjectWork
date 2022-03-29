@@ -71,6 +71,7 @@ public class VeicoloService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
 		
 	
 	public void delVeicolo(Veicolo veicolo) {
