@@ -7,7 +7,10 @@ let bottone_prenota= null;
 let icon = null;
 let coordinate = null;
 let counter = null;
-
+let pannello= document.getElementById("pannello").addEventListener("click", controlloPannello);
+const user = localStorage.getItem('user');
+const idv = localStorage.getItem('veicolo');
+let modal= null;
 
 
 // handlebars Helpers
@@ -24,6 +27,17 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
 Handlebars.registerHelper('is_available', function (disponibilita) {
 	return (disponibilita == "DISPONIBILE")?"btn-primary":"btn-outline-primary";
 })
+
+function controlloPannello(){
+
+  if (user == null){
+
+    modal.show();
+  }else{
+    location.href="pannello-controllo";
+  }
+
+}
 
 
 function listaVeicoli(event){
@@ -164,9 +178,12 @@ window.addEventListener(
   'DOMContentLoaded', 
   function(event){
 
+
+    modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
     render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
     veicoliDisponibili();
     wrap();
+    
 })
 
 /* HOMEDEF JS */

@@ -23,8 +23,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @Controller
-@RequestMapping("/pannello-controllo")
-public class PannelloCTRL {
+@RequestMapping("/pannello-utente")
+public class PannelloUtenteCTRL {
 
 	@Autowired
 	FileService fs;
@@ -34,35 +34,10 @@ public class PannelloCTRL {
 	VeicoloService vSrv;
 
     @GetMapping
-	public String getListaVeicoli(HttpSession session) {
+	public String getPannelloUtente(HttpSession session) {
 		
 		if(session.getAttribute("utenteSession") == null) return "index";
-		
-		Utente u = (Utente) session.getAttribute("utenteSession");
-		if(u.getRuolo().equals("RUOLO_ADMIN")) return "pannello-controllo";
-		return "pagina-forbidden";
+		return "pannello-utente";
 	}
-
-	@PostMapping("/save")
-	public String saveArt(Model model, Immagine veicoloForm,
-			@RequestParam(name = "image") MultipartFile immagine,@RequestParam(name = "veicoloId")Integer idVeicolo) {
-
-		if (immagine != null) {
-			try {
-				String percorso = fs.saveFile("img/veicoli/upload", immagine.getName(),
-						immagine);
-				veicoloForm.setImmagine(percorso);
-				Veicolo v=vSrv.getById(idVeicolo);
-				veicoloForm.setVeicolo(v);
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		aDB.save(veicoloForm);
-		return "pannello-controllo";
-	}
-
-	
     
 }
