@@ -12,49 +12,30 @@
     <link  rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
       <!-- FONT AWESOME-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/homepagedef.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
 </head>
 <body>
      <!-- NAVBAR-->
-    <div class="container">
-        <nav class="navbar navbar-expand-lg fixed-top">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
-              </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Chi siamo</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Milano</a></li>
-                    <li><a class="dropdown-item" href="#">Roma</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item verticalerule">
-                    <a class="nav-link">|</a>
-                    </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="myModal" href="#"data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">Accedi</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pannello-controllo"><i class="bi bi-gear-fill"></i></a>
-                </li>
-              </ul>
-        
-            </div>
-          </div>
-        </nav>
-      </div>
-
+     <header id="nav-wrapper">
+      <nav id="nav">
+        <div class="nav left">
+          <span class="gradient skew">
+            <h1 class="logo un-skew"><a href="#home">Logo Here</a></h1>
+          </span>
+          <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
+        </div>
+        <div class="nav right">
+          <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
+          <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About</span></span></a>
+          <a href="#work" class="nav-link"><span class="nav-link-span"><span class="u-nav">Work</span></span></a>
+          <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+  
+      </section>
 <!-- FINE NAVBAR-->
     <!-- HERO-->
       <div class="backg">
@@ -599,5 +580,46 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script src="js/homepagedef.js"></script>
       <script src="js/chart.js"></script>
+
+      <script>
+        var util = {
+  mobileMenu() {
+    $("#nav").toggleClass("nav-visible");
+  },
+  windowResize() {
+    if ($(window).width() > 800) {
+      $("#nav").removeClass("nav-visible");
+    }
+  },
+  scrollEvent() {
+    var scrollPosition = $(document).scrollTop();
+
+    $.each(util.scrollMenuIds, function (i) {
+      var link = util.scrollMenuIds[i],
+        container = $(link).attr("href"),
+        containerOffset = $(container).offset().top,
+        containerHeight = $(container).outerHeight(),
+        containerBottom = containerOffset + containerHeight;
+
+      if (
+        scrollPosition < containerBottom - 20 &&
+        scrollPosition >= containerOffset - 20
+      ) {
+        $(link).addClass("active");
+      } else {
+        $(link).removeClass("active");
+      }
+    });
+  }
+};
+
+$(document).ready(function () {
+  util.scrollMenuIds = $("a.nav-link[href]");
+  $("#menu").click(util.mobileMenu);
+  $(window).resize(util.windowResize);
+  $(document).scroll(util.scrollEvent);
+});
+
+      </script>
 </body>
 </html>
