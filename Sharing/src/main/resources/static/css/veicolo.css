@@ -194,6 +194,12 @@ ul {
     padding-inline-start: 40px;
 }
 
+@media(max-width: 768px){
+    .group-wrapper{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
 li {
     display: list-item;
     text-align: -webkit-match-parent;
@@ -209,6 +215,8 @@ li {
 .group-specifications .pane-title.open+.pane-content, .group-specifications .title-group.open+.group-wrapper>li {
     display: block;
 }
+
+
 
 .group-specifications .group-wrapper>li span.field-item.field_offer_co2.cl-A {
     background: url("https://www.arval.it/sites/all/themes/arval/images/CO2/A.png") no-repeat left center;

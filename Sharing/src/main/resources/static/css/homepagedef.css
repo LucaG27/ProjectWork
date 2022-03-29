@@ -53,9 +53,9 @@
 }
   .cta{
     position: absolute;
-    top: 75%;
+    top: 55%;
     left: 50%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -55%);
   }
   
   #wa i{
