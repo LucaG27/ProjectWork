@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.opencsv.bean.CsvBindByName;
 
 @Entity
 @Table(name="veicolo")
@@ -25,22 +26,31 @@ public class Veicolo {
 	private int id;
 	
 	@Column(name="categoria")
+	@CsvBindByName
 	private String categoria;	
 	@Column(name="descrizione")
+	@CsvBindByName
 	private String descrizione;
 	@Column(name="alimentazione")
+	@CsvBindByName
 	private String alimentazione;
 	@Column(name="ruote")
+	@CsvBindByName
 	private String ruote;
 	@Column(name="disponibilita")
+	@CsvBindByName
 	private String disponibilita;
 	@Column(name="indirizzo")
+	@CsvBindByName
 	private String indirizzo;
 	@Column(name="citta")
+	@CsvBindByName
 	private String citta;
 	@Column(name="coordinate")
+	@CsvBindByName
 	private String coordinate;
 	@Column(name="prezzo")
+	@CsvBindByName
 	private double prezzo;
 	
 	@OneToMany(mappedBy= "veicolo" ,cascade = {CascadeType.ALL})
