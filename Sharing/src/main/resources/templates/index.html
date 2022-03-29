@@ -300,18 +300,18 @@
   <!-- FINE MODAL -->
 
   <script id="template-veicoli" type="text/x-handlebars-template">
-    {{#each this}}
+    {{#each veicoli}}
       <div class="col-lg-3 mt-5 p-3">
         <div class="card {{is_available disponibilita}}">
           <img class="card-img-top"
-            src="{{immagine.immagine}}"
+            src="{{this.immagine.0.immagine}}"
             alt="">
           <div class="card-body text-center">
-            <h5 class="card-title pac fontTitoli">{{descrizione}}</h5>
+            <h5 class="card-title pac fontTitoli">{{this.descrizione}}</h5>
             <ul>
-              <li>{{categoria}}</li>
-              <li>{{alimentazione}}</li>
-              <li>{{disponibilita}}</li>
+              <li>{{this.categoria}}</li>
+              <li>{{this.alimentazione}}</li>
+              <li>{{this.disponibilita}}</li>
             </ul>
             <button class="button-prenota" veicolo-id="{{id}}">PRENOTA</button>
           </div>

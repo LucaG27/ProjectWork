@@ -44,8 +44,11 @@ function listaVeicoli(event){
       return response.json();
     })
       .then(function(json) {
-          console.log(json);    
-          let rows = render_veicoli(json);
+          console.log(json);
+          const context = {
+            'veicoli': json
+          };    
+          let rows = render_veicoli(context);
          
           document.getElementById("bodyDivImmagini").innerHTML = rows;
 
@@ -285,10 +288,11 @@ var util = {
   }
 };
 
+/*
 $(document).ready(function () {
   util.scrollMenuIds = $("a.nav-link[href]");
   $("#menu").click(util.mobileMenu);
   $(window).resize(util.windowResize);
   $(document).scroll(util.scrollEvent);
 });
-
+*/
