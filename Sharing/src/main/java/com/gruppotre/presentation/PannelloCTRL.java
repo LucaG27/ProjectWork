@@ -62,5 +62,15 @@ public class PannelloCTRL {
 		aDB.save(veicoloForm);
 		return "pannello-controllo";
 	}
+
+	@GetMapping("/aggiungi-veicolo")
+	public String addVeicolo(HttpSession session) {
+		
+		if(session.getAttribute("utenteSession") == null) return "index";
+		
+		Utente u = (Utente) session.getAttribute("utenteSession");
+		if(u.getRuolo().equals("RUOLO_ADMIN")) return "inserimento";
+		return "pagina-forbidden";
+	}
     
 }

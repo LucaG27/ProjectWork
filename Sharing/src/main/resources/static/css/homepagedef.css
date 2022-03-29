@@ -1,6 +1,11 @@
 /* ------------------------------------ 
                 NAVBAR                      
 --------------------------------------- */
+
+#map { 
+  height: 720px;
+  width: 200px;
+}
 .navbar {
     transition: all .2s ease-in-out;
   }
