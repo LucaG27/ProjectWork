@@ -619,6 +619,10 @@ font-weight: bold;
     text-decoration: none;
   }
 
+
+  /* ------------------------------------ 
+            BOTTONE TORNA TOP                   
+--------------------------------------- */
   #btn-back-to-top {
     position: fixed;
     bottom: 20px;
