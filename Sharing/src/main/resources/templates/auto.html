@@ -25,59 +25,53 @@
 </head>
 
 <body>
-  <!-- NAVBAR-->
-  <div class="contenitore container-fluid mb-5 ">
-    <nav class="navbar navbar-expand-lg container ">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img class="logo"
-            src="https://media.discordapp.net/attachments/955030566347079702/956500337945104444/M__2_-removebg-preview_final.png"
-            alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+   <!-- NAVBAR-->
+   <div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" style="color: rgb(3, 183, 3);">Home</a>
+              <a class="nav-link" href="index">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Chi siamo</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Città
-              </a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Milano</a></li>
+                <li><a class="dropdown-item" href="#">Roma</a></li>
               </ul>
             </li>
-            <li class="nav-item d-flex">
-              <svg class="ms-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 24 24">
-                <defs>
-                  <path id="ico_account_svg__a"
-                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm4.893 16.002H6.829a.34.34 0 00-.1.015A7.96 7.96 0 0012 20a7.968 7.968 0 005.15-1.878.335.335 0 00-.257-.12zM12 4a8 8 0 00-6.568 12.57c.365-.357.861-.57 1.397-.57h10.064a2 2 0 011.552.74A8 8 0 0012 4zm0 2a4 4 0 110 8 4 4 0 010-8zm0 2a2 2 0 100 4 2 2 0 000-4z">
-                  </path>
-                </defs>
-                <use fill="#fff" fill-rule="evenodd" xlink:href="#ico_account_svg__a"></use>
-              </svg>
-              <a class="nav-link ms-2" id="myModal" href="#" tabindex="-1" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" data-bs-whatever="@mdo">Accedi</a>
+            <li class="nav-item verticalerule">
+                <a class="nav-link">|</a>
+                </li>
+            <li class="nav-item">
+            <a class="nav-link" id="myModal" href="#"data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Accedi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pannello-controllo"><i class="bi bi-gear-fill"></i></a>
             </li>
           </ul>
+    
         </div>
       </div>
     </nav>
   </div>
-  <!-- FINE HERO-->
 
+<!-- FINE NAVBAR-->
+  <!-- FINE HERO-->
+<div class="contanier colorenav">
+   
+</div>
 
   <!-- Swiper -->
       <!-- MAPPA -->
@@ -145,119 +139,178 @@
       <div id="map"></div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-center text-white pt-5 ">
-      <!-- Grid container -->
+   <!-- FOOTER -->
+<footer class="bg-dark text-center text-white pt-5 ">
+  <!-- Grid container -->
 
-      <!-- Section: Links -->
-      <section class="container">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Indirizzo</h5>
+  <!-- Section: Links -->
+  <section class="container">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Indirizzo</h5>
 
-            <ul class="list-unstyled mb-0">
+        <ul class="list-unstyled mb-0">
+          <li>
+              <a class="text-white">Via Antonio Banfi, 8</a>
+            </li>
+            <li>
+              <a class="text-white">20122 Milano MI</a>
+            </li>
+            <br>
+          <li>
+              <a class="text-white">Via Principi d'Acaja, 33</a>
+            </li>
+            <li>
+              <a class="text-white">10138 Torino TO</a>
+            </li>
+        </ul>
+      </div>
+      <!--Grid column-->
 
-              <li>
-                <a class="text-white">Via Principi d'Acaja, 33</a>
-              </li>
-              <li>
-                <a class="text-white">10138 Torino TO</a>
-              </li>
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Contatti</h5>
 
-            </ul>
-          </div>
-          <!--Grid column-->
+        <ul class="list-unstyled mb-0">
+          <li>
+              <a class="text-white">Tel. 0114472954</a>
+            </li>
+            <li>
+              <a class="text-white">move@gmail.com</a>
+            </li>
+        </ul>
+      </div>
+      <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Contatti</h5>
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-white">FAQ</a>
+          </li>
+          <li>
+            <a href="#!" class="text-white">Cookies</a>
+          </li>
+          <li>
+            <a href="#!" class="text-white">Privacy Policy</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
 
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a class="text-white">Tel. 0114472954</a>
-              </li>
-              <li>
-                <a class="text-white">move@gmail.com</a>
-              </li>
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
 
-            </ul>
-          </div>
-          <!--Grid column-->
+        <ul class="list-unstyled mb-0">
+          <li class="">FOLLOW MOVE</li>
+          <li>
+            <div class="container p-4">
+              <!-- Section: Social media -->
+              <section class="mb-2">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                    class="fab fa-facebook-f"></i></a>
 
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                    class="fab fa-twitter"></i></a>
 
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Cookies</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Privacy Policy</a>
-              </li>
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                    class="fab fa-google"></i></a>
 
-            </ul>
-          </div>
-          <!--Grid column-->
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                    class="fab fa-instagram"></i></a>
 
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-
-            <ul class="list-unstyled mb-0">
-              <li class="">FOLLOW MOVE</li>
-              <li>
-                <div class="container p-4">
-                  <!-- Section: Social media -->
-                  <section class="mb-2">
-                    <!-- Facebook -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
-
-                    <!-- Twitter -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-twitter"></i></a>
-
-                    <!-- Google -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-google"></i></a>
-
-                    <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-instagram"></i></a>
-
-                  </section>
-                  <!-- Section: Social media -->
-              </li>
-              <li class="mb-3">
-                <img
-                  src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
-                  alt="" width="150px">
-              </li>
-              <li class="mb-3">
-                <img
-                  src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
-                  alt="" width="150px">
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </section>
-      <!-- Section: Links -->
+              </section>
+              <!-- Section: Social media -->
+          </li>
+          <li class="mb-3">
+            <img
+              src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
+              alt="" width="150px">
+          </li>
+          <li class="mb-3">
+            <img
+              src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
+              alt="" width="150px">
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </section>
+  <!-- Section: Links -->
   </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright: Move
+  <div class="text-center p-3" >
+    © 2022 Copyright: Move - All rights reserved
 
   </div>
   <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+</footer>
+<!-- Footer -->
+
+ <!-- MODAL -->
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body ">
+        <div class="column text-centerd" id="main">
+          <h1>Log In</h1>
+          <form>
+            <div class="form-group mb-3">
+              <label for="email">E-mail </label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+            </div>
+            <div class="form-group mb-3 icon-inside">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="">
+              <i class="far fa-eye" id="togglePassword"></i>
+            </div>
+            <button type="submit" class="btn btn-primary text-center">Accedi</button>
+          </form>
+        </div>
+        <div>
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+              <title>Path</title>
+              <desc>Created with Sketch.</desc>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#27ea1d"></path>
+              </g>
+          </svg>
+        </div>
+        <div class="column" id="secondary">
+          <div class="sec-content">
+            <h2>Registrati</h2>
+            <h3>Cosa aspetti? Crea il tuo account e prenota il tuo veicolo</h3>
+            <button type="button" class="btn2 btn-primary">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINE MODAL -->
+<!-- Back to top button -->
+<button
+      type="button"
+      class="btn btn-danger btn-floating btn-lg"
+      id="btn-back-to-top"
+      >
+<i class="fas fa-arrow-up"></i>
+</button>
 
   <script id="template-veicoli" type="text/x-handlebars-template">
     {{#each immagine}}
@@ -343,11 +396,14 @@
     crossorigin="anonymous"></script>
   <script src="js/login.js"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/chart.js"></script>
-  <script src="js/veicolo.js"></script>
+  
+  
+  
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="js/veicolo.js"></script>
+  <script src="js/veicolo2.js"></script>
   <style>
 
     .macchina {
