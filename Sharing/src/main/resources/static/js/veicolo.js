@@ -1,3 +1,5 @@
+
+
 let render_specifiche = null;
 let render_veicoli = null;
 let veicolo_id = document.getElementById("veicolo_id")
@@ -196,3 +198,4 @@ switch(tipo_veicolo){
 let mOrange = L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
 
 }
+

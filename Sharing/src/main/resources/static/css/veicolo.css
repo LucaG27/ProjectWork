@@ -1,7 +1,46 @@
-body{
-    font-family: 'Montserrat', sans-serif;
+
+/* ------------------------------------ 
+                NAVBAR                      
+--------------------------------------- */
+.navbar {
+    transition: all .2s ease-in-out;
+  }
+
+  body{
+      background-color: #fdf9fd;;
+  }
+  .navbar.scrolled-nav{
+    background: linear-gradient(189deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
+  }
+
+  nav:hover{
+    background: linear-gradient(189deg, rgba(96,223,9,1) 34%, rgba(190,255,4,1) 61%);
+       
+  }
+  .navbar-nav li a, .navbar-toggler-icon{
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .dropdown-menu li a{
+    color: green;
 }
 
+.nav-link:focus, .nav-link:hover {
+  color: gray;
+}
+
+.colorenav{
+    background-color: #aaabac;
+    height: 75px;
+}
+
+@media (max-width: 991px){
+ .verticalerule{
+       display: none; 
+    }
+}
 
 .swiper-button-prev{
     color: green;
@@ -10,59 +49,6 @@ body{
 .swiper-button-next{
     color: green;
 }
-
-.grafico{
-    border: 1px solid black;
-    height: 500px;
-    border-radius: 10px;
-    margin-bottom: 5rem;
-}
-
-.banner{
-    background-image: url("https://enjoy.eni.com/img/home/bg_map_milano.png");
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.banner .ban img{
-    width: 90%;
-}
-
-.banner .info{
-    height: 200px;
-}
-
-.banner .info p{
-    font-size: 2.3rem;
-    color: white;
-}
-.banner .info span{
-    color: #7ab423;
-}
-
-
-.logo{
-    width: 200px;
-}
-
-.dropdown-menu li a{
-    color: green;
-}
-
-svg{
-    width: 20px;
-}
-
-.banner{
-  display: flex;   
-  flex-direction: column; 
-  align-items: center;
-  justify-content: end;
-  
-  
-}
-
 
 .contenitore{
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
@@ -96,9 +82,6 @@ svg{
     font-size: 1.2rem;
 }
 
-nav{
-    border-bottom: 1px solid white;
-}
 
 .contenitore img{
     width: 100px;
@@ -127,56 +110,6 @@ nav{
 .text-white{
     text-decoration: none;
 }
-
-
-/* CSS */
-.button-6 {
-  align-items: center;
-  background-color: rgb(3, 183, 3);
-  color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
-}
-
-.button-6:hover,
-.button-6:focus {
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.button-6:hover {
-  transform: translateY(-1px);
-}
-
-.button-6:active {
-  background-color: #F0F0F1;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  color: rgba(0, 0, 0, 0.65);
-  transform: translateY(0);
-}
-
 
 .swiper-button-prev{
     color: green;
@@ -326,3 +259,128 @@ li {
 #map { 
     height: 720px;
  }
+/* ------------------------------------ 
+                MODAL                   
+--------------------------------------- */
+.modal-body {
+    display: flex;
+    padding: 0;
+    border-radius: 4rem;
+    font-family: 'PT Sans', sans-serif;
+    
+  }
+
+  .modal-body h1 {
+    padding-top: 3rem;
+  }
+  
+  .modal-content {
+    border-radius: 4rem;
+    width: 90%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+  -moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+  box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+  }
+  .modal-content h1, .modal-content h2, .modal-content h3 {
+      text-align: center;
+
+      
+  }
+  .modal-content h1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  
+  .modal-content h2 {
+      font-size: 1.1em;
+      
+  }
+  .modal-content h3 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: black;
+  }
+  form {
+    font-size: 1rem;
+}
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+.column#main {
+    flex: 75%;
+    padding: 50px;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  
+  #secondary {
+    background: linear-gradient(287deg,#9df136 0%, #27ea1d 99% 100%);
+    border-radius: 0 4rem 4rem 0;
+    text-align: center;
+    
+  }
+
+  #secondary h2, h3{
+    color: white;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+
+  #main .form-control {
+    border-radius: 0;
+    font-size: .9em;
+    padding-top: 1rem;
+  }
+
+  #main h1, h3{
+    font-weight: 500;
+  }
+
+  .modal-body label {
+    margin-bottom: 0;
+  }
+  
+  .sec-content {
+    margin-top: 85%;
+  }
+
+
+.icon-inside{
+  position: relative;
+}
+
+.icon-inside i{
+  position: absolute;
+  right:1rem;
+  top:70%;
+  transform: translateY(-70%);
+  color:#30A3F1;
+}
+ /* ------------------------------------ 
+                FOOTER                   
+--------------------------------------- */
+
+.btn-footer{
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+    background: -moz-linear-gradient(left, #9df136 0%, #27ea1d 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #9df136 0%, #27ea1d 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #9df136 0%, #27ea1d 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 48px;
+}
+
+.text-white{
+    text-decoration: none;
+  }
+
+  #btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+  }
