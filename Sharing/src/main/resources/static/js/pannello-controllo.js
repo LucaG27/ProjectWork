@@ -1,14 +1,15 @@
 "use strict";
 let template_riga = "";
-const url = "http://localhost:8080/api/veicolo/";
+const URL = "http://localhost:8080/api/veicolo/";
 let modal = null;
 let modalImmagine = null;
+let modalDelete = null;
 let immagini = null;
 let specifiche = null;
 
 
 function listaVeicoli(){
-    fetch(url)
+    fetch(URL)
         .then(function(response) {
             return response.json();
         })
@@ -42,7 +43,7 @@ function listaVeicoli(){
     }
     function createVeicolo(event) {
 
-        fetch(url, {
+        fetch(URL, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -76,10 +77,32 @@ function listaVeicoli(){
         agganciaEventi();
     }
 
+    function deleteVeicolo(event){
+
+        let originator = event.currentTarget;
+        let delVeicoloId = originator.getAttribute('veicolo-id');
+
+        fetch(URL +"delete/" +delVeicoloId, {
+            method: 'DELETE',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }           
+        })
+        .then(response => response.json())
+            modalDelete.hide();
+            alert("Veicolo cancellato con successo")
+            listaVeicoli()
+        .catch((error) => {
+    
+            console.error('Error:', error);
+        });
+        
+    }
+
     function editVeicolo(event) {
 
         console.log(document.getElementById("veicolo_id").value);
-        fetch(url, {
+        fetch(URL, {
                 method: 'PUT',
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -115,9 +138,9 @@ function listaVeicoli(){
                     }
                 }),
             })
-            .then(response => response.json())
-        listaVeicoli()
-        modal.hide()
+        .then(response => response.json())
+            listaVeicoli()
+            modal.hide()
     
         .catch((error) => {
     
@@ -135,7 +158,7 @@ function listaVeicoli(){
     
         console.log(idVeicolo);
     
-        fetch(url +"id/"+ idVeicolo)
+        fetch(URL +"id/"+ idVeicolo)
             .then(function(response) {
                 return response.json();
             })
@@ -204,6 +227,11 @@ function listaVeicoli(){
         for (let li = 0; li < imgButton.length; li++) {
             imgButton[li].addEventListener("click", insertImmagine);
         }
+
+        let delButton = document.getElementsByClassName("delButton");
+        for (let li = 0; li < delButton.length; li++) {
+            delButton[li].addEventListener("click", chiamaDelModale);
+        }
     }
 
     function svuotaModale() {
@@ -227,6 +255,15 @@ function listaVeicoli(){
         svuotaModale();
         modal.show();
     }
+
+    function chiamaDelModale(){
+
+        let originator = event.currentTarget;
+        let veicoloId = originator.getAttribute('veicolo-id');
+        confermaDelete.setAttribute('veicolo-id', veicoloId);
+        modalDelete.show()
+
+    }
     
 
     window.addEventListener('DOMContentLoaded', (event) => {
@@ -234,6 +271,8 @@ function listaVeicoli(){
         modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
         
         modalImmagine = new bootstrap.Modal(document.getElementById('immaginiModal'), {});
+        
+        modalDelete = new bootstrap.Modal(document.getElementById('deleteModal'), {});
         
         template_riga = document.getElementById("table_rows").innerHTML;
         listaVeicoli();
@@ -244,12 +283,20 @@ function listaVeicoli(){
         /*let call_modale = document.getElementById("call_modale");
         call_modale.addEventListener("click", chiamaModale);*/
 
-        let createButton = document.getElementById("createButton");
-        createButton.addEventListener("click", createVeicolo);
+        /*let createButton = document.getElementById("createButton");
+        createButton.addEventListener("click", createVeicolo);*/
+
+        let confermaDelete = document.getElementById("confermaDelete");
+        confermaDelete.addEventListener("click", deleteVeicolo)
 
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
             editButton[li].addEventListener("click", editInsertVeicolo);
+        }
+       
+        let delButton = document.getElementsByClassName("delButton");
+        for (let li = 0; li < delButton.length; li++) {
+            delButton[li].addEventListener("click", chiamaDelModale);
         }
             console.log(JSON.parse(localStorage.getItem('user')));
         });

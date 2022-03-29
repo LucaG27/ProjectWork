@@ -42,4 +42,8 @@ public class VeicoloService {
 	public List<VeicoloPrenotazioniDTO> getAllPrenotazioni (int id){
 		return db.getAllPrenotazioniVeicoli(id);
 	}
+	
+	public void delVeicolo(Veicolo veicolo) {
+		db.delete(veicolo);;
+	}
 }
