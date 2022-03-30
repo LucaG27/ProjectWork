@@ -74,6 +74,10 @@ color: white;
 --------------------------------------- */
 .vantaggi{
     height: auto;
+    background-color: #bdd1c6;
+    background-size: cover;
+    box-sizing: border-box;
+    align-items: center;
 }
 .vantaggi-title{
     padding-top: 3rem;
