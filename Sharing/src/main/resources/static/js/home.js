@@ -302,6 +302,7 @@ $(document).ready(function() {
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('password');
 
+//OCCHIO
 togglePassword.addEventListener('click', function (e) {
   // toggle the type attribute
   const type = password.getAttribute('type') === 'password' ? 'text' : 'password';

@@ -143,7 +143,9 @@ p{
 
 .card {
     width: 250px;
-    border-radius: 10px
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-img-top {
@@ -164,7 +166,8 @@ h5.mb-0 {
 }
 
 small.ghj {
-    font-size: 9px
+    font-size: 9px;
+    padding-top: 8px;
 }
 
 .mid {
@@ -172,7 +175,8 @@ small.ghj {
 }
 
 h6.ml-1 {
-    font-size: 13px
+    font-size: 13px;
+    padding-top: 5px;
 }
 
 small.key {
@@ -193,6 +197,10 @@ small.justify-content-center {
     font-size: 9px;
     cursor: pointer;
     text-decoration: underline
+}
+
+.col-sm-4{
+  padding: 10px;
 }
 
 @media screen and (max-width:600px) {
@@ -635,3 +643,4 @@ font-weight: bold;
   #btn-back-to-top:hover{
     font-weight: bold;
   }
+
