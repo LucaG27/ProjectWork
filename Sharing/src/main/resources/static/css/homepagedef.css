@@ -214,6 +214,11 @@ small.justify-content-center {
     -webkit-text-fill-color: transparent;
     padding: 5rem;
 }
+
+.card-disable{
+  background: #dddddd;
+}
+
 /* ------------------------------------ 
                 BANNER                   
 --------------------------------------- */

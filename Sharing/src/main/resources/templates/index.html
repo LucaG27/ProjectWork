@@ -609,7 +609,7 @@
       <div class="row mt-5">
     {{#each veicoli}}
         <div class="col-sm-4">
-          <div class="card"> <img src="{{this.immagine.0.immagine}}" class="card-img-top" width="100%">
+          <div class="card {{is_available disponibilita}}"> <img src="{{this.immagine.0.immagine}}" class="card-img-top" width="100%">
             <div class="card-body pt-0 px-0">
               <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Tariffa al
                   minuto</small>
@@ -644,7 +644,7 @@
                 </div>
               </div>
               <div class="mx-3 mt-3 mb-2"><button type="button" veicolo-id="{{id}}"
-                  class="button-prenota btn btn-danger btn-block">
+                  class="button-prenota btn btn-danger btn-block" {{is_available_button disponibilita}}>
                   <small>BUILD & PRICE</small></button></div>
             </div>
           </div>
