@@ -1,7 +1,3 @@
-let bottone_auto  = document.getElementById("btn_auto").addEventListener("click", listaVeicoli);
-let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli);
-let bottone_mono  = document.getElementById("btn_mono").addEventListener("click", listaVeicoli);
-let bottone_bici  = document.getElementById("btn_bici").addEventListener("click", listaVeicoli);
 let bottone_login = document.getElementById("btn").addEventListener("click", loadPage);
 let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
 let render_veicoli = null;
@@ -82,15 +78,15 @@ function controlloPannello(){
 }
 
 
-function listaVeicoli(event){
+function listaVeicoli(veicoloId){
 
-  let originator = event.currentTarget;
-  let veicoloId = originator.getAttribute("veicolo-id");
+  /*let originator = event.currentTarget;
+  let veicoloId = originator.getAttribute("veicolo-id");*/ 
 
   fetch("http://localhost:8080/api/veicolo/categoria/"+ veicoloId)
-      .then(function(response) {
-      return response.json();
-    })
+      .then(response => 
+       response.json()
+    )
       .then(function(json) {
           console.log(json);
           const context = {
@@ -104,7 +100,7 @@ function listaVeicoli(event){
       
       })
       .catch(function(err) { 
-              alert(err);
+              
               console.log('Failed to fetch page: ', err);
       })
      
@@ -276,10 +272,10 @@ breakpoints: {
     spaceBetween: 20
   }
 },
-autoplay: {
+/*autoplay: {
   delay: 2300,
   disableOnInteraction: false,
-},
+},*/
 // If we need pagination
 pagination: {
   el: '.swiper-pagination',
