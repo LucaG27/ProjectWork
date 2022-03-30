@@ -2,7 +2,7 @@ let bottone_auto  = document.getElementById("btn_auto").addEventListener("click"
 let bottone_moto  = document.getElementById("btn_moto").addEventListener("click", listaVeicoli);
 let bottone_mono  = document.getElementById("btn_mono").addEventListener("click", listaVeicoli);
 let bottone_bici  = document.getElementById("btn_bici").addEventListener("click", listaVeicoli);
-let bottone_login = document.getElementById("btn").addEventListener("click", loadPage);
+//let bottone_login = document.getElementById("btn").addEventListener("click", loadPage);
 let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
 let render_veicoli = null;
 let bottone_prenota= null;
@@ -41,6 +41,7 @@ function logout(){
   
 }
 
+/*
 function loadPage(){
 
   let userL = JSON.parse(user);
@@ -63,6 +64,8 @@ function loadPage(){
     document.getElementById("buttonLogin").setAttribute("style", "display:none");
   }
 }
+
+*/
 
 function controlloPannello(){
 
@@ -228,7 +231,7 @@ window.addEventListener(
   'DOMContentLoaded', 
   function(event){
 
-    loadPage();
+  //  loadPage();
     modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
     render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
     veicoliDisponibili();
@@ -289,6 +292,14 @@ navigation: {
 scrollbar: {
   el: '.swiper-scrollbar',
 },
+});
+
+$(document).ready(function() {
+  var o = 0;
+  $(window).scroll(function() {
+      o = $(window).scrollTop(), $(".counter").html(o),
+      o >= 100 ? $(".navbar").addClass("scrolled-nav") : o < 100 && $(".navbar").removeClass("scrolled-nav")
+  })
 });
 
 const togglePassword = document.querySelector('#togglePassword');

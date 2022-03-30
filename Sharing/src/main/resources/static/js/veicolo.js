@@ -74,7 +74,6 @@ let bottone_prenota = null;
 }
 
   function createPrenotazione(event){
-
     let userJson = JSON.parse(user);
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -105,12 +104,13 @@ let bottone_prenota = null;
                             veicoloId: veicoloPreno
 
                           })
-              });   
+              }); 
+
           })
           .catch(function(err) { 
-                  alert(err);
                   console.log('Failed to fetch page: ', err);
-          });	
+          });
+          alert("Prenotazione effettuata con successo!")	
   }
 const swiper = new Swiper('.swiper', {
   // Optional parameters
