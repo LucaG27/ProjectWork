@@ -18,142 +18,365 @@
 
 <body>
     <!-- NAVBAR-->
-    <div class="contenitore container-fluid mb-5 ">
-        <nav class="navbar navbar-expand-lg container ">
-            <div class="container">
-                <a class="navbar-brand" href="#"><img class="logo"
-                        src="https://media.discordapp.net/attachments/955030566347079702/956500337945104444/M__2_-removebg-preview_final.png"
-                        alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="homepage.html"
-                               >Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"
-                                style="color: rgb(3, 183, 3);">Prenota</a>
-                        </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Città
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Torino</a></li>
-                                <li><a class="dropdown-item" href="#">Milano</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Cincilla</a></li>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Data <span>List</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Age</th>
+                                <th>Job Title</th>
+                                <th>City</th>
+                                <th>Action</th>
+                     
+                                <th>Full Name</th>
+                                <th>Age</th>
+                                <th>Job Title</th>
+                                <th>City</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Vincent Williamson</td>
+                                <td>31</td>
+                                <td>iOS Developer</td>
+                                <td>Sinaai-Waas</td>
+                                <td>1</td>
+                                <td>Vincent Williamson</td>
+                                <td>31</td>
+                                <td>iOS Developer</td>
+                                <td>Sinaai-Waas</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Taylor Reyes</td>
+                                <td>22</td>
+                                <td>UI/UX Developer</td>
+                                <td>Baileux</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Justin Block</td>
+                                <td>26</td>
+                                <td>Frontend Developer</td>
+                                <td>Overland Park</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Justin Block</td>
+                                <td>26</td>
+                                <td>Frontend Developer</td>
+                                <td>Overland Park</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Justin Block</td>
+                                <td>26</td>
+                                <td>Frontend Developer</td>
+                                <td>Overland Park</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sean Guzman</td>
+                                <td>26</td>
+                                <td>Web Designer</td>
+                                <td>Gloucester</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sean Guzman</td>
+                                <td>26</td>
+                                <td>Web Designer</td>
+                                <td>Gloucester</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sean Guzman</td>
+                                <td>26</td>
+                                <td>Web Designer</td>
+                                <td>Gloucester</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Keith Carter</td>
+                                <td>20</td>
+                                <td>Graphic Designer</td>
+                                <td>Oud-Turnhout</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                        <div class="col-sm-6 col-xs-6">
+                            <ul class="pagination hidden-xs pull-right">
+                                <li><a href="#"><</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">></a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item d-flex">
-                            <svg class="ms-3" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-                                <defs>
-                                    <path id="ico_account_svg__a"
-                                        d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm4.893 16.002H6.829a.34.34 0 00-.1.015A7.96 7.96 0 0012 20a7.968 7.968 0 005.15-1.878.335.335 0 00-.257-.12zM12 4a8 8 0 00-6.568 12.57c.365-.357.861-.57 1.397-.57h10.064a2 2 0 011.552.74A8 8 0 0012 4zm0 2a4 4 0 110 8 4 4 0 010-8zm0 2a2 2 0 100 4 2 2 0 000-4z">
-                                    </path>
-                                </defs>
-                                <use fill="#fff" fill-rule="evenodd" xlink:href="#ico_account_svg__a"></use>
-                            </svg>
-                            <a class="nav-link ms-2" id="myModal" href="#" tabindex="-1" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo">Logout</a>
-                        </li>
-                    </ul>
+                            <ul class="pagination visible-xs pull-right">
+                                <li><a href="#"><</a></li>
+                                <li><a href="#">></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h3 class="mb-3">Aggiungi un singolo articolo</h3>
-                <button type="button" id="call_modale" class="btn btn-primary">Aggiungi</button>
-            </div>
-            <div class="col-lg-6">
-                <form action="/api/articolo/import" name="importCSV" method="post" enctype="multipart/form-data">
-                    <h3 class="mb-3">Import Articoli CSV:</h3>
-                    <input  type="file" name="fileCSV" accept=".csv" />
-                    <input type="submit" value="Aggiungi">
-
-
-            </div>
         </div>
     </div>
-    <!-- AGGIUNGI E CSV-->
-    
-
-    
-        <!-- TABLE-->
-        <div class="container">
-            <table class="styled-table table">
-                <thead>
-                    <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">categoria</th>
-                        <th scope="col">descrizione</th>
-                        <th scope="col">alimentazione</th>
-                        <th scope="col">ruote</th>
-                        <th scope="col">disponibilita</th>
-                        <th scope="col">indirizzo</th>
-                        <th scope="col">citta</th>
-                        <th scope="col">coordinate</th>
-                        <th scope="col">immagine</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody id="table_rows">
-                    <th scope="row">{{veicolo_id}}</th>
-                    <td class="active-row">{{categoria}}</td>
-                    <td>{{descrizione}}</td>
-                    <td class="active-row">{{alimentazione}}</td>
-                    <td>{{ruote}}</td>
-                    <td class="active-row">{{disponibilita}}</td>
-                    <td>{{indirizzo}}</td>
-                    <td class="active-row">{{citta}}</td>
-                    <td>{{coordinate}}</td>
-                    <td class="active-row">{{immagine}}</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-primary editButton" veicolo-id="{{veicolo_id}}"
-                            data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button>
-                    </td>
-                </tbody>
-            </table>
-              <!--		Start Pagination -->
-  <div class='pagination-container'>
-    <nav>
-      <ul class="pagination">
-
-        <li data-page="prev">
-          <span>
-             <span class="sr-only">(current)
-          </span>
-        </span>
-        </li>
-        <!--	Here the JS Function Will Add the Rows -->
-        <li data-page="next" id="prev">
-          <span> > <span class="sr-only">(current)</span></span>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
-</div> <!-- 		End of Container -->
-
-        </div>
+</div>
 
 
-
-        <!-- Footer -->
-        <footer class="bg-dark text-center text-white pt-5 ">
+<style>
+    .demo{ font-family: 'Noto Sans', sans-serif; }
+.panel{
+    background: linear-gradient(to right, #2980b9, #2c3e50);
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
+}
+.panel .panel-heading{
+    padding: 20px 15px;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+}
+.panel .panel-heading .title{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 40px;
+    margin: 0;
+}
+.panel .panel-heading .btn{
+    color: rgba(255,255,255,0.5);
+    background: transparent;
+    font-size: 16px;
+    text-transform: capitalize;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+.panel .panel-heading .btn:hover{
+    color: #fff;
+    text-shadow: 3px 3px rgba(255,255,255,0.2);
+}
+.panel .panel-heading .form-control{
+    color: #fff;
+    background-color: transparent;
+    width: 35%;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.panel .panel-heading .form-control:focus{
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: none;
+    outline: none;
+}
+.panel .panel-heading .form-control::placeholder{
+    color: rgba(255,255,255,0.5);
+    font-size: 15px;
+    font-weight: 500;
+}
+.panel .panel-body{ padding: 0; }
+.panel .panel-body .table thead tr th{
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 12px;
+    border: none;
+}
+.panel .panel-body .table tbody tr td{
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 12px;
+    vertical-align: middle;
+    border: none;
+}
+.panel .panel-body .table tbody tr:nth-child(even){ background-color: rgba(255,255,255,0.05); }
+.panel .panel-body .table tbody .action-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.panel .panel-body .table tbody .action-list li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.panel .panel-body .table tbody .action-list li a{
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+.panel .panel-body .table tbody .action-list li a:hover{ text-shadow: 3px 3px 0 rgba(255,255,255,0.3); }
+.panel .panel-body .table tbody .action-list li a:before,
+.panel .panel-body .table tbody .action-list li a:after{
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #111;
+    font-size: 12px;
+    padding: 5px 7px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: none;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    transition: all 0.3s ease 0s;
+}
+.panel .panel-body .table tbody .action-list li a:after{
+    content: '';
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -18px;
+    z-index: -1;
+}
+.panel .panel-body .table tbody .action-list li a:hover:before,
+.panel .panel-body .table tbody .action-list li a:hover:after{
+    display: block;
+}
+.panel .panel-footer{
+    color: #fff;
+    background-color: transparent;
+    padding: 15px;
+    border: none;
+}
+.panel .panel-footer .col{ line-height: 35px; }
+.pagination{ margin: 0; }
+.pagination li a{
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 31px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin: 0 3px;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+.pagination li a:hover{
+    color: #fff;
+    background-color: transparent;
+    border-color: rgba(255,255,255,0.2);
+}
+.pagination li a:focus,
+.pagination li.active a,
+.pagination li.active a:hover{
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+.pagination li:first-child a,
+.pagination li:last-child a{
+    border-radius: 50%;
+}
+@media only screen and (max-width:767px){
+    .panel .panel-heading .title{
+        text-align: center;
+        margin: 0 0 10px;
+    }
+    .panel .panel-heading .btn_group{ text-align: center; }
+}
+</style>
+    <footer class="bg-dark text-center text-white pt-5 ">
             <!-- Grid container -->
 
             <!-- Section: Links -->
