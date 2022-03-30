@@ -63,6 +63,11 @@ public class PannelloCTRL {
 		return "pannello-controllo";
 	}
 
+	@GetMapping("/inserimento")
+	public String insert(){
+		return "inserimento";
+	}
+
 	
     
 }
