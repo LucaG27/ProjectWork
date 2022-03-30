@@ -4,37 +4,37 @@ font-family: 'Source Serif 4', sans-serif; */
 h1,h2,h3,h4,h5,h6{
   font-family: 'Dosis', sans-serif;
   font-weight:bold;
-  font-size: 40px;
+
 }
 p{
   font-family: 'Dosis', sans-serif;
   font-weight:bold;
-  font-size: 20px;
+  
 }
 .vantaggi-title{
   font-family: 'Dosis', sans-serif;
   font-weight:bold;
-  font-size: 30px;
+  
 }
 .vantaggi-description{
   font-family: 'Dosis', sans-serif;
   font-weight:bold;
-  font-size: 20px;
+  
 }
 .text-center{
   font-family: 'Dosis', sans-serif;
   font-weight:bold;
-  font-size: 20px;
+
 }
 .nav-link{
   font-family: 'Dosis', sans-serif;
   font-weight:bold;
-  font-size: 20px;
+
 }
 .testoColorato{
   font-family: 'Dosis', sans-serif;
   font-weight:bold;
-  font-size: 40px;
+
 }
 /* ------------------------------------ 
                 NAVBAR                      
@@ -48,7 +48,7 @@ p{
   body{
       background-color: #fdf9fd;;
   }
-  .navbar.scrolled-nav{
+  .navbar .scrolled-nav{
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
   }
 

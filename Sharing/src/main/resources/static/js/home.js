@@ -241,14 +241,6 @@ scrollbar: {
 },
 });
 
-$(document).ready(function() {
-  var o = 0;
-  $(window).scroll(function() {
-      o = $(window).scrollTop(), $(".counter").html(o),
-      o >= 100 ? $(".navbar").addClass("scrolled-nav") : o < 100 && $(".navbar").removeClass("scrolled-nav")
-  })
-});
-
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('password');
 
