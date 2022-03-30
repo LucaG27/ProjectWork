@@ -1,14 +1,16 @@
 "use strict";
 let template_riga = "";
-const url = "http://localhost:8080/api/veicolo/";
+const URL = "http://localhost:8080/api/veicolo/";
 let modal = null;
 let modalImmagine = null;
+let csvModal = null;
+let modalDelete = null;
 let immagini = null;
 let specifiche = null;
 
 
 function listaVeicoli(){
-    fetch(url)
+    fetch(URL)
         .then(function(response) {
             return response.json();
         })
@@ -42,7 +44,7 @@ function listaVeicoli(){
     }
     function createVeicolo(event) {
 
-        fetch(url, {
+        fetch(URL, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -76,10 +78,32 @@ function listaVeicoli(){
         agganciaEventi();
     }
 
+    function deleteVeicolo(event){
+
+        let originator = event.currentTarget;
+        let delVeicoloId = originator.getAttribute('veicolo-id');
+
+        fetch(URL +"delete/" +delVeicoloId, {
+            method: 'DELETE',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }           
+        })
+        .then(response => response.json())
+            modalDelete.hide();
+            alert("Veicolo cancellato con successo")
+            listaVeicoli()
+        .catch((error) => {
+    
+            console.error('Error:', error);
+        });
+        
+    }
+
     function editVeicolo(event) {
 
         console.log(document.getElementById("veicolo_id").value);
-        fetch(url, {
+        fetch(URL, {
                 method: 'PUT',
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -94,10 +118,7 @@ function listaVeicoli(){
                     indirizzo: document.getElementById("indirizzo").value,
                     citta: document.getElementById("citta").value,
                     coordinate: document.getElementById("coordinate").value,
-                    immagine: {
-                        id: immagini.id,
-                        immagine: immagini.immagine
-                    },
+                    prezzo: document.getElementById("prezzo").value,
                     specifiche:{
                         id: specifiche.id,
                         velocita: specifiche.velocita,
@@ -115,9 +136,9 @@ function listaVeicoli(){
                     }
                 }),
             })
-            .then(response => response.json())
-        listaVeicoli()
-        modal.hide()
+        .then(response => response.json())
+            listaVeicoli()
+            modal.hide()
     
         .catch((error) => {
     
@@ -135,7 +156,7 @@ function listaVeicoli(){
     
         console.log(idVeicolo);
     
-        fetch(url +"id/"+ idVeicolo)
+        fetch(URL +"id/"+ idVeicolo)
             .then(function(response) {
                 return response.json();
             })
@@ -151,6 +172,7 @@ function listaVeicoli(){
                 document.getElementById("indirizzo").value = json.indirizzo;
                 document.getElementById("citta").value = json.citta;
                 document.getElementById("coordinate").value = json.coordinate;
+                document.getElementById("prezzo").value = json.prezzo;
                 specifiche = {
                     id: json.specifiche.id,
                     velocita: json.specifiche.velocita,
@@ -194,6 +216,11 @@ function listaVeicoli(){
         
     }
 
+    function loadCsv(){
+
+        csvModal.show();
+    }
+
     function agganciaEventi() {
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
@@ -203,6 +230,11 @@ function listaVeicoli(){
         let imgButton = document.getElementsByClassName("imgButton");
         for (let li = 0; li < imgButton.length; li++) {
             imgButton[li].addEventListener("click", insertImmagine);
+        }
+
+        let delButton = document.getElementsByClassName("delButton");
+        for (let li = 0; li < delButton.length; li++) {
+            delButton[li].addEventListener("click", chiamaDelModale);
         }
     }
 
@@ -227,6 +259,15 @@ function listaVeicoli(){
         svuotaModale();
         modal.show();
     }
+
+    function chiamaDelModale(){
+
+        let originator = event.currentTarget;
+        let veicoloId = originator.getAttribute('veicolo-id');
+        confermaDelete.setAttribute('veicolo-id', veicoloId);
+        modalDelete.show()
+
+    }
     
 
     window.addEventListener('DOMContentLoaded', (event) => {
@@ -235,8 +276,12 @@ function listaVeicoli(){
         
         modalImmagine = new bootstrap.Modal(document.getElementById('immaginiModal'), {});
         
+        csvModal = new bootstrap.Modal(document.getElementById('csvModal'), {});
+
+        modalDelete = new bootstrap.Modal(document.getElementById('deleteModal'), {});
+        
         template_riga = document.getElementById("table_rows").innerHTML;
-        listaVeicoli();
+       
 
         let updateButton = document.getElementById("updateButton");
         updateButton.addEventListener("click", editVeicolo);
@@ -244,13 +289,23 @@ function listaVeicoli(){
         /*let call_modale = document.getElementById("call_modale");
         call_modale.addEventListener("click", chiamaModale);*/
 
-        let createButton = document.getElementById("createButton");
-        createButton.addEventListener("click", createVeicolo);
+        /*let createButton = document.getElementById("createButton");
+        createButton.addEventListener("click", createVeicolo);*/
+
+        let confermaDelete = document.getElementById("confermaDelete");
+        confermaDelete.addEventListener("click", deleteVeicolo)
 
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
             editButton[li].addEventListener("click", editInsertVeicolo);
         }
+       
+        let delButton = document.getElementsByClassName("delButton");
+        for (let li = 0; li < delButton.length; li++) {
+            delButton[li].addEventListener("click", chiamaDelModale);
+        }
+
+        listaVeicoli();
             console.log(JSON.parse(localStorage.getItem('user')));
         });
 
