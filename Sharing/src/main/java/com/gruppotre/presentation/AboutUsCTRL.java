@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
     
 @Controller
-public class VeicoloCTRL {
-   
-    @RequestMapping("/veicolo")
-	public String veicoli(){
-        return "auto";
-	}
-
+public class AboutUsCTRL {
+  
+    @RequestMapping("/aboutus")
+    public String about() {
+        return "chiSiamo";
+    }
 }

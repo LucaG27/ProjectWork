@@ -75,6 +75,9 @@ let bottone_prenota = null;
 
   function createPrenotazione(event){
     let userJson = JSON.parse(user);
+    if(user == null){
+      alert('Non puoi effettuare una prenotazione se non sei loggato!')
+    }else{
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); 
@@ -111,6 +114,7 @@ let bottone_prenota = null;
                   console.log('Failed to fetch page: ', err);
           });
           alert("Prenotazione effettuata con successo!")	
+        }
   }
 const swiper = new Swiper('.swiper', {
   // Optional parameters
