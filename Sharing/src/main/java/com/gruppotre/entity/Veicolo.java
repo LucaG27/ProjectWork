@@ -56,8 +56,7 @@ public class Veicolo {
 	@OneToMany(mappedBy= "veicolo" ,cascade = {CascadeType.ALL})
 	private List<Immagine> immagine;
 
-	@OneToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name="specifiche_id_fk")
+	@OneToOne(mappedBy = "veicolo",cascade = {CascadeType.ALL})
 	private Specifiche specifiche;
 	
 	@OneToMany(mappedBy = "veicoloId")

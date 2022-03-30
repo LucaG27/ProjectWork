@@ -261,6 +261,14 @@ small.justify-content-center {
   min-width: 350px;
 }
 
+@media(min-width:575px){
+  #map{
+    min-height: 300px;
+    width: 100%;
+    min-width: 1000px;
+  }
+}
+
 /* ------------------------------------ 
                 SECONDO SWIPER                   
 --------------------------------------- */

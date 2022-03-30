@@ -306,29 +306,45 @@ li {
 --------------------------------------- */
 
 .btn-footer{
-    border-color: rgba( 255, 255, 255, 0);
-    background: #f1da36; /* Old browsers */
-    background: -moz-linear-gradient(left, #9df136 0%, #27ea1d 99%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #9df136 0%, #27ea1d 99%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #9df136 0%, #27ea1d 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
-    border-radius: 10px;
-    padding: 10px 15px;
-    width: 48px;
+  border-color: rgba( 255, 255, 255, 0);
+  background: #f1da36; /* Old browsers */
+  background: -moz-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 48px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+.btn-footer:hover{
+  color: white;
+  font-weight: bold;
+}
+
+.fab:hover{
+color: white;
+font-weight: bold;
 }
 
 .text-white{
     text-decoration: none;
   }
 
-  #btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-  }
 
-
-  .container-auto{
-      
-  }
+  /* ------------------------------------ 
+            BOTTONE TORNA TOP                   
+--------------------------------------- */
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  color: white;
+  background-color: green;
+  border: white;
+}
+#btn-back-to-top:hover{
+  font-weight: bold;
+}
