@@ -230,11 +230,11 @@ window.addEventListener(
   'DOMContentLoaded', 
   function(event){
 
-    loadPage();
     modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
     render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
     veicoliDisponibili();
     wrap();
+    loadPage();
     
 })
 

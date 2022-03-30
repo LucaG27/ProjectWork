@@ -42,8 +42,21 @@ public class PrenotazioneREST {
 		return srv.getAllPrenotazioniDTO();
 	}
 	
+	@GetMapping("{id}")
+	public Prenotazione selectPrenotazioneById(@PathVariable("id") int id){				
+		return srv.getPrenotazioneById(id);
+	}
+	
+	@GetMapping("/id/{id}")
+	public List<Prenotazione> selectPrenotazioniByUtenteId(@PathVariable("id") int id){
+		Utente u = uSrv.findById(id);		
+		return u.getPrenotazione();
+	}
+	
 	@PostMapping("/savePrenotazione")
 	public void savePrenotazione(@RequestBody Prenotazione p) {
+		Veicolo v = p.getVeicoloId();
+		vSrv.updVeicolo(v);
 		srv.savePrenotazione(p);
 	}
 	

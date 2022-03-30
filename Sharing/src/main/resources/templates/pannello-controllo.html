@@ -153,8 +153,7 @@
                                                     <td>
                                                         <ul class="action-list d-flex">
                                                             <li><a href="#" data-tip="edit"><i class="fa fa-edit editButton"
-                                                                veicolo-id="{{veicolo_id}}" data-bs-toggle="modal"
-                                                                data-bs-target="#exampleModal"></i></a></li>
+                                                                veicolo-id="{{veicolo_id}}"></i></a></li>
                                                             <li><a href="#" data-tip="delete"><i class="fa fa-trash delButton"
                                                                 veicolo-id="{{veicolo_id}}"></i></a></li>
                                                                 <li>
@@ -401,8 +400,13 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="descrizione" class="form-label ">categoria</label>
-                                                <input type="text" class="form-control" id="categoria"
-                                                    aria-describedby="emailHelp">
+                                                <select id="categoria" class="form-select" aria-label="Default select example">
+                                                    <option selected>Scegli categoria</option>
+                                                    <option value="BICICLETTA">Bicicletta</option>
+                                                    <option value="AUTO">Automobile</option>
+                                                    <option value="MOTO">Moto</option>
+                                                    <option value="MONOPATTINO">Monopattino</option>                                                   
+                                                  </select>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="prezzo" class="form-label ">descrizione</label>
@@ -422,15 +426,18 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="rimanenza" class="form-label">ruote</label>
-                                                <input type="text" class="form-control" id="ruote"
-                                                    aria-describedby="emailHelp">
+                                                <select id="ruote" class="form-select" aria-label="Default select example">
+                                                    <option selected>Scegli Nr. Ruote</option>
+                                                    <option value="DUE RUOTE">2</option>
+                                                    <option value="QUATTRO RUOTE">4</option>                                                   
+                                                  </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">disponibilita</label>
-                                                <input type="text" class="form-control" id="disponibilita"
-                                                    aria-describedby="emailHelp">
+                                                <label for="rimanenza" class="form-label">Disponibile: </label>
+                                                <input onclick="cambiaDisponibilita()" type="checkbox" id="disponibile" name="Disponibile" value="DISPONIBILE" />
+                                                <input hidden type="text" id="disponibilita" value="DISPONIBILE" />
                                             </div>
                                             <div class="mb-3">
                                                 <label for="rimanenza" class="form-label">indirizzo</label>
@@ -456,13 +463,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button id="updateButton" type="button" class="btn btn-primary">Update</button>
+        
+                            </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button id="updateButton" type="button" class="btn btn-primary">Update</button>
-
-                    </div>
+                    
                 </div>
             </div>
         </div>

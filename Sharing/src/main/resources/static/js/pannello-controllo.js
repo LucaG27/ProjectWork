@@ -9,6 +9,14 @@ let immagini = null;
 let specifiche = null;
 
 
+function cambiaDisponibilita(){
+    if(document.getElementById("disponibile").checked){
+        document.getElementById("disponibilita").value = "DISPONIBILE";
+    }else{
+        document.getElementById("disponibilita").value = "NOLEGGIATO";
+    }
+}
+
 function listaVeicoli(){
     fetch(URL)
         .then(function(response) {
@@ -42,41 +50,7 @@ function listaVeicoli(){
             console.log('Failed to fetch page: ', err);
         });
     }
-    function createVeicolo(event) {
 
-        fetch(URL, {
-            method: 'POST',
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            },
-            body: JSON.stringify({
-    
-                categoria: document.getElementById("categoria").value,
-                descrizione: document.getElementById("descrizione").value,
-                alimentazione: document.getElementById("alimentazione").value,
-                ruote: document.getElementById("ruote").value,
-                disponibilita: document.getElementById("disponibilita").value,
-                indirizzo: document.getElementById("indirizzo").value,
-                citta: document.getElementById("citta").value,
-                coordinate: document.getElementById("coordinate").value,
-                immagine: document.getElementById("immagine").value,
-            }),
-    
-        })
-    
-        .then(function(response) {
-    
-                modal.hide();
-                listaVeicoli();
-                return response.json();
-            })
-            .catch((error) => {
-    
-                console.error('Error:', error);
-            });
-    
-        agganciaEventi();
-    }
 
     function deleteVeicolo(event){
 
@@ -93,7 +67,7 @@ function listaVeicoli(){
             modalDelete.hide();
             alert("Veicolo cancellato con successo")
             listaVeicoli()
-        .catch((error) => {
+            .catch((error) => {
     
             console.error('Error:', error);
         });
@@ -102,7 +76,7 @@ function listaVeicoli(){
 
     function editVeicolo(event) {
 
-        console.log(document.getElementById("veicolo_id").value);
+        
         fetch(URL, {
                 method: 'PUT',
                 headers: {
@@ -113,32 +87,19 @@ function listaVeicoli(){
                     categoria: document.getElementById("categoria").value,
                     descrizione: document.getElementById("descrizione").value,
                     alimentazione: document.getElementById("alimentazione").value,
-                    ruote: document.getElementById("ruote").value,
+                    ruote: document.getElementById("ruote").value,                    
                     disponibilita: document.getElementById("disponibilita").value,
                     indirizzo: document.getElementById("indirizzo").value,
                     citta: document.getElementById("citta").value,
                     coordinate: document.getElementById("coordinate").value,
                     prezzo: document.getElementById("prezzo").value,
-                    specifiche:{
-                        id: specifiche.id,
-                        velocita: specifiche.velocita,
-                        potenza: specifiche.potenza,
-                        alimentazione: specifiche.alimentazione,
-                        tempoDiRicarica: specifiche.tempoDiRicarica,
-                        tipoDiRuota: specifiche.tempoDiRicarica,
-                        limitatoreVelocita: specifiche.limitatoreVelocita,
-                        autonomia: specifiche.autonomia,
-                        emissioniCo2: specifiche.emissioniCo2,
-                        cambio: specifiche.cambio,
-                        cavalli: specifiche.cavalli,
-                        cilindrata: specifiche.cilindrata,
-                        consumoMedio: specifiche.consumoMedio
-                    }
+
                 }),
             })
         .then(response => response.json())
-            listaVeicoli()
+            console.log(document.getElementById("veicolo_id").value);
             modal.hide()
+            window.location.reload()
     
         .catch((error) => {
     
@@ -155,6 +116,8 @@ function listaVeicoli(){
         let idVeicolo = originator.getAttribute('veicolo-id');
     
         console.log(idVeicolo);
+
+        modal.show();
     
         fetch(URL +"id/"+ idVeicolo)
             .then(function(response) {
@@ -168,26 +131,16 @@ function listaVeicoli(){
                 document.getElementById("descrizione").value = json.descrizione;
                 document.getElementById("alimentazione").value = json.alimentazione;
                 document.getElementById("ruote").value = json.ruote;
-                document.getElementById("disponibilita").value = json.disponibilita;
+                if(json.disponibilita == "NOLEGGIATO"){
+                    document.getElementById("disponibile").checked = false;
+                }else{
+                    document.getElementById("disponibile").checked = true;
+                };
                 document.getElementById("indirizzo").value = json.indirizzo;
                 document.getElementById("citta").value = json.citta;
                 document.getElementById("coordinate").value = json.coordinate;
                 document.getElementById("prezzo").value = json.prezzo;
-                specifiche = {
-                    id: json.specifiche.id,
-                    velocita: json.specifiche.velocita,
-                    potenza: json.specifiche.potenza,
-                    alimentazione: json.specifiche.alimentazione,
-                    tempoDiRicarica: json.specifiche.tempoDiRicarica,
-                    tipoDiRuota: json.specifiche.tempoDiRicarica,
-                    limitatoreVelocita: json.specifiche.limitatoreVelocita,
-                    autonomia: json.specifiche.autonomia,
-                    emissioniCo2: json.specifiche.emissioniCo2,
-                    cambio: json.specifiche.cambio,
-                    cavalli: json.specifiche.cavalli,
-                    cilindrata: json.specifiche.cilindrata,
-                    consumoMedio: json.specifiche.consumoMedio
-                }
+
             })
             .catch(function(err) {
                 alert(err);
@@ -254,13 +207,7 @@ function listaVeicoli(){
     }
 
 
-    function chiamaModale(event) {
-
-        svuotaModale();
-        modal.show();
-    }
-
-    function chiamaDelModale(){
+    function chiamaDelModale(event){
 
         let originator = event.currentTarget;
         let veicoloId = originator.getAttribute('veicolo-id');
@@ -284,13 +231,7 @@ function listaVeicoli(){
        
 
         let updateButton = document.getElementById("updateButton");
-        updateButton.addEventListener("click", editVeicolo);
-        
-        /*let call_modale = document.getElementById("call_modale");
-        call_modale.addEventListener("click", chiamaModale);*/
-
-        /*let createButton = document.getElementById("createButton");
-        createButton.addEventListener("click", createVeicolo);*/
+        updateButton.addEventListener("click", editVeicolo);       
 
         let confermaDelete = document.getElementById("confermaDelete");
         confermaDelete.addEventListener("click", deleteVeicolo)
