@@ -77,7 +77,7 @@
                                         class='fa fa-lg fa-phone-square pe-2'></i> Person Lookup</a></li>
                             <li class='software-support'><a href='#softwareSupport'><i
                                         class='fa fa-lg fa-question-circle pe-2'></i> Support</a></li>
-                            <li class='dashboard-updates' ><a href="/inserimento copy.html"><i
+                            <li class='dashboard-updates' ><a href="/pannello-controllo/inserimento"><i
                                         class='fa fa-lg fa-arrow-up pe-2'></i> Aggiungi Veicolo</a></li>
                             <li onclick="printJS('table-id', 'html')" class='print'><a href='#'><i class='fa fa-lg fa-print pe-2'></i> Stampa</a></li>
                         </ul>
@@ -410,9 +410,15 @@
                                                     aria-describedby="emailHelp">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="categoria" class="form-label">alimentazione</label>
-                                                <input type="text" class="form-control" id="alimentazione"
-                                                    aria-describedby="emailHelp">
+                                                <label for="alimentazione" class="form-label">Alimentazione</label>
+                                                <select id="alimentazione" class="form-select" aria-label="Default select example">
+                                                    <option selected>Scegli alimentazione</option>
+                                                    <option value="BENZINA">Benzina</option>
+                                                    <option value="ELETTRICA">Elettrica</option>
+                                                    <option value="GPL">Gpl</option>
+                                                    <option value="DIESEL">Diesel</option>
+                                                    <option value="IBRIDA">Ibrida</option>
+                                                  </select>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="rimanenza" class="form-label">ruote</label>
