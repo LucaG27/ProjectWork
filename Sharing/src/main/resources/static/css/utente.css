@@ -131,9 +131,132 @@ nav{
     text-decoration: none;
 }
 
+.main{
+    padding-top: 130px;
+}
+/* ------------------------------------ 
+                NAVBAR                      
+--------------------------------------- */
+
+.navbar {
+    transition: all .2s ease-in-out;
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  .container-nav{
+   padding-top: 130px;
+  }
+
+  body{
+      background-color: #fdf9fd;;
+  }
+  .navbar .scrolled-nav{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  nav:hover{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+       
+  }
+  .navbar-nav li a, .navbar-toggler-icon{
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .dropdown-menu li a{
+    color: green;
+}
+
+.nav-link:focus, .nav-link:hover {
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width: 991px){
+ .verticalerule{
+       display: none; 
+    }
+}
+
+/* ------------------------------------ 
+                FOOTER                   
+--------------------------------------- */
+
+.btn-footer{
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+    background: -moz-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 48px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+}
+
+.btn-outline-light:hover {
+    color: white;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    font-weight: bold;
+}
+.fab:hover{
+color: white;
+font-weight: bold;
+}
+
+.text-white{
+    text-decoration: none;
+  }
+/* ------------------------------------ 
+                BOTTONI                   
+--------------------------------------- */
+
+.btn {
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+  background: -moz-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+  font-family: 'Dosis', sans-serif;
+  }
+
+  .btn:hover{
+font-weight: bold;
+    border-color: white;
+    color: white;
+  }
+#secondary .btn2{
+    background: linear-gradient(80deg, #859ce8 0%, #de9505 100%);
+    padding: 8px 15px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+}
+
+  /* ------------------------------------ 
+            BOTTONE TORNA TOP                   
+--------------------------------------- */
+  #btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    color: white;
+    background-color: green;
+    border: white;
+  }
+  #btn-back-to-top:hover{
+    font-weight: bold;
+  }
+
+
 
 /* CSS */
-.button-6 {
+/* .button-6 {
   align-items: center;
   background-color: rgb(3, 183, 3);
   color: white;
@@ -178,4 +301,4 @@ nav{
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
-}
+} */

@@ -40,143 +40,43 @@
                     </div>
                 </div>
                 <div class="panel-body table-responsive">
-                    <table class="table">
+                    <table class="table" id="table-id">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Full Name</th>
-                                <th>Age</th>
-                                <th>Job Title</th>
-                                <th>City</th>
-                                <th>Action</th>
-                     
-                                <th>Full Name</th>
-                                <th>Age</th>
-                                <th>Job Title</th>
-                                <th>City</th>
-                                <th>Action</th>
+                                <th scope="col">categoria</th>
+                                <th scope="col">descrizione</th>
+                                <th scope="col">alimentazione</th>
+                                <th scope="col">ruote</th>
+                                <th scope="col">disponibilita</th>
+                                <th scope="col">indirizzo</th>
+                                <th scope="col">citta</th>
+                                <th scope="col">coordinate</th>
+                                <th scope="col">azioni</th>
+
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="table_rows">
                             <tr>
-                                <td>1</td>
-                                <td>Vincent Williamson</td>
-                                <td>31</td>
-                                <td>iOS Developer</td>
-                                <td>Sinaai-Waas</td>
-                                <td>1</td>
-                                <td>Vincent Williamson</td>
-                                <td>31</td>
-                                <td>iOS Developer</td>
-                                <td>Sinaai-Waas</td>
+                                <th >{{veicolo_id}}</th>
+                                <td >{{categoria}}</td>
+                                <td>{{descrizione}}</td>
+                                <td >{{alimentazione}}</td>
+                                <td>{{ruote}}</td>
+                                <td >{{disponibilita}}</td>
+                                <td>{{indirizzo}}</td>
+                                <td >{{citta}}</td>
+                                <td>{{coordinate}}</td>
                                 <td>
                                     <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Taylor Reyes</td>
-                                <td>22</td>
-                                <td>UI/UX Developer</td>
-                                <td>Baileux</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Justin Block</td>
-                                <td>26</td>
-                                <td>Frontend Developer</td>
-                                <td>Overland Park</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Justin Block</td>
-                                <td>26</td>
-                                <td>Frontend Developer</td>
-                                <td>Overland Park</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Justin Block</td>
-                                <td>26</td>
-                                <td>Frontend Developer</td>
-                                <td>Overland Park</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Sean Guzman</td>
-                                <td>26</td>
-                                <td>Web Designer</td>
-                                <td>Gloucester</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Sean Guzman</td>
-                                <td>26</td>
-                                <td>Web Designer</td>
-                                <td>Gloucester</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Sean Guzman</td>
-                                <td>26</td>
-                                <td>Web Designer</td>
-                                <td>Gloucester</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Keith Carter</td>
-                                <td>20</td>
-                                <td>Graphic Designer</td>
-                                <td>Oud-Turnhout</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit editButton"
+                                            veicolo-id="{{veicolo_id}}" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash delButton"
+                                            veicolo-id="{{veicolo_id}}"></i></a></li>
+                                            <li>
+                                                <button type="button" class="btn btn-sm btn-primary imgButton"
+                                        veicolo-id="{{veicolo_id}}">img</button>
+                                            </li>
                                     </ul>
                                 </td>
                             </tr>
