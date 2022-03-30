@@ -5,315 +5,242 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/veicolo.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin="" />
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 
   <title>Veicolo</title>
 </head>
 
 <body>
-  <!-- NAVBAR-->
-  <div class="contenitore container-fluid mb-5 ">
-    <nav class="navbar navbar-expand-lg container">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img class="logo"
-            src="https://media.discordapp.net/attachments/955030566347079702/956500337945104444/M__2_-removebg-preview_final.png"
-            alt=""></a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list text-white"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Prenota</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Città
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Milano</a></li>
-                <li><a class="dropdown-item" href="#">Roma</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ms-2" id="myModal" href="#" tabindex="-1" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="bi bi-person-circle"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pannello-controllo"><i class="bi bi-gear-fill"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col mt-5 p-5">
-          
-        </div>
-        <div class="col ">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FINE HERO-->
-
-
-  <!-- Swiper -->
-  <div class="container-fluid">
-    <div class="row">
- 
-
- 
-  <!-- MAPPA -->
-      <div class="col-lg-6 d-flex align-items-center">
   
-<!-- INFORMAZIONI -->
-<div class="group-specifications" id="specifications-ancor">
-  <h2 class="pane-title open text-center"></h2>
-  <div class="pane-content">
-    <h3 class="title-group open">CARATTERISTICHE</h3>
-    <ul class="group-wrapper">
-      <li>
-        <span class="field-label field_offer_doors">Porte</span>
-        <span class="value field-item field_offer_doors ">5porte</span>
-      </li>
-      <li>
-        <span class="field-label field_offer_transmission">Cambio</span>
-        <span class="value field-item field_offer_transmission ">Automatico</span>
-      </li>
-      <li>
-        <span class="field-label field_offer_average_consumption">Consumo Medio</span>
-        <span class="value field-item field_offer_average_consumption ">4.4L/100km</span>
-      </li>
-      <li>
-        <span class="field-label field_offer_horsepower">Cavalli</span>
-        <span class="value field-item field_offer_horsepower ">116CV</span>
-      </li>
-      <li>
-        <span class="field-label field_offer_co2">CO²</span>
-        <span class="value field-item field_offer_co2 cl-A">cl-A &lt;- 100g/km</span>
-      </li>
-      <li>
-        <span class="field-label field_offer_emission_co2">Emissioni di CO²</span>
-        <span class="value field-item field_offer_emission_co2 ">100 g/km</span>
-      </li>
-      <li>
-        <span class="field-label field_offer_fuel_type">Alimentazione</span>
-        <span class="value field-item field_offer_fuel_type ">Ibrida</span>
-      </li>
-      <li>
-        <span class="field-label field_offer_motor_displacement">Cilindrata Motore</span>
-        <span class="value field-item field_offer_motor_displacement ">1490cm3</span>
-      </li>
-      <!-- check last row -->
-      <li class="empty"></li>
-    </ul>
+<div class="card">
+  <div class="left">
+   
+  <div class="right"><img class="helmet" src="img/veicoli/auto/q5-1.png" alt="helmet"/>
+    <div class="productInfo">
+      <h1>AUDI Q5</h1>
+      <h2>€/min 0,19</h2>
+      <div class="details">
+        <div class="size">
+          <h4>HELMET SIZE</h4>
+          <p>S</p>
+          <p>M</p>
+          <p>L</p>
+          <p>XL</p>
+        </div>
+        <div class="durability">
+          <h3>75%</h3>
+          <h4>Livello del serbatoio Benzina</h4>
+        </div>
+      </div>
+      <button id="prenota">PRENOTA</button><i class="material-icons fav"></i>
+    </div>
   </div>
 </div>
-<!--  FINE INFORMAZIONI -->
-  <!-- FINE MAPPA -->
 
-        
-      </div>
-      <div class="col-lg-6">
-        <div class="swiper mySwiper container">
-          <div class="swiper-wrapper" id="bodyDivImmagini">
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  
- <div id='map'></div>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGFudG94OTQiLCJhIjoiY2wxNHZlZ2s5MDFidjNlb2czbXNoMzc1aCJ9.iBe28DfUV8hQO25wBG3X2w';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
-    });
-  </script>
+::-webkit-scrollbar {
+  display: none;
+}
 
+button {
+  border: none;
+  cursor: pointer;
+}
 
+button:focus {
+  outline: 0;
+}
 
-  <!-- Footer -->
-  <footer class="bg-dark text-center text-white pt-5 ">
-    <!-- Grid container -->
+.card {
+  width: 892px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+.card .left {
+  width: 480px;
+  height: 553px;
+  background: #CC3843;
+  border-radius: 23px;
+  display: flex;
+  align-items: center;
+}
+.card .left .wordmark {
+  opacity: 0.2;
+  transform: rotate(-90deg) scale(1.2);
+  margin-left: -90px;
+}
+.card .right {
+  width: 654px;
+  height: 479px;
+  background: #0c1f2c;
+  position: absolute;
+  left: -10%;
+  transform: translateX(50%);
+  border-radius: 23px;
+}
+.card .right .helmet {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.card .right .productInfo {
+  width: 300px;
+  height: 300px;
+  margin: 50px 0 0 235px;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+.card .right .productInfo h1 {
+  font-weight: 800;
+  line-height: 46px;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.card .right .productInfo h2 {
+  font-weight: 300;
+  font-size: 32px;
+  letter-spacing: 1.6px;
+  margin-bottom: 30px;
+}
+.card .right .productInfo .details {
+  height: 145px;
+}
+.card .right .productInfo .details .size,
+.card .right .productInfo .details .durability {
+  width: 50%;
+  float: left;
+}
+.card .right .productInfo .details .size {
+  border-right: 1px solid #CB1F40;
+  padding: 30px 0;
+}
+.card .right .productInfo .details .durability {
+  text-align: center;
+}
+.card .right .productInfo .details .durability h4 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.card .right .productInfo button {
+  height: 48px;
+  background: #CB2140;
+  border-radius: 90px;
+  font-weight: 300;
+  line-height: 35px;
+  font-size: 14px;
+  padding: 0 24px;
+  color: #fff;
+}
+.card .right .productInfo i.fav {
+  font-size: 12px;
+  margin: 0 12px 0 24px;
+  color: #CB2140;
+}
+.card .right .productInfo a {
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.3;
+  text-decoration: none;
+}
+.card .right .productInfo h3 {
+  width: 80px;
+  height: 80px;
+  font-weight: 300;
+  line-height: 80px;
+  font-size: 16px;
+  margin-left: 30px;
+  positon: relative;
+}
+.card .right .productInfo h3:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #CB1F40;
+  border-top-color: transparent;
+  transform: rotate(-45deg) translate(-50%, -50%);
+}
+.card .right .productInfo h4 {
+  font-weight: bold;
+  line-height: normal;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+.card .right .productInfo p {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  line-height: normal;
+  text-align: center;
+  font-weight: 300px;
+  line-height: 28px;
+  font-size: 14px;
+  border-radius: 50%;
+  transition: 0.3s linear;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.card .right .productInfo p:hover {
+  border: 1px solid #CB1F40;
+}
+.card .right .productInfo p:nth-of-type(1) {
+  border: 1px solid #CB1F40;
+}
 
-    <!-- Section: Links -->
-    <section class="container">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Indirizzo</h5>
+.slider {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  line-height: 70px;
+  text-align: center;
+  margin-left: -30px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+  color: #CB1F40;
+  cursor: pointer;
+}
+.slider:nth-of-type(2) {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translate(-50%, -50%);
+}
 
-          <ul class="list-unstyled mb-0">
+@media screen and (max-width: 576px) {
+  .card {
+    transform: rotate(90deg) scale(0.7) translate(calc(50% - 25vh), 50%);
+    position: static;
+  }
+}
 
-            <li>
-              <a class="text-white">Via Principi d'Acaja, 33</a>
-            </li>
-            <li>
-              <a class="text-white">10138 Torino TO</a>
-            </li>
+@-webkit-keyframes clickMe {
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes clickMe {
+  50% {
+    opacity: 0.5;
+  }
+}
+</style>
 
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Contatti</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a class="text-white">Tel. 0114472954</a>
-            </li>
-            <li>
-              <a class="text-white">move@gmail.com</a>
-            </li>
-
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Cookies</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Privacy Policy</a>
-            </li>
-
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-
-          <ul class="list-unstyled mb-0">
-            <li class="">FOLLOW MOVE</li>
-            <li>
-              <div class="container p-4">
-                <!-- Section: Social media -->
-                <section class="mb-2">
-                  <!-- Facebook -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                      class="fab fa-facebook-f"></i></a>
-
-                  <!-- Twitter -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                      class="fab fa-twitter"></i></a>
-
-                  <!-- Google -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                      class="fab fa-google"></i></a>
-
-                  <!-- Instagram -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                      class="fab fa-instagram"></i></a>
-
-                </section>
-                <!-- Section: Social media -->
-            </li>
-            <li class="mb-3">
-              <img
-                src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
-                alt="" width="150px">
-            </li>
-            <li class="mb-3">
-              <img
-                src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
-                alt="" width="150px">
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </section>
-    <!-- Section: Links -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Copyright: Move
-
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-
-  <script id="template-veicoli" type="text/x-handlebars-template">
-    {{#each this}}
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine1}}" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine2}}" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine3}}" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine4}}" alt="">
-    </div>
-    <div class="swiper-slide">
-      <img class="img-fluid"
-        src="{{immagine5}}" alt="">
-    </div>
-    {{/each}}
-  </script>
-  
-
-
-
-  <script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="js/login.js"></script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/chart.js"></script>
-  <script src="js/veicolo.js"></script>
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 </body>
 </html>

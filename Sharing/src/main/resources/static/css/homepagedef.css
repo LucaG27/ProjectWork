@@ -84,8 +84,11 @@ p{
 
     background-repeat: no-repeat;
     background-size: cover;
-    height: 760px;
+    height: 90vh;
     background-position:center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 3rem;
 }
   .cta{
     
@@ -253,8 +256,9 @@ small.justify-content-center {
 }  
 
 #map{
-  height: 300px;
-  width: 700px;
+  min-height: 300px;
+  width: 100%;
+  min-width: 350px;
 }
 
 /* ------------------------------------ 
