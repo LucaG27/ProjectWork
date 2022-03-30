@@ -30,7 +30,11 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
 });
 
 Handlebars.registerHelper('is_available', function (disponibilita) {
-	return (disponibilita == "DISPONIBILE")?"btn-primary":"btn-outline-primary";
+	return (disponibilita == "DISPONIBILE")?"":"card-disable";
+})
+
+Handlebars.registerHelper('is_available_button', function (disponibilita) {
+	return (disponibilita == "DISPONIBILE")?"":"disabled";
 })
 
 function logout(){
