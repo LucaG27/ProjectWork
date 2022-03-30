@@ -33,7 +33,7 @@ public class Prenotazione {
 	@JoinColumn(name = "utente_id_fk")
 	private Utente utenteId;
 
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "veicolo_id_fk")
 	private Veicolo veicoloId;
 

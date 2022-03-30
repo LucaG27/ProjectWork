@@ -104,7 +104,18 @@ let bottone_prenota = null;
                             dataFine: null,
                             stato: "in corso",
                             utenteId: userJson,
-                            veicoloId: veicoloPreno
+                            veicoloId: {
+                            id: veicoloPreno.id,
+                            categoria: veicoloPreno.categoria,
+                            descrizione: veicoloPreno.descrizione,
+                            alimentazione: veicoloPreno.alimentazione,
+                            ruote: veicoloPreno.ruote,
+                            disponibilita: "NOLEGGIATO",
+                            indirizzo: veicoloPreno.indirizzo,
+                            citta: veicoloPreno.citta,
+                            coordinate: veicoloPreno.coordinate,
+                            prezzo: veicoloPreno.prezzo,
+                          }
 
                           })
               }); 

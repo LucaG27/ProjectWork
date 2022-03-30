@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -49,7 +50,8 @@ public class Specifiche {
 	@Column(name = "consumo_medio")
 	private String consumoMedio;
 
-	@OneToOne(mappedBy = "specifiche")
+	@OneToOne
+	@JoinColumn(name="veicolo_id_fk")
 	@JsonIgnore
 	private Veicolo veicolo;
 
