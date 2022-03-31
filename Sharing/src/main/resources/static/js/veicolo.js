@@ -86,8 +86,13 @@ let bottone_prenota = null;
               
               let rowsSpec = render_veicoli(json);
                   document.getElementById("bodyDivImmagini").innerHTML = rowsSpec;
-                  
+              if(json.disponibilita == "NOLEGGIATO"){  
+                document.getElementById("prenota").setAttribute("disabled","");
+                document.getElementById("prenota").classList.remove("prenotabile");
+                document.getElementById("prenota").classList.add("prenotato");
 
+              }
+                  
           })
           .catch(function(err) { 
                   alert(err);
@@ -115,7 +120,7 @@ let bottone_prenota = null;
 
             document.getElementById("percentualeBenzina").innerHTML = 22 + '%';    
         })
-        .then(()=>listaSpecifiche())
+        .then(()=>listaVeicoli())
         .catch(function(err) { 
                 alert(err);
                 console.log('Failed to fetch page: ', err);
@@ -142,7 +147,9 @@ let bottone_prenota = null;
           .then(function(veicoloPreno) {
         
               console.log(veicoloPreno);
-
+              document.getElementById("prenota").setAttribute("disabled","");
+              document.getElementById("prenota").classList.remove("prenotabile");
+              document.getElementById("prenota").classList.add("prenotato");
               return fetch(URL4 + "savePrenotazione",{
                           method: 'POST',
                           headers: {
