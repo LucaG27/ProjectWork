@@ -1,5 +1,6 @@
 let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
 let bottone_login = document.getElementById("btn").addEventListener("click", loadPage);
+let pannello= document.getElementById("pannello").addEventListener("click", controlloPannello);
 const user = localStorage.getItem('user');
 
 function logout(){
@@ -8,6 +9,17 @@ function logout(){
 
   location.href = "/logout";
   
+}
+
+function controlloPannello(){
+
+  if (user == null){
+
+    modal.show();
+  }else{
+    location.href="pannello-controllo";
+  }
+
 }
 
 
