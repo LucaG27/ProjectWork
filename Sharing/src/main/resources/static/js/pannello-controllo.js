@@ -82,6 +82,46 @@ function listaVeicoli(){
         
     }
 
+    function resetEdit(event){
+
+        let originator = event.currentTarget;
+        let idVeicolo = originator.getAttribute('veicolo-id');
+    
+        console.log(idVeicolo);
+
+        modal.show();
+    
+        fetch(URL +"id/"+ idVeicolo)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(json) {
+                console.log(json);
+    
+                document.getElementById("veicolo_id").value = json.id;
+                document.getElementById("categoria").value = json.categoria;
+                document.getElementById("descrizione").value = json.descrizione;
+                document.getElementById("alimentazione").value = json.alimentazione;
+                document.getElementById("ruote").value = json.ruote;
+                if(json.disponibilita == "NOLEGGIATO"){
+                    document.getElementById("disponibile").checked = false;
+                }else{
+                    document.getElementById("disponibile").checked = true;
+                };
+                document.getElementById("indirizzo").value = json.indirizzo;
+                document.getElementById("citta").value = json.citta;
+                document.getElementById("coordinate").value = json.coordinate;
+                document.getElementById("prezzo").value = json.prezzo;
+
+                agganciaEventi();
+
+            })
+            .catch(function(err) {
+                alert(err);
+                console.log('Failed to fetch page: ', err);
+            })      
+    }
+
     function editVeicolo(event) {
 
         
@@ -122,6 +162,7 @@ function listaVeicoli(){
 
         let originator = event.currentTarget;
         let idVeicolo = originator.getAttribute('veicolo-id');
+        resetButton.setAttribute('veicolo-id', idVeicolo);
     
         console.log(idVeicolo);
 
@@ -237,6 +278,8 @@ function listaVeicoli(){
         
         template_riga = document.getElementById("table_rows").innerHTML;
        
+        let resetButton = document.getElementById("resetButton");
+        resetButton.addEventListener("click", resetEdit);
 
         let updateButton = document.getElementById("updateButton");
         updateButton.addEventListener("click", editVeicolo);       
