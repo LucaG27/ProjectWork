@@ -24,8 +24,7 @@ const utente = localStorage.getItem('user');
 			.then(utente => {
 				if(utente == null) alert("Utente o Password errati.")
 				else {
-					getUser();
-					window.location.reload();
+					getUser();				
 				}
 			})
 	}
@@ -38,6 +37,7 @@ const utente = localStorage.getItem('user');
         })
         .then(function(json) {
 	    localStorage.setItem('user', JSON.stringify(json));
+		window.location.reload();
 	})
 }
 
