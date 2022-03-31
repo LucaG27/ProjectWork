@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin="" />
+      
      <!--FONT-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +37,7 @@
         <nav class="navbar navbar-expand-lg fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" href="http://localhost:8080/">
-                <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
+                <img src="" alt="" width="300" height="100" >
               </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
@@ -63,7 +64,7 @@
                   <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><i id="pannello" class="bi bi-gear-fill"></i></a>
+                  
 
             </li>
           </ul>
@@ -73,7 +74,29 @@
     </nav>
   </div>
 
-  <!-- FINE NAVBAR-->
+ <a class="nav-link" href="#"><i id="pannello" class="bi bi-gear-fill"></i></a>
+
+
+<!-- 
+ <header id="nav-wrapper">
+  <nav id="nav">
+    <div class="nav left">
+      <span class="gradient skew">
+        <H3>MOVE</H3>
+      </span>
+      <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
+    </div>
+    <div class="nav right">
+      <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
+      <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About</span></span></a>
+      <a href="#work" class="nav-link"><span class="nav-link-span"><span class="u-nav">Accedi</span></span></a>
+      <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
+    </div>
+  </nav>
+</header> -->
+
+
+ <!-- FINE NAVBAR-->
   <!-- HERO-->
   <div class="backg">
     <!-- <div class="cta text-center fixed-bottom">
@@ -90,7 +113,7 @@
   </div>
   </div>
 
-      <div class="container vantaggi pt-5">
+      <div class="container-fluid vantaggi pt-5">
           <div class="text-center">
             <h1 class="testoColorato">Un noleggio fatto di vantaggi</h1>
           </div>
@@ -147,16 +170,16 @@
       <div class="swiper-slide">
         <img class="img-fluid" src="img/veicoli/auto-removebg-preview.png" alt="">
         <div class="slideText">
-          <h2>Renault Twingo</h2>
+          <h2>Automobile</h2>
           <p>Largo La Foppa 27, MI 20215</p>
-          <button class="btn btn-primary" id="btn_auto" veicolo-id="AUTO">Buy now!!!</button>
+          <button class="btn btn-primary" id="btn_auto" veicolo-id="AUTO">Scopri</button>
         </div>
       </div>
 
       <div class="swiper-slide">
         <img class="img-fluid" src="img/veicoli/scooter-removebg-preview.png" alt="">
         <div class="slideText">
-          <h2>Mazda CX-30</h2>
+          <h2>Scooter</h2>
           <p>Corso Buenos Aires 79, MI 20121</p>
           <button class="btn btn-primary" id="btn_moto" veicolo-id="MOTO">Scopri</button>
         </div>
@@ -165,7 +188,7 @@
       <div class="swiper-slide">
         <img class="img-fluid" src="img/veicoli/bici-removebg-preview.png" alt="">
         <div class="slideText">
-          <h2>Audi Q5</h2>
+          <h2>Bici</h2>
           <p>Via della Spiga 84, MI 20122</p>
           <button class="btn btn-primary" id="btn_bici" veicolo-id="BICICLETTA">Scopri</button>
         </div>
@@ -174,7 +197,7 @@
       <div class="swiper-slide">
         <img class="img-fluid" src="img/veicoli/monopattino-removebg-preview.png" alt="">
         <div class="slideText">
-          <h2>BMW serie 1</h2>
+          <h2>Monopattino</h2>
           <p>Via Degli Angioli 15, MI 20121</p>
           <button class="btn btn-primary" id="btn_mono" veicolo-id="MONOPATTINO">Scopri</button>
         </div>
@@ -560,7 +583,7 @@
             <div class="sec-content">
               <h2>Registrati</h2>
               <h3>Cosa aspetti? Crea il tuo account e prenota il tuo veicolo</h3>
-              <button type="button" class="btn2 btn-primary">Sign In</button>
+              <button type="button" class="btn3 btn-primary">Sign In</button>
             </div>
           </div>
         </div>
