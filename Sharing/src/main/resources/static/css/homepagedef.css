@@ -1,40 +1,36 @@
-/* font-family: 'Dosis', sans-serif;
-font-family: 'Source Serif 4', sans-serif; */
+
+body{
+  font-family: 'Nunito Sans', sans-serif;
+}
 
 h1,h2,h3,h4,h5,h6{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
-
+  font-family: 'Prompt', sans-serif;
 }
 p{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+  font-family: 'Nunito Sans', sans-serif;
   
 }
 .vantaggi-title{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
-  
+  font-family: 'Prompt', sans-serif;
 }
 .vantaggi-description{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+  font-family: 'Nunito Sans', sans-serif;
   
 }
-.text-center{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+.riga{
+  font-family: 'Nunito Sans', sans-serif;
 
 }
 .nav-link{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
-
+  font-family: 'Prompt', sans-serif;
 }
 .testoColorato{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+  font-family: 'Prompt', sans-serif;
+}
 
+.sec-content h3{
+  font-family: 'Nunito Sans', sans-serif;
+  
 }
 /* ------------------------------------ 
                 NAVBAR                      
@@ -593,7 +589,6 @@ small.justify-content-center {
     display: flex;
     padding: 0;
     border-radius: 4rem;
-    font-family: 'Dosis', sans-serif;
     font-size: 20px;
   }
 
@@ -625,7 +620,7 @@ small.justify-content-center {
   .modal-content h3 {
     font-size: 1rem;
     letter-spacing: 2px;
-    color: black;
+    color: white;
   }
   form {
     font-size: 1rem;
@@ -696,7 +691,7 @@ small.justify-content-center {
   background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
-  font-family: 'Dosis', sans-serif;
+  
   }
 
   .btn-primary:hover{
@@ -707,7 +702,7 @@ font-weight: bold;
 #secondary .btn3{
   background: linear-gradient(to right, #5AAA4E 0%, #118943 99%);
     padding: 8px 15px;
-    font-family: 'Dosis', sans-serif;
+
     font-size: 20px;
     border-radius: 0.25rem;
 
@@ -785,13 +780,11 @@ font-weight: bold;
 .btn2-primary {
     border: 0;
     color: #fff;
-    font-family: 'Dosis', sans-serif;
     font-size: 20px;
 }
 
 .btn2{
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
     text-transform: capitalize;
     padding: 18px 45px;
     border-radius: 45px;
@@ -804,7 +797,6 @@ font-weight: bold;
     z-index: 1;
     transition: .3s ease-in;
     overflow: hidden;
-    font-family: 'Dosis', sans-serif;
     font-size: 20px;
 }
 
@@ -839,7 +831,6 @@ font-weight: bold;
     border-radius: 10px;
     padding: 10px 15px;
     width: 48px;
-    font-family: 'Dosis', sans-serif;
     font-size: 20px;
 }
 
