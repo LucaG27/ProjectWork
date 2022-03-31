@@ -595,6 +595,7 @@ small.justify-content-center {
     border-radius: 4rem;
     font-family: 'Dosis', sans-serif;
     font-size: 20px;
+    padding: 2rem;
   }
 
   .modal-body h1 {
@@ -602,8 +603,8 @@ small.justify-content-center {
   }
   
   .modal-content {
-    border-radius: 4rem;
-    width: 90%;
+   
+
     -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
   -moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
   box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
@@ -711,6 +712,16 @@ font-weight: bold;
     font-size: 20px;
     border-radius: 0.25rem;
 
+}
+
+#button-auto{
+  width: 100px;
+}
+#button-moto{
+  width: 100px;
+}
+#button-bici{
+  width: 100px;
 }
 /* ------------------------------------ 
                 NEWSLETTER                   
@@ -897,7 +908,7 @@ font-weight: bold;
     left: 0;
     width: 100%;
     height: 300px;
-    background: #0f1041;
+    background: linear-gradient(to right,  #066659, #118943);
   }
 
   .input-header {
@@ -1037,3 +1048,8 @@ font-weight: bold;
     color: #fff;
   }
 
+  .input-content .btns .btn-confirm {
+    border: 1px solid #066659;
+    background: linear-gradient(to right, #5AAA4E 0%, #118943 99%);
+    color: #fff;
+}
