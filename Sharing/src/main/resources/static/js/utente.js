@@ -4,6 +4,7 @@ const URL = "http://localhost:8080/api/prenotazioni/";
 const user = localStorage.getItem('user');
 let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
 let pannello= document.getElementById("pannello").addEventListener("click", controlloPannello);
+let modalTerminaPreno = null;
 let render_prenotazioni = null;
 let render_prenotazioni2 = null;
 let render_anagrafica = null;
@@ -63,6 +64,7 @@ function terminaPrenotazione(event){
 
   fetch(URL+prenotazioneId)
       .then(function(response) {
+        modalTerminaPreno.hide();
         return response.json();
       })
       .then(function(prenotazione){        
@@ -117,7 +119,7 @@ function listaPrenotazioni(event){
             document.getElementById("bodyTabellaClienti2").innerHTML = rows2;
        
             agganciaEventi();
-        
+      
         })
         .catch(function(err) { 
                 alert(err);
@@ -148,8 +150,18 @@ function utenteByEmail(){
 function agganciaEventi(){
   let buttonTermina = document.getElementsByClassName("terminaPrenotazione");
   for(let li=0; li<buttonTermina.length; li++){
-    buttonTermina[li].addEventListener("click", terminaPrenotazione);
+    buttonTermina[li].addEventListener("click", chiamaDelModale);
   }
+}
+
+
+function chiamaDelModale(event){
+
+  let originator = event.currentTarget;
+  let prenotazioneId = originator.getAttribute('prenotazione-id');
+  confermaTerminaPreno.setAttribute('prenotazione-id', prenotazioneId);
+  modalTerminaPreno.show()
+
 }
 
 window.addEventListener(
@@ -158,8 +170,15 @@ window.addEventListener(
 
     let buttonTermina = document.getElementsByClassName("terminaPrenotazione");
     for(let li=0; li<buttonTermina.length; li++){
-      buttonTermina[li].addEventListener("click", terminaPrenotazione);
+      buttonTermina[li].addEventListener("click", chiamaDelModale);
     }
+    
+    modalTerminaPreno = new bootstrap.Modal(document.getElementById('terminaPrenoModal'), {});
+
+    let confermaTerminaPreno = document.getElementById("confermaTerminaPreno");
+    confermaTerminaPreno.addEventListener("click", terminaPrenotazione)
+
+
 
 		render_prenotazioni = Handlebars.compile( document.getElementById("template-prenotazioni").innerHTML );
 		render_prenotazioni2 = Handlebars.compile( document.getElementById("template-prenotazioni2").innerHTML );
