@@ -1,8 +1,8 @@
 
-
+let render_caratteristiche = null;
 let render_specifiche = null;
 let render_veicoli = null;
-let veicolo_id = document.getElementById("veicolo_id")
+let veicolo_id = document.getElementById("veicolo_id");
 const URL = "http://localhost:8080/api/immagine/allImmagini"
 const URL2 = "http://localhost:8080/api/specifiche/"
 const URL3 = "http://localhost:8080/api/veicolo/id/"
@@ -83,9 +83,11 @@ let bottone_prenota = null;
           .then(function(json) {
         
               console.log(json);
-      
-              let rows = render_veicoli(json);
-                  document.getElementById("bodyDivImmagini").innerHTML = rows;
+              
+              let rowsSpec = render_veicoli(json);
+                  document.getElementById("bodyDivImmagini").innerHTML = rowsSpec;
+                  
+
           })
           .catch(function(err) { 
                   alert(err);
@@ -93,6 +95,7 @@ let bottone_prenota = null;
           });	
   
   }
+
 
   function listaSpecifiche(event){
   
@@ -103,10 +106,14 @@ let bottone_prenota = null;
         .then(function(json) {
       
             console.log(json);
-    
-            let rows = "";      
+            let rowsCar = "";
+            let rows = "";
+            rowsCar = render_caratteristiche(json)      
             rows = render_specifiche(json);
+              document.getElementById("caratteristiche").innerHTML = rowsCar;
                 document.getElementById("body_specifiche").innerHTML = rows;
+
+            document.getElementById("percentualeBenzina").innerHTML = 22 + '%';    
         })
         .catch(function(err) { 
                 alert(err);
@@ -196,9 +203,9 @@ const swiper = new Swiper('.swiper', {
     function(event){
 
 
-  
       render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
       render_specifiche = Handlebars.compile( document.getElementById("template-specifiche").innerHTML );
+      render_caratteristiche = Handlebars.compile( document.getElementById("template-schedaTecnica").innerHTML );
       bottone_prenota = document.getElementById("prenota").addEventListener("click", createPrenotazione);
   
           listaVeicoli();

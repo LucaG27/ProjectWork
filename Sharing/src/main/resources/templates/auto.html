@@ -92,8 +92,8 @@
               <div class="helmet">
             </div>
             <div class="productInfo">
-                
-                <h1>AUDI Q5</h1>
+                <div id="caratteristiche">
+<!--             <h1>AUDI Q5</h1>
                 <h2>€/min 0,19</h2>
                 <div class="details">
                   <div class="size">
@@ -105,7 +105,8 @@
                     <h3>55%</h3>
                     <h4>Livello del serbatoio Benzina</h4>
                   </div>
-                </div>
+                </div>-->   
+              </div>
                 <button id="prenota">PRENOTA</button><i class="material-icons fav"></i>
               </div>
             </div>
@@ -115,9 +116,9 @@
       </div>
     </div>
   
-   
+<!--    
 
-
+-->
 
 
   <!-- INFORMAZIONI -->
@@ -322,6 +323,23 @@
   <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
     <i class="fas fa-arrow-up"></i>
   </button>
+
+
+  <script id="template-schedaTecnica" type="text/x-handlebars-template">
+  <h1>{{descrizione}}</h1>
+  <h2>{{prezzo}}</h2>
+  <div class="details">
+    <div class="size">
+      <h4>{{indirizzo}} <br>{{citta}} </h4>
+      <h4>{{disponibilita}} 
+      </h4>
+    </div>
+    <div class="durability">
+      <h3 id="percentualeBenzina">55%</h3>
+      <h4>Livello del serbatoio Benzina</h4>
+    </div>
+  </div>
+</script>
 
   <script id="template-veicoli" type="text/x-handlebars-template">
     {{#each immagine}}
