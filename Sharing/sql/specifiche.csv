@@ -1,0 +1,10 @@
+specifiche_id;velocita;potenza_motore;alimentazione;tempo_ricarica;tipo_ruota;limitatore_velocita;autonomia;emissioni_co2;cambio;cavalli;cilindrata_motore;consumo_medio;veicolo_id_fk
+1;130 Km/h;;Ibrida;;;;80 Km;65 g/km;Automatico;72 CV;998 cm3;0,6 l/100 km;1
+2;140 Km/h;;Ibrida;;;;123 Km;72 g/km;Automatico;83 CV;1199 cm3;0,9 l/100 km;2
+3;110 Km/h;;Elettrica;2 h;;;70 Km;0 emissioni;Automatico;70CV;999 cm3;12 kWh/100 km;3
+4;119 Km/h;;Ibrida;;;;57 Km;69 g/km;Automatico;70 CV;883 cm3;0,6 l/100 km;4
+5;122 Km/h;;Ibrida;;;;111 Km;73 g/km;Automatico;92 CV;999 cm3;0,6 l/100 km;5
+6;125 Km/h;;Ibrida;;;;25 Km;72 g/km;Automatico;65 CV;998 cm3;0,6 l/100 km;6
+7;110 Km/h;;Elettrica;45 min;;;105 Km;0 emissioni;Automatico;82 CV;883 cm3;10,3 kWh/100 km;7
+8;137 Km/h;;Ibrida;;;;96 Km;71 g/km;Automatico;100 CV;1197 cm3;0,6 l/100 km;8
+9;110 Km/h;;Elettrica;1,3 h;;;67 Km;0 emissioni;Automatico;60 CV;798 cm3;0,6 l/100 km;9
