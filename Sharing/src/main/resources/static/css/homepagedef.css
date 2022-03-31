@@ -291,7 +291,7 @@ a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
-    background-position:center;
+    background-position:left center;
     display: flex;
     align-items: center;
     padding-bottom: 14rem;
