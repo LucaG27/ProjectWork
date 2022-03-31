@@ -61,7 +61,6 @@ function terminaPrenotazione(event){
       console.log('Failed to fetch page: ', err);
   });
     listaPrenotazioni();
-    window.location.reload();
 }
 
 function listaPrenotazioni(event){
