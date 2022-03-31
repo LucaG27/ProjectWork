@@ -286,7 +286,7 @@ a:hover {
                 HERO                      
 --------------------------------------- */
 .backg{
-    background-image: url("");
+    background-image: url("/img/BG-1.png");
 
     background-repeat: no-repeat;
     background-size: cover;
