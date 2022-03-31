@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.gruppotre.entity.Specifiche;
 import com.gruppotre.entity.Veicolo;
 import com.gruppotre.entity.VeicoloPrenotazioniDTO;
 import com.gruppotre.service.VeicoloService;
@@ -49,6 +50,8 @@ public class VeicoloREST {
 	
 	@PostMapping
 	public void addVeicolo(@RequestBody Veicolo veicolo) {
+		Specifiche s = veicolo.getSpecifiche();
+		s.setVeicolo(veicolo);
 		srv.addVeicolo(veicolo);
 	}
 	
