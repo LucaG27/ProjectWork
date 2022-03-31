@@ -272,6 +272,7 @@ window.addEventListener(
     veicoliDisponibili();
     wrap();
     loadPage();
+    listaVeicoli('AUTO');
     
 })
 

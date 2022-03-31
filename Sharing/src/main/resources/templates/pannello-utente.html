@@ -325,7 +325,7 @@
   {{#each this}}
   <tr>
     {{#ifEquals stato "scaduta"}}
-    <td>{{veicoloId.id}}</td>
+    <td >{{veicoloId.id}}</td>
     <td>{{veicoloId.descrizione}}</td>
     <td>{{dataInizio}}</td>
     <td>{{dataFine}}</td>
@@ -339,8 +339,8 @@
 <script id="template-anagraficaUtente" type="text/x-handlebars-template">
 <tbody>
   <tr>
-    <td class="active">ID Utente</td>
-    <td>{{id}}</td>
+    <td class="active" hidden>ID Utente</td>
+    <td hidden>{{id}}</td>
   </tr>
   <tr>
     <td class="active">Nome</td>
