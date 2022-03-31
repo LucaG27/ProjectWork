@@ -267,7 +267,6 @@
         <div class="modal-body ">
           <div class="column text-centerd" id="main">
             <h1>Log In</h1>
-            <form>
               <div class="form-group mb-3">
                 <label for="email">E-mail </label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
@@ -277,8 +276,7 @@
                 <input type="password" class="form-control" id="password" placeholder="">
                 <i class="far fa-eye" id="togglePassword"></i>
               </div>
-              <button type="submit" class="btn btn-primary text-center">Accedi</button>
-            </form>
+              <button type="submit" id="btn" class="btn btn-primary text-center">Accedi</button>
           </div>
           <div>
             <?xml version="1.0" encoding="UTF-8"?>
@@ -298,7 +296,7 @@
             <div class="sec-content">
               <h2>Registrati</h2>
               <h3>Cosa aspetti? Crea il tuo account e prenota il tuo veicolo</h3>
-              <button type="button" class="btn2 btn-primary">Sign In</button>
+              <button type="button" class="btn3 btn-primary">Sign In</button>
             </div>
           </div>
         </div>
@@ -307,6 +305,21 @@
   </div>
 
   <!-- FINE MODAL -->
+
+    <!-- OFF CANVAS-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header text-center">
+        <h5 id="offcanvasRightLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body container text-end">
+        <div class="ml-3 pd-5"><a href="/pannello-utente">Mio profilo</a></div>
+        <div class="ml-3 pd-5"><a id="logout" href="/logout">Logout</a></div>
+      </div>
+    </div>
+  
+    <!-- FINE OFF CANVAS-->
+    
   <!-- Back to top button -->
   <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
     <i class="fas fa-arrow-up"></i>
@@ -405,6 +418,7 @@
     crossorigin="anonymous"></script>
   <script src="js/veicolo.js"></script>
   <script src="js/veicolo2.js"></script>
+  <script src="js/login.js"></script>
   <style>
       @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:800");
@@ -533,7 +547,7 @@ button:focus {
   line-height: 80px;
   font-size: 16px;
   margin-left: 30px;
-  positon: relative;
+  position: relative;
 }
 .card .right .productInfo h3:after {
   content: "";

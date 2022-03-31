@@ -340,6 +340,107 @@ small.justify-content-center {
     outline: 0;
   }
 
+
+/* ------------------------------------ 
+                MODAL                   
+--------------------------------------- */
+.modal-body {
+  display: flex;
+  padding: 0;
+  border-radius: 4rem;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+
+.modal-body h1 {
+  padding-top: 3rem;
+}
+
+.modal-content {
+  border-radius: 4rem;
+  width: 90%;
+  -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+-moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+}
+.modal-content h1, .modal-content h2, .modal-content h3 {
+    text-align: center;
+
+    
+}
+.modal-content h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.modal-content h2 {
+    font-size: 1.1em;
+    
+}
+.modal-content h3 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: black;
+}
+form {
+  font-size: 1rem;
+}
+.column {
+flex: 50%;
+padding: 10px;
+}
+.column#main {
+  flex: 75%;
+  padding: 50px;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+#secondary {
+  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  border-radius: 0 4rem 4rem 0;
+  text-align: center;
+  
+}
+
+#secondary h2, h3{
+  color: white;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+#main .form-control {
+  border-radius: 0;
+  font-size: .9em;
+  
+}
+
+#main h1, h3{
+  font-weight: 500;
+}
+
+.modal-body label {
+  margin-bottom: 0;
+}
+
+.sec-content {
+  margin-top: 85%;
+}
+
+
+.icon-inside{
+position: relative;
+}
+
+.icon-inside i{
+position: absolute;
+right:1rem;
+top:70%;
+transform: translateY(-70%);
+color:#30A3F1;
+}  
+
 /* ------------------------------------ 
                 BOTTONI                   
 --------------------------------------- */

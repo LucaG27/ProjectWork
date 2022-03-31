@@ -2,6 +2,8 @@
 
 const URL = "http://localhost:8080/api/prenotazioni/";
 const user = localStorage.getItem('user');
+let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
+let pannello= document.getElementById("pannello").addEventListener("click", controlloPannello);
 let render_prenotazioni = null;
 let render_prenotazioni2 = null;
 let render_anagrafica = null;
@@ -10,6 +12,41 @@ let session = JSON.parse(localStorage.getItem('user'));
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
+
+function logout(){
+
+  localStorage.removeItem("user");
+
+  location.href = "/logout";
+  
+}
+
+function loadPage(){
+
+  let userL = session;
+
+  if(userL == null){
+    location.href = "/";
+  }
+  if(userL.ruolo == "RUOLO_UTENTE"){
+    document.getElementById("pannello").setAttribute("style", "display:none");
+    document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+  }else{
+    document.getElementById("pannello").setAttribute("style", "display:inline");
+    document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+  }
+}
+
+function controlloPannello(){
+
+  if (user == null){
+
+    modal.show();
+  }else{
+    location.href="pannello-controllo";
+  }
+
+}
 
 function terminaPrenotazione(event){
 
@@ -129,6 +166,7 @@ window.addEventListener(
         render_anagrafica = Handlebars.compile(document.getElementById("template-anagraficaUtente").innerHTML);
         listaPrenotazioni();
         utenteByEmail();
+        loadPage();
 		
 });
 

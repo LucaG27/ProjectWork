@@ -24,7 +24,8 @@ const utente = localStorage.getItem('user');
 			.then(utente => {
 				if(utente == null) alert("Utente o Password errati.")
 				else {
-					getUser();				
+					getUser();
+					
 				}
 			})
 	}
