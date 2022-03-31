@@ -1,6 +1,7 @@
 "use strict";
 let template_riga = "";
 const URL = "http://localhost:8080/api/veicolo/";
+let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
 let modal = null;
 let modalImmagine = null;
 let csvModal = null;
@@ -8,6 +9,13 @@ let modalDelete = null;
 let immagini = null;
 let specifiche = null;
 
+function logout(){
+
+    localStorage.removeItem("user");
+  
+    location.href = "/logout";
+    
+  }
 
 function cambiaDisponibilita(){
     if(document.getElementById("disponibile").checked){

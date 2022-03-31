@@ -18,7 +18,7 @@
      <div class="container-nav">
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="http://localhost:8080/">
+          <a class="navbar-brand" href="/">
               <img src="Verde_e_Nero_Mattonelle_DJ_Bitz_Logo-removebg-preview (1).png" alt="" width="100">
             </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,8 +41,6 @@
                   <a class="nav-link ">|</a>
                   </li>
               <li class="nav-item">
-              <a class="nav-link" id="buttonLogin" href="#"data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Accedi</a>
                 <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
               </li>
               <li class="nav-item">
@@ -302,6 +300,19 @@
 
   <!-- FINE MODAL -->
 
+    <!-- OFF CANVAS-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header text-center">
+        <h5 id="offcanvasRightLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body container text-end">
+        <div class="ml-3 pd-5"><a id="logout" href="/logout">Logout</a></div>
+      </div>
+    </div>
+  
+    <!-- FINE OFF CANVAS-->
+
   
   <!-- HANDLEBARS -->
 <script id="template-prenotazioni" type="text/x-handlebars-template">
@@ -325,7 +336,7 @@
   {{#each this}}
   <tr>
     {{#ifEquals stato "scaduta"}}
-    <td>{{veicoloId.id}}</td>
+    <td >{{veicoloId.id}}</td>
     <td>{{veicoloId.descrizione}}</td>
     <td>{{dataInizio}}</td>
     <td>{{dataFine}}</td>
@@ -339,8 +350,8 @@
 <script id="template-anagraficaUtente" type="text/x-handlebars-template">
 <tbody>
   <tr>
-    <td class="active">ID Utente</td>
-    <td>{{id}}</td>
+    <td class="active" hidden>ID Utente</td>
+    <td hidden>{{id}}</td>
   </tr>
   <tr>
     <td class="active">Nome</td>

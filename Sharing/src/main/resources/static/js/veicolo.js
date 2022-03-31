@@ -9,12 +9,44 @@ const URL3 = "http://localhost:8080/api/veicolo/id/"
 const URL4 = "http://localhost:8080/api/prenotazioni/"
 const user = localStorage.getItem('user');
 const idv = localStorage.getItem('veicolo');
+let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
+let pannello= document.getElementById("pannello").addEventListener("click", controlloPannello);
 let tipo_veicolo = null;
 let icon = null;
 let bottone_prenota = null;
 
   "use strict";
 
+  function logout(){
+
+    localStorage.removeItem("user");
+  
+    location.href = "/logout";
+    
+  }
+
+  function loadPage(){
+
+    let userL = JSON.parse(user);
+  
+    if(userL == null){
+      document.getElementById("pannello").setAttribute("style", "display:none");
+      document.getElementById("iconaProfilo").setAttribute("style", "display:none");
+      //document.getElementById("pulsanteProfilo").setAttribute("style", "display:none");
+      document.getElementById("buttonLogin").setAttribute("style", "display:block");
+    }
+    if(userL.ruolo == "RUOLO_UTENTE"){
+      document.getElementById("pannello").setAttribute("style", "display:none");
+      document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+      //document.getElementById("pulsanteProfilo").setAttribute("style", "display:inline");
+      document.getElementById("buttonLogin").setAttribute("style", "display:none");
+    }else{
+      document.getElementById("pannello").setAttribute("style", "display:inline");
+      document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+      //document.getElementById("pulsanteProfilo").setAttribute("style", "display:inline");
+      document.getElementById("buttonLogin").setAttribute("style", "display:none");
+    }
+  }
   
    async function asyncCall(){
     const veicolo = await loadCoordinate();
@@ -31,6 +63,16 @@ let bottone_prenota = null;
     return veicolo;
   }
 
+  function controlloPannello(){
+
+    if (user == null){
+  
+      modal.show();
+    }else{
+      location.href="pannello-controllo";
+    }
+  
+  }
   
   function listaVeicoli(event){
   
@@ -162,6 +204,7 @@ const swiper = new Swiper('.swiper', {
           listaVeicoli();
           listaSpecifiche();
           wrap();
+          loadPage();
 
       
   });
