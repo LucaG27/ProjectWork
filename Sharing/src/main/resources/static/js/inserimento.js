@@ -28,6 +28,11 @@ function sceltaVeicolo(event){
 
     document.getElementById("specifiche").innerHTML = rows;
 
+    if(categoriaF == "AUTO"){
+    document.getElementById("ruote").value = "QUATTRO RUOTE";
+    }else{
+        document.getElementById("ruote").value = "DUE RUOTE"    
+    }
     veicoloModal.hide();
 }
 
@@ -54,8 +59,8 @@ function createVeicolo(){
             specifiche:{
                 velocita: document.getElementById("velocita").value, 
                 potenza: document.getElementById("potenzaMotore").value, 
-                //alimentazione: document.getElementById().value, 
-                //tempoDiRicarica: document.getElementById().value, 
+                alimentazione: null, 
+                tempoDiRicarica: null, 
                 tipoDiRuota: null, 
                 limitatoreVelocita: null, 
                 autonomia: null, 
@@ -89,15 +94,15 @@ function createVeicolo(){
                 specifiche:{
                     velocita: document.getElementById("velocita").value, 
                     potenza: document.getElementById("potenzaMotore").value, 
-                    //alimentazione: document.getElementById().value, 
-                    //tempoDiRicarica: document.getElementById().value, 
+                    alimentazione: document.getElementById("alimentazioneSpec").value, 
+                    tempoDiRicarica: document.getElementById("tempoDiRicarica").value, 
                     tipoDiRuota: document.getElementById("tipoRuota").value, 
                     limitatoreVelocita: document.getElementById("limitatore").value, 
                     autonomia: document.getElementById("autonomia").value, 
                     emissioniCo2: document.getElementById("emissioni").value, 
                     cambio: null, 
                     cavalli: null, 
-                    cilindrata: document.getElementById("cilindrata").value, 
+                    cilindrata: null, 
                     consumoMedio: null 
                 } 
             })  

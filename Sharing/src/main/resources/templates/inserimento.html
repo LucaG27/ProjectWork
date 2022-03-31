@@ -113,11 +113,7 @@
                 
                 <dl class="inputbox">
                   <dd class="inputbox-content">
-                    <select id="ruote" class="form-select" aria-label="Default select example">
-                      <option selected>Scegli nr. Ruote</option>
-                      <option value="DUE RUOTE">2</option>
-                      <option value="QUATTRO RUOTE">4</option>
-                    </select>
+                    <input id="ruote" type="text" readonly>
                   </dd>
                 </dl> 
               </div>
@@ -149,8 +145,8 @@
 					<div class="container text-center">		
           <button id="button-auto" veicolo-cate="AUTO" type="submit" class="btn btn-primary" data-dismiss="modal">Auto</button>
           <button id="button-moto" veicolo-cate="MOTO" type="submit" class="btn btn-primary" data-dismiss="modal">Moto</button>
-          <button id="button-bici" veicolo-cate="BICI" type="submit" class="btn btn-primary" data-dismiss="modal">Bicicletta</button>
-          <button id="button-mono" veicolo-cate="MONO" type="submit" class="btn btn-primary" data-dismiss="modal">Monopattino</button>
+          <button id="button-bici" veicolo-cate="BICICLETTA" type="submit" class="btn btn-primary" data-dismiss="modal">Bicicletta</button>
+          <button id="button-mono" veicolo-cate="MONOPATTINO" type="submit" class="btn btn-primary" data-dismiss="modal">Monopattino</button>
         </div>   
         </div>
              
@@ -195,6 +191,15 @@
       </dd>
     </dl>
     {{/ifEquals}}
+    {{#ifEquals categoria "BICICLETTA" "MONOPATTINO"}}
+    <dl class="inputbox">
+      <dd class="inputbox-content">
+        <input type="text" class="" id="alimentazioneSpec" required />
+        <label for="alimentazione">Alimentazione</label>
+        <span class="underline"></span>
+      </dd>
+    </dl>
+    {{/ifEquals}}
   </div>
   <div class="col-lg-4">
     <dl class="inputbox">
@@ -217,6 +222,15 @@
     <dd class="inputbox-content">
       <input ype="text" class="" id="autonomia" required />
       <label for="autonomia">Autonomia</label>
+      <span class="underline"></span>
+    </dd>
+  </dl>
+  {{/ifEquals}}
+  {{#ifEquals categoria "BICICLETTA" "MONOPATTINO"}}
+  <dl class="inputbox">
+    <dd class="inputbox-content">
+      <input ype="text" class="" id="tempoDiRicarica" required />
+      <label for="tempoDiRicarica">Tempo di ricarica</label>
       <span class="underline"></span>
     </dd>
   </dl>
