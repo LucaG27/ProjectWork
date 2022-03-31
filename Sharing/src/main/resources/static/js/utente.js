@@ -1,6 +1,6 @@
 "use strict";
 
-const URL = "http://localhost:8080/api/veicolo/";
+const URL = "http://localhost:8080/api/prenotazioni/";
 const user = localStorage.getItem('user');
 let render_prenotazioni = null;
 let render_prenotazioni2 = null;
@@ -11,9 +11,62 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
+function terminaPrenotazione(event){
+
+  let originator = event.currentTarget;
+  let prenotazioneId = originator.getAttribute('prenotazione-id');
+
+  
+
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+  let yyyy = today.getFullYear();
+  today = yyyy + '-' + mm + '-' + dd;
+
+  fetch(URL+prenotazioneId)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(prenotazione){        
+        return fetch(URL + "savePrenotazione",{
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                
+                  body: JSON.stringify({ 
+                    id: prenotazioneId,
+                    dataInizio: prenotazione.dataInizio,
+                    dataFine: today,
+                    stato: "scaduta",
+                    utenteId: session,
+                    veicoloId: {
+                    id: prenotazione.veicoloId.id,
+                    categoria: prenotazione.veicoloId.categoria,
+                    descrizione: prenotazione.veicoloId.descrizione,
+                    alimentazione: prenotazione.veicoloId.alimentazione,
+                    ruote: prenotazione.veicoloId.ruote,
+                    disponibilita: "DISPONIBILE",
+                    indirizzo: prenotazione.veicoloId.indirizzo,
+                    citta: prenotazione.veicoloId.citta,
+                    coordinate: prenotazione.veicoloId.coordinate,
+                    prezzo: prenotazione.veicoloId.prezzo,
+                  }
+                })
+      })
+      
+    })
+    .catch(function(err) { 
+      console.log('Failed to fetch page: ', err);
+  });
+    listaPrenotazioni();
+    window.location.reload();
+}
+
 function listaPrenotazioni(event){
 
-    fetch(URL+"prenotazioni/"+ session.id)
+    fetch(URL+ "id/"+session.id)
         .then(function(response) {
 		    return response.json();
 	    })
@@ -27,7 +80,7 @@ function listaPrenotazioni(event){
             document.getElementById("bodyTabellaClienti").innerHTML = rows;
             document.getElementById("bodyTabellaClienti2").innerHTML = rows2;
        
-    
+            agganciaEventi();
         
         })
         .catch(function(err) { 
@@ -56,9 +109,21 @@ function utenteByEmail(){
 
 }
 
+function agganciaEventi(){
+  let buttonTermina = document.getElementsByClassName("terminaPrenotazione");
+  for(let li=0; li<buttonTermina.length; li++){
+    buttonTermina[li].addEventListener("click", terminaPrenotazione);
+  }
+}
+
 window.addEventListener(
 	'DOMContentLoaded', 
 	function(event){
+
+    let buttonTermina = document.getElementsByClassName("terminaPrenotazione");
+    for(let li=0; li<buttonTermina.length; li++){
+      buttonTermina[li].addEventListener("click", terminaPrenotazione);
+    }
 
 		render_prenotazioni = Handlebars.compile( document.getElementById("template-prenotazioni").innerHTML );
 		render_prenotazioni2 = Handlebars.compile( document.getElementById("template-prenotazioni2").innerHTML );

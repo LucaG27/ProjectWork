@@ -308,15 +308,14 @@
   {{#each this}}
   <tr>
     {{#ifEquals stato "in corso"}}
-    <td>{{idVeicolo}}</td>
-    <td>{{descrizione}}</td>
+    <td>{{veicoloId.id}}</td>
+    <td>{{veicoloId.descrizione}}</td>
     <td>{{dataInizio}}</td>
     <td>{{dataFine}}</td>
     <td>{{stato}}</td>
     
-    <td><button class="btn btn-success" data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop">Modifica</button></td>
-      <td><button class="btn btn-danger">Cancella</button></td>
+    <td><button class="btn btn-success terminaPrenotazione" prenotazione-id="{{id}}">Termina</button></td>
+      <td><button class="btn btn-danger" disabled>Cancella</button></td>
       {{/ifEquals}}
   </tr>
   {{/each}}      
@@ -326,8 +325,8 @@
   {{#each this}}
   <tr>
     {{#ifEquals stato "scaduta"}}
-    <td>{{idVeicolo}}</td>
-    <td>{{descrizione}}</td>
+    <td>{{veicoloId.id}}</td>
+    <td>{{veicoloId.descrizione}}</td>
     <td>{{dataInizio}}</td>
     <td>{{dataFine}}</td>
     <td>{{stato}}</td>

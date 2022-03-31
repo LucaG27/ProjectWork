@@ -3,6 +3,7 @@ package com.gruppotre.integration;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +42,7 @@ public class VeicoloREST {
 		return srv.getAllDisponibili(disponibilita);
 	}
 	
-	@GetMapping("/categoria/{categoria}")
+	@GetMapping(value="/categoria/{categoria}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Veicolo> getAllByCategoria(@PathVariable("categoria") String categoria){
 		return srv.getAllCategoria(categoria);
 	}
