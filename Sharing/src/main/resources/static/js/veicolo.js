@@ -115,6 +115,7 @@ let bottone_prenota = null;
 
             document.getElementById("percentualeBenzina").innerHTML = 22 + '%';    
         })
+        .then(()=>listaSpecifiche())
         .catch(function(err) { 
                 alert(err);
                 console.log('Failed to fetch page: ', err);

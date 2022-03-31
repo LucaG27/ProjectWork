@@ -68,7 +68,8 @@ function terminaPrenotazione(event){
         return response.json();
       })
       .then(function(prenotazione){        
-        return fetch(URL + "savePrenotazione",{
+        //return
+         fetch(URL + "savePrenotazione",{
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json'
@@ -94,6 +95,7 @@ function terminaPrenotazione(event){
                   }
                 })
       })
+      .then(()=>listaPrenotazioni())
       
     })
     .catch(function(err) { 
