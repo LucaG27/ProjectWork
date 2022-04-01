@@ -8,20 +8,19 @@
 /* ------------------------------------ 
                 NAVBAR                      
 --------------------------------------- */
-
+.container-nav{
+    padding-top: 129px;
+}
 .navbar {
     transition: all .2s ease-in-out;
-    background: linear-gradient(to right,  #066659, #118943);
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
   }
 
-  .nav{
-      padding-bottom: 100px;
-  }
 
   body{
       background-color: #fdf9fd;;
   }
-  .navbar.scrolled-nav{
+  .navbar .scrolled-nav{
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
   }
 
@@ -39,11 +38,6 @@
     color: green;
 }
 
-.icona{
-    font-size: 1.5rem;
-    color: #fdf9fd;
-}
-
 .nav-link:focus, .nav-link:hover {
   font-weight: bold;
   color: white;
@@ -54,11 +48,6 @@
        display: none; 
     }
 }
-footer {
-    position: static;
-    bottom:0;
-    width:100%;
- }
 
 /* ------------------------------------ 
                 SIDEBAR                      
@@ -129,6 +118,11 @@ font-weight: bold;
                 TABLE                      
 --------------------------------------- */
   .demo{ font-family: 'Noto Sans', sans-serif; }
+
+  .container-fluid{
+      padding-top: 10px;
+  }
+
   .panel{
     background: linear-gradient(to right,  #066659, #118943);
       padding: 0;
@@ -163,8 +157,8 @@ font-weight: bold;
       text-shadow: 3px 3px rgba(255,255,255,0.2);
   }
   .panel .panel-heading .form-control{
-      color: #fff;
-      background-color: transparent;
+      color: rgb(68, 68, 68);
+      background-color: rgba(255, 255, 255, 0.2);
       width: 35%;
       height: 40px;
       border: 2px solid #fff;
@@ -286,6 +280,21 @@ font-weight: bold;
   .pagination li:last-child a{
       border-radius: 50%;
   }
+
+  .modal-header{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  #confermaDelete{
+      background-color: red;
+      border-color: red;
+  }
+
+  #confermaDelete:hover{
+    background-color: rgb(174, 0, 0);
+    border-color: rgb(174, 0, 0);
+  }
+
   @media only screen and (max-width:767px){
       .panel .panel-heading .title{
           text-align: center;
@@ -353,4 +362,31 @@ font-weight: bold;
   right: 0;
   left: 0;
   height: 100%;
+  }
+
+
+  .btn{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    color: white;
+  }
+
+  .btn-secondary{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  .input{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  .btn:hover{
+      
+      color: rgb(179, 179, 179);
+  }
+  .btn-secondary:hover{
+     
+    color: rgb(179, 179, 179);
+  }
+  .input:hover{
+      
+    color: rgb(179, 179, 179);
   }
