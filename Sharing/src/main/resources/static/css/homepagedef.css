@@ -452,7 +452,7 @@ small.justify-content-center {
 }
 
 .banner .info{
-    height: 150px;
+    height: 50px;
     margin-bottom: 1rem;
 }
 
@@ -470,7 +470,7 @@ small.justify-content-center {
     justify-content: center; 
 }  
 #map{
-  min-height: 300px;
+  min-height: 490px;
   width: 100%;
   min-width: 1000px;
 }
@@ -481,6 +481,10 @@ small.justify-content-center {
     width: 100%;
     min-width: 700px;
   }
+  .banner .info{
+    height: 100px;
+    margin-bottom: 1rem;
+}
 }
 
 @media(max-width:575px){
@@ -489,6 +493,10 @@ small.justify-content-center {
     width: 100%;
     min-width: 350px;
   }
+  .banner .info{
+    height: 150px;
+    margin-bottom: 1rem;
+}
 }
 
 /* ------------------------------------ 
