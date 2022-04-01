@@ -21,11 +21,6 @@
   <!--FONT-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Source+Serif+4:wght@200&display=swap"
     rel="stylesheet">
   <!-- Make sure you put this AFTER Leaflet's CSS -->
@@ -38,12 +33,11 @@
 
 <body>
   <!-- NAVBAR-->
-  <div class="container-nav">
+  <div class="container">
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="http://localhost:8080/">
-          <img src="/img/Color_tè_scuro_Illustrativo_Consegne_Logo_servizi_di_consegna__2_-removebg-preview.png" alt=""
-            width="130">
+        <a class="navbar-brand" href="/">
+          <img src="/img/Color_tè_scuro_Illustrativo_Consegne_Logo_servizi_di_consegna__2_-removebg-preview.png" alt="" width="100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,9 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-            <li class="nav-item">
-              <a class="nav-link" href="/aboutus">Chi siamo</a>
-            </li>
+           
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">Città</a>
@@ -63,50 +55,88 @@
                 <li><a class="dropdown-item" href="#">Roma</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/aboutus">Contatti</a>
-            </li>
             <li class="nav-item verticalerule">
               <a class="nav-link ">|</a>
             </li>
             <li class="nav-item">
-              <div class="nav-link align-items-center" id="buttonLogin"><a class="text-decoration-none" href="#"
-                  data-bs-toggle="modal" data-bs-target="#exampleModal">Accedi</a></div>
-              <div id="iconaProfilo" class="nav-link">
-                <div class="testo"><a class="text-decoration-none evidenziato" href="#" tabindex="-1"
-                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Profilo personale</i></a></div>
-                <div class="icone"><a href="#" tabindex="-1" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasRight"><i class="bi bi-person-circle"></i></a></div>
-              </div>
+              <a class="nav-link" id="buttonLogin" href="#"data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Accedi</a>
+              <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
             </li>
             <li class="nav-item">
-              <div id="pannello" class="nav-link">
-                <div class="testo"><a class="text-decoration-none evidenziato" href="#">Pannello di controllo</i></a>
-                </div>
-                <div class="icone"><a href="#"><i class="bi bi-gear-fill"></i></a></div>
-              </div>
-            </li>
+              <a class="nav-link" href="#"><i id="pannello" class="bi bi-gear-fill"></i></a>
+        </li>
           </ul>
 
         </div>
       </div>
     </nav>
   </div>
+  <div class="backg"></div>
 
-  <!-- ----------------------------- FINE NAVBAR ----------------------------- -->
+    <!-- MODAL -->
 
-  <!-- ----------------------------------------------------------------------- -->
-  <!--                                  HERO                                   -->
-  <!-- ----------------------------------------------------------------------- -->
-
-  <div class="backg">
-    <!-- <div class="cta text-center fixed-bottom">
-                <h2 class="brand">WE <span id="wa"><i> MOVE</i></span>PEOPLE</h2>
-              </div> -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body ">
+          <div class="column text-centerd" id="main">
+            <h1>Log In</h1>
+              <div class="form-group mb-3">
+                <label for="email">E-mail </label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+              </div>
+              <div class="form-group mb-3 icon-inside">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="">
+                <i class="far fa-eye" id="togglePassword"></i>
+              </div>
+              <button type="submit" id="btn" class="btn btn-primary text-center">Accedi</button>
+          </div>
+          <div>
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+              <title>Path</title>
+              <desc>Created with Sketch.</desc>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path
+                  d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z"
+                  id="Path" fill="#27ea1d"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="column" id="secondary">
+            <div class="sec-content">
+              <h2>Registrati</h2>
+              <h3>Cosa aspetti? Crea il tuo account e prenota il tuo veicolo</h3>
+              <button type="button" class="btn3 btn-primary">Sign In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- ------------------------------ FINE HERO ------------------------------ -->
+  <!-- FINE MODAL -->
 
+
+
+   <!-- OFF CANVAS-->
+   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header text-center">
+      <h5 id="offcanvasRightLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body container text-end">
+      <div class="ml-3 pd-5"><a href="/pannello-utente">Profilo Personale</a></div>
+      <div class="ml-3 pd-5"><a id="logout" href="/logout">Logout</a></div>
+    </div>
+  </div>
+
+  <!-- FINE OFF CANVAS-->
 
   <!-- FOOTER -->
   <footer class="bg-dark text-center text-white pt-5 ">
@@ -160,14 +190,14 @@
               <a href="#!" class="text-white">FAQ</a>
             </li>
 
-
-            <li>
-              <a href="#!" class="text-white">Cookies</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Privacy Policy</a>
-            </li>
-          </ul>
+           
+              <li>
+                <a href="#!" class="text-white">Cookies</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Privacy Policy</a>
+              </li>
+            </ul>
         </div>
         <!--Grid column-->
 
@@ -203,11 +233,11 @@
               <img
                 src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
                 alt="" width="150px">
-              <img
+                <img
                 src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
                 alt="" width="150px">
             </li>
-
+            
           </ul>
         </div>
         <!--Grid column-->
@@ -227,13 +257,21 @@
   </footer>
   <!-- Footer -->
 
-   <!-- bootstrap -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-   crossorigin="anonymous"></script>
 
-   <script src="js/roma.js"></script>
-   <script src="js/login.js"></script>
-   <script src="js/home.js"></script>
-  </body>
-  </html>
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- swiper -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <!--custom js-->
+  <script src="js/login.js"></script>
+  <script src="js/roma.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>

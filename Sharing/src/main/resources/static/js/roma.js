@@ -1,89 +1,57 @@
-$(document).ready(function() {
-    var o = 0;
-    $(window).scroll(function() {
-        o = $(window).scrollTop(), $(".counter").html(o),
-        o >= 100 ? $(".navbar").addClass("scrolled-nav") : o < 100 && $(".navbar").removeClass("scrolled-nav")
-    })
-  });
+let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
+let bottone_login = document.getElementById("btn").addEventListener("click", loadPage);
+let pannello= document.getElementById("pannello").addEventListener("click", controlloPannello);
+const user = localStorage.getItem('user');
+
+function logout(){
+
+  localStorage.removeItem("user");
+
+  location.href = "/logout";
   
+}
 
-    const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 1, //valore di default che funziona fuori dai breakpoint (da 0px)
-  spaceBetween: 10,
-  breakpoints: {
-    // when window width is >= 576
-    576: {
-      slidesPerView: 2,
-      spaceBetween: 20
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 20
-    },
-    // when window width is >= 1200px
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 20
-    }
-  },
-  autoplay: {
-    delay: 2300,
-    disableOnInteraction: false,
-  },
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+function controlloPannello(){
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  if (user == null){
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+    modal.show();
+  }else{
+    location.href="pannello-controllo";
+  }
 
-  const togglePassword = document.querySelector('#togglePassword');
-  const password = document.querySelector('password');
- 
-  togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash');
-});
-  
-//Get the button
-let mybutton = document.getElementById("btn-back-to-top");
+}
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
 
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+function loadPage(){
+
+  let userL = JSON.parse(user);
+
+  if(userL == null){
+    document.getElementById("pannello").setAttribute("style", "display:none");
+    document.getElementById("iconaProfilo").setAttribute("style", "display:none");
+    //document.getElementById("pulsanteProfilo").setAttribute("style", "display:none");
+    document.getElementById("buttonLogin").setAttribute("style", "display:block");
+  }
+  if(userL.ruolo == "RUOLO_UTENTE"){
+    document.getElementById("pannello").setAttribute("style", "display:none");
+    document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+    //document.getElementById("pulsanteProfilo").setAttribute("style", "display:inline");
+    document.getElementById("buttonLogin").setAttribute("style", "display:none");
+  }else{
+    document.getElementById("pannello").setAttribute("style", "display:inline");
+    document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+    //document.getElementById("pulsanteProfilo").setAttribute("style", "display:inline");
+    document.getElementById("buttonLogin").setAttribute("style", "display:none");
   }
 }
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
 
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+window.addEventListener(
+  'DOMContentLoaded', 
+  function(event){
+
+    modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+
+    loadPage();
+    
+})
