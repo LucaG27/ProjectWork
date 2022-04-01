@@ -282,12 +282,12 @@ a:hover {
                 HERO                      
 --------------------------------------- */
 .backg{
-    background-image: url("https://images-ext-2.discordapp.net/external/ZlaAIJh-9Wx8dCdDWd1boVUYyl6pZ9PN_Lcnj7WshNw/https/www.leasysrent.it/it/blog/wp-content/uploads/2019/06/categoria-auto.jpg");
+    background-image: url("/img/BG-1.png");
 
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
-    background-position:left center;
+    background-position:right center;
     display: flex;
     align-items: center;
     padding-bottom: 14rem;
