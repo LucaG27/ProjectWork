@@ -285,15 +285,12 @@ font-weight: bold;
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
   }
 
-  #confermaDelete{
+  #confermaDelete:hover{
       background-color: red;
       border-color: red;
   }
 
-  #confermaDelete:hover{
-    background-color: rgb(174, 0, 0);
-    border-color: rgb(174, 0, 0);
-  }
+
 
   @media only screen and (max-width:767px){
       .panel .panel-heading .title{
@@ -395,4 +392,16 @@ font-weight: bold;
     display: flex;
     align-items: center;
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}
+.btn-primary{
+    border-color: white;
+}
+
+.btn-primary:hover{
+    border-color: white;
+}
+
+#confermaDelete:hover{
+    background-color: red;
+    border-color: red;
 }

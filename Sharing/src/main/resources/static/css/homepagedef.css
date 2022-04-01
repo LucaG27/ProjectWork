@@ -41,6 +41,10 @@ p{
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
   }
 
+  .container-nav{
+    padding-top: 60px;
+}
+
   body{
       background-color: #fdf9fd;;
   }
@@ -326,6 +330,7 @@ a:hover {
 .vantaggi{
     height: auto;
     background: aliceblue;
+    font-size: 1rem;
 }
 .vantaggi-title{
     padding-top: 3rem;
@@ -447,7 +452,8 @@ small.justify-content-center {
 }
 
 .banner .info{
-    height: 200px;
+    height: 150px;
+    margin-bottom: 1rem;
 }
 
 .banner .info p{
@@ -461,20 +467,27 @@ small.justify-content-center {
     display: flex;   
     flex-direction: column; 
     align-items: center;
-    justify-content: end; 
+    justify-content: center; 
 }  
-
 #map{
   min-height: 300px;
   width: 100%;
-  min-width: 350px;
+  min-width: 1000px;
 }
 
-@media(min-width:575px){
+@media(max-width:1000px){
   #map{
     min-height: 300px;
     width: 100%;
-    min-width: 1000px;
+    min-width: 700px;
+  }
+}
+
+@media(max-width:575px){
+  #map{
+    min-height: 300px;
+    width: 100%;
+    min-width: 350px;
   }
 }
 
@@ -874,4 +887,8 @@ font-weight: bold;
     display: flex;
     align-items: center;
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}
+
+.fa-eye{
+  padding-top: 1rem;
 }

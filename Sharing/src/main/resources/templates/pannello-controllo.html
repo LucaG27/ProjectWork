@@ -343,12 +343,12 @@
   <!-- Footer -->
 
             <!--MODALI-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modifica Veicolo</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Modifica dati auto</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -440,7 +440,7 @@
         </div>
 
         <div class="modal fade" id="immaginiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Inserisci un'immagine</h5>
@@ -465,7 +465,7 @@
 
             <div class="modal fade" id="csvModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Carica file CSV</h5>
@@ -477,7 +477,7 @@
                                     <form action="/api/veicolo/import" name="importCSV" method="post" enctype="multipart/form-data">
                                         <h3 class="mb-3">Import Veicoli CSV:</h3>
                                         <input type="file" name="fileCSV" accept=".csv" />
-                                        <input type="submit" value="Aggiungi">
+                                        <input type="submit" class="btn" value="Aggiungi">
                             </div>
                             </div>
                     </div>
@@ -487,14 +487,18 @@
 
             <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cancellazione veicolo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body">
                                 <div class="container">
                                     <div class="col-lg-6">
-                                        <h5 class="modal-title" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
-                                        <button type="button" class="btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
-                                        <button type="button" veicolo-id="" id="confermaDelete" class="btn-primary">Confermo</button>
+                                        <h5 class="modal-title mb-3" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
+                                        <button type="button" veicolo-id="" id="confermaDelete" class="btn btn-primary">Confermo</button>
                                    
                                 </div>
                                 </div>
@@ -505,7 +509,7 @@
            
             <div class="modal fade" id="deleteModalPrenotazione" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
                                 <div class="container">
