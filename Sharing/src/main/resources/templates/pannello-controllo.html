@@ -65,8 +65,7 @@
 
     <div class="container-fluid">
         <div class="text-center">
-            <button class="btn btn-success" id="filtroPrenotazioni" onclick="listaPrenotazioni()">Prenotazioni</button>
-            <button class="btn btn-success" id="filtroVeicoli" onclick="listaVeicoli()">Veicolo</button>
+            
         </div>
         <div class="row pb-5">
             <div class="col-lg-2">
@@ -111,11 +110,11 @@
                                             </div>
                                             <div class="col-sm-9 col-xs-12 text-right">
                                                 <div class="btn_group">
-                                                    <input type="text" class="form-control text-muted" placeholder="Search">
-                                                    <button class="btn btn-default text-muted" title="Reload"><i class="fa fa-sync-alt"></i></button>
-                                                    <button class="btn btn-default text-muted" title="Pdf"><i class="fa fa-file-pdf"></i></button>
-                                                    <button class="btn btn-default text-muted" title="Excel"><i class="fas fa-file-excel"></i></button>
-                                                    <select class="form-control" name="state" id="maxRows">
+                                                    <input type="text" class="form-control text-muted cerca" placeholder="Cerca">
+                                                    <button class="btn btn-default " title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                                    <button class="btn btn-default centro" id="filtroPrenotazioni" onclick="listaPrenotazioni()">Prenotazioni</button>
+                                                    <button class="btn btn-default centro" id="filtroVeicoli" onclick="listaVeicoli()">Veicoli</button>
+                                                    <select class="form-control seleziona" name="state" id="maxRows">
                                                         <option selected value="5000">Mostra tutte le righe</option>
                                                         <option value="5">5</option>
                                                         <option value="10">10</option>
@@ -432,7 +431,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="container">
-                            <div class="col-lg-6">
+                            <div class="col">
                                 <form action="/pannello-controllo/save" name="immagineForm" method="post"
                                     enctype="multipart/form-data">
                                     <h3 class="mb-3">Carica l'immagine:</h3>
@@ -479,11 +478,12 @@
                         </div>
                         <div class="modal-body">
                                 <div class="container">
-                                    <div class="col-lg-6">
-                                        <h5 class="modal-title mb-3" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
-                                        <button type="button" veicolo-id="" id="confermaDelete" class="btn btn-primary">Confermo</button>
-                                   
+                                    <div class="col">
+                                        <h5 class=" mb-3" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
+                                        <div class="bottonii text-end pt-3">
+                                            <button type="button" class="btn btn-secondary anul" data-bs-dismiss="modal" aria-label="Close">Annulla</button>
+                                            <button type="button" veicolo-id="" id="confermaDelete" class="btn btn-primary">Confermo</button>
+                                        </div>
                                 </div>
                                 </div>
                         </div>

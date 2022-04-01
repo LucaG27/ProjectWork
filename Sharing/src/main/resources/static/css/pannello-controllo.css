@@ -123,7 +123,28 @@ font-weight: bold;
       padding-top: 10px;
   }
 
-  .panel{
+  .modal-title{
+      color: white;
+  }
+
+  .centro{
+      width: 118px;
+  }
+
+  .seleziona{
+      width: 50px;
+  }
+  .anul{
+      width: 97px;
+  }
+
+  .cerca{
+      width: 150px;
+  }
+
+  .btn-close{
+      color: white;
+  }  .panel{
     background: linear-gradient(to right,  #066659, #118943);
       padding: 0;
       border-radius: 10px;
@@ -157,9 +178,9 @@ font-weight: bold;
       text-shadow: 3px 3px rgba(255,255,255,0.2);
   }
   .panel .panel-heading .form-control{
-      color: rgb(68, 68, 68);
+      color: rgb(213, 213, 213);
       background-color: rgba(255, 255, 255, 0.2);
-      width: 35%;
+     
       height: 40px;
       border: 2px solid #fff;
       border-radius: 20px;
