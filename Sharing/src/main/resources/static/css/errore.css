@@ -2,134 +2,91 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.swiper{
-    padding-bottom: 3rem;
-}
-
-.swiper-button-prev{
-    color: green;
-}
-
-.swiper-button-next{
-    color: green;
-}
-
-.grafico{
-    border: 1px solid black;
-    height: 500px;
-    border-radius: 10px;
-    margin-bottom: 5rem;
-}
-
-.banner{
-    background-image: url("https://enjoy.eni.com/img/home/bg_map_milano.png");
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.banner .ban img{
-    width: 90%;
-}
-
-.banner .info{
-    height: 200px;
-}
-
-.banner .info p{
-    font-size: 2.3rem;
-    color: white;
-}
-.banner .info span{
-    color: #7ab423;
-}
-
-
-.logo{
-    width: 200px;
-}
-
-.dropdown-menu li a{
-    color: green;
-}
-
-svg{
-    width: 20px;
-}
-
-.banner{
-  display: flex;   
-  flex-direction: column; 
-  align-items: center;
-  justify-content: end;
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Prompt', sans-serif;
+  }
+  p{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  .vantaggi-title{
+    font-family: 'Prompt', sans-serif;
+  }
+  .vantaggi-description{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  .riga{
+    font-family: 'Nunito Sans', sans-serif;
   
+  }
+  .nav-link{
+    font-family: 'Prompt', sans-serif;
+  }
+  .testoColorato{
+    font-family: 'Prompt', sans-serif;
+  }
   
-}
-
-
-.contenitore{
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 70px; 
-    filter: opacity(100%);   
-
-}
-
-.cards ul{
-    list-style-type: none;
-    padding: 0;
-
-}
-
-.icon-inside{
-    position: relative;
-}
-
-.icon-inside i{
-    position: absolute;
-    right:1rem;
-    top:50%;
-    transform: translateY(-50%);
-    color:#30A3F1;
-}
-
-.contenitore .col p{
+  .sec-content h3{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  /* ------------------------------------ 
+                  NAVBAR                      
+  --------------------------------------- */
+  
+  .navbar {
+      transition: all .2s ease-in-out;
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    }
+  
+    .container-nav{
+      padding-top: 60px;
+  }
+  
+    body{
+        background-color: #fdf9fd;;
+    }
+    .navbar .scrolled-nav{
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    }
+  
+    nav:hover{
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+         
+    }
+    .navbar-nav li a, .navbar-toggler-icon{
+      color: rgb(255, 255, 255);
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  
+    .dropdown-menu li a{
+      color: green;
+  }
+  
+  .nav-link:focus, .nav-link:hover, .evidenziato:hover{
+    font-weight: bold;
     color: white;
-    font-size: 1.2rem;
-}
-
-nav{
-    border-bottom: 1px solid white;
-}
-
-.contenitore img{
-    width: 100px;
-}
-
-.contenitore a{
-    color: rgb(255, 255, 255);
-    padding-left: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.contenitore ul li a:hover{
-
-    color: rgb(3, 183, 3);
-}
-
-.container .btn{
-    background-color: rgb(3, 183, 3);
-    color: white;
-}
-
-.contenitore .swiper-button-prev{
-    background-color: rgb(3, 183, 3);
-}
-
-.text-white{
-    text-decoration: none;
-}
+  }
+  
+  @media (max-width: 991px){
+   .verticalerule{
+         display: none; 
+      }
+  }
+  
+  @media (min-width: 991px){
+    .testo{
+      display:none;
+    }
+  }
+  
+    @media (max-width: 991px){
+    .icone{
+      display:none;
+    }
+  }
 
 
 /* CSS */
