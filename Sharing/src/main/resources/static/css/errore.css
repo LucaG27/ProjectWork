@@ -142,3 +142,35 @@ h1,h2,h3,h4,h5,h6{
     align-items: center;
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
 }
+
+/* ------------------------------------ 
+                FOOTER                   
+--------------------------------------- */
+
+.btn-footer{
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+    background: -moz-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 48px;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.btn-footer:hover{
+  color: white;
+  font-weight: bold;
+}
+
+.fab:hover{
+color: white;
+font-weight: bold;
+}
+
+.text-white{
+    text-decoration: none;
+  }
