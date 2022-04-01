@@ -34,8 +34,14 @@ public class PrenotazioneService {
 	public List<Prenotazione> getAllPrenotazioni() {
 		return db.findAll();
 	}
+
+	public List<Prenotazione> getAllPrenotazioniOrdered(String stato) {
+		return db.findAllOrderByStato(stato);
+	}
 	
 	public List<PrenotazioneDTO> getAllPrenotazioniDTO() {
 		return db.getAllPrenotazioniDTO();
 	}
+	
+	
 }
