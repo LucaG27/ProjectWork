@@ -23,4 +23,7 @@ public class ImmagineService {
 		return db.findById(id).get();
 	}
 
+	public void deleteImmagine(int id) {
+		db.delete(db.getById(id));
+	}
 }

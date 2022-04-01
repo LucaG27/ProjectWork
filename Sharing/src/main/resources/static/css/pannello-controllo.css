@@ -451,3 +451,9 @@ font-weight: bold;
 #thumbnail:hover {
   -webkit-transform: scale(5,5);
 }
+
+.anteprima:hover {
+  transform: scale(3);
+  background-color: white;
+}
+

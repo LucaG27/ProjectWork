@@ -11,6 +11,7 @@ import com.gruppotre.service.ImmagineService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,5 +37,9 @@ public class ImmagineRest {
 	public Immagine getById(@PathVariable int id) {
 		return srv.getById(id);
 	}
-    
+	
+	@DeleteMapping("/delete/{id}")
+	public void deleteImmagine(@PathVariable("id") int id) {
+		srv.deleteImmagine(id);
+	}
 }

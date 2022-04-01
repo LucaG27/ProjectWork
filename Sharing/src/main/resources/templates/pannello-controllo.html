@@ -509,6 +509,36 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="deleteModalImmagine" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cancellazione immagine</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                                <div class="container-fluid">
+                                    <input id="segnaVeicoloId" type="number" hidden>
+                                    <div id="tabellaImmagini" class="row">
+
+                                    </div>
+                                    <input id="daCancellare" type="number" hidden>
+                                    <div>
+                                        <div class="text-center" id="fotoDaCancellare">
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
+                                        <button type="button" id="confermaDelImg" class="btn btn-primary">Confermo</button>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!--FINE MODALI-->
 
               <!-- OFF CANVAS-->
@@ -571,6 +601,9 @@
                         <li>
                             <a href="#" data-tip="image"><i class="bi bi-images imgButton" veicolo-id="{{id}}"></i></a>
                         </li>
+                        <li>
+                            <a href="#" data-tip="image"><i class="bi bi-images delImg" veicolo-id="{{id}}"></i></a>
+                        </li>
                 </ul>
             </td>
         </tr>
@@ -579,9 +612,23 @@
 </table>
 </script>
 
-<script id="template-tabellaPrenotazioni" type="text/x-handlebars-template">
+<script id="template-tabellaImmagini" type="text/x-handlebars-template">
 
-    
+        {{#each immagine}}
+        <div class="gallery col-3">
+            <a class="selezionaImmagine" immagine-id="{{id}}" image-id="{{immagine}}" onclick="selezionaImg(event)" href="#">
+              <img class="border border-1 rounded hover-shadow anteprima" src="{{immagine}}" width="100" height="80">
+            </a>
+            <input  type="number" value="{{id}}" hidden>
+          </div>
+        {{/each}}
+
+
+       
+</script>
+
+
+<script id="template-tabellaPrenotazioni" type="text/x-handlebars-template">
 <table class="table" id="table-id">
     <thead>
         <tr>

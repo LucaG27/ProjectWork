@@ -2,6 +2,7 @@
 let template_riga = "";
 const URL = "http://localhost:8080/api/veicolo/";
 const URL1 = "http://localhost:8080/api/prenotazioni/";
+const URL2 = "http://localhost:8080/api/immagine/delete/";
 const session = JSON.parse(localStorage.getItem('user'));
 let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
 let modal = null;
@@ -9,10 +10,12 @@ let modalImmagine = null;
 let csvModal = null;
 let modalDelete = null;
 let modalTerminaPreno = null;
+let modalDeleteImmagine = null;
 let immagini = null;
 let specifiche = null;
 let render_tabellaPrenotazioni = null;
 let render_tabellaVeicoli = null;
+let render_immagini = null;
 
 
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
@@ -89,6 +92,34 @@ function cambiaDisponibilita(){
     }
 }
 
+function listaImmagini(){
+
+    let immagineId = document.getElementById("segnaVeicoloId").value;
+    
+    fetch(URL+"id/"+ immagineId)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(json) {
+
+            console.log(json);
+
+            let rows = "";
+        
+
+            rows = render_immagini(json);
+        
+            document.getElementById("tabellaImmagini").innerHTML = rows;
+  
+            agganciaEventi();
+
+        })
+        .catch(function(err) {
+            alert(err);
+            console.log('Failed to fetch page: ', err);
+        });
+}
+
 function listaVeicoli(){
 
     document.getElementById("titolo").innerHTML = "";
@@ -119,6 +150,46 @@ function listaVeicoli(){
         });
     }
 
+function selezionaImg(event){
+
+    document.getElementById("fotoDaCancellare").innerHTML = "";
+
+    let originator = event.currentTarget;
+    let immagineId = originator.getAttribute('immagine-id');
+    let immagine = originator.getAttribute('image-id');
+
+    document.getElementById("daCancellare").value = immagineId;
+
+    let img = document.createElement("img");
+
+    img.src = immagine;
+    img.setAttribute("width", 150);
+    img.setAttribute("height", 110);
+
+    document.getElementById("fotoDaCancellare").appendChild(img);
+
+}
+
+function confermaDelImmagine(){
+
+    let idImmagine = document.getElementById("daCancellare").value;
+    
+    fetch(URL2 + idImmagine, {
+        method: 'DELETE',
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }           
+    })
+    .then(response => response.json())
+        modalDeleteImmagine.hide();
+        alert("Immagine cancellata con successo")
+        listaVeicoli()
+
+    .catch((error) => {
+
+        console.error('Error:', error);
+    });        
+}
 
     function deleteVeicolo(event){
 
@@ -217,7 +288,7 @@ function listaVeicoli(){
         agganciaEventi();
     }
 
-    function editInsertVeicolo() {
+    function editInsertVeicolo(event) {
 
 
         let originator = event.currentTarget;
@@ -351,6 +422,12 @@ function listaVeicoli(){
         for (let li = 0; li < delButtonPr.length; li++) {
             delButtonPr[li].addEventListener("click", chiamaDelModalePrenotazione);
         }
+
+        let delImgButton = document.getElementsByClassName("delImg");
+        for (let li = 0; li < delImgButton.length; li++) {
+            delImgButton[li].addEventListener("click", chiamaDelModaleImg);
+        }
+
     }
 
     function svuotaModale() {
@@ -386,12 +463,24 @@ function listaVeicoli(){
         modalTerminaPreno.show()
       
       }
+
+    function chiamaDelModaleImg(event){
+
+        document.getElementById("fotoDaCancellare").innerHTML = "";
+
+        let originator = event.currentTarget;
+        let veicoloId = originator.getAttribute('veicolo-id');
+        document.getElementById("segnaVeicoloId").value = veicoloId;
+        listaImmagini();
+        modalDeleteImmagine.show();
+    }  
     
 
     window.addEventListener('DOMContentLoaded', (event) => {
 
         modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});       
         modalImmagine = new bootstrap.Modal(document.getElementById('immaginiModal'), {});        
+        modalDeleteImmagine = new bootstrap.Modal(document.getElementById('deleteModalImmagine'), {});        
         csvModal = new bootstrap.Modal(document.getElementById('csvModal'), {});
         modalDelete = new bootstrap.Modal(document.getElementById('deleteModal'), {});       
         modalTerminaPreno = new bootstrap.Modal(document.getElementById('deleteModalPrenotazione'), {});       
@@ -399,7 +488,11 @@ function listaVeicoli(){
 
         render_tabellaPrenotazioni = Handlebars.compile( document.getElementById("template-tabellaPrenotazioni").innerHTML );
         render_tabellaVeicoli = Handlebars.compile( document.getElementById("template-tabellaVeicoli").innerHTML );
+        render_immagini = Handlebars.compile( document.getElementById("template-tabellaImmagini").innerHTML );
        
+        let confermaDelImg = document.getElementById("confermaDelImg");
+        confermaDelImg.addEventListener("click", confermaDelImmagine);
+
         let resetButton = document.getElementById("resetButton");
         resetButton.addEventListener("click", resetEdit);
 
@@ -411,6 +504,11 @@ function listaVeicoli(){
 
         let confermaTerminaPreno = document.getElementById("confermaTerminaPr");
         confermaTerminaPreno.addEventListener("click", terminaPrenotazione)
+
+        let delImgButton = document.getElementsByClassName("delImg");
+        for (let li = 0; li < delImgButton.length; li++) {
+            delImgButton[li].addEventListener("click", chiamaDelModaleImg);
+        }
 
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
