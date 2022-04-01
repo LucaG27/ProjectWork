@@ -91,12 +91,12 @@ function loadPage(){
   }
   if(userL.ruolo == "RUOLO_UTENTE"){
     document.getElementById("pannello").setAttribute("style", "display:none");
-    document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+    document.getElementById("iconaProfilo").setAttribute("style", "display:block");
     //document.getElementById("pulsanteProfilo").setAttribute("style", "display:inline");
     document.getElementById("buttonLogin").setAttribute("style", "display:none");
   }else{
-    document.getElementById("pannello").setAttribute("style", "display:inline");
-    document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+    document.getElementById("pannello").setAttribute("style", "display:block");
+    document.getElementById("iconaProfilo").setAttribute("style", "display:block");
     //document.getElementById("pulsanteProfilo").setAttribute("style", "display:inline");
     document.getElementById("buttonLogin").setAttribute("style", "display:none");
   }
