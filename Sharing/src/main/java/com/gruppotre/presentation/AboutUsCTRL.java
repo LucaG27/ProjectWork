@@ -12,4 +12,10 @@ public class AboutUsCTRL {
     public String about() {
         return "chiSiamo";
     }
+  
+
+    @RequestMapping("/roma")
+    public String roma() {
+        return "roma";
+    }
 }
