@@ -212,11 +212,11 @@ async function wrap(){
 
   console.log(coo);
   
-  let map = L.map('map').setView([43.76928, 11.25524], 18);
+  let map = L.map('map').setView([45.4735, 9.152], 14);
   
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18, 
+    maxZoom: 20, 
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
@@ -257,7 +257,7 @@ switch(x.categoria){
     icon = new LeafIcon({iconUrl: 'img/veicoli/icon/monopattino.png'})
     break;
 }
-L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup(info).addTo(map);
+L.marker([coo_split[1],coo_split[0]], {icon: icon}).bindPopup(info).addTo(map);
 }
 agganciaEventi();
 }

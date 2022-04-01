@@ -14,6 +14,8 @@ let pannello= document.getElementById("pannello").addEventListener("click", cont
 let tipo_veicolo = null;
 let icon = null;
 let bottone_prenota = null;
+let descrizione = null;
+let indirizzoVeicolo = null;
 
   "use strict";
 
@@ -52,6 +54,8 @@ let bottone_prenota = null;
     const veicolo = await loadCoordinate();
      let coo = veicolo.coordinate;
      tipo_veicolo= veicolo.categoria;
+     descrizione = veicolo.descrizione;
+     indirizzoVeicolo = veicolo.indirizzo;
      let coo_split=coo.split(',');
     return coo_split;
   }
@@ -101,6 +105,10 @@ let bottone_prenota = null;
   
   }
 
+  function mathRandom(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }  
+
 
   function listaSpecifiche(event){
   
@@ -117,8 +125,8 @@ let bottone_prenota = null;
             rows = render_specifiche(json);
               document.getElementById("caratteristiche").innerHTML = rowsCar;
                 document.getElementById("body_specifiche").innerHTML = rows;
-
-            document.getElementById("percentualeBenzina").innerHTML = 22 + '%';    
+            let random = mathRandom(15, 99)
+            document.getElementById("percentualeBenzina").innerHTML = random + '%';    
         })
         .then(()=>listaVeicoli())
         .catch(function(err) { 
@@ -227,7 +235,7 @@ const swiper = new Swiper('.swiper', {
 async function wrap(){
 let coo_split = await asyncCall();
 
-let map = L.map('map').setView([coo_split[0],coo_split[1]], 18);
+let map = L.map('map').setView([coo_split[1],coo_split[0]], 18);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -267,8 +275,9 @@ switch(tipo_veicolo){
     icon = new LeafIcon({iconUrl: 'img/veicoli/icon/monopattino.png'})
     break;
 }
+let info = '<center>'+descrizione +'<br>'+ indirizzoVeicolo+'<br>'
 
-let mOrange = L.marker([coo_split[0],coo_split[1]], {icon: icon}).bindPopup('I am an orange leaf.').addTo(map);
+let mOrange = L.marker([coo_split[1],coo_split[0]], {icon: icon}).bindPopup(info).addTo(map);
 
 }
 
