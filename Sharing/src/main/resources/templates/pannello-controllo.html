@@ -682,9 +682,9 @@
                                         '<li data-page="' +
                                         i +
                                         '">\
-								  <span>' +
+								  <span><a href="">' +
                                         i++ +
-                                        '<span class="sr-only">(current)</span></span>\
+                                        '</a><span class="sr-only">(current)</span></span>\
 								</li>'
                                     )
                                     .show();
@@ -734,13 +734,16 @@
                         }); // end of on click pagination list
                         limitPagging();
                     })
-                    .val(5)
-                    .change();
+                    //.val(5);
+                    //.change();
 
                 // end of on select change
 
                 // END OF PAGINATION
+                //
+               
             }
+
 
             function limitPagging() {
                 // alert($('.pagination li').length)
