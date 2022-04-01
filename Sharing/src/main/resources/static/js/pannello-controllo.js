@@ -317,18 +317,11 @@ function listaVeicoli(){
         let originator = event.currentTarget;
         let idvImmagine = originator.getAttribute('veicolo-id');
         console.log(idvImmagine);
-        /*
-        let rows ="";
-        let row = template_riga;
-        rows+= row.replaceAll("{{veicolo}}", idvImmagine);
-        */
-
 
         document.getElementById("upload_immagini").value = idvImmagine;
-        /*document.getElementById("upload_immagini").innerHtml = idvImmagine;*/
 
         console.log(document.getElementById("upload_immagini").value);
-        
+        listaVeicoli();
     }
 
     function loadCsv(){

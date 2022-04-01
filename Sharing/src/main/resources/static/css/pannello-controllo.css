@@ -405,3 +405,16 @@ font-weight: bold;
     background-color: red;
     border-color: red;
 }
+
+#thumbnail {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 50px; /* Set a small width */
+  display: inline-block;
+  background-color: white;
+}
+
+#thumbnail:hover {
+  -webkit-transform: scale(5,5);
+}
