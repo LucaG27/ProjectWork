@@ -4,14 +4,14 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 p{
   font-family: 'Nunito Sans', sans-serif;
   
 }
 .vantaggi-title{
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .vantaggi-description{
   font-family: 'Nunito Sans', sans-serif;
@@ -22,10 +22,10 @@ p{
 
 }
 .nav-link{
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .testoColorato{
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .sec-content h3{
@@ -39,6 +39,11 @@ p{
 .navbar {
     transition: all .2s ease-in-out;
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  .icona-nav{
+    color: white;
+    font-size: 2rem;
   }
 
   body{
@@ -74,7 +79,7 @@ p{
 }
 
 /*-------------Reset-------------*/
-/* button {
+button {
   background: none;
   box-shadow: none;
   border: none;
@@ -90,15 +95,13 @@ html {
   scroll-behavior: smooth;
 }
 
-
+/*-------------Layout-------------*/
+body {
   line-height: 1.5em;
   padding: 0;
   margin: 0;
 }
 
-section {
-  height: 100vh;
-}
 
 #home {
   background-color: #ddd;
@@ -116,6 +119,7 @@ section {
   background-color: #666;
 }
 
+/*-------------Helpers-------------*/
 .skew {
   transform: skew(-20deg);
 }
@@ -124,7 +128,7 @@ section {
   transform: skew(20deg);
 }
 
-
+/*-------------Nav-------------*/
 #nav-wrapper {
   overflow: hidden;
   width: 100%;
@@ -158,23 +162,16 @@ section {
 
 .nav-link,
 .logo {
-  padding: 0 1em;
+  
 }
 
-span.gradient {
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  padding: 0 1em;
-  position: relative;
-  right: 1em;
-  margin-right: auto;
-}
+
 span.gradient:hover {
   animation-name: logo-hover;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.17, 0.57, 0.31, 0.85);
+  
 }
 
 h1.logo {
@@ -191,17 +188,13 @@ h1.logo a, a:active, a:hover, a:visited {
 
 .nav-link {
   text-transform: uppercase;
-  text-align: center;
-  border-top: 0.5px solid #ddd;
+
 }
 
-a:link, a:visited, a:active {
-  text-decoration: none;
-  color: #118943;
-}
+
 
 a:hover {
-  text-decoration: underline;
+  
 }
 
 .right {
@@ -211,7 +204,7 @@ a:hover {
 }
 
 .btn-nav {
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  color: #f857a8;
   padding-left: 2em;
   padding-right: 2em;
 }
@@ -244,9 +237,9 @@ a:hover {
   }
 
   .nav a:link.active, a:visited.active, a:active.active {
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    background: #f857a8;
+    background: -webkit-linear-gradient(45deg, #f857a8, #ff5858);
+    background: linear-gradient(45deg, #f857a8, #ff5858);
     color: #fff;
   }
 
@@ -256,7 +249,7 @@ a:hover {
   }
 
   .nav-link {
-    transform: skew(-20deg);
+    
     color: #777;
     text-decoration: none;
   }
@@ -277,7 +270,9 @@ a:hover {
   100% {
     padding-right: 5em;
   }
-} */
+}
+
+
   /* ------------------------------------ 
                 HERO                      
 --------------------------------------- */

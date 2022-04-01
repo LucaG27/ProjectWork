@@ -253,6 +253,18 @@ font-weight: bold;
       padding: 15px;
       border: none;
   }
+
+  .pagination{
+      justify-content: flex-end;
+
+  }
+
+
+  .pagination li{
+ 
+  
+      padding: 1rem;
+  }
   .panel .panel-footer .col{ line-height: 35px; }
   .pagination{ margin: 0; }
   .pagination li a{
