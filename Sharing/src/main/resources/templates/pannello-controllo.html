@@ -20,50 +20,50 @@
 </head>
 
 <body>
-    <!-- NAVBAR-->
-    <div class="container nav">
+     <!-- NAVBAR-->
+     <div class="container-nav">
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="/img/Color_tè_scuro_Illustrativo_Consegne_Logo_servizi_di_consegna__2_-removebg-preview.png" alt="" width="100">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-list"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="http://localhost:8080/">
+                <img src="/img/Color_tè_scuro_Illustrativo_Consegne_Logo_servizi_di_consegna__2_-removebg-preview.png" alt="" width="130">
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link" href="/aboutus">Chi siamo</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Milano</a></li>
+                    <li><a class="dropdown-item" href="#">Roma</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/aboutus">Contatti</a>
+                </li>
+                <li class="nav-item verticalerule">
+                    <a class="nav-link ">|</a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i id="pannello" class="bi bi-gear-fill"></i></a>
+            </li>
+          </ul>
 
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/aboutus">Chi siamo</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Città</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Milano</a></li>
-                                <li><a class="dropdown-item" href="#">Roma</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item verticalerule">
-                            <a class="nav-link">|</a>
-                        </li>
-                        <li class="nav-item">
-                              <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
-                            </li>
-                            <li class="nav-item">
-                              
-            
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 <!-- FINE NAVBAR-->
 
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <div class="text-center">
             <button class="btn btn-success" id="filtroPrenotazioni" onclick="listaPrenotazioni()">Prenotazioni</button>
             <button class="btn btn-success" id="filtroVeicoli" onclick="listaVeicoli()">Veicolo</button>
@@ -348,7 +348,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Aggiungi un immagine</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -362,7 +362,7 @@
                                                     aria-describedby="emailHelp" readonly>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="descrizione" class="form-label ">categoria</label>
+                                                <label for="descrizione" class="form-label ">Categoria</label>
                                                 <select id="categoria" class="form-select" aria-label="Default select example">
                                                     <option selected>Scegli categoria</option>
                                                     <option value="BICICLETTA">Bicicletta</option>
@@ -372,7 +372,7 @@
                                                   </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="prezzo" class="form-label ">descrizione</label>
+                                                <label for="prezzo" class="form-label ">Descrizione</label>
                                                 <input type="text" class="form-control" id="descrizione"
                                                     aria-describedby="emailHelp">
                                             </div>
@@ -388,7 +388,7 @@
                                                   </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">ruote</label>
+                                                <label for="rimanenza" class="form-label">Ruote</label>
                                                 <select id="ruote" class="form-select" aria-label="Default select example">
                                                     <option selected>Scegli Nr. Ruote</option>
                                                     <option value="DUE RUOTE">2</option>
@@ -403,22 +403,22 @@
                                                 <input hidden type="text" id="disponibilita" value="DISPONIBILE" />
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">indirizzo</label>
+                                                <label for="rimanenza" class="form-label">Indirizzo</label>
                                                 <input type="text" class="form-control" id="indirizzo"
                                                     aria-describedby="emailHelp">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">citta</label>
+                                                <label for="rimanenza" class="form-label">Città</label>
                                                 <input type="text" class="form-control" id="citta"
                                                     aria-describedby="emailHelp">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">coordinate</label>
+                                                <label for="rimanenza" class="form-label">Coordinate</label>
                                                 <input type="text" class="form-control" id="coordinate"
                                                     aria-describedby="emailHelp">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">prezzo</label>
+                                                <label for="rimanenza" class="form-label">Prezzo</label>
                                                 <input type="text" class="form-control" id="prezzo"
                                                     aria-describedby="emailHelp">
                                             </div>
@@ -427,9 +427,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                                 <button id="resetButton" veicolo-id="" type="button" class="btn btn-light"><i class="fas fa-redo-alt"></i></button>
-                                <button id="updateButton" type="button" class="btn btn-primary">Update</button>
+                                <button id="updateButton" type="button" class="btn btn-primary">Aggiorna</button>
         
                             </div>
                         </form>
@@ -451,10 +451,10 @@
                             <div class="col-lg-6">
                                 <form action="/pannello-controllo/save" name="immagineForm" method="post"
                                     enctype="multipart/form-data">
-                                    <h3 class="mb-3">upload Immagini:</h3>
-                                    <input type="number" name="veicoloId" id="upload_immagini" readonly />
-                                    <input type="file" name="image" accept="image/png, image/jpeg" multiple />
-                                    <input type="submit" value="Aggiungi">
+                                    <h3 class="mb-3">Carica l'immagine:</h3>
+                                    <input class="mb-3" type="number" name="veicoloId" id="upload_immagini" readonly />
+                                    <input class="mb-3" type="file" name="image" accept="image/png, image/jpeg" multiple />
+                                    <input class="mb-3" type="submit" value="Aggiungi">
                                 </form>
                             </div>
                         </div>
