@@ -340,7 +340,7 @@ $(document).ready(function() {
 });
 
 const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('password');
+const password = document.querySelector('#password');
 
 //OCCHIO
 togglePassword.addEventListener('click', function (e) {
