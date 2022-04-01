@@ -64,4 +64,10 @@ public class PrenotazioneREST {
 	public void deletePrenotazione(@PathVariable("id") int id) {
 		srv.deletePrenotazione(id);
 	}
+	
+	@GetMapping("ordinati/{stato}")
+	public List<Prenotazione> orderedByStato(@PathVariable("stato") String stato){		
+		return srv.getAllPrenotazioniOrdered(stato);
+	}
+	
 }
