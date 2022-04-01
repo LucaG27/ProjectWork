@@ -326,6 +326,7 @@ a:hover {
 .vantaggi{
     height: auto;
     background: aliceblue;
+    font-size: 1rem;
 }
 .vantaggi-title{
     padding-top: 3rem;
@@ -874,4 +875,8 @@ font-weight: bold;
     display: flex;
     align-items: center;
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}
+
+.fa-eye{
+  padding-top: 1rem;
 }
