@@ -157,8 +157,8 @@ font-weight: bold;
       text-shadow: 3px 3px rgba(255,255,255,0.2);
   }
   .panel .panel-heading .form-control{
-      color: #fff;
-      background-color: transparent;
+      color: rgb(68, 68, 68);
+      background-color: rgba(255, 255, 255, 0.2);
       width: 35%;
       height: 40px;
       border: 2px solid #fff;
@@ -362,4 +362,31 @@ font-weight: bold;
   right: 0;
   left: 0;
   height: 100%;
+  }
+
+
+  .btn{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    color: white;
+  }
+
+  .btn-secondary{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  .input{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
+  .btn:hover{
+      
+      color: rgb(179, 179, 179);
+  }
+  .btn-secondary:hover{
+     
+    color: rgb(179, 179, 179);
+  }
+  .input:hover{
+      
+    color: rgb(179, 179, 179);
   }
