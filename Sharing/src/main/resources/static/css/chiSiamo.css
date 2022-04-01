@@ -674,3 +674,9 @@ right: 0;
 left: 0;
 height: 100%;
 }
+
+.offcanvas-header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}

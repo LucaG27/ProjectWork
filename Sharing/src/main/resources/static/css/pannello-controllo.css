@@ -390,3 +390,9 @@ font-weight: bold;
       
     color: rgb(179, 179, 179);
   }
+
+  .offcanvas-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}
