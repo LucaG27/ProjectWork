@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -68,6 +69,11 @@ public class PannelloCTRL {
 		return "inserimento";
 	}
 
-	
+	@PostMapping("/import")
+	public String insertCSV(@RequestPart("fileCSV") MultipartFile file) {
+		
+		vSrv.importCsv(file);
+		return "redirect:/pannello-controllo";
+	}
     
 }

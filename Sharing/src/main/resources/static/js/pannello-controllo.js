@@ -103,13 +103,15 @@ function listaVeicoli(){
             console.log(json);
 
             let rows1 = "";
-            let rows2 = "";
+        
 
             rows1 = render_tabellaVeicoli(json);
         
             document.getElementById("table_rows").innerHTML = rows1;
   
             agganciaEventi();
+
+            $("#maxRows").val(10).change();
         })
         .catch(function(err) {
             alert(err);
@@ -317,18 +319,11 @@ function listaVeicoli(){
         let originator = event.currentTarget;
         let idvImmagine = originator.getAttribute('veicolo-id');
         console.log(idvImmagine);
-        /*
-        let rows ="";
-        let row = template_riga;
-        rows+= row.replaceAll("{{veicolo}}", idvImmagine);
-        */
-
 
         document.getElementById("upload_immagini").value = idvImmagine;
-        /*document.getElementById("upload_immagini").innerHtml = idvImmagine;*/
 
         console.log(document.getElementById("upload_immagini").value);
-        
+        listaVeicoli();
     }
 
     function loadCsv(){

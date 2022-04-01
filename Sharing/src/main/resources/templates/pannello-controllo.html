@@ -457,7 +457,7 @@
                     <div class="modal-body">
                             <div class="container">
                                 <div class="col">
-                                    <form action="/api/veicolo/import" name="importCSV" method="post" enctype="multipart/form-data">
+                                    <form action="/pannello-controllo/import" name="importCSV" method="post" enctype="multipart/form-data">
                                         <h3 class="mb-3">Import Veicoli CSV:</h3>
                                         <input type="file" name="fileCSV" accept=".csv" />
                                         <input type="submit" class="btn" value="Aggiungi">
@@ -540,6 +540,7 @@
             <th scope="col">indirizzo</th>
             <th scope="col">citta</th>
             <th scope="col">coordinate</th>
+            <th scope="col">immagini</th>
             <th scope="col">azioni</th>
 
         </tr>
@@ -556,6 +557,11 @@
             <td>{{indirizzo}}</td>
             <td >{{citta}}</td>
             <td>{{coordinate}}</td>
+            <td>
+            {{#each immagine}}
+                <img id="thumbnail" src="{{immagine}}" alt="">
+            {{/each}}
+            </td>
             <td>
                 <ul class="action-list d-flex">
                     <li><a href="#" data-tip="edit"><i class="fa fa-edit editButton"
@@ -682,9 +688,9 @@
                                         '<li data-page="' +
                                         i +
                                         '">\
-								  <span>' +
+								  <span><a href="">' +
                                         i++ +
-                                        '<span class="sr-only">(current)</span></span>\
+                                        '</a><span class="sr-only">(current)</span></span>\
 								</li>'
                                     )
                                     .show();
@@ -734,13 +740,16 @@
                         }); // end of on click pagination list
                         limitPagging();
                     })
-                    .val(5)
-                    .change();
+                    //.val(5);
+                    //.change();
 
                 // end of on select change
 
                 // END OF PAGINATION
+                //
+               
             }
+
 
             function limitPagging() {
                 // alert($('.pagination li').length)

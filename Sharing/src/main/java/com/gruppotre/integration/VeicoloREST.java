@@ -70,11 +70,4 @@ public class VeicoloREST {
 	public List<VeicoloPrenotazioniDTO> getAllPrenotazioni(@PathVariable("id") int id){
 		return srv.getAllPrenotazioni(id);
 	}
-	
-	@PostMapping("/import")
-	public ResponseEntity insertCSV(@RequestPart("fileCSV") MultipartFile file) {
-		
-		srv.importCsv(file);
-		return ResponseEntity.ok().build();	
-	}
 }
