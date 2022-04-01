@@ -374,8 +374,10 @@ h5.mb-0 {
 }
 
 small.ghj {
-    font-size: 9px;
-    padding-top: 8px;
+    font-size: 13px;
+    padding-top: 5px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
 }
 
 .mid {
@@ -691,7 +693,7 @@ small.justify-content-center {
   background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
-  
+  font-family: 'Prompt', sans-serif;
   }
 
   .btn-primary:hover{
@@ -781,6 +783,7 @@ font-weight: bold;
     border: 0;
     color: #fff;
     font-size: 20px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .btn2{
@@ -798,6 +801,7 @@ font-weight: bold;
     transition: .3s ease-in;
     overflow: hidden;
     font-size: 20px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .btn2:hover{
@@ -832,6 +836,7 @@ font-weight: bold;
     padding: 10px 15px;
     width: 48px;
     font-size: 20px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .btn-footer:hover{
