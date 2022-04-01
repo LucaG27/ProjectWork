@@ -92,8 +92,8 @@
               <div class="helmet">
             </div>
             <div class="productInfo">
-                
-                <h1>AUDI Q5</h1>
+                <div id="caratteristiche">
+<!--             <h1>AUDI Q5</h1>
                 <h2>€/min 0,19</h2>
                 <div class="details">
                   <div class="size">
@@ -105,8 +105,9 @@
                     <h3>55%</h3>
                     <h4>Livello del serbatoio Benzina</h4>
                   </div>
-                </div>
-                <button id="prenota">PRENOTA</button><i class="material-icons fav"></i>
+                </div>-->   
+              </div>
+                <button class="prenotabile" id="prenota">PRENOTA</button><i class="material-icons fav"></i>
               </div>
             </div>
           </div>
@@ -115,9 +116,9 @@
       </div>
     </div>
   
-   
+<!--    
 
-
+-->
 
 
   <!-- INFORMAZIONI -->
@@ -323,6 +324,23 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+
+  <script id="template-schedaTecnica" type="text/x-handlebars-template">
+  <h1>{{descrizione}}</h1>
+  <h2>{{prezzo}}</h2>
+  <div class="details">
+    <div class="size">
+      <h4>{{indirizzo}} <br>{{citta}} </h4>
+      <h4>{{disponibilita}} 
+      </h4>
+    </div>
+    <div class="durability">
+      <h3 id="percentualeBenzina">55%</h3>
+      <h4>Livello del serbatoio Benzina</h4>
+    </div>
+  </div>
+</script>
+
   <script id="template-veicoli" type="text/x-handlebars-template">
     {{#each immagine}}
     <div class="swiper-slide">
@@ -517,9 +535,21 @@ button:focus {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-.card .right .productInfo button {
-  height: 48px;
+
+  /* ------------------------------------ 
+            BOTTONE PRENOTA                   
+--------------------------------------- */
+
+.prenotato{
+  background: rgb(90, 88, 88);
+}
+
+.prenotabile{
   background: #CB2140;
+}
+
+.card .right .productInfo button {
+  height: 48px; 
   border-radius: 90px;
   font-weight: 300;
   line-height: 35px;
@@ -527,6 +557,7 @@ button:focus {
   padding: 0 24px;
   color: #fff;
 }
+
 .card .right .productInfo i.fav {
   font-size: 12px;
   margin: 0 12px 0 24px;

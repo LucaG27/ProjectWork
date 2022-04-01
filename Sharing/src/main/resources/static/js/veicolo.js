@@ -1,8 +1,8 @@
 
-
+let render_caratteristiche = null;
 let render_specifiche = null;
 let render_veicoli = null;
-let veicolo_id = document.getElementById("veicolo_id")
+let veicolo_id = document.getElementById("veicolo_id");
 const URL = "http://localhost:8080/api/immagine/allImmagini"
 const URL2 = "http://localhost:8080/api/specifiche/"
 const URL3 = "http://localhost:8080/api/veicolo/id/"
@@ -83,9 +83,16 @@ let bottone_prenota = null;
           .then(function(json) {
         
               console.log(json);
-      
-              let rows = render_veicoli(json);
-                  document.getElementById("bodyDivImmagini").innerHTML = rows;
+              
+              let rowsSpec = render_veicoli(json);
+                  document.getElementById("bodyDivImmagini").innerHTML = rowsSpec;
+              if(json.disponibilita == "NOLEGGIATO"){  
+                document.getElementById("prenota").setAttribute("disabled","");
+                document.getElementById("prenota").classList.remove("prenotabile");
+                document.getElementById("prenota").classList.add("prenotato");
+
+              }
+                  
           })
           .catch(function(err) { 
                   alert(err);
@@ -93,6 +100,7 @@ let bottone_prenota = null;
           });	
   
   }
+
 
   function listaSpecifiche(event){
   
@@ -103,11 +111,16 @@ let bottone_prenota = null;
         .then(function(json) {
       
             console.log(json);
-    
-            let rows = "";      
+            let rowsCar = "";
+            let rows = "";
+            rowsCar = render_caratteristiche(json)      
             rows = render_specifiche(json);
+              document.getElementById("caratteristiche").innerHTML = rowsCar;
                 document.getElementById("body_specifiche").innerHTML = rows;
+
+            document.getElementById("percentualeBenzina").innerHTML = 22 + '%';    
         })
+        .then(()=>listaVeicoli())
         .catch(function(err) { 
                 alert(err);
                 console.log('Failed to fetch page: ', err);
@@ -134,7 +147,9 @@ let bottone_prenota = null;
           .then(function(veicoloPreno) {
         
               console.log(veicoloPreno);
-
+              document.getElementById("prenota").setAttribute("disabled","");
+              document.getElementById("prenota").classList.remove("prenotabile");
+              document.getElementById("prenota").classList.add("prenotato");
               return fetch(URL4 + "savePrenotazione",{
                           method: 'POST',
                           headers: {
@@ -196,9 +211,9 @@ const swiper = new Swiper('.swiper', {
     function(event){
 
 
-  
       render_veicoli = Handlebars.compile( document.getElementById("template-veicoli").innerHTML );
       render_specifiche = Handlebars.compile( document.getElementById("template-specifiche").innerHTML );
+      render_caratteristiche = Handlebars.compile( document.getElementById("template-schedaTecnica").innerHTML );
       bottone_prenota = document.getElementById("prenota").addEventListener("click", createPrenotazione);
   
           listaVeicoli();
