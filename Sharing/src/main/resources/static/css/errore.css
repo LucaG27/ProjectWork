@@ -2,6 +2,91 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Prompt', sans-serif;
+  }
+  p{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  .vantaggi-title{
+    font-family: 'Prompt', sans-serif;
+  }
+  .vantaggi-description{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  .riga{
+    font-family: 'Nunito Sans', sans-serif;
+  
+  }
+  .nav-link{
+    font-family: 'Prompt', sans-serif;
+  }
+  .testoColorato{
+    font-family: 'Prompt', sans-serif;
+  }
+  
+  .sec-content h3{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  /* ------------------------------------ 
+                  NAVBAR                      
+  --------------------------------------- */
+  
+  .navbar {
+      transition: all .2s ease-in-out;
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    }
+  
+    .container-nav{
+      padding-top: 60px;
+  }
+  
+    body{
+        background-color: #fdf9fd;;
+    }
+    .navbar .scrolled-nav{
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    }
+  
+    nav:hover{
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+         
+    }
+    .navbar-nav li a, .navbar-toggler-icon{
+      color: rgb(255, 255, 255);
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  
+    .dropdown-menu li a{
+      color: green;
+  }
+  
+  .nav-link:focus, .nav-link:hover, .evidenziato:hover{
+    font-weight: bold;
+    color: white;
+  }
+  
+  @media (max-width: 991px){
+   .verticalerule{
+         display: none; 
+      }
+  }
+  
+  @media (min-width: 991px){
+    .testo{
+      display:none;
+    }
+  }
+  
+    @media (max-width: 991px){
+    .icone{
+      display:none;
+    }
+  }
 
 
 /* CSS */
