@@ -1,9 +1,10 @@
 var ctx = document.getElementById('myChart');
+var ctxw = document.getElementById('myChartWorld')
 
 var config = {
     type: 'bar',
     data: {
-        labels: ['2020', '2021', '2022', '2023', '2024','2025'],
+        labels: ['2000', '2015', '2020', '2022', '2025','2030'],
         datasets: [{
             label: "Veicoli benzina",
             type: "bar",
@@ -12,7 +13,7 @@ var config = {
             borderWidth: 2,
             fill: false,
             xAxisID: "axis-bar",
-            data: [130.91, 75.8, 56.5, 125.61, 278.9, 345.25]
+            data: [22.91, 75.8, 56.5, 125.61, 278.9, 345.25]
            //data: [130.91, 410.43, 980.49, 1209.02, 1800.82]
         },
         {
@@ -23,7 +24,7 @@ var config = {
             borderWidth: 1,
             fill: true,
             xAxisID: "axis-bar",
-            data: [140.78, 220.5, 299.87, 250.78, 311.94, 405.84]
+            data: [27.66, 120.5, 199.87, 250.78, 311.94, 355.84]
             //data: [1950.0, 2380.0, 5550.0, 6190.0, 4950.0]
         },
         {
@@ -34,7 +35,7 @@ var config = {
             borderWidth: 1,
             fill: true,
             xAxisID: "axis-bar",
-            data: [349.78, 299.24, 401.36, 502.23, 644.2, 650.33]
+            data: [109.78, 199.24, 201.36, 302.23, 444.2, 550.33]
             //data: [1210.0, 6000.0, 25230.0, 36650.0, 34810.0]
         },
         {
@@ -45,7 +46,7 @@ var config = {
             borderWidth: 2,
             fill: true,
             xAxisID: "axis-bar",
-            data: [472.65, 324.21, 575.21, 689.39, 756.3, 879.04]
+            data: [272.65, 324.21, 511.21, 589.39, 566.3, 879.04]
            // data: [1950.0, 2380.0, 5550.0, 6190.0, 4950.0]
         },
         {
@@ -56,7 +57,7 @@ var config = {
             borderWidth: 1,
             fill: true,
             xAxisID: "axis-bar",
-            data: [786.22, 793.55, 835.69, 877.44, 927.38, 980.63]
+            data: [188.22, 293.55, 435.69, 577.44, 619.38, 780.63]
             //data: [1210.0, 6000.0, 25230.0, 36650.0, 34810.0]
         },
         {
@@ -67,7 +68,7 @@ var config = {
             borderWidth: 2,
             fill: true,
             xAxisID: "axis-bar",
-            data: [820.22, 860.42, 910.39, 940.78, 980.42, 996.31]
+            data: [420.22, 560.42, 610.39, 840.78, 890.42, 1096.31]
             //data: [1210.0, 6000.0, 25230.0, 36650.0, 34810.0]
         },
         {
@@ -86,5 +87,5 @@ var config = {
 };
 
 var myChart = new Chart(ctx, config);
-//var legend = myChart.generateLegend();
+var myChartWorld = new Chart(ctx, config);
 //document.getElementById("legend").innerHTML = legend;
