@@ -2,134 +2,6 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.swiper{
-    padding-bottom: 3rem;
-}
-
-.swiper-button-prev{
-    color: green;
-}
-
-.swiper-button-next{
-    color: green;
-}
-
-.grafico{
-    border: 1px solid black;
-    height: 500px;
-    border-radius: 10px;
-    margin-bottom: 5rem;
-}
-
-.banner{
-    background-image: url("https://enjoy.eni.com/img/home/bg_map_milano.png");
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.banner .ban img{
-    width: 90%;
-}
-
-.banner .info{
-    height: 200px;
-}
-
-.banner .info p{
-    font-size: 2.3rem;
-    color: white;
-}
-.banner .info span{
-    color: #7ab423;
-}
-
-
-.logo{
-    width: 200px;
-}
-
-.dropdown-menu li a{
-    color: green;
-}
-
-svg{
-    width: 20px;
-}
-
-.banner{
-  display: flex;   
-  flex-direction: column; 
-  align-items: center;
-  justify-content: end;
-  
-  
-}
-
-
-.contenitore{
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 70px; 
-    filter: opacity(100%);   
-
-}
-
-.cards ul{
-    list-style-type: none;
-    padding: 0;
-
-}
-
-.icon-inside{
-    position: relative;
-}
-
-.icon-inside i{
-    position: absolute;
-    right:1rem;
-    top:50%;
-    transform: translateY(-50%);
-    color:#30A3F1;
-}
-
-.contenitore .col p{
-    color: white;
-    font-size: 1.2rem;
-}
-
-nav{
-    border-bottom: 1px solid white;
-}
-
-.contenitore img{
-    width: 100px;
-}
-
-.contenitore a{
-    color: rgb(255, 255, 255);
-    padding-left: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.contenitore ul li a:hover{
-
-    color: rgb(3, 183, 3);
-}
-
-.container .btn{
-    background-color: rgb(3, 183, 3);
-    color: white;
-}
-
-.contenitore .swiper-button-prev{
-    background-color: rgb(3, 183, 3);
-}
-
-.text-white{
-    text-decoration: none;
-}
 
 
 /* CSS */
@@ -185,3 +57,35 @@ nav{
     align-items: center;
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
 }
+
+/* ------------------------------------ 
+                FOOTER                   
+--------------------------------------- */
+
+.btn-footer{
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+    background: -moz-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 48px;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.btn-footer:hover{
+  color: white;
+  font-weight: bold;
+}
+
+.fab:hover{
+color: white;
+font-weight: bold;
+}
+
+.text-white{
+    text-decoration: none;
+  }
