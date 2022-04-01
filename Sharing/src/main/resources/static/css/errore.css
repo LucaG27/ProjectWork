@@ -1,5 +1,10 @@
 body{
     font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+.mainContainer{
+    height:50rem;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -146,6 +151,8 @@ h1,h2,h3,h4,h5,h6{
 /* ------------------------------------ 
                 FOOTER                   
 --------------------------------------- */
+
+
 
 .btn-footer{
     border-color: rgba( 255, 255, 255, 0);
