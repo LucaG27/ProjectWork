@@ -63,7 +63,11 @@
     </div>
 <!-- FINE NAVBAR-->
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
+        <div class="text-center">
+            <button class="btn btn-success" id="filtroPrenotazioni" onclick="listaPrenotazioni()">Prenotazioni</button>
+            <button class="btn btn-success" id="filtroVeicoli" onclick="listaVeicoli()">Veicolo</button>
+        </div>
         <div class="row pb-5">
             <div class="col-lg-2">
                 <div class="">
@@ -87,6 +91,7 @@
                     </nav>
                 </div>
             </div>
+            
             <div class="col-lg-10">
                 <!-- TABLE-->
                 <div class="container">
@@ -102,7 +107,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col col-sm-3 col-xs-12">
-                                                <h4 class="title">Tabella <span>Veicoli</span></h4>
+                                                <h4 class="title">Tabella <span id="titolo"></span></h4>
                                             </div>
                                             <div class="col-sm-9 col-xs-12 text-right">
                                                 <div class="btn_group">
@@ -125,8 +130,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="panel-body table-responsive">
-                                        <table class="table" id="table-id">
+                                    <div id="table_rows" class="panel-body table-responsive">
+                                <!--       <table class="table" id="table-id">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">categoria</th>
@@ -165,7 +170,7 @@
                                                     </td>
                                                 </tr>
                                             </tbody>
-                                        </table>
+                                        </table> --> 
                                     </div>
                                     <div class="panel-footer">
                                         <div class="row">
@@ -192,51 +197,7 @@
                         </div>
                     </div>
 
-                    <!-- <table class="table table-striped table-class" id="table-id">
-                        <thead>
-                            <tr>
-                               
-                                <th scope="col">categoria</th>
-                                <th scope="col">descrizione</th>
-                                <th scope="col">alimentazione</th>
-                                <th scope="col">ruote</th>
-                                <th scope="col">disponibilita</th>
-                                <th scope="col">indirizzo</th>
-                                <th scope="col">citta</th>
-                                <th scope="col">coordinate</th>
-                                <th scope="col"></th>
-
-                            </tr>
-                        </thead>
-
-                        <tbody id="table_rows">
-                            <tr>
-                                <th >{{veicolo_id}}</th>
-                                <td >{{categoria}}</td>
-                                <td>{{descrizione}}</td>
-                                <td >{{alimentazione}}</td>
-                                <td>{{ruote}}</td>
-                                <td >{{disponibilita}}</td>
-                                <td>{{indirizzo}}</td>
-                                <td >{{citta}}</td>
-                                <td>{{coordinate}}</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary editButton"
-                                        veicolo-id="{{veicolo_id}}" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">edit</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary imgButton"
-                                        veicolo-id="{{veicolo_id}}">img</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-danger delButton"
-                                        veicolo-id="{{veicolo_id}}">Cancella</button>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table> -->
+                  
 
                     <!--		Start Pagination -->
                     <div class='pagination-container'>
@@ -523,6 +484,7 @@
                 </div>
             </div>
         </div>
+
             <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -534,6 +496,24 @@
                                         <button type="button" class="btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
                                         <button type="button" veicolo-id="" id="confermaDelete" class="btn-primary">Confermo</button>
                                    
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="modal fade" id="deleteModalPrenotazione" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                                <div class="container">
+                                    <div class="col-lg-6">
+                                        <h5 class="modal-title">Sei sicuro di voler terminare la prenotazione?</h5>
+                                        <button type="button" class="btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
+                                        <button type="button" id="confermaTerminaPr" class="btn-primary">Confermo</button>
+                                        <input id="prenotazione_id" type="number" hidden >
                                 </div>
                                 </div>
                         </div>
@@ -556,7 +536,107 @@
           </div>
 
   <!-- FINE OFF CANVAS-->
-           
+
+  <!-- HANDLEBARS -->
+
+<script id="template-tabellaVeicoli" type="text/x-handlebars-template">
+  <table class="table" id="table-id">
+    <thead>
+        <tr>
+            <th scope="col">categoria</th>
+            <th scope="col">descrizione</th>
+            <th scope="col">alimentazione</th>
+            <th hidden scope="col">ruote</th>
+            <th scope="col">disponibilita</th>
+            <th scope="col">indirizzo</th>
+            <th scope="col">citta</th>
+            <th scope="col">coordinate</th>
+            <th scope="col">azioni</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this}}
+        <tr>
+            <td >{{id}}</td>
+            <td >{{categoria}}</td>
+            <td>{{descrizione}}</td>
+            <td >{{alimentazione}}</td>
+            <td hidden>{{ruote}}</td>
+            <td >{{disponibilita}}</td>
+            <td>{{indirizzo}}</td>
+            <td >{{citta}}</td>
+            <td>{{coordinate}}</td>
+            <td>
+                <ul class="action-list d-flex">
+                    <li><a href="#" data-tip="edit"><i class="fa fa-edit editButton"
+                        veicolo-id="{{id}}"></i></a></li>
+                    <li><a href="#" data-tip="delete"><i class="fa fa-trash delButton"
+                        veicolo-id="{{id}}"></i></a></li>
+                        <li>
+                            <a href="#" data-tip="image"><i class="bi bi-images imgButton" veicolo-id="{{veicolo_id}}"></i></a>
+                        </li>
+                </ul>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</script>
+
+<script id="template-tabellaPrenotazioni" type="text/x-handlebars-template">
+
+    
+<table class="table" id="table-id">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Veicolo</th>
+            <th scope="col">Data inizio</th>
+            <th scope="col">Data fine</th>
+            <th scope="col"><a id="filtroStato" href="#" onclick="ordinaPrenotazioni()">Stato</a> </th>           
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this}}
+        {{#ifEquals stato "in corso"}}
+        <tr>
+            <td >{{utenteId.nome}}</td>
+            <td >{{utenteId.cognome}}</td>
+            <td >{{veicoloId.descrizione}}</td>
+            <td>{{dataInizio}}</td>
+            <td >{{dataFine}}</td>
+            <td>{{stato}}</td>
+            <td>
+                <ul class="action-list d-flex">
+                    <li><a href="#" data-tip="delete"><i class="fa fa-trash delButtonPrenotaz"
+                        prenotazione-id="{{id}}"></i></a></li>
+                </ul>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td >{{utenteId.nome}}</td>
+            <td >{{utenteId.cognome}}</td>
+            <td >{{veicoloId.descrizione}}</td>
+            <td>{{dataInizio}}</td>
+            <td >{{dataFine}}</td>
+            <td>{{stato}}</td>
+            <td>
+                <ul class="action-list d-flex">
+                </ul>
+            </td>
+        </tr>
+        {{/ifEquals}}
+        {{/each}}
+    </tbody>
+</table>
+
+</script>  
+
+<!-- HANDLEBARS -->
 
         <script>
             getPagination("#table-id");
@@ -712,6 +792,7 @@
         </script>
         <script src="/js/print.js"></script>
         <!--bootstrap-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
