@@ -65,8 +65,7 @@
 
     <div class="container-fluid">
         <div class="text-center">
-            <button class="btn btn-success" id="filtroPrenotazioni" onclick="listaPrenotazioni()">Prenotazioni</button>
-            <button class="btn btn-success" id="filtroVeicoli" onclick="listaVeicoli()">Veicolo</button>
+            
         </div>
         <div class="row pb-5">
             <div class="col-lg-2">
@@ -111,11 +110,11 @@
                                             </div>
                                             <div class="col-sm-9 col-xs-12 text-right">
                                                 <div class="btn_group">
-                                                    <input type="text" class="form-control text-muted" placeholder="Search">
-                                                    <button class="btn btn-default text-muted" title="Reload"><i class="fa fa-sync-alt"></i></button>
-                                                    <button class="btn btn-default text-muted" title="Pdf"><i class="fa fa-file-pdf"></i></button>
-                                                    <button class="btn btn-default text-muted" title="Excel"><i class="fas fa-file-excel"></i></button>
-                                                    <select class="form-control" name="state" id="maxRows">
+                                                    <input type="text" class="form-control text-muted cerca" placeholder="Cerca">
+                                                    <button class="btn btn-default " title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                                    <button class="btn btn-default centro" id="filtroPrenotazioni" onclick="listaPrenotazioni()">Prenotazioni</button>
+                                                    <button class="btn btn-default centro" id="filtroVeicoli" onclick="listaVeicoli()">Veicoli</button>
+                                                    <select class="form-control seleziona" name="state" id="maxRows">
                                                         <option selected value="5000">Mostra tutte le righe</option>
                                                         <option value="5">5</option>
                                                         <option value="10">10</option>
@@ -176,19 +175,17 @@
                                         <div class="row">
                                             <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
                                             <div class="col-sm-6 col-xs-6">
-                                                <ul class="pagination hidden-xs pull-right">
-                                                    <li><a href="#"></a></li>
-                                                    <li class="active"><a href="#">1</a></li>
-                                                    <li><a href="#">2</a></li>
-                                                    <li><a href="#">3</a></li>
-                                                    <li><a href="#">4</a></li>
-                                                    <li><a href="#">5</a></li>
-                                                    <li><a href="#">></a></li>
-                                                </ul>
-                                                <ul class="pagination visible-xs pull-right">
-                                                    <li><a href="#"></a></li>
-                                                    <li><a href="#"></a></li>
-                                                </ul>
+                                                <div class='pagination-container'>
+                                                    <ul class="pagination">
+                                                        
+                                                        
+                                                        <!--	Here the JS Function Will Add the Rows -->
+                                                        <li data-page="next" id="prev">
+                                                            
+                                                        </li>
+                                                    </ul>
+                                
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -200,19 +197,7 @@
                   
 
                     <!--		Start Pagination -->
-                    <div class='pagination-container'>
-                
-                            <ul class="pagination">
-                                <li data-page="prev">
-                                    <span> <span class="sr-only">(current)</span></span>
-                                </li>
-                                <!--	Here the JS Function Will Add the Rows -->
-                                <li data-page="next" id="prev">
-                                    <span><span class="sr-only">(current)</span></span>
-                                </li>
-                            </ul>
-        
-                    </div>
+                    
                 </div>
 </div>
 </div>
@@ -221,8 +206,8 @@
 
 
             
- <!-- FOOTER -->
- <footer class="bg-dark text-center text-white pt-5 ">
+  <!-- FOOTER -->
+  <footer class="bg-dark text-center text-white pt-5 ">
     <!-- Grid container -->
 
     <!-- Section: Links -->
@@ -231,21 +216,17 @@
       <div class="row">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Indirizzo</h5>
+          <h5 class="text-uppercase">Move Italia</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a class="text-white">Via Antonio Banfi, 8</a>
+              <a class="text-white">Chi Siamo</a>
             </li>
             <li>
-              <a class="text-white">20122 Milano MI</a>
-            </li>
-            <br>
-            <li>
-              <a class="text-white">Via Principi d'Acaja, 33</a>
+              <a class="text-white">Lavora con Noi</a>
             </li>
             <li>
-              <a class="text-white">10138 Torino TO</a>
+              <a class="text-white">Note legali</a>
             </li>
           </ul>
         </div>
@@ -262,6 +243,9 @@
             <li>
               <a class="text-white">move@gmail.com</a>
             </li>
+            <li>
+              <a class="text-white" href="">Via Antonio Banfi 8 , MI 20212</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -274,7 +258,7 @@
               <a href="#!" class="text-white">FAQ</a>
             </li>
 
-            <ul class="list-unstyled mb-0">
+           
               <li>
                 <a href="#!" class="text-white">Cookies</a>
               </li>
@@ -317,12 +301,11 @@
               <img
                 src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
                 alt="" width="150px">
-            </li>
-            <li class="mb-3">
-              <img
+                <img
                 src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
                 alt="" width="150px">
             </li>
+            
           </ul>
         </div>
         <!--Grid column-->
@@ -330,7 +313,7 @@
       <!--Grid row-->
     </section>
     <!-- Section: Links -->
-   
+    </div>
     <!-- Grid container -->
 
     <!-- Copyright -->
@@ -448,7 +431,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="container">
-                            <div class="col-lg-6">
+                            <div class="col">
                                 <form action="/pannello-controllo/save" name="immagineForm" method="post"
                                     enctype="multipart/form-data">
                                     <h3 class="mb-3">Carica l'immagine:</h3>
@@ -495,11 +478,12 @@
                         </div>
                         <div class="modal-body">
                                 <div class="container">
-                                    <div class="col-lg-6">
-                                        <h5 class="modal-title mb-3" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
-                                        <button type="button" veicolo-id="" id="confermaDelete" class="btn btn-primary">Confermo</button>
-                                   
+                                    <div class="col">
+                                        <h5 class=" mb-3" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
+                                        <div class="bottonii text-end pt-3">
+                                            <button type="button" class="btn btn-secondary anul" data-bs-dismiss="modal" aria-label="Close">Annulla</button>
+                                            <button type="button" veicolo-id="" id="confermaDelete" class="btn btn-primary">Confermo</button>
+                                        </div>
                                 </div>
                                 </div>
                         </div>
@@ -704,9 +688,9 @@
                                         '<li data-page="' +
                                         i +
                                         '">\
-								  <span>' +
+								  <span><a href="">' +
                                         i++ +
-                                        '<span class="sr-only">(current)</span></span>\
+                                        '</a><span class="sr-only">(current)</span></span>\
 								</li>'
                                     )
                                     .show();
@@ -756,13 +740,16 @@
                         }); // end of on click pagination list
                         limitPagging();
                     })
-                    .val(5)
-                    .change();
+                    //.val(5);
+                    //.change();
 
                 // end of on select change
 
                 // END OF PAGINATION
+                //
+               
             }
+
 
             function limitPagging() {
                 // alert($('.pagination li').length)

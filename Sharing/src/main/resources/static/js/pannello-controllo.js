@@ -103,13 +103,15 @@ function listaVeicoli(){
             console.log(json);
 
             let rows1 = "";
-            let rows2 = "";
+        
 
             rows1 = render_tabellaVeicoli(json);
         
             document.getElementById("table_rows").innerHTML = rows1;
   
             agganciaEventi();
+
+            $("#maxRows").val(10).change();
         })
         .catch(function(err) {
             alert(err);

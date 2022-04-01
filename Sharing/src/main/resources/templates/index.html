@@ -45,8 +45,9 @@
                 <i class="bi bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
+              
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li><a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a></li>
                 <li class="nav-item">
                   <a class="nav-link" href="/aboutus">Chi siamo</a>
                 </li>
@@ -54,22 +55,28 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#">Milano</a></li>
-                    <li><a class="dropdown-item" href="#">Roma</a></li>
+                    <li><a class="dropdown-item" href="/roma">Roma</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/aboutus">Contatti</a>
+                  <a class="nav-link" href="footer">Contatti</a>
                 </li>
                 <li class="nav-item verticalerule">
                     <a class="nav-link ">|</a>
                     </li>
                 <li class="nav-item">
-                <a class="nav-link" id="buttonLogin" href="#"data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">Accedi</a>
-                  <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
+                <div class="nav-link align-items-center" id="buttonLogin"><a class="text-decoration-none" href="#"data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">Accedi</a></div>
+                  <div id="iconaProfilo" class="nav-link">
+                    <div class="testo"><a class="text-decoration-none evidenziato" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Profilo personale</i></a></div>
+                    <div class="icone"><a href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i  class="bi bi-person-circle"></i></a></div>
+                  </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><i id="pannello" class="bi bi-gear-fill"></i></a>
+                  <div id="pannello" class="nav-link">
+                    <div class="testo"><a class="text-decoration-none evidenziato" href="#">Pannello di controllo</i></a></div>
+                    <div class="icone"><a href="#"><i  class="bi bi-gear-fill"></i></a></div>
+                  </div>
             </li>
           </ul>
 
@@ -164,7 +171,7 @@
     <div class="swiper-wrapper">
       <!-- Slides -->
       <div class="swiper-slide">
-        <img class="img-fluid" src="img/veicoli/auto-removebg-preview.png" alt="">
+        <img class="img-fluid" src="https://www.arval.it/sites/it/files/mazda_20mazda2skycruisehb4fb_lowaggressive.png" alt="">
         <div class="slideText">
           <h2>Automobile</h2>
           <h6>Tutto lo spazio che ti serve, con stile</h6>   
@@ -494,7 +501,7 @@
               <a href="#!" class="text-white">FAQ</a>
             </li>
 
-            <ul class="list-unstyled mb-0">
+           
               <li>
                 <a href="#!" class="text-white">Cookies</a>
               </li>
