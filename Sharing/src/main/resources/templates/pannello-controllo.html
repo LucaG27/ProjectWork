@@ -20,50 +20,54 @@
 </head>
 
 <body>
-    <!-- NAVBAR-->
-    <div class="container nav">
+     <!-- NAVBAR-->
+     <div class="container-nav">
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="/img/Color_tè_scuro_Illustrativo_Consegne_Logo_servizi_di_consegna__2_-removebg-preview.png" alt="" width="100">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-list"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="http://localhost:8080/">
+                <img src="/img/Color_tè_scuro_Illustrativo_Consegne_Logo_servizi_di_consegna__2_-removebg-preview.png" alt="" width="130">
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link" href="/aboutus">Chi siamo</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Milano</a></li>
+                    <li><a class="dropdown-item" href="#">Roma</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/aboutus">Contatti</a>
+                </li>
+                <li class="nav-item verticalerule">
+                    <a class="nav-link ">|</a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i id="pannello" class="bi bi-gear-fill"></i></a>
+            </li>
+          </ul>
 
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/aboutus">Chi siamo</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Città</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Milano</a></li>
-                                <li><a class="dropdown-item" href="#">Roma</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item verticalerule">
-                            <a class="nav-link">|</a>
-                        </li>
-                        <li class="nav-item">
-                              <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
-                            </li>
-                            <li class="nav-item">
-                              
-            
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 <!-- FINE NAVBAR-->
 
     <div class="container-fluid">
+        <div class="text-center">
+            <button class="btn btn-success" id="filtroPrenotazioni" onclick="listaPrenotazioni()">Prenotazioni</button>
+            <button class="btn btn-success" id="filtroVeicoli" onclick="listaVeicoli()">Veicolo</button>
+        </div>
         <div class="row pb-5">
             <div class="col-lg-2">
                 <div class="">
@@ -75,9 +79,9 @@
                             <li class='divider'>
                              <hr>
                             </li>
-                            <li class='person-lookup'><a href='#personLookup'><i
+                            <li class='person-lookup text-muted'><a href='#personLookup'><i
                                         class='fa fa-lg fa-phone-square pe-2'></i> Person Lookup</a></li>
-                            <li class='software-support'><a href='#softwareSupport'><i
+                            <li class='software-support text-muted'><a href='#softwareSupport'><i
                                         class='fa fa-lg fa-question-circle pe-2'></i> Support</a></li>
                             <li class='dashboard-updates' ><a href="/pannello-controllo/inserimento"><i
                                         class='fa fa-lg fa-arrow-up pe-2'></i> Aggiungi Veicolo</a></li>
@@ -87,6 +91,7 @@
                     </nav>
                 </div>
             </div>
+            
             <div class="col-lg-10">
                 <!-- TABLE-->
                 <div class="container">
@@ -102,14 +107,14 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col col-sm-3 col-xs-12">
-                                                <h4 class="title">Tabella <span>Veicoli</span></h4>
+                                                <h4 class="title">Tabella <span id="titolo"></span></h4>
                                             </div>
                                             <div class="col-sm-9 col-xs-12 text-right">
                                                 <div class="btn_group">
-                                                    <input type="text" class="form-control" placeholder="Search">
-                                                    <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
-                                                    <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
-                                                    <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                                                    <input type="text" class="form-control text-muted" placeholder="Search">
+                                                    <button class="btn btn-default text-muted" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                                    <button class="btn btn-default text-muted" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                                    <button class="btn btn-default text-muted" title="Excel"><i class="fas fa-file-excel"></i></button>
                                                     <select class="form-control" name="state" id="maxRows">
                                                         <option selected value="5000">Mostra tutte le righe</option>
                                                         <option value="5">5</option>
@@ -125,8 +130,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="panel-body table-responsive">
-                                        <table class="table" id="table-id">
+                                    <div id="table_rows" class="panel-body table-responsive">
+                                <!--       <table class="table" id="table-id">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">categoria</th>
@@ -165,7 +170,7 @@
                                                     </td>
                                                 </tr>
                                             </tbody>
-                                        </table>
+                                        </table> --> 
                                     </div>
                                     <div class="panel-footer">
                                         <div class="row">
@@ -190,51 +195,7 @@
                         </div>
                     </div>
 
-                    <!-- <table class="table table-striped table-class" id="table-id">
-                        <thead>
-                            <tr>
-                               
-                                <th scope="col">categoria</th>
-                                <th scope="col">descrizione</th>
-                                <th scope="col">alimentazione</th>
-                                <th scope="col">ruote</th>
-                                <th scope="col">disponibilita</th>
-                                <th scope="col">indirizzo</th>
-                                <th scope="col">citta</th>
-                                <th scope="col">coordinate</th>
-                                <th scope="col"></th>
-
-                            </tr>
-                        </thead>
-
-                        <tbody id="table_rows">
-                            <tr>
-                                <th >{{veicolo_id}}</th>
-                                <td >{{categoria}}</td>
-                                <td>{{descrizione}}</td>
-                                <td >{{alimentazione}}</td>
-                                <td>{{ruote}}</td>
-                                <td >{{disponibilita}}</td>
-                                <td>{{indirizzo}}</td>
-                                <td >{{citta}}</td>
-                                <td>{{coordinate}}</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary editButton"
-                                        veicolo-id="{{veicolo_id}}" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">edit</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary imgButton"
-                                        veicolo-id="{{veicolo_id}}">img</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-danger delButton"
-                                        veicolo-id="{{veicolo_id}}">Cancella</button>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table> -->
+                  
 
                     <!--		Start Pagination -->
                     
@@ -246,8 +207,8 @@
 
 
             
- <!-- FOOTER -->
- <footer class="bg-dark text-center text-white pt-5 ">
+  <!-- FOOTER -->
+  <footer class="bg-dark text-center text-white pt-5 ">
     <!-- Grid container -->
 
     <!-- Section: Links -->
@@ -256,21 +217,17 @@
       <div class="row">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Indirizzo</h5>
+          <h5 class="text-uppercase">Move Italia</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a class="text-white">Via Antonio Banfi, 8</a>
+              <a class="text-white">Chi Siamo</a>
             </li>
             <li>
-              <a class="text-white">20122 Milano MI</a>
-            </li>
-            <br>
-            <li>
-              <a class="text-white">Via Principi d'Acaja, 33</a>
+              <a class="text-white">Lavora con Noi</a>
             </li>
             <li>
-              <a class="text-white">10138 Torino TO</a>
+              <a class="text-white">Note legali</a>
             </li>
           </ul>
         </div>
@@ -287,6 +244,9 @@
             <li>
               <a class="text-white">move@gmail.com</a>
             </li>
+            <li>
+              <a class="text-white" href="">Via Antonio Banfi 8 , MI 20212</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -299,7 +259,7 @@
               <a href="#!" class="text-white">FAQ</a>
             </li>
 
-            <ul class="list-unstyled mb-0">
+           
               <li>
                 <a href="#!" class="text-white">Cookies</a>
               </li>
@@ -342,12 +302,11 @@
               <img
                 src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
                 alt="" width="150px">
-            </li>
-            <li class="mb-3">
-              <img
+                <img
                 src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
                 alt="" width="150px">
             </li>
+            
           </ul>
         </div>
         <!--Grid column-->
@@ -355,7 +314,7 @@
       <!--Grid row-->
     </section>
     <!-- Section: Links -->
-   
+    </div>
     <!-- Grid container -->
 
     <!-- Copyright -->
@@ -368,12 +327,12 @@
   <!-- Footer -->
 
             <!--MODALI-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Modifica dati auto</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -387,7 +346,7 @@
                                                     aria-describedby="emailHelp" readonly>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="descrizione" class="form-label ">categoria</label>
+                                                <label for="descrizione" class="form-label ">Categoria</label>
                                                 <select id="categoria" class="form-select" aria-label="Default select example">
                                                     <option selected>Scegli categoria</option>
                                                     <option value="BICICLETTA">Bicicletta</option>
@@ -397,7 +356,7 @@
                                                   </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="prezzo" class="form-label ">descrizione</label>
+                                                <label for="prezzo" class="form-label ">Descrizione</label>
                                                 <input type="text" class="form-control" id="descrizione"
                                                     aria-describedby="emailHelp">
                                             </div>
@@ -413,7 +372,7 @@
                                                   </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">ruote</label>
+                                                <label for="rimanenza" class="form-label">Ruote</label>
                                                 <select id="ruote" class="form-select" aria-label="Default select example">
                                                     <option selected>Scegli Nr. Ruote</option>
                                                     <option value="DUE RUOTE">2</option>
@@ -428,22 +387,22 @@
                                                 <input hidden type="text" id="disponibilita" value="DISPONIBILE" />
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">indirizzo</label>
+                                                <label for="rimanenza" class="form-label">Indirizzo</label>
                                                 <input type="text" class="form-control" id="indirizzo"
                                                     aria-describedby="emailHelp">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">citta</label>
+                                                <label for="rimanenza" class="form-label">Città</label>
                                                 <input type="text" class="form-control" id="citta"
                                                     aria-describedby="emailHelp">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">coordinate</label>
+                                                <label for="rimanenza" class="form-label">Coordinate</label>
                                                 <input type="text" class="form-control" id="coordinate"
                                                     aria-describedby="emailHelp">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="rimanenza" class="form-label">prezzo</label>
+                                                <label for="rimanenza" class="form-label">Prezzo</label>
                                                 <input type="text" class="form-control" id="prezzo"
                                                     aria-describedby="emailHelp">
                                             </div>
@@ -452,9 +411,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                                 <button id="resetButton" veicolo-id="" type="button" class="btn btn-light"><i class="fas fa-redo-alt"></i></button>
-                                <button id="updateButton" type="button" class="btn btn-primary">Update</button>
+                                <button id="updateButton" type="button" class="btn btn-primary">Aggiorna</button>
         
                             </div>
                         </form>
@@ -465,10 +424,10 @@
         </div>
 
         <div class="modal fade" id="immaginiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Inserisci un'immagine</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -476,10 +435,10 @@
                             <div class="col-lg-6">
                                 <form action="/pannello-controllo/save" name="immagineForm" method="post"
                                     enctype="multipart/form-data">
-                                    <h3 class="mb-3">upload Immagini:</h3>
-                                    <input type="number" name="veicoloId" id="upload_immagini" readonly />
-                                    <input type="file" name="image" accept="image/png, image/jpeg" multiple />
-                                    <input type="submit" value="Aggiungi">
+                                    <h3 class="mb-3">Carica l'immagine:</h3>
+                                    <input class="mb-3" type="number" name="veicoloId" id="upload_immagini" readonly />
+                                    <input class="mb-3" type="file" name="image" accept="image/png, image/jpeg" multiple />
+                                    <input class="btn mb-3" type="submit" value="Aggiungi">
                                 </form>
                             </div>
                         </div>
@@ -490,7 +449,7 @@
 
             <div class="modal fade" id="csvModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Carica file CSV</h5>
@@ -502,24 +461,47 @@
                                     <form action="/api/veicolo/import" name="importCSV" method="post" enctype="multipart/form-data">
                                         <h3 class="mb-3">Import Veicoli CSV:</h3>
                                         <input type="file" name="fileCSV" accept=".csv" />
-                                        <input type="submit" value="Aggiungi">
+                                        <input type="submit" class="btn" value="Aggiungi">
                             </div>
                             </div>
                     </div>
                 </div>
             </div>
         </div>
+
             <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cancellazione veicolo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                                <div class="container">
+                                    <div class="col-lg-6">
+                                        <h5 class="modal-title mb-3" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
+                                        <button type="button" veicolo-id="" id="confermaDelete" class="btn btn-primary">Confermo</button>
+                                   
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="modal fade" id="deleteModalPrenotazione" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
                                 <div class="container">
                                     <div class="col-lg-6">
-                                        <h5 class="modal-title" id="exampleModalLabel">Sei sicuro di voler eliminare il veicolo?</h5>
+                                        <h5 class="modal-title">Sei sicuro di voler terminare la prenotazione?</h5>
                                         <button type="button" class="btn-secondary" data-bs-dismiss="modal" aria-label="Close">Chiudi</button>
-                                        <button type="button" veicolo-id="" id="confermaDelete" class="btn-primary">Confermo</button>
-                                   
+                                        <button type="button" id="confermaTerminaPr" class="btn-primary">Confermo</button>
+                                        <input id="prenotazione_id" type="number" hidden >
                                 </div>
                                 </div>
                         </div>
@@ -542,7 +524,108 @@
           </div>
 
   <!-- FINE OFF CANVAS-->
-           
+
+  <!-- HANDLEBARS -->
+
+<script id="template-tabellaVeicoli" type="text/x-handlebars-template">
+  <table class="table" id="table-id">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">categoria</th>
+            <th scope="col">descrizione</th>
+            <th scope="col">alimentazione</th>
+            <th hidden scope="col">ruote</th>
+            <th scope="col">disponibilita</th>
+            <th scope="col">indirizzo</th>
+            <th scope="col">citta</th>
+            <th scope="col">coordinate</th>
+            <th scope="col">azioni</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this}}
+        <tr>
+            <td >{{id}}</td>
+            <td >{{categoria}}</td>
+            <td>{{descrizione}}</td>
+            <td >{{alimentazione}}</td>
+            <td hidden>{{ruote}}</td>
+            <td >{{disponibilita}}</td>
+            <td>{{indirizzo}}</td>
+            <td >{{citta}}</td>
+            <td>{{coordinate}}</td>
+            <td>
+                <ul class="action-list d-flex">
+                    <li><a href="#" data-tip="edit"><i class="fa fa-edit editButton"
+                        veicolo-id="{{id}}"></i></a></li>
+                    <li><a href="#" data-tip="delete"><i class="fa fa-trash delButton"
+                        veicolo-id="{{id}}"></i></a></li>
+                        <li>
+                            <a href="#" data-tip="image"><i class="bi bi-images imgButton" veicolo-id="{{id}}"></i></a>
+                        </li>
+                </ul>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</script>
+
+<script id="template-tabellaPrenotazioni" type="text/x-handlebars-template">
+
+    
+<table class="table" id="table-id">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Veicolo</th>
+            <th scope="col">Data inizio</th>
+            <th scope="col">Data fine</th>
+            <th scope="col"><a id="filtroStato" href="#" onclick="ordinaPrenotazioni()">Stato</a> </th>           
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this}}
+        {{#ifEquals stato "in corso"}}
+        <tr>
+            <td >{{utenteId.nome}}</td>
+            <td >{{utenteId.cognome}}</td>
+            <td >{{veicoloId.descrizione}}</td>
+            <td>{{dataInizio}}</td>
+            <td >{{dataFine}}</td>
+            <td>{{stato}}</td>
+            <td>
+                <ul class="action-list d-flex">
+                    <li><a href="#" data-tip="delete"><i class="fa fa-trash delButtonPrenotaz"
+                        prenotazione-id="{{id}}"></i></a></li>
+                </ul>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td >{{utenteId.nome}}</td>
+            <td >{{utenteId.cognome}}</td>
+            <td >{{veicoloId.descrizione}}</td>
+            <td>{{dataInizio}}</td>
+            <td >{{dataFine}}</td>
+            <td>{{stato}}</td>
+            <td>
+                <ul class="action-list d-flex">
+                </ul>
+            </td>
+        </tr>
+        {{/ifEquals}}
+        {{/each}}
+    </tbody>
+</table>
+
+</script>  
+
+<!-- HANDLEBARS -->
 
         <script>
             getPagination("#table-id");
@@ -698,6 +781,7 @@
         </script>
         <script src="/js/print.js"></script>
         <!--bootstrap-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>

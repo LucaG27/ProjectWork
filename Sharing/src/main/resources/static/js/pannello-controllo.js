@@ -1,13 +1,23 @@
 "use strict";
 let template_riga = "";
 const URL = "http://localhost:8080/api/veicolo/";
+const URL1 = "http://localhost:8080/api/prenotazioni/";
+const session = JSON.parse(localStorage.getItem('user'));
 let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
 let modal = null;
 let modalImmagine = null;
 let csvModal = null;
 let modalDelete = null;
+let modalTerminaPreno = null;
 let immagini = null;
 let specifiche = null;
+let render_tabellaPrenotazioni = null;
+let render_tabellaVeicoli = null;
+
+
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
 
 function logout(){
 
@@ -16,6 +26,60 @@ function logout(){
     location.href = "/logout";
     
   }
+
+function listaPrenotazioni(event){
+
+    document.getElementById("titolo").innerHTML = "prenotazioni";
+
+    fetch(URL1+ "allPrenotazioni")
+        .then(function(response) {
+		    return response.json();
+	    })
+        .then(function(json) {
+            console.log(json);
+            let rows = "";   
+                   
+            rows = render_tabellaPrenotazioni(json);
+                      
+            document.getElementById("table_rows").innerHTML = rows;
+            
+       
+            agganciaEventi();
+      
+        })
+        .catch(function(err) { 
+                alert(err);
+                console.log('Failed to fetch page: ', err);
+        });	
+
+}  
+
+function ordinaPrenotazioni(){
+
+    fetch(URL1+ "ordinati/in corso")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(json) {
+        console.log(json);
+        let rows = "";   
+               
+        rows = render_tabellaPrenotazioni(json);
+                  
+        document.getElementById("table_rows").innerHTML = rows;
+        
+   
+        agganciaEventi();
+  
+    })
+    .catch(function(err) { 
+            alert(err);
+            console.log('Failed to fetch page: ', err);
+    });	
+
+
+
+}
 
 function cambiaDisponibilita(){
     if(document.getElementById("disponibile").checked){
@@ -26,6 +90,10 @@ function cambiaDisponibilita(){
 }
 
 function listaVeicoli(){
+
+    document.getElementById("titolo").innerHTML = "";
+    document.getElementById("titolo").innerHTML = "veicoli";
+
     fetch(URL)
         .then(function(response) {
             return response.json();
@@ -34,23 +102,13 @@ function listaVeicoli(){
 
             console.log(json);
 
-            let rows = "";
+            let rows1 = "";
+            let rows2 = "";
 
-            for (let li = 0; li < json.length; li++) {
-                let row = template_riga;
-                rows += row.replaceAll("{{veicolo_id}}", json[li].id)
-                    .replaceAll("{{categoria}}", json[li].categoria)
-                    .replaceAll("{{descrizione}}", json[li].descrizione)
-                    .replaceAll("{{alimentazione}}", json[li].alimentazione)
-                    .replaceAll("{{ruote}}", json[li].ruote)
-                    .replaceAll("{{disponibilita}}", json[li].disponibilita)
-                    .replaceAll("{{indirizzo}}", json[li].indirizzo)
-                    .replaceAll("{{citta}}", json[li].citta)
-                    .replaceAll("{{coordinate}}", json[li].coordinate)
-                    .replaceAll("{{immagine}}", json[li].immagine)
-            }
-
-            document.getElementById("table_rows").innerHTML = rows;
+            rows1 = render_tabellaVeicoli(json);
+        
+            document.getElementById("table_rows").innerHTML = rows1;
+  
             agganciaEventi();
         })
         .catch(function(err) {
@@ -157,7 +215,7 @@ function listaVeicoli(){
         agganciaEventi();
     }
 
-    function editInsertVeicolo(event) {
+    function editInsertVeicolo() {
 
 
         let originator = event.currentTarget;
@@ -197,6 +255,61 @@ function listaVeicoli(){
             })
         agganciaEventi();
     }
+
+    function terminaPrenotazione(event){
+
+        
+        let prenotazioneId = document.getElementById("prenotazione_id").value;
+      
+        
+      
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        let yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+      
+        fetch(URL1+prenotazioneId)
+            .then(function(response) {
+              modalTerminaPreno.hide();
+              return response.json();
+            })
+            .then(function(prenotazione){        
+              //return
+               fetch(URL1 + "savePrenotazione",{
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                      
+                        body: JSON.stringify({ 
+                          id: prenotazioneId,
+                          dataInizio: prenotazione.dataInizio,
+                          dataFine: today,
+                          stato: "scaduta",
+                          utenteId: session,
+                          veicoloId: {
+                          id: prenotazione.veicoloId.id,
+                          categoria: prenotazione.veicoloId.categoria,
+                          descrizione: prenotazione.veicoloId.descrizione,
+                          alimentazione: prenotazione.veicoloId.alimentazione,
+                          ruote: prenotazione.veicoloId.ruote,
+                          disponibilita: "DISPONIBILE",
+                          indirizzo: prenotazione.veicoloId.indirizzo,
+                          citta: prenotazione.veicoloId.citta,
+                          coordinate: prenotazione.veicoloId.coordinate,
+                          prezzo: prenotazione.veicoloId.prezzo,
+                        }
+                      })
+            })
+            .then(()=>listaPrenotazioni())
+            
+          })
+          .catch(function(err) { 
+            console.log('Failed to fetch page: ', err);
+        });
+          
+      }
 
     function insertImmagine(event) {
 
@@ -238,6 +351,11 @@ function listaVeicoli(){
         for (let li = 0; li < delButton.length; li++) {
             delButton[li].addEventListener("click", chiamaDelModale);
         }
+      
+        let delButtonPr = document.getElementsByClassName("delButtonPrenotaz");
+        for (let li = 0; li < delButtonPr.length; li++) {
+            delButtonPr[li].addEventListener("click", chiamaDelModalePrenotazione);
+        }
     }
 
     function svuotaModale() {
@@ -264,19 +382,28 @@ function listaVeicoli(){
         modalDelete.show()
 
     }
+
+    function chiamaDelModalePrenotazione(event){
+
+        let originator = event.currentTarget;
+        let prenotazioneId = originator.getAttribute('prenotazione-id');
+        document.getElementById("prenotazione_id").value = prenotazioneId;
+        modalTerminaPreno.show()
+      
+      }
     
 
     window.addEventListener('DOMContentLoaded', (event) => {
 
-        modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
-        
-        modalImmagine = new bootstrap.Modal(document.getElementById('immaginiModal'), {});
-        
+        modal = new bootstrap.Modal(document.getElementById('exampleModal'), {});       
+        modalImmagine = new bootstrap.Modal(document.getElementById('immaginiModal'), {});        
         csvModal = new bootstrap.Modal(document.getElementById('csvModal'), {});
-
-        modalDelete = new bootstrap.Modal(document.getElementById('deleteModal'), {});
-        
+        modalDelete = new bootstrap.Modal(document.getElementById('deleteModal'), {});       
+        modalTerminaPreno = new bootstrap.Modal(document.getElementById('deleteModalPrenotazione'), {});       
         template_riga = document.getElementById("table_rows").innerHTML;
+
+        render_tabellaPrenotazioni = Handlebars.compile( document.getElementById("template-tabellaPrenotazioni").innerHTML );
+        render_tabellaVeicoli = Handlebars.compile( document.getElementById("template-tabellaVeicoli").innerHTML );
        
         let resetButton = document.getElementById("resetButton");
         resetButton.addEventListener("click", resetEdit);
@@ -287,6 +414,9 @@ function listaVeicoli(){
         let confermaDelete = document.getElementById("confermaDelete");
         confermaDelete.addEventListener("click", deleteVeicolo)
 
+        let confermaTerminaPreno = document.getElementById("confermaTerminaPr");
+        confermaTerminaPreno.addEventListener("click", terminaPrenotazione)
+
         let editButton = document.getElementsByClassName("editButton");
         for (let li = 0; li < editButton.length; li++) {
             editButton[li].addEventListener("click", editInsertVeicolo);
@@ -295,6 +425,11 @@ function listaVeicoli(){
         let delButton = document.getElementsByClassName("delButton");
         for (let li = 0; li < delButton.length; li++) {
             delButton[li].addEventListener("click", chiamaDelModale);
+        }
+
+        let delButtonPr = document.getElementsByClassName("delButtonPrenotaz");
+        for (let li = 0; li < delButtonPr.length; li++) {
+            delButtonPr[li].addEventListener("click", chiamaDelModalePrenotazione);
         }
 
         listaVeicoli();

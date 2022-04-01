@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/inserimento.css">
@@ -41,8 +42,6 @@
                   <a class="nav-link ">|</a>
                   </li>
               <li class="nav-item">
-              <a class="nav-link" id="buttonLogin" href="#"data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Accedi</a>
                 <a class="nav-link ms-2" id="pulsanteProfilo" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i id="iconaProfilo" class="bi bi-person-circle"></i></a>
               </li>
               <li class="nav-item">
@@ -160,7 +159,20 @@
     </div>
   </div>
 </div>
+
+ <!-- OFF CANVAS-->
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header text-center">
+    <h5 id="offcanvasRightLabel">Menu</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body container text-end">
+    <div class="ml-3 pd-5"><a href="/pannello-utente">Profilo Personale</a></div>
+    <div class="ml-3 pd-5"><a id="logout" href="/logout">Logout</a></div>
+  </div>
+</div>
   
+<!-- HANDLEBARS-->
 
 <script id="template-specs" type="text/x-handlebars-template">
   <div class="col-lg-4">
@@ -273,7 +285,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="bg-dark text-center text-white pt-5 ">
     <!-- Grid container -->
 
@@ -283,17 +295,18 @@
       <div class="row">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Indirizzo</h5>
+          <h5 class="text-uppercase">Move Italia</h5>
 
           <ul class="list-unstyled mb-0">
-
             <li>
-              <a class="text-white">Via Principi d'Acaja, 33</a>
+              <a class="text-white">Chi Siamo</a>
             </li>
             <li>
-              <a class="text-white">10138 Torino TO</a>
+              <a class="text-white">Lavora con Noi</a>
             </li>
-
+            <li>
+              <a class="text-white">Note legali</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -309,7 +322,9 @@
             <li>
               <a class="text-white">move@gmail.com</a>
             </li>
-
+            <li>
+              <a class="text-white" href="">Via Antonio Banfi 8 , MI 20212</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -317,16 +332,19 @@
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase">Links</h5>
-
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-white">Cookies</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Privacy Policy</a>
+              <a href="#!" class="text-white">FAQ</a>
             </li>
 
-          </ul>
+           
+              <li>
+                <a href="#!" class="text-white">Cookies</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Privacy Policy</a>
+              </li>
+            </ul>
         </div>
         <!--Grid column-->
 
@@ -340,19 +358,19 @@
                 <!-- Section: Social media -->
                 <section class="mb-2">
                   <!-- Facebook -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-facebook-f"></i></a>
 
                   <!-- Twitter -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-twitter"></i></a>
 
                   <!-- Google -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-google"></i></a>
 
                   <!-- Instagram -->
-                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
                       class="fab fa-instagram"></i></a>
 
                 </section>
@@ -362,12 +380,11 @@
               <img
                 src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
                 alt="" width="150px">
-            </li>
-            <li class="mb-3">
-              <img
+                <img
                 src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
                 alt="" width="150px">
             </li>
+            
           </ul>
         </div>
         <!--Grid column-->
@@ -379,8 +396,8 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Copyright: Move
+    <div class="text-center p-3">
+      © 2022 Copyright: Move - All rights reserved
 
     </div>
     <!-- Copyright -->
@@ -388,6 +405,7 @@
   <!-- Footer -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+<script src="https://kit.fontawesome.com/214b84d692.js" crossorigin="anonymous"></script>
 <script src="/js/inserimento.js"></script>
 <script src="/js/indirizzi-din.js"></script>
 

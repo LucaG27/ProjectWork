@@ -9,11 +9,28 @@ const URL="http://localhost:8080/api/veicolo";
 let render_veicolo = null;
 let veicoloModal = null;
 let categoriaF = null;
+let pannello= document.getElementById("pannello").addEventListener("click", controlloPannello);
+const session = JSON.parse(localStorage.getItem('user'));
 
 
   Handlebars.registerHelper('ifEquals', function(arg1, arg2, arg3, options) {
     return (arg1 == arg2 || arg1 == arg3) ? options.fn(this) : options.inverse(this);
 });
+
+function loadPage(){
+
+    let userL = session;
+  
+    if(userL == null){
+      location.href = "/";
+    }
+    if(userL.ruolo == "RUOLO_UTENTE"){
+        location.href = "/";
+    }else{
+      document.getElementById("pannello").setAttribute("style", "display:inline");
+      document.getElementById("iconaProfilo").setAttribute("style", "display:inline");
+    }
+  }
 
 function sceltaVeicolo(event){
 
@@ -36,6 +53,17 @@ function sceltaVeicolo(event){
     veicoloModal.hide();
 }
 
+function controlloPannello(){
+
+    if (session == null){
+  
+      modal.show();
+    }else{
+      location.href="/pannello-controllo";
+    }
+  
+  }
+  
 function createVeicolo(){
 
     if(categoriaF == "AUTO" || categoriaF == "MOTO"){
@@ -122,6 +150,8 @@ window.addEventListener(
 
         bottone_aggiungi = document.getElementById("createButton").addEventListener("click", createVeicolo);
         veicoloModal.show();
+
+        loadPage();
 
       
   });

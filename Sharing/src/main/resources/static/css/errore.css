@@ -1,135 +1,97 @@
 body{
     font-family: 'Montserrat', sans-serif;
+    height: 100%;
 }
 
-.swiper{
-    padding-bottom: 3rem;
+.mainContainer{
+    height:50rem;
 }
 
-.swiper-button-prev{
-    color: green;
-}
-
-.swiper-button-next{
-    color: green;
-}
-
-.grafico{
-    border: 1px solid black;
-    height: 500px;
-    border-radius: 10px;
-    margin-bottom: 5rem;
-}
-
-.banner{
-    background-image: url("https://enjoy.eni.com/img/home/bg_map_milano.png");
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.banner .ban img{
-    width: 90%;
-}
-
-.banner .info{
-    height: 200px;
-}
-
-.banner .info p{
-    font-size: 2.3rem;
-    color: white;
-}
-.banner .info span{
-    color: #7ab423;
-}
-
-
-.logo{
-    width: 200px;
-}
-
-.dropdown-menu li a{
-    color: green;
-}
-
-svg{
-    width: 20px;
-}
-
-.banner{
-  display: flex;   
-  flex-direction: column; 
-  align-items: center;
-  justify-content: end;
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Prompt', sans-serif;
+  }
+  p{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  .vantaggi-title{
+    font-family: 'Prompt', sans-serif;
+  }
+  .vantaggi-description{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  .riga{
+    font-family: 'Nunito Sans', sans-serif;
   
+  }
+  .nav-link{
+    font-family: 'Prompt', sans-serif;
+  }
+  .testoColorato{
+    font-family: 'Prompt', sans-serif;
+  }
   
-}
-
-
-.contenitore{
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.317) 0%, rgba(0,0,0,0.7231486344537815) 100%), url("");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 70px; 
-    filter: opacity(100%);   
-
-}
-
-.cards ul{
-    list-style-type: none;
-    padding: 0;
-
-}
-
-.icon-inside{
-    position: relative;
-}
-
-.icon-inside i{
-    position: absolute;
-    right:1rem;
-    top:50%;
-    transform: translateY(-50%);
-    color:#30A3F1;
-}
-
-.contenitore .col p{
+  .sec-content h3{
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+  /* ------------------------------------ 
+                  NAVBAR                      
+  --------------------------------------- */
+  
+  .navbar {
+      transition: all .2s ease-in-out;
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    }
+  
+    .container-nav{
+      padding-top: 60px;
+  }
+  
+    body{
+        background-color: #fdf9fd;;
+    }
+    .navbar .scrolled-nav{
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+    }
+  
+    nav:hover{
+      background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+         
+    }
+    .navbar-nav li a, .navbar-toggler-icon{
+      color: rgb(255, 255, 255);
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  
+    .dropdown-menu li a{
+      color: green;
+  }
+  
+  .nav-link:focus, .nav-link:hover, .evidenziato:hover{
+    font-weight: bold;
     color: white;
-    font-size: 1.2rem;
-}
-
-nav{
-    border-bottom: 1px solid white;
-}
-
-.contenitore img{
-    width: 100px;
-}
-
-.contenitore a{
-    color: rgb(255, 255, 255);
-    padding-left: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.contenitore ul li a:hover{
-
-    color: rgb(3, 183, 3);
-}
-
-.container .btn{
-    background-color: rgb(3, 183, 3);
-    color: white;
-}
-
-.contenitore .swiper-button-prev{
-    background-color: rgb(3, 183, 3);
-}
-
-.text-white{
-    text-decoration: none;
-}
+  }
+  
+  @media (max-width: 991px){
+   .verticalerule{
+         display: none; 
+      }
+  }
+  
+  @media (min-width: 991px){
+    .testo{
+      display:none;
+    }
+  }
+  
+    @media (max-width: 991px){
+    .icone{
+      display:none;
+    }
+  }
 
 
 /* CSS */
@@ -179,3 +141,110 @@ nav{
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
+
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}
+
+/* ------------------------------------ 
+                FOOTER                   
+--------------------------------------- */
+
+
+
+.btn-footer{
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+    background: -moz-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 48px;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.btn-footer:hover{
+  color: white;
+  font-weight: bold;
+}
+
+.fab:hover{
+color: white;
+font-weight: bold;
+}
+
+.text-white{
+    text-decoration: none;
+  }
+
+
+/* OFF-CANVAS */
+
+.offcanvas-backdrop {
+  
+    position: fixed;
+    top: 0;
+    
+   background-color: transparent;
+  }
+  .offcanvas{
+   background-color: aliceblue;
+  }
+  
+  
+  
+  .offcanvas-header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(71, 109, 142);
+    
+  }
+  
+  #offcanvasRightLabel{
+  font-size: 3rem;
+  }
+  
+  .offcanvas-body a{
+  display: block;
+  margin: auto;
+  padding: 1rem 1.25rem;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 1;
+  }
+  .offcanvas-body a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 1.25rem;
+  left: 1.25rem;
+  background-color: #5aaa4e97;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transform-origin: bottom center;
+  z-index: -1;
+  }
+  .offcanvas-body a:hover {
+  color: #2D2D2D;
+  }
+  .offcanvas-body a:hover:after {
+  right: 0;
+  left: 0;
+  height: 100%;
+  }
+  
+  .offcanvas-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }  

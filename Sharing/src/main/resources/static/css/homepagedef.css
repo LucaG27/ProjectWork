@@ -45,6 +45,9 @@ p{
     color: white;
     font-size: 2rem;
   }
+  .container-nav{
+    padding-top: 60px;
+}
 
   body{
       background-color: #fdf9fd;;
@@ -67,7 +70,7 @@ p{
     color: green;
 }
 
-.nav-link:focus, .nav-link:hover {
+.nav-link:focus, .nav-link:hover, .evidenziato:hover{
   font-weight: bold;
   color: white;
 }
@@ -78,6 +81,17 @@ p{
     }
 }
 
+@media (min-width: 991px){
+  .testo{
+    display:none;
+  }
+}
+
+  @media (max-width: 991px){
+  .icone{
+    display:none;
+  }
+}
 /*-------------Reset-------------*/
 button {
   background: none;
@@ -277,12 +291,12 @@ a:hover {
                 HERO                      
 --------------------------------------- */
 .backg{
-    background-image: url("https://images-ext-2.discordapp.net/external/ZlaAIJh-9Wx8dCdDWd1boVUYyl6pZ9PN_Lcnj7WshNw/https/www.leasysrent.it/it/blog/wp-content/uploads/2019/06/categoria-auto.jpg");
+    background-image: url("/img/BG-1.png");
 
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
-    background-position:left center;
+    background-position:right center;
     display: flex;
     align-items: center;
     padding-bottom: 14rem;
@@ -321,6 +335,7 @@ a:hover {
 .vantaggi{
     height: auto;
     background: aliceblue;
+    font-size: 1rem;
 }
 .vantaggi-title{
     padding-top: 3rem;
@@ -369,8 +384,10 @@ h5.mb-0 {
 }
 
 small.ghj {
-    font-size: 9px;
-    padding-top: 8px;
+    font-size: 13px;
+    padding-top: 5px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
 }
 
 .mid {
@@ -440,7 +457,8 @@ small.justify-content-center {
 }
 
 .banner .info{
-    height: 200px;
+    height: 50px;
+    margin-bottom: 1rem;
 }
 
 .banner .info p{
@@ -454,21 +472,36 @@ small.justify-content-center {
     display: flex;   
     flex-direction: column; 
     align-items: center;
-    justify-content: end; 
+    justify-content: center; 
 }  
-
 #map{
-  min-height: 300px;
+  min-height: 490px;
   width: 100%;
-  min-width: 350px;
+  min-width: 1000px;
 }
 
-@media(min-width:575px){
+@media(max-width:1000px){
   #map{
     min-height: 300px;
     width: 100%;
-    min-width: 1000px;
+    min-width: 700px;
   }
+  .banner .info{
+    height: 100px;
+    margin-bottom: 1rem;
+}
+}
+
+@media(max-width:575px){
+  #map{
+    min-height: 300px;
+    width: 100%;
+    min-width: 350px;
+  }
+  .banner .info{
+    height: 150px;
+    margin-bottom: 1rem;
+}
 }
 
 /* ------------------------------------ 
@@ -686,7 +719,7 @@ small.justify-content-center {
   background: -webkit-linear-gradient(left, #5AAA4E 0%, #118943 99%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #5AAA4E 0%, #118943 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
-  
+  font-family: 'Prompt', sans-serif;
   }
 
   .btn-primary:hover{
@@ -776,6 +809,7 @@ font-weight: bold;
     border: 0;
     color: #fff;
     font-size: 20px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .btn2{
@@ -793,6 +827,7 @@ font-weight: bold;
     transition: .3s ease-in;
     overflow: hidden;
     font-size: 20px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .btn2:hover{
@@ -827,6 +862,7 @@ font-weight: bold;
     padding: 10px 15px;
     width: 48px;
     font-size: 20px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .btn-footer:hover{
@@ -860,3 +896,12 @@ font-weight: bold;
     font-weight: bold;
   }
 
+  .offcanvas-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}
+
+.fa-eye{
+  padding-top: 1rem;
+}

@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../static/css/errori/style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- BOOTSTRAP ICON-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!--MAPS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin="" />
+     <!--FONT-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Source+Serif+4:wght@200&display=swap" rel="stylesheet">
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""></script>
+    <link rel="stylesheet" href="css/errore.css">
     <title>Oh no!</title>
 
     <style>
@@ -24,13 +48,200 @@
 </head>
 <body>
 
-    <h1 class="center">Qualcosa è andato storto :/ </h1>
+    <div class="container-nav">
+        <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="http://localhost:8080/">
+                <img src="/img/Color_tè_scuro_Illustrativo_Consegne_Logo_servizi_di_consegna__2_-removebg-preview.png" alt="" width="130">
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link" href="/aboutus">Chi siamo</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Città</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Milano</a></li>
+                    <li><a class="dropdown-item" href="#">Roma</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/aboutus">Contatti</a>
+                </li>
+                <li class="nav-item verticalerule">
+                    <a class="nav-link ">|</a>
+                    </li>
+                <li class="nav-item">
+                <div class="nav-link align-items-center" id="buttonLogin"><a class="text-decoration-none" href="#"data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">Accedi</a></div>
+                  <div id="iconaProfilo" class="nav-link">
+                    <div class="testo"><a class="text-decoration-none evidenziato" href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Profilo personale</i></a></div>
+                    <div class="icone"><a href="#" tabindex="-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i  class="bi bi-person-circle"></i></a></div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div id="pannello" class="nav-link">
+                    <div class="testo"><a class="text-decoration-none evidenziato" href="#">Pannello di controllo</i></a></div>
+                    <div class="icone"><a href="#"><i  class="bi bi-gear-fill"></i></a></div>
+                  </div>
+            </li>
+          </ul>
 
-    <div class="center" >
-    <img class="error_img" src="https://tracemytrack.com/wp-content/uploads/2017/05/frown-face.png" alt="oh no!">
-    </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-    <div class="center">
-        <h3>Pagine richiesta non trovata</h3>
-    </div>    
+
+    <div class="container mainContainer">
+        <h1 class="center">Qualcosa è andato storto :/ </h1>
+        <div class="center" >
+        <img class="error_img" src="https://tracemytrack.com/wp-content/uploads/2017/05/frown-face.png" alt="oh no!">
+        </div>
+        <div class="center">
+            <h3>Pagine richiesta non trovata</h3>
+        </div>
+    </div>   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-center text-white pt-5 ">
+    <!-- Grid container -->
+
+    <!-- Section: Links -->
+    <section class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Move Italia</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a class="text-white">Chi Siamo</a>
+            </li>
+            <li>
+              <a class="text-white">Lavora con Noi</a>
+            </li>
+            <li>
+              <a class="text-white">Note legali</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contatti</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a class="text-white">Tel. 0114472954</a>
+            </li>
+            <li>
+              <a class="text-white">move@gmail.com</a>
+            </li>
+            <li>
+              <a class="text-white" href="">Via Antonio Banfi 8 , MI 20212</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">FAQ</a>
+            </li>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Cookies</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Privacy Policy</a>
+              </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+          <ul class="list-unstyled mb-0">
+            <li class="">FOLLOW MOVE</li>
+            <li>
+              <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-2">
+                  <!-- Facebook -->
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                      class="fab fa-facebook-f"></i></a>
+
+                  <!-- Twitter -->
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                      class="fab fa-twitter"></i></a>
+
+                  <!-- Google -->
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                      class="fab fa-google"></i></a>
+
+                  <!-- Instagram -->
+                  <a class="btn btn-outline-light btn-floating m-1 btn-footer" href="#!" role="button"><i
+                      class="fab fa-instagram"></i></a>
+
+                </section>
+                <!-- Section: Social media -->
+            </li>
+            <li class="mb-3">
+              <img
+                src="https://images-ext-2.discordapp.net/external/NQOoWDHGCRghugM-nYJxFjFui11_9DV2GoeLoyF2StE/https/i.imgur.com/47q2YGt.png"
+                alt="" width="150px">
+                <img
+                src="https://images-ext-2.discordapp.net/external/0DT8yuGJXWsNS6dtUToOH_GkuzDcJXlzvBImeT7vZyo/https/i.imgur.com/nkZP7fe.png"
+                alt="" width="150px">
+            </li>
+            
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3">
+      © 2022 Copyright: Move - All rights reserved
+
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <!-- OFF-CANVA -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header text-center">
+      <h5 id="offcanvasRightLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body container text-end">
+      <div class="ml-3 pd-5"><a href="/pannello-utente">Profilo Personale</a></div>
+      <div class="ml-3 pd-5"><a id="logout" href="/logout">Logout</a></div>
+    </div>
+  </div>
+
+ </body>
+
+ 
+ <script src="js/errore.js"></script>
