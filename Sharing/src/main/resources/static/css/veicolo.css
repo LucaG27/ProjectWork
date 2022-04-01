@@ -197,11 +197,36 @@ li {
     border-top: 1px solid rgba(0,0,0,.1);
     display: none;
 }
+/* ///////MAP/////////// */
+.banner{
+  display: flex;   
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  padding-bottom: 1rem;
+}   
 
+#map{
+  min-height: 700px;
+  width: 100%;
+  min-width: 1000px;
+}
 
-#map { 
-    height: 720px;
- }
+@media(max-width:1000px){
+  #map{
+    min-height: 700px;
+    width: 100%;
+    min-width: 700px;
+  }
+}
+
+@media(max-width:700px){
+  #map{
+    min-height: 700px;
+    width: 100%;
+    min-width: 350px;
+  }
+}
 /* ------------------------------------ 
                 MODAL                   
 --------------------------------------- */
@@ -411,6 +436,7 @@ z-index: 1;
 content: "";
 display: block;
 height: 2px;
+
 position: absolute;
 bottom: 0;
 right: 1.25rem;
