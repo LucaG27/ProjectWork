@@ -66,7 +66,7 @@ p{
     color: green;
 }
 
-.nav-link:focus, .nav-link:hover {
+.nav-link:focus, .nav-link:hover, .evidenziato:hover{
   font-weight: bold;
   color: white;
 }
@@ -77,6 +77,17 @@ p{
     }
 }
 
+@media (min-width: 991px){
+  .testo{
+    display:none;
+  }
+}
+
+  @media (max-width: 991px){
+  .icone{
+    display:none;
+  }
+}
 /*-------------Reset-------------*/
 /* button {
   background: none;
