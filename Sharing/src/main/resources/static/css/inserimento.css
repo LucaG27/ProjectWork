@@ -598,6 +598,10 @@ small.justify-content-center {
     padding: 2rem;
   }
 
+  .modal-header{
+    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+  }
+
   .modal-body h1 {
     padding-top: 3rem;
   }
