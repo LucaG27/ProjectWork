@@ -24,10 +24,7 @@
     background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
   }
 
-  nav:hover{
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-       
-  }
+ 
   .navbar-nav li a, .navbar-toggler-icon{
     color: rgb(255, 255, 255);
     font-size: 1.2rem;
@@ -462,3 +459,4 @@ font-weight: bold;
   max-width:1700px
 }
 }
+
