@@ -1,6 +1,7 @@
 
 body{
   font-family: 'Nunito Sans', sans-serif;
+  color:  #141718;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -8,6 +9,7 @@ h1,h2,h3,h4,h5,h6{
 }
 p{
   font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
   
 }
 .vantaggi-title{
@@ -32,6 +34,12 @@ p{
   font-family: 'Nunito Sans', sans-serif;
   
 }
+
+
+
+.nero{
+  color: #172328;
+}
 /* ------------------------------------ 
                 NAVBAR                      
 --------------------------------------- */
@@ -49,6 +57,10 @@ p{
     padding-top: 60px;
 }
 
+.verticalerule p {
+  color: white;
+}
+
   body{
       background-color: #fdf9fd;;
   }
@@ -62,10 +74,17 @@ p{
   }
   .navbar-nav li a, .navbar-toggler-icon{
     color: rgb(255, 255, 255);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
   }
 
+  .hambu i{
+    color: white;
+  }
+
+  .navbar-toggler:hover, .navbar-toggler:focus {
+    color: white;
+  }
   .dropdown-menu li a{
     color: green;
 }
@@ -326,6 +345,14 @@ a:hover {
     padding-bottom: 3rem;
 }
 
+.s1 .swiper-button-prev{
+  color: green;
+}
+
+.s1 .swiper-button-next{
+  color: green;
+}
+
 .slideText{
   text-align: center
 }
@@ -360,7 +387,7 @@ a:hover {
 }
 
 .card {
-    width: 250px;
+    width: 270px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -509,6 +536,10 @@ small.justify-content-center {
 --------------------------------------- */
 .slider2 {
     background: aliceblue;
+  }
+
+  .slider2 .card{
+    height: 369px;
   }
   
   .gtco-testimonials {
@@ -845,6 +876,15 @@ font-weight: bold;
     background: linear-gradient(45deg, #00a8f4 0%, #02d1a1 100%);
     z-index: -1;
     transition: ease 0.3s
+}
+
+/* ------------------------------------ 
+                GRAFCO                      
+--------------------------------------- */
+
+.grafico p{
+  padding-bottom: 4rem;
+  letter-spacing: 2px;
 }
 
 /* ------------------------------------ 
