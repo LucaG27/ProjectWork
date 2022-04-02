@@ -109,7 +109,8 @@ color: white;
 }
 
 .card {
-    border-radius: 10px
+    border-radius: 10px;
+    min-height: 386px;
 }
 
 .card-img-top {
@@ -171,6 +172,11 @@ small.justify-content-center {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 5rem;
+}
+
+.team{
+  background-color: aliceblue;
+  padding-bottom: 5rem;
 }
 /* ------------------------------------ 
                 BANNER                   
