@@ -5,6 +5,7 @@ const URL1 = "http://localhost:8080/api/prenotazioni/";
 const URL2 = "http://localhost:8080/api/immagine/delete/";
 const session = JSON.parse(localStorage.getItem('user'));
 let bottone_logout = document.getElementById("logout").addEventListener("click", logout);
+let print = document.getElementById("print-button").addEventListener("click", printHTML)
 let modal = null;
 let modalImmagine = null;
 let csvModal = null;
@@ -474,6 +475,14 @@ function confermaDelImmagine(){
         listaImmagini();
         modalDeleteImmagine.show();
     }  
+
+    function printHTML() {
+        printJS({
+          printable: 'table-id',
+          type: 'html',
+          ignoreElements: ['thumbnail','immagg','ico1','ico2','azioni','ico3','ico4']
+        })
+      }
     
 
     window.addEventListener('DOMContentLoaded', (event) => {

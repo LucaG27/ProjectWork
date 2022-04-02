@@ -84,7 +84,7 @@
                                         class='fa fa-lg fa-question-circle pe-2'></i> Support</a></li>
                             <li class='dashboard-updates' ><a href="/pannello-controllo/inserimento"><i
                                         class='fa fa-lg fa-arrow-up pe-2'></i> Aggiungi Veicolo</a></li>
-                            <li onclick="printJS('table-id', 'html')" class='print'><a href='#'><i class='fa fa-lg fa-print pe-2'></i> Stampa</a></li>
+                            <li id="print-button" class='print'><a href='#'><i class='fa fa-lg fa-print pe-2'></i> Stampa</a></li>
                         </ul>
                     </div>
                     </nav>
@@ -570,8 +570,8 @@
             <th scope="col">indirizzo</th>
             <th scope="col">citta</th>
             <th scope="col">coordinate</th>
-            <th scope="col">immagini</th>
-            <th scope="col">azioni</th>
+            <th id="immagg"scope="col">immagini</th>
+            <th id="azioni"scope="col">azioni</th>
 
         </tr>
     </thead>
@@ -594,14 +594,16 @@
             </td>
             <td>
                 <ul class="action-list d-flex">
-                    <li><a href="#" data-tip="edit"><i class="fa fa-edit editButton"
+                    <li id="ico3">
+                        <a href="#" data-tip="edit"><i class="fa fa-edit editButton"
                         veicolo-id="{{id}}"></i></a></li>
-                    <li><a href="#" data-tip="delete"><i class="fa fa-trash delButton"
+                    <li id="ico4">
+                        <a href="#" data-tip="delete"><i class="fa fa-trash delButton"
                         veicolo-id="{{id}}"></i></a></li>
-                        <li>
+                        <li id="ico1">
                             <a href="#" data-tip="image"><i class="bi bi-images imgButton" veicolo-id="{{id}}"></i></a>
                         </li>
-                        <li>
+                        <li id="ico2">
                             <a href="#" data-tip="image"><i class="bi bi-file-earmark-image-fill delImg" veicolo-id="{{id}}"></i></a>
                         </li>
                 </ul>
