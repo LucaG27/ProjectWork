@@ -82,6 +82,7 @@ function createVeicolo(){
             indirizzo: document.getElementById("indirizzo").value,  
             citta: document.getElementById("citta").value, 
             coordinate: document.getElementById("coordinate").value,
+            prezzo: document.getElementById("prezzo").value,
             immagine: [{
             }],
             specifiche:{
