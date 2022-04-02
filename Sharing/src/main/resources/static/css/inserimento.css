@@ -1,287 +1,305 @@
 /* font-family: 'Dosis', sans-serif;
 font-family: 'Source Serif 4', sans-serif; */
 
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+body{
+  font-family: 'Nunito Sans', sans-serif;
+  color:  #141718;
+}
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Poppins', sans-serif;
 }
 p{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
   
 }
 .vantaggi-title{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
-  
+  font-family: 'Poppins', sans-serif;
 }
 .vantaggi-description{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+  font-family: 'Nunito Sans', sans-serif;
   
 }
-.text-center{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+.riga{
+  font-family: 'Nunito Sans', sans-serif;
 
 }
 .nav-link{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
-
+  font-family: 'Poppins', sans-serif;
 }
 .testoColorato{
-  font-family: 'Dosis', sans-serif;
-  font-weight:bold;
+  font-family: 'Poppins', sans-serif;
+}
 
+.sec-content h3{
+  font-family: 'Nunito Sans', sans-serif;
+  
 }
 /* ------------------------------------ 
                 NAVBAR                      
 --------------------------------------- */
 
 .navbar {
-    transition: all .2s ease-in-out;
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  }
-
-  body{
-      background-color: #fdf9fd;;
-  }
-  .navbar .scrolled-nav{
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  }
-
-  nav:hover{
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-       
-  }
-  .navbar-nav li a, .navbar-toggler-icon{
-    color: rgb(255, 255, 255);
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-
-  .dropdown-menu li a{
-    color: green;
+  transition: all .2s ease-in-out;
+  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
 }
 
-.nav-link:focus, .nav-link:hover {
-  font-weight: bold;
+.icona-nav{
+  color: white;
+  font-size: 2rem;
+}
+.container-nav{
+  padding-top: 60px;
+}
+
+.verticalerule p {
+color: white;
+}
+
+body{
+    background-color: #fdf9fd;;
+}
+.navbar .scrolled-nav{
+  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+}
+
+nav:hover{
+  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
+     
+}
+.navbar-nav li a, .navbar-toggler-icon{
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hambu i{
   color: white;
 }
 
-@media (max-width: 991px){
- .verticalerule{
-       display: none; 
-    }
+.navbar-toggler:hover, .navbar-toggler:focus {
+  color: white;
+}
+.dropdown-menu li a{
+  color: green;
 }
 
+.nav-link:focus, .nav-link:hover, .evidenziato:hover{
+font-weight: bold;
+color: white;
+}
+
+@media (max-width: 991px){
+.verticalerule{
+     display: none; 
+  }
+}
+
+@media (min-width: 991px){
+.testo{
+  display:none;
+}
+}
+
+@media (max-width: 991px){
+.icone{
+  display:none;
+}
+}
 /*-------------Reset-------------*/
-/* button {
-  background: none;
-  box-shadow: none;
-  border: none;
-  cursor: pointer;
+button {
+background: none;
+box-shadow: none;
+border: none;
+cursor: pointer;
 }
 
 button:focus,
 input:focus {
-  outline: 0;
+outline: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
-
-  line-height: 1.5em;
-  padding: 0;
-  margin: 0;
+/*-------------Layout-------------*/
+body {
+line-height: 1.5em;
+padding: 0;
+margin: 0;
 }
 
-section {
-  height: 100vh;
-}
 
 #home {
-  background-color: #ddd;
+background-color: #ddd;
 }
 
 #about {
-  background-color: #aaa;
+background-color: #aaa;
 }
 
 #work {
-  background-color: #888;
+background-color: #888;
 }
 
 #contact {
-  background-color: #666;
+background-color: #666;
 }
 
+/*-------------Helpers-------------*/
 .skew {
-  transform: skew(-20deg);
+transform: skew(-20deg);
 }
 
 .un-skew {
-  transform: skew(20deg);
+transform: skew(20deg);
 }
 
-
+/*-------------Nav-------------*/
 #nav-wrapper {
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
+overflow: hidden;
+width: 100%;
+margin: 0 auto;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 100;
 }
 
 #nav {
-  background-color: #fff;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  font-family: "Saira Semi Condensed", sans-serif;
-  height: 4em;
-  overflow: hidden;
+background-color: #fff;
+box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+font-family: "Saira Semi Condensed", sans-serif;
+height: 4em;
+overflow: hidden;
 }
 #nav.nav-visible {
-  height: 100%;
-  overflow: auto;
+height: 100%;
+overflow: auto;
 }
 
 .nav {
-  display: flex;
-  height: 4em;
-  line-height: 4em;
-  flex-grow: 1;
+display: flex;
+
+
+flex-grow: 1;
 }
 
 .nav-link,
 .logo {
-  padding: 0 1em;
+
 }
 
-span.gradient {
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  padding: 0 1em;
-  position: relative;
-  right: 1em;
-  margin-right: auto;
-}
+
 span.gradient:hover {
-  animation-name: logo-hover;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.17, 0.57, 0.31, 0.85);
+animation-name: logo-hover;
+animation-duration: 0.3s;
+animation-fill-mode: forwards;
+animation-timing-function: cubic-bezier(0.17, 0.57, 0.31, 0.85);
+
 }
 
 h1.logo {
-  font-weight: 300;
-  font-size: 1.75em;
-  line-height: 0.75em;
-  color: #fff;
+font-weight: 300;
+font-size: 1.75em;
+line-height: 0.75em;
+color: #fff;
 }
 
 h1.logo a, a:active, a:hover, a:visited {
-  text-decoration: none;
-  color: #fff;
+text-decoration: none;
+color: #fff;
 }
 
 .nav-link {
-  text-transform: uppercase;
-  text-align: center;
-  border-top: 0.5px solid #ddd;
+text-transform: uppercase;
+
 }
 
-a:link, a:visited, a:active {
-  text-decoration: none;
-  color: #118943;
-}
+
 
 a:hover {
-  text-decoration: underline;
+
 }
 
 .right {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+display: flex;
+flex-direction: column;
+height: 100%;
 }
 
 .btn-nav {
-  background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-  padding-left: 2em;
-  padding-right: 2em;
+color: #f857a8;
+padding-left: 2em;
+padding-right: 2em;
 }
 
 @media (min-width: 800px) {
-  #nav-wrapper {
-    overflow: hidden;
-  }
+#nav-wrapper {
+  overflow: hidden;
+}
 
-  #nav {
-    overflow: hidden;
-    flex-direction: row;
-  }
+#nav {
+  overflow: hidden;
+  flex-direction: row;
+}
 
-  .nav-link {
-    border-top: none;
-  }
+.nav-link {
+  border-top: none;
+}
 
-  .right {
-    overflow: hidden;
-    flex-direction: row;
-    justify-content: flex-end;
-    position: relative;
-    left: 1.5em;
-    height: auto;
-  }
+.right {
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: relative;
+  left: 1.5em;
+  height: auto;
+}
 
-  .btn-nav {
-    display: none;
-  }
+.btn-nav {
+  display: none;
+}
 
-  .nav a:link.active, a:visited.active, a:active.active {
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-    background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
-    color: #fff;
-  }
+.nav a:link.active, a:visited.active, a:active.active {
+  background: #f857a8;
+  background: -webkit-linear-gradient(45deg, #f857a8, #ff5858);
+  background: linear-gradient(45deg, #f857a8, #ff5858);
+  color: #fff;
+}
 
-  .nav-link-span {
-    transform: skew(20deg);
-    display: inline-block;
-  }
+.nav-link-span {
+  transform: skew(20deg);
+  display: inline-block;
+}
 
-  .nav-link {
-    transform: skew(-20deg);
-    color: #777;
-    text-decoration: none;
-  }
-  .nav-link:last-child {
-    padding-right: 3em;
-  }
+.nav-link {
+  
+  color: #777;
+  text-decoration: none;
+}
+.nav-link:last-child {
+  padding-right: 3em;
+}
 
-  a:hover.nav-link:not(.active) {
-    color: #444;
-    background: #ddd;
-    background: linear-gradient(45deg, #fff, #ddd);
-  }
+a:hover.nav-link:not(.active) {
+  color: #444;
+  background: #ddd;
+  background: linear-gradient(45deg, #fff, #ddd);
+}
 }
 @keyframes logo-hover {
-  20% {
-    padding-right: 0em;
-  }
-  100% {
-    padding-right: 5em;
-  }
-} */
+20% {
+  padding-right: 0em;
+}
+100% {
+  padding-right: 5em;
+}
+}
   /* ------------------------------------ 
                 HERO                      
 --------------------------------------- */
