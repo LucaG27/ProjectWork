@@ -490,7 +490,7 @@ small.justify-content-center {
 }
 
 .banner .info p{
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     color: white;
 }
 .banner .info span{
@@ -502,6 +502,7 @@ small.justify-content-center {
     align-items: center;
     justify-content: end; 
 }  
+
 #map{
   min-height: 430px;
   width: 100%;
@@ -514,9 +515,11 @@ small.justify-content-center {
     width: 100%;
     min-width: 700px;
   }
-  .banner .info{
+  .banner .info p{
     height: 100px;
     margin-bottom: 1rem;
+    font-size: 1.7rem;
+    padding-bottom: 70px;
 }
 }
 
@@ -526,9 +529,10 @@ small.justify-content-center {
     width: 100%;
     min-width: 350px;
   }
-  .banner .info{
+  .banner .info p{
     height: 150px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.7rem;
+    padding-bottom: 70px;
 }
 }
 
