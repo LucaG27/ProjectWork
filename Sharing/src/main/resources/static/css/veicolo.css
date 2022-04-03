@@ -716,3 +716,7 @@ height: 100%;
   align-items: center;
   background: linear-gradient(189deg, #118943  34%, #5aaa4e 61%);
 }
+
+.fa-eye{
+  padding-top: 1rem;
+}
