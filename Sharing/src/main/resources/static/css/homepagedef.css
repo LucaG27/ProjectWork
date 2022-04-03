@@ -521,6 +521,9 @@ small.justify-content-center {
     font-size: 1.7rem;
     padding-bottom: 70px;
 }
+#pgrafico{
+  display: none;
+}
 }
 
 @media(max-width:575px){
@@ -533,6 +536,9 @@ small.justify-content-center {
     height: 150px;
     margin-bottom: 1.7rem;
     padding-bottom: 70px;
+}
+#pgrafico{
+  display: none;
 }
 }
 
